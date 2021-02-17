@@ -1,0 +1,37 @@
+Modifications to existing files.
+.env  (Database connection setup points to localhost DB named Patient_Experience_Tracker)
+
+New files:
+App\Models
+Admin.php
+Condition_List.php
+Patient.php
+Removed_Questions.php
+Survey_Questions.php
+Survey_Responses.php
+
+database\Migratiions
+2021_02_17_000001_create__condition__list_table.php
+2021_02_17_000002_create__patient__profile_table.php
+2021_02_17_180625_create__admin__profile_table.php
+2021_02_17_181157_create__survey__questions_table.php
+2021_02_17_181849_create__survey__responses_table.php
+2021_02_17_182809_create__removed__questions_table.php
+
+database\Seeders
+DB_Seed.php
+
+To create tables run artisan command from the repo folder:
+"php artisan migrate"
+
+to seed database run artisan commands from the repo folder:
+"composer dump autoload"
+
+and 
+
+"php artisan db:seed --class=DB_Seed"
+
+This will seed the DB with surveys with test questions and a test root admin profile and test admin as well as two test patients one that is 
+still new and cannot login. Password left as empty strings until Authentication implemented.
+
+
