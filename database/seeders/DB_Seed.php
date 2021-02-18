@@ -98,7 +98,7 @@ class DB_Seed extends Seeder
             'SurveyName' => 'IBDPROM_Two',
             'ConditionServed' => 'IDB',
             'SurveyType' => 'PROM',
-            'SurveyQuestions' => json_encode($testQuestions1)
+            'SurveyQuestions' => json_encode($testQuestions2)
         ]);        
     } 
 }
