@@ -24,6 +24,7 @@ class CreatePatientProfileTable extends Migration
             $table->integer('HeightFeet');
             $table->integer('HeightInches');
             $table->string('Condition');
+            $table->string('Medication');
             $table->boolean('PREMFlag')->default(true);
             $table->boolean('PROMFlag')->default(true);
             $table->boolean('NewAccount')->default(true);
