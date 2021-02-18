@@ -20,8 +20,9 @@ class CreatePatientProfileTable extends Migration
             $table->string('LastName');
             $table->date('DOB');
             $table->string('Gender');
-            $table->decimal('Weight', 3, 0);
-            $table->decimal('Height', 3, 2);
+            $table->integer('Weight');
+            $table->integer('HeightFeet');
+            $table->integer('HeightInches');
             $table->string('Condition');
             $table->boolean('PREMFlag')->default(true);
             $table->boolean('PROMFlag')->default(true);
