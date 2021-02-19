@@ -35,6 +35,30 @@ class DB_Seed extends Seeder
             'Condition' => 'IBD'
         ]);
 
+        DB::table('MEDICATION_LIST')->insert([            
+            'MedicationName' => 'Test Medication 1'
+        ]);
+
+        DB::table('MEDICATION_LIST')->insert([            
+            'MedicationName' => 'Test Medication 2'
+        ]);
+
+        DB::table('MEDICATION_LIST')->insert([            
+            'MedicationName' => 'Test Medication 3'
+        ]);
+
+        DB::table('MEDICATION_LIST')->insert([            
+            'MedicationName' => 'Test Medication 4'
+        ]);
+
+        DB::table('MEDICATION_LIST')->insert([            
+            'MedicationName' => 'Test Medication 5'
+        ]);
+
+        DB::table('MEDICATION_LIST')->insert([            
+            'MedicationName' => 'Test Medication 6'
+        ]);
+
         DB::table('PATIENT_PROFILE')->insert([
             'Email' => 'testpatientone@test.ca',
             'Password' => '',
@@ -46,6 +70,7 @@ class DB_Seed extends Seeder
             'HeightFeet' => 6,
             'HeightInches' => 0,
             'Condition' =>'IBD',
+            'Medications' => json_encode(array(array('MedicationName' => 'Test Medication 1'))),    
             'PREMFlag' => true,
             'PROMFlag' => true,
             'NewAccount' => false    
@@ -62,6 +87,7 @@ class DB_Seed extends Seeder
             'HeightFeet' => 5,
             'HeightInches' => 7,
             'Condition' =>'IBD',
+            'Medications' => json_encode(array(array('MedicationName' => 'Test Medication 2'))),
             'PREMFlag' => true,
             'PROMFlag' => true,
             'NewAccount' => true

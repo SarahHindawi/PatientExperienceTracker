@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/patientregistration', 'App\Http\Controllers\PatientRegistrationController@index');
+Route::post('/patientregistration', 'App\Http\Controllers\PatientRegistrationController@register');
