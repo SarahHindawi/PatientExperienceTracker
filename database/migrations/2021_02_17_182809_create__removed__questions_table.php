@@ -13,7 +13,7 @@ class CreateRemovedQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('REMOVED_QUSTIONS', function (Blueprint $table) {
+        Schema::create('REMOVED_QUESTIONS', function (Blueprint $table) {
             $table->id();
             $table->date('DateRemoved');
             $table->string('SurveySource');

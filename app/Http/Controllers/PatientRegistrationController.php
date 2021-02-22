@@ -37,7 +37,15 @@ class PatientRegistrationController extends Controller
             ]);
 
        
+        $existanceTest = Patient::where('Email', $request->input('email'))->first();
 
+        if($existanceTest)
+        {
+            //TODO Replace with redirect to homepage with error message when homepage is complete.
+            return "Registration Failure: Patient already exists.";
+        }
+        
+    
         $patient = new Patient();
 
         $patient->Email = $request->input('email');
