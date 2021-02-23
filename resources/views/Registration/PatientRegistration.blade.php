@@ -24,18 +24,39 @@
     <body class="antialiased">
         <h1>Press submit for test registration</h1>        
         {!! Form::open(['action' => 'App\Http\Controllers\PatientRegistrationController@register', 'method' => 'POST']) !!}
-        {{ Form::hidden('email', 'mysterypatient@test.ca') }}
-        {{ Form::hidden('firstName', 'John') }}
-        {{ Form::hidden('lastName', 'Doe') }}
-        {{ Form::hidden('dob', '06-06-1995') }}   
-        {{ Form::hidden('gender', 'Male') }}
-        {{ Form::hidden('weight', 250) }}
-        {{ Form::hidden('heightFeet', 6) }}
-        {{ Form::hidden('heightInches', 10) }} 
-        {!! Form::select('condition',  $conditionList, null, ['class' => 'form-control', 'placeholder' => 'Select Condition']) !!}
-        @php
-        $i = 0;
-        @endphp
+        <div class="form-group">    
+            {{Form::label('email', 'Email')}}
+            {{Form::text('email', '' , ['class' => 'form-control', 'placeholder' => 'Email'])}}
+         </div>
+         <div class="form-group">    
+            {{Form::label('firstname', 'First Name')}}
+            {{Form::text('firstName', '' , ['class' => 'form-control', 'placeholder' => 'First Name'])}}
+         </div>
+         <div class="form-group">    
+            {{Form::label('lastname', 'Last Name')}}
+            {{Form::text('lastName', '' , ['class' => 'form-control', 'placeholder' => 'Last Name'])}}
+         </div>
+         <div class="form-group">    
+            {{Form::label('dob', 'Date of Birth')}}
+            {{Form::text('dob', '' , ['class' => 'form-control', 'placeholder' => 'DOB: dd-mm-yyyy'])}}
+         </div>
+         <div class="form-group">    
+            {{Form::label('weight', 'Weight')}}
+            {{Form::number('weight', '' , ['class' => 'form-control', 'placeholder' => 'Weight' , 'width' => '25'])}}
+         </div>
+         <div class="form-group">    
+            {{Form::label('height', 'Height')}}           
+            {{Form::number('heightFeet', '' , ['class' => 'form-control', 'placeholder' => 'Feet'])}}         
+            {{Form::number('heightInches', '' , ['class' => 'form-control', 'placeholder' => 'Inches'])}}            
+         </div>
+         <div class="form-group">    
+            {{Form::label('gender', 'Gender')}}
+            {{Form::select('gender', ['Male' => 'Male' ,'Female' => 'Female'], ['class' => 'form-control', 'placeholder' => 'Gender'])}}
+         </div>
+        {{Form::label('condition', 'Condition')}}
+        {!! Form::select('condition',  $conditionList, null,['class' => 'form-control', 'placeholder' => 'Select Condition']) !!}       
+        
+        {{Form::label('medications', 'Select any medicaitons you are taking from this list.')}}
         <div class = 'container'>
         @foreach($medicationList as $meds)            
                 <div class="checkbox">
