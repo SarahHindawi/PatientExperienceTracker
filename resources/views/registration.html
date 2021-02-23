@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <link rel = "stylesheet" href = "reg.css">
+ </head>
+
+<body style="background-color:lightgray;">
+<form action="signreq.html" style="border:1px solid #ccc">
+  <div class=row>
+       <div class="column side">
+    <h3 style = "text-align: center;">PET</h3>
+    <ul>
+        <li><a href ="#signup">Sign Up</a></li>
+        <li><a href ="#login">Login</a></li>
+    </ul>
+</div>
+    <div class="header">
+    <h1 style = "text-align:center;">Patient Experience Tracker</h1>
+    <p style = "text-align: center;">Sign Up As a New User.</p>
+    
+    <p style = "color:red">All Fields are required.</p>
+    <hr>
+    <div class="column middle">
+    <label for="fname"><b></b></label>
+    <input type="text" placeholder="First Name" name="fname" required>
+
+    <label for="lname"><b></b></label>
+    <input type="text" placeholder="Last Name" name="lname" required>
+
+    <label for="weight"><b></b></label>
+    <input type="text" placeholder="Your Weight" name="weight" required>
+
+    <label for="height"><b></b></label>
+    <input type="text" placeholder="Your Height" name="height" required>
+
+    <label for="email"><b></b></label>
+    <input type="text" placeholder="Email" name="email" required>
+    
+    <p>
+        <label>
+            Medical Condition: 
+
+            <select name = "condition">
+                <option selected>Condition 1</option>
+                <option>Condition 2</option>
+                <option>Condition 3</option>
+                <option>Condition 4</option>
+                <option>Condition 5</option>
+            </select>
+        </label>
+    </p>
+
+    <p><label> Medications: <br>
+        <textarea name = "medications"
+        rows = "10" cols = "50">List All the Medications that you took before and are currently taking.</textarea>
+    </label></p>
+
+    <div class="clearfix">
+      <button type="submit" class="submitbtn">Submit</button>
+    </div>
+  </div>
+</form>
+
+</body>
+</html>
