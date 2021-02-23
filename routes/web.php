@@ -19,3 +19,6 @@ Route::get('/', function () {
 
 Route::get('/patientregistration', 'App\Http\Controllers\PatientRegistrationController@index');
 Route::post('/patientregistration', 'App\Http\Controllers\PatientRegistrationController@register');
+
+Route::get('/form/create', 'App\Http\Controllers\SurveyController@create');
+Route::post('/form', 'App\Http\Controllers\SurveyController@store');
