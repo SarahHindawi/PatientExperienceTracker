@@ -48,6 +48,10 @@ class PatientRegistrationController extends Controller
     
         $patient = new Patient();
 
+        $conditionElements = Condition_List::where('id', $request -> input('condition') + 1)->first()->pluck('condition');
+        $conditionValue = $conditionElements[0]; 
+        
+
         $patient->Email = $request->input('email');
         $patient->Password = '';                                 //TODO impletement password hashing when authentication is implemented.
         $patient->FirstName = $request->input('firstName');
@@ -57,7 +61,7 @@ class PatientRegistrationController extends Controller
         $patient->HeightFeet = $request->input('heightFeet');
         $patient->HeightInches = $request->input('heightInches');
         $patient->Gender = $request->input('gender');
-        $patient->Condition = $request->input('condition');
+        $patient->Condition = $conditionValue;
         $patient->Medications = json_encode($request->input('medication'));  
                 
         $patient->save();
