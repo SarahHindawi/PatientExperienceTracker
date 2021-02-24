@@ -25,3 +25,5 @@ Route::get('/profilesearch', 'App\Http\Controllers\PatientProfileSummaryControll
 Route::post('/profilesearch/report', 'App\Http\Controllers\PatientProfileSummaryController@search');
 Route::get('/form/create', 'App\Http\Controllers\SurveyController@create');
 Route::post('/form', 'App\Http\Controllers\SurveyController@store');
+Route::get('/adminlogin', 'App\Http\Controllers\AdminLoginController@index');
+Route::post('/adminloginpage', 'App\Http\Controllers\AdminLoginController@login');

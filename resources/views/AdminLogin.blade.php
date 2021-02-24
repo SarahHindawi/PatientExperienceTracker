@@ -40,7 +40,7 @@
 
             <section class="row justify-content-center">
                 <section class="col-12 col-sm-6 col-md-3">
-                    <form class="form-container">
+                    <form class="form-container" action="/adminlogin" method="get">
 
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-group form-inline">Email address</label>
