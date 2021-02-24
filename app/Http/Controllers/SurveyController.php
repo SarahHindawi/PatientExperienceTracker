@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Survey_Questions;
 use Illuminate\Http\Request;
 use App\Models\Survey_Responses;
-
 
 class SurveyController extends Controller
 {
@@ -15,7 +15,12 @@ class SurveyController extends Controller
      */
     public function create()
     {
-        return view('survey.create');
+        //TODO get selected survey name
+        $surveyName = "IBDPREM_One";
+        $survey = Survey_Questions::query()->where("SurveyName", $surveyName)->first();
+        $surveyArray = json_decode($survey, true);
+        $surveyArray = json_decode($surveyArray["SurveyQuestions"], true);
+        return view('survey.create', ["questions" => $surveyArray]);
     }
 
 
@@ -28,26 +33,18 @@ class SurveyController extends Controller
         //the fields of the table: id, Email, DateCompleted, SurveyName, FirstName, LastName, Responses
 
         $submittedData = $_POST;
+        print_r($_POST);
 
         //remove the first element of the submitted form (the token)
         unset($submittedData["_token"]);
-
-        $responses = [];
-        foreach (array_keys($submittedData) as $index) {
-            $field = [$index, $submittedData[$index]];
-            $responses[] = $field;
-        }
-
-        $responses = json_encode($responses);
+        $responses =json_encode($submittedData);
 
 
-        //$entry = ["Email" => "email@gmail.com","DateCompleted" => date("Y-m-d"),"SurveyName" => "prom","FirstName" => "test1","LastName" => "test2","Responses" => $responses];
-
-        //TODO get authenticated user's data (email, first and last name)
+        //TODO get authenticated user's data (email, first and last name), and get the type of the survey
 
         $survey_response = new SURVEY_RESPONSES;
 
-        $survey_response->Email = "email3@gmail.com";
+        $survey_response->Email = "email1@gmail.com"; //the same email is allowed to submit the same survey only once a day
         $survey_response->DateCompleted = date("Y-m-d");
         $survey_response->SurveyName = "prom";
         $survey_response->FirstName = "John";
