@@ -8,6 +8,7 @@ use App\Models\Survey_Responses;
 
 class SurveyController extends Controller
 {
+
     /**
      * This method that will create the form
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
@@ -16,6 +17,7 @@ class SurveyController extends Controller
     {
         return view('survey.create');
     }
+
 
     /**
      * This method that will store the response to the form
@@ -45,7 +47,7 @@ class SurveyController extends Controller
 
         $survey_response = new SURVEY_RESPONSES;
 
-        $survey_response->Email = "email2@gmail.com";
+        $survey_response->Email = "email3@gmail.com";
         $survey_response->DateCompleted = date("Y-m-d");
         $survey_response->SurveyName = "prom";
         $survey_response->FirstName = "John";

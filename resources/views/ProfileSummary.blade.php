@@ -3,7 +3,7 @@
     <head>
         <title>Patient Report Search</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="resources/css/cssFile.css">
+        <link rel="stylesheet" type="text/css" href="./cssFile.css">
     </head>
     <body>
         <nav class="navbar navbar-light bg-light">
@@ -83,6 +83,7 @@
             <label for="inputLastName" class="col-sm-2 col-form-label ">Last Name</label>
             <div class="col-sm-10">
                 <input type="password" class="form-control shadow-sm" id="inputLastName">
+            </div>
             </div>
         </form>
 
