@@ -33,7 +33,6 @@ class SurveyController extends Controller
         //the fields of the table: id, Email, DateCompleted, SurveyName, FirstName, LastName, Responses
 
         $submittedData = $_POST;
-        print_r($_POST);
 
         //remove the first element of the submitted form (the token)
         unset($submittedData["_token"]);
@@ -44,7 +43,7 @@ class SurveyController extends Controller
 
         $survey_response = new SURVEY_RESPONSES;
 
-        $survey_response->Email = "email1@gmail.com"; //the same email is allowed to submit the same survey only once a day
+        $survey_response->Email = "email12@gmail.com"; //the same email is allowed to submit the same survey only once a day
         $survey_response->DateCompleted = date("Y-m-d");
         $survey_response->SurveyName = "prom";
         $survey_response->FirstName = "John";
