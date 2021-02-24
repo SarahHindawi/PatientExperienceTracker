@@ -63,7 +63,7 @@
                 </nav>
             </div>
 
-        <form style="width: 600px; margin:15%; margin-top:8%">
+        <form style="width: 600px; margin:15%; margin-top:8%" action="/profilesearch" method="GET">
         <div class="mb-3 row">
             <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
