@@ -34,6 +34,8 @@ class SurveyController extends Controller
 
         $submittedData = $_POST;
 
+        print_r($_POST);
+
         //remove the first element of the submitted form (the token)
         unset($submittedData["_token"]);
         $responses =json_encode($submittedData);

@@ -54,7 +54,7 @@
 
         @endforeach
 
-        <button>Submit</button>
+        <button style="width: 200px;" type="submit" class="btn btn-success btn-rounded">Search</button>
     </form>
 </div>
 </body>

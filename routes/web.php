@@ -29,3 +29,8 @@ Route::get('/adminlogin', 'App\Http\Controllers\AdminLoginController@index');
 Route::post('/adminloginpage', 'App\Http\Controllers\AdminLoginController@login');
 Route::get('/editSurvey/create', 'App\Http\Controllers\EditSurveyController@create');
 Route::post('/editSurvey', 'App\Http\Controllers\EditSurveyController@store');
+Route::post('/report', 'App\Http\Controllers\ReportController@store');
+Route::get('/report/create', 'App\Http\Controllers\ReportController@create');
+
+
+
