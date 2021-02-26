@@ -25,9 +25,8 @@
 
             @elseif ($q["Type"]  == "Checkbox")
 
-                <!--TODO fix: checking more than one box returns only the last checked box-->
                 @foreach(explode(",",$q['PossibleResponses']) as $option)
-                    <input type="checkbox" name="{{$q["Text"]}}" value="{{$option}}">
+                    <input type="checkbox" name="{{$q["Text"]}}[]" value="{{$option}}">
                     <label>{{$option}}</label>
                 @endforeach
                 <br>

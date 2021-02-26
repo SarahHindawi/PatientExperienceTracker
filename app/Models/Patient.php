@@ -15,4 +15,18 @@ class Patient extends Model
     protected $hidden = ['Password'];
     public $incrementing = false;
     public $timestamps = false;
+
+    protected $fillable = [
+        "Email",
+        "Password",
+        "FirstName",
+        "LastName",
+        "DOB",
+        'Gender',
+        'Weight',
+        'HeightFeet',
+        'HeightInches',
+        'Condition',
+        'Medications',
+    ];
 }

@@ -17,6 +17,7 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Default</a>
         <form class="d-flex">
+            @csrf
             <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button"
                     id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
                 Dropdown
@@ -85,7 +86,9 @@
     </nav>
 </div>
 
+
 <form name="surveyForm" method="post" action="/report" enctype="multipart/form-data">
+    @csrf
     <div style="width:device-widthx; margin:15%; margin-top:3%; height: 12cm;">
         <br>
         <p class="h6">Survey Desired:</p>
@@ -98,145 +101,84 @@
         <br>
         <p class="h6">Gender:</p>
         <div class="form-check form-check-inline">
-            <label><input type="radio" name="optradio" checked>Both</label>
+            <label><input type="radio" name="gender" value="all" checked> Any</label>
         </div>
         <div class="form-check form-check-inline">
-            <label><input type="radio" name="optradio">Male</label>
+            <label><input type="radio" name="gender" value="male"> Male</label>
         </div>
         <div class="form-check form-check-inline">
-            <label><input type="radio" name="optradio">Female</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
         </div>
         <br>
 
         <br>
         <p class="h6">Age:</p>
-        <input type="radio" name="reason" value="Suspicious Behavior">All<br>
-        <br><input type="radio" name="reason" value="">Above: <input type="text" class="shadow  bg-body rounded"
-                                                                     name="other_reason" style="width: 50px "> Below:
-        <input type="text" class="shadow  bg-body rounded"
-               name="other_reason" style="width: 50px "/><br>
-        <br><input type="radio" name="reason" value="">Equals: <input type="text" class="shadow  bg-body rounded"
-                                                                      name="other_reason" style="width: 50px"/><br>
+        <input type="radio" name="age" value="all" checked>All<br>
+        <br><input type="radio" name="age" value="above"> Above: <input type="text" class="shadow  bg-body rounded"
+                                                                        name="ageAbove" style="width: 50px ">
+        <br><br><input type="radio" name="age" value="below"> Below: <input type="text" class="shadow  bg-body rounded"
+                                                                            name="ageBelow" style="width: 50px "/><br>
+        <br><input type="radio" name="age" value="equals"> Equals: <input type="text" class="shadow  bg-body rounded"
+                                                                          name="ageEquals" style="width: 50px"/><br>
 
         <br>
         <p class="h6">Weight:</p>
-        <input type="radio" name="reason" value="Suspicious Behavior">All<br>
-        <br><input type="radio" name="reason" value="">Above: <input type="text" class="shadow  bg-body rounded"
-                                                                     name="other_reason" style="width: 50px "> Below:
-        <input type="text" class="shadow  bg-body rounded"
-               name="other_reason" style="width: 50px "/><br>
-        <br><input type="radio" name="reason" value="">Equals: <input type="text" class="shadow  bg-body rounded"
-                                                                      name="other_reason" style="width: 50px"/><br>
+        <input type="radio" name="weight" value="all" checked>All<br>
+        <br><input type="radio" name="weight" value="above"> Above: <input type="text" class="shadow  bg-body rounded"
+                                                                           name="weightAbove" style="width: 50px ">
+        <br><br><input type="radio" name="weight" value="below"> Below: <input type="text"
+                                                                               class="shadow  bg-body rounded"
+                                                                               name="weightBelow" style="width: 50px "/><br>
+        <br><input type="radio" name="weight" value="equals"> Equals: <input type="text" class="shadow  bg-body rounded"
+                                                                             name="weightEquals"
+                                                                             style="width: 50px"/><br>
 
 
         <div style="width: 300px; margin:90%; margin-top:-47%; height: 2cm;">
             <p class="h6">Height:</p>
-            <input type="radio" name="reason" value="Suspicious Behavior">All<br>
-            <br><input type="radio" name="reason" value="">Above: <input type="text" class="shadow  bg-body rounded"
-                                                                         name="other_reason" style="width: 50px ">
-            Below: <input type="text" class="shadow  bg-body rounded"
-                          name="other_reason" style="width: 50px "/><br>
-            <br><input type="radio" name="reason" value="">Equals: <input type="text"
-                                                                          class="shadow  bg-body rounded"
-                                                                          name="other_reason" style="width: 50px"/><br>
+            <input type="radio" name="height" value="all" checked> All<br>
+            <br><input type="radio" name="height" value="above"> Above: <input type="text"
+                                                                               class="shadow  bg-body rounded"
+                                                                               name="heightAbove" style="width: 50px ">
+            <br><br><input type="radio" name="height" value="below"> Below: <input type="text"
+                                                                                   class="shadow  bg-body rounded"
+                                                                                   name="heightBelow"
+                                                                                   style="width: 50px "/><br>
+            <br><input type="radio" name="height" value="equals"> Equals: <input type="text"
+                                                                                 class="shadow  bg-body rounded"
+                                                                                 name="heightEquals"
+                                                                                 style="width: 50px"/><br>
 
             <br>
             <p class="h6">Medication:</p>
-            <input type="radio" name="reason" value="Suspicious Behavior">None<br>
-            <br><input type="radio" name="reason" value="Suspicious Behavior">Includes<br>
+            <input type="radio" name="medicationUsage" value="none" checked> None<br>
+            <br><input type="radio" name="medicationUsage" value="includes"> Includes<br>
             <div class="panel panel-default">
                 <div style="width: 330px;margin-right: 35px;" class="panel-body shadow p-3">
 
                     <div class="container">
                         <div class="row align-items-start">
 
-                            <div class="col">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Medication1
-                                    </label>
-                                </div>
-                            </div>
+                            @foreach ($medications as $m)
 
-                            <div class="col">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Medication2
-                                    </label>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name = "medication[]" value="{{$m}}" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            {{$m}}
+                                        </label>
+                                    </div>
                                 </div>
-                            </div>
+                            @endforeach
 
-                            <div class="col">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Medication3
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="col">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Medication4
-                                    </label>
-                                </div>
-                            </div>
                         </div>
-
-
-                        <div class="row align-items-end">
-
-                            <div class="col">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Medication5
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="col">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Medication6
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="col">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Medication7
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="col">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Medication8
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
-
         </div>
-
-
     </div>
 
-    <button style="width: 5cm; margin-left: 19cm; margin-bottom:1cm; " type="button"
+    <button style="width: 5cm; margin-left: 19cm; margin-bottom:1cm; " type="submit"
             class="btn btn-success btn-rounded">Submit
     </button>
 

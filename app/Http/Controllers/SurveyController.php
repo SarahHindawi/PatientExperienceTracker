@@ -45,9 +45,9 @@ class SurveyController extends Controller
 
         $survey_response = new SURVEY_RESPONSES;
 
-        $survey_response->Email = "email12@gmail.com"; //the same email is allowed to submit the same survey only once a day
+        $survey_response->Email = "testpatientOne@test.ca"; //the same email is allowed to submit the same survey only once a day
         $survey_response->DateCompleted = date("Y-m-d");
-        $survey_response->SurveyName = "prom";
+        $survey_response->SurveyName = "IBDPREM_One";
         $survey_response->FirstName = "John";
         $survey_response->LastName = "Doe";
         $survey_response->Responses = $responses;
