@@ -90,7 +90,7 @@
     <div class="mb-3 row">
         <label for="inputFirstName" class="col-sm-2 col-form-label">First Name </label>
         <div class="col-sm-10">
-            <input type="password" class="form-control shadow-sm" id="inputFirstName">
+            <input type="text" class="form-control shadow-sm" id="inputFirstName">
             <div style="margin-left:130%; margin-top:-7%; width: 150Px">
                 <button style="width: 200px;" type="button" class="btn btn-success btn-rounded">Search</button>
             </div>
@@ -99,7 +99,7 @@
     <div class="mb-3 row">
         <label for="inputLastName" class="col-sm-2 col-form-label ">Last Name</label>
         <div class="col-sm-10">
-            <input type="password" class="form-control shadow-sm" id="inputLastName">
+            <input type="text" class="form-control shadow-sm" id="inputLastName">
         </div>
     </div>
 </form>
