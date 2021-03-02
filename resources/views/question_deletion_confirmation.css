@@ -1,0 +1,53 @@
+.greenbutton {
+    background-color: Green;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    /*padding-right: 500px;*/
+}
+.redbutton {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    /*padding-right: 500px;*/
+}
+.cent {
+    margin: 0;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.aa{
+    position: relative;
+    margin-left: 200px;
+    margin-top: 50px;
+    float:left;
+    /*border: 3px solid #73AD21;*/
+    height: 500px;
+}
+
+.cc{
+    float:left;
+    width: 300px;
+    height: 550px;
+    border: 1px solid black;
+    display: flex;
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-bottom: 0px;
+}
