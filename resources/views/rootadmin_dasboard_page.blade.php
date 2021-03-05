@@ -3,8 +3,8 @@
 <head>
     <title>Root Admin Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/css/admin_dashboard_page.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/admin-reset_password.css">
+    <link rel="stylesheet" type="text/css" href="/admin_dashboard_page.css">
+    <link rel="stylesheet" type="text/css" href="/admin-reset_password.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <!--Get your own code at fontawesome.com
         Here is the link to find all the important icons
@@ -69,15 +69,15 @@
 
         <nav class="navbar navbar-default" role="navigation">
             <div class="btn-group-vertical" style=" margin-top:15%; width:100%">
-                <ul class="nav flex-column"style="width:100%">
+                <ul class="nav flex-column" style="width:100%">
                     <li class="nav-item">
-                        <p class="text-center"><a class="text-center text-dark nav-link active" aria-current="page" href="admin_dashboard_page.html"><i class='fas fa-home'></i>Dashboard</a></p>
+                        <p class="text-center"><a class="text-center text-dark nav-link active" aria-current="page" href="admin_dashboard_page.blade.php"><i class='fas fa-home'></i>Dashboard</a></p>
                     </li>
                     <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="new_patient_registeration.html"><i class='fas fa-user-plus'></i>Patient Registeration</a></p>
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="new_patient_registeration.blade.php"><i class='fas fa-user-plus'></i>Patient Registeration</a></p>
                     </li>
                     <li class="nav-item">
-                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="admin_reset_password.html"> <i class='fas fa-user-lock'></i>Password Reset</a></p>
+                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="admin_reset_password.blade.php"> <i class='fas fa-user-lock'></i>Password Reset</a></p>
                     </li>
                     <li class="nav-item">
                         <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#"><i class='fas fa-pen'></i>Patient Summary</a></p>
@@ -95,7 +95,7 @@
                         <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#"><i class='fas fa-question'></i>ADMIN Help</a></p>
                     </li>
                     <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="new_patient_registeration.html"><i class='fas fa-user-plus'></i>Register Admin</a></p>
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="new_patient_registeration.blade.php"><i class='fas fa-user-plus'></i>Register Admin</a></p>
                     </li>
                     &nbsp;&nbsp;&nbsp;
                     <li class="nav-item">
