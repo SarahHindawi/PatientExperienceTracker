@@ -31,6 +31,8 @@ Route::get('/editSurvey/create', 'App\Http\Controllers\EditSurveyController@crea
 Route::post('/editSurvey', 'App\Http\Controllers\EditSurveyController@store');
 Route::post('/report', 'App\Http\Controllers\ReportController@store');
 Route::get('/report/create', 'App\Http\Controllers\ReportController@create');
+Route::post('/accept', 'App\Http\Controllers\AcceptanceController@store');
+Route::get('/accept/create', 'App\Http\Controllers\AcceptanceController@create');
 
 
 

@@ -175,10 +175,25 @@ class ReportController extends Controller
 
         //an array of arrays of strings (an array of records from the Survey_Responses table, which store attributes are Strings)
         $responsesArray = [];
+
+        //an array of emails of the selected patients
+        $patientsEmail = [];
+        $patientsName = [];
+
+
         for ($i = 0; $i < count($responses); $i++) {
             $responsesArray[] = json_decode($responses[$i]["Responses"], true);
+            $patientsEmail[] = $responses[$i]["Email"];
+            $patientsName[] = $responses[$i]["FirstName"] . " ". $responses[$i]["LastName"];
+
         }
 
-        return view("ReportResults", ["responses" => $responsesArray]);
+//        for ($i = 0; $i< count($patientEmail); $i++) {
+//            $query = DB::table('Patient_Profile')
+//            ->where('Email', "LIKE", $patientEmail[$i])
+//            ->get();
+//        }
+
+        return view("ReportResults", ["responses" => $responsesArray, "emails" => $patientsEmail, "names" => $patientsName]);
     }
 }
