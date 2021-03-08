@@ -73,7 +73,8 @@ class DB_Seed extends Seeder
             'Medications' => json_encode(array('Test Medication 1', 'Test Medication 4')),
             'PREMFlag' => true,
             'PROMFlag' => true,
-            'NewAccount' => false
+            'NewAccount' => false,
+            'PasswordReset' => "false",
         ]);
 
         DB::table('PATIENT_PROFILE')->insert([
@@ -90,7 +91,8 @@ class DB_Seed extends Seeder
             'Medications' => json_encode(array('Test Medication 2')),
             'PREMFlag' => true,
             'PROMFlag' => true,
-            'NewAccount' => true
+            'NewAccount' => true,
+            'PasswordReset' => "false",
         ]);
 
         $testQuestions1 = array(array('Text' => 'Text for test question 1' , 'Type' => 'DropDown' , 'PossibleResponses' => 'Option1,Option2,Option3'),
