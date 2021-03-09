@@ -22,7 +22,7 @@ class DB_Seed extends Seeder
             'LastName' => 'TestRootLast',
             'RootAdmin' => true
         ]);
-        
+
         DB::table('ADMIN_PROFILE')->insert([
             'Email' => 'testadmin@test.ca',
             'Password' => '',
@@ -31,31 +31,31 @@ class DB_Seed extends Seeder
             'RootAdmin' => false
         ]);
 
-        DB::table('CONDITION_LIST')->insert([            
+        DB::table('CONDITION_LIST')->insert([
             'Condition' => 'IBD'
         ]);
 
-        DB::table('MEDICATION_LIST')->insert([            
+        DB::table('MEDICATION_LIST')->insert([
             'MedicationName' => 'Test Medication 1'
         ]);
 
-        DB::table('MEDICATION_LIST')->insert([            
+        DB::table('MEDICATION_LIST')->insert([
             'MedicationName' => 'Test Medication 2'
         ]);
 
-        DB::table('MEDICATION_LIST')->insert([            
+        DB::table('MEDICATION_LIST')->insert([
             'MedicationName' => 'Test Medication 3'
         ]);
 
-        DB::table('MEDICATION_LIST')->insert([            
+        DB::table('MEDICATION_LIST')->insert([
             'MedicationName' => 'Test Medication 4'
         ]);
 
-        DB::table('MEDICATION_LIST')->insert([            
+        DB::table('MEDICATION_LIST')->insert([
             'MedicationName' => 'Test Medication 5'
         ]);
 
-        DB::table('MEDICATION_LIST')->insert([            
+        DB::table('MEDICATION_LIST')->insert([
             'MedicationName' => 'Test Medication 6'
         ]);
 
@@ -70,10 +70,11 @@ class DB_Seed extends Seeder
             'HeightFeet' => 6,
             'HeightInches' => 0,
             'Condition' =>'IBD',
-            'Medications' => json_encode(array(array('MedicationName' => 'Test Medication 1'))),    
+            'Medications' => json_encode(array('Test Medication 1', 'Test Medication 4')),
             'PREMFlag' => true,
             'PROMFlag' => true,
-            'NewAccount' => false    
+            'NewAccount' => false,
+            'PasswordReset' => "false",
         ]);
 
         DB::table('PATIENT_PROFILE')->insert([
@@ -87,18 +88,19 @@ class DB_Seed extends Seeder
             'HeightFeet' => 5,
             'HeightInches' => 7,
             'Condition' =>'IBD',
-            'Medications' => json_encode(array(array('MedicationName' => 'Test Medication 2'))),
+            'Medications' => json_encode(array('Test Medication 2')),
             'PREMFlag' => true,
             'PROMFlag' => true,
-            'NewAccount' => true
+            'NewAccount' => true,
+            'PasswordReset' => "false",
         ]);
 
-        $testQuestions1 = array(array('Text' => 'Text for test question 1' , 'Type' => 'DropDown' , 'PossibleResponses' => 'Option1,Option2,Option3'), 
+        $testQuestions1 = array(array('Text' => 'Text for test question 1' , 'Type' => 'DropDown' , 'PossibleResponses' => 'Option1,Option2,Option3'),
                             array('Text' => 'Text for test question 2' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'));
 
-        $testQuestions2 = array(array('Text' => 'Text for test question 1' , 'Type' => 'RadioButtons' , 'PossibleResponses' => 'Option1,Option2,Option3'), 
+        $testQuestions2 = array(array('Text' => 'Text for test question 1' , 'Type' => 'RadioButtons' , 'PossibleResponses' => 'Option1,Option2,Option3'),
                             array('Text' => 'Text for test question 2' , 'Type' => 'FreeText' , 'PossibleResponses' => ''));
-                            
+
         DB::table('SURVEY_QUESTIONS')->insert([
             'SurveyName' => 'IBDPREM_One',
             'ConditionServed' => 'IDB',
@@ -125,6 +127,6 @@ class DB_Seed extends Seeder
             'ConditionServed' => 'IDB',
             'SurveyType' => 'PROM',
             'SurveyQuestions' => json_encode($testQuestions2)
-        ]);        
-    } 
+        ]);
+    }
 }

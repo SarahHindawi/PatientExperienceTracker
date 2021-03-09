@@ -1,0 +1,32 @@
+h1{
+  text-align:center;
+}
+
+p{
+   color:red;
+   text-align: center;
+}
+div {
+    height: 200px;
+    width: 400px;
+    background: black;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+h4{
+    color:blue;
+}
+
+.center{
+    position:absolute;
+    height: X px;
+    width: Y px;
+    left:20%;
+    top:50%;
+    margin-top:- X/2 px;
+    margin-left:- Y/2 px;
+}

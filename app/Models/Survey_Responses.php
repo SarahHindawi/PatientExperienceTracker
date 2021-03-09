@@ -9,6 +9,16 @@ class Survey_Responses extends Model
 {
     use HasFactory;
 
-    protected $table = 'SURVEY_RESPONSES';    
+    protected $fillable = [
+        "Email",
+        "DateCompleted",
+        "SurveyName",
+        "FirstName",
+        "LastName",
+        "Responses"
+    ];
+
+
+    protected $table = 'SURVEY_RESPONSES';
     public $timestamps = false;
 }
