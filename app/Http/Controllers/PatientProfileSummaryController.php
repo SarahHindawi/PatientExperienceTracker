@@ -4,28 +4,45 @@ namespace App\Http\Controllers;
 
 use App\Models\PatientReport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PatientProfileSummaryController extends Controller
 {
     public function index()
     {
-        $data = \DB::table('patient_profile')->paginate(10);
         return view('ProfileSummary');
     }
 
     public function search(Request $request)
     {
-        $data = \DB::table('patient_profile');
-        if ($request->email) {
-            $data = $data->where('email', 'LIKE', "%" . $request->email . "%");
+
+       $this->validate($request, [
+            'email' => 'required|email',
+            'firstName' => 'required|max:255',
+            'lastName' => 'required|max:255',
+        ]);
+
+        //dd($request);
+
+        $data = DB::table('PATIENT_PROFILE');
+        if (!empty($request->Email)) {
+            if ($request->Email){
+                $data = $data->where('Email', 'LIKE', "%" . $request->Email . "%");
+            }
         }
-        if ($request->firstName) {
-            $data = $data->where('firstName', 'LIKE', "%" . $request->firstName . "%");
+        if (!empty($request->FirstName)) {
+            if ($request->FirstName){
+                $data = $data->where('FirstName', 'LIKE', "%" . $request->FirstName . "%");
+            }
         }
-        if ($request->lastName) {
-            $data = $data->where('lastName', 'LIKE', "%" . $request->lastName);
+        if (!empty($request->LastName)) {
+            if ($request->LastName){
+                $data = $data->where('LastName', 'LIKE', "%" . $request->LastName);
+            }
         }
-        $data = $data->paginate(10);
-        return view('GenerateReport');
+
+
+        return view('PatientSummaryResult', ["Summary"=>$data]);
     }
+
 }
