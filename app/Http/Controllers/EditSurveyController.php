@@ -15,7 +15,7 @@ class EditSurveyController extends Controller
         $survey = Survey_Questions::query()->where("SurveyName", $surveyName)->first();
         $surveyArray = json_decode($survey, true);
         $surveyArray = json_decode($surveyArray["SurveyQuestions"], true);
-        return view('EditSurvey', ["questions" => $surveyArray]);
+        return view('ModifyingSurveys', ["questions" => $surveyArray]);
     }
 
     /**
