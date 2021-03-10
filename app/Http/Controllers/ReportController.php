@@ -164,6 +164,11 @@ class ReportController extends Controller
             }
         }
 
+        if (count($finalPatients) == 0) {
+            echo '<script type="text/javascript">alert("No records match the specified data.")</script>';
+            return $this->create();
+        }
+
         //Get the responses of the patients that match the required filters
         $query = DB::table('Survey_Responses')
             ->where('SurveyName', "LIKE", $_POST["surveyName"])

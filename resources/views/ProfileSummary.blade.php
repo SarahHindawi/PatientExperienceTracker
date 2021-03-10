@@ -80,26 +80,27 @@
     </nav>
 </div>
 
-<form style="width: 600px; margin:15%; margin-top:8%">
+<form method="post" action="/profilereport" enctype="multipart/form-data" style="width: 600px; margin:15%; margin-top:8%">
+    @csrf
     <div class="mb-3 row">
         <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-10">
-            <input type="email" class="form-control shadow-sm" id="inputEmail">
+            <input type="email" class="form-control shadow-sm" name="inputEmail">
         </div>
     </div>
     <div class="mb-3 row">
         <label for="inputFirstName" class="col-sm-2 col-form-label">First Name </label>
         <div class="col-sm-10">
-            <input type="text" class="form-control shadow-sm" id="inputFirstName">
+            <input type="text" class="form-control shadow-sm" name="inputFirstName">
             <div style="margin-left:130%; margin-top:-7%; width: 150Px">
-                <button style="width: 200px;" type="button" class="btn btn-success btn-rounded">Search</button>
+                <button style="width: 200px;" type="submit" class="btn btn-success btn-rounded">Search</button>
             </div>
         </div>
     </div>
     <div class="mb-3 row">
         <label for="inputLastName" class="col-sm-2 col-form-label ">Last Name</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control shadow-sm" id="inputLastName">
+            <input type="text" class="form-control shadow-sm" name="inputLastName">
         </div>
     </div>
 </form>

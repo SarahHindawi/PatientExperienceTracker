@@ -16,33 +16,39 @@ class PatientProfileSummaryController extends Controller
     public function search(Request $request)
     {
 
-       $this->validate($request, [
-            'email' => 'required|email',
-            'firstName' => 'required|max:255',
-            'lastName' => 'required|max:255',
+        $this->validate($request, [
+            'inputEmail' => 'required|email',
+            'inputFirstName' => 'required',
+            'inputLastName' => 'required',
         ]);
 
-        //dd($request);
 
         $data = DB::table('PATIENT_PROFILE');
-        if (!empty($request->Email)) {
-            if ($request->Email){
-                $data = $data->where('Email', 'LIKE', "%" . $request->Email . "%");
-            }
-        }
-        if (!empty($request->FirstName)) {
-            if ($request->FirstName){
-                $data = $data->where('FirstName', 'LIKE', "%" . $request->FirstName . "%");
-            }
-        }
-        if (!empty($request->LastName)) {
-            if ($request->LastName){
-                $data = $data->where('LastName', 'LIKE', "%" . $request->LastName);
+        if (!empty($request->inputEmail)) {
+            if ($request->inputEmail) {
+                $data = $data->where('Email', 'LIKE', "%" . $request->inputEmail . "%");
             }
         }
 
+        if (!empty($request->inputFirstName)) {
+            if ($request->inputFirstName) {
+                $data = $data->where('FirstName', 'LIKE', "%" . $request->inputFirstName . "%");
+            }
+        }
+        if (!empty($request->inputLastName)) {
+            if ($request->inputLastName) {
+                $data = $data->where('LastName', 'LIKE', "%" . $request->inputLastName)->get();
+            }
+        }
 
-        return view('PatientSummaryResult', ["Summary"=>$data]);
+        if (count($data) == 0) {
+            echo '<script type="text/javascript">alert("No records match the specified data.")</script>';
+            return view('ProfileSummary');
+        }
+
+        $data = (array)$data[0];
+
+        return view('PatientSummaryResult', ["Summary" => $data]);
     }
 
 }
