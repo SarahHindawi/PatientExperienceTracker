@@ -2,14 +2,13 @@
 <html>
 <head>
     <title>Admin Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/admin_dashboard_page.css">
-    <link rel="stylesheet" type="text/css" href="/admin-reset_password.css">
+    <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin_dashboard_page.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <!--Get your own code at fontawesome.com
         Here is the link to find all the important icons
-    https://www.w3schools.com/icons/icons_reference.asp
-    -->
+    https://www.w3schools.com/icons/icons_reference.asp-->
 </head>
 <body>
 
@@ -34,7 +33,7 @@
     <p class="text-center h2" style="padding-right: 600px" >Hello Mystery Admin</p>
 
 
-    <p  class="text-center h6" style="text-align:right; padding-right: 500px">Here are you r administration option </p>
+    <p  class="text-center h6" style="text-align:right; padding-right: 500px">Here are your administration option </p>
 
     <p>Default list:</p>
 

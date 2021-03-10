@@ -66,8 +66,6 @@ class PatientRegistrationController extends Controller
 
         $patient->save();
 
-        //TODO Replace with redirect to Non-Logged in homepage with success message when implemented.
-        return 'success';
-
+        return view("signreq");
     }
 }

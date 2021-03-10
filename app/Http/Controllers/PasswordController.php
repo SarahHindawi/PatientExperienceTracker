@@ -20,7 +20,7 @@ class PasswordController extends Controller
             $patientsInfo[] = $patient;
         }
 
-        return view('PasswordReset', ["patients" => $patientsInfo]);
+        return view('Admin_reset_password', ["patients" => $patientsInfo]);
     }
 
     public function store()
@@ -54,6 +54,6 @@ class PasswordController extends Controller
             Patient::where('Email', $removedEmail)->update(array('PasswordReset' => "false"));
         }
 
-        return view("Welcome");
+        return view("Admin_dashboard_page");
     }
 }

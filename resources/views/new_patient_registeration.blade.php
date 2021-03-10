@@ -2,8 +2,9 @@
 <html>
 <head>
     <title>new_patient_registeration</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/admin-reset_password.css">
+    <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
+
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
@@ -33,7 +34,7 @@
 
 
     <p  class="text-center h6" style="text-align:right; padding-right: 500px">Selecting the green check marks will approve the new
-    <p class="text-center h6" style="text-align:right; padding-right: 500px"> patient and theywill be added to the system. Then will recive thier</p>
+    <p class="text-center h6" style="text-align:right; padding-right: 500px"> patients so they will be added to the system. They will receive their</p>
     <p class="text-center h6" style="text-align:right; padding-right: 500px">  account activation email and the
         ability to set the password</p>
     <br>

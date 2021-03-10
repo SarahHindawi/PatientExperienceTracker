@@ -27,7 +27,7 @@ class AdminLoginController extends Controller
             return back()->with('status', 'Invalid login details');
         }
 
-        return 'success';
+        return view("Admin_dashboard_page");
 
     }
 

@@ -3,9 +3,9 @@
 
 <head>
     <title>Modify Survey</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./cssFile.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
 </head>
 
 <body>
@@ -72,7 +72,7 @@
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <div style="width: 1100px; margin:20%; margin-top:-27%" class="shadow-lg p-3 mb-5 bg-white rounded">
         <br>
-        
+
         <p class="double"></p>
         <p class="h6 ">This is an example of a Radio Button Question Type. These Questions will allows selection of one item from a list.</p>
         <p class="h6"> Typically rating. Example How would you rate how you feel today?</p>
@@ -121,7 +121,7 @@
 
         <p class="double"></p>
         <p class="h6 ">This is an example of a Dropdown Question Type. These Questions will allows selection of a single itme from dropdown list Appropriate for questions with a large amount of selections.</p>
-       
+
         </p>
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -136,10 +136,10 @@
         </p>
 
         <p class="double"></p>
-        <p class="h6 ">This is an example of a freetext question type.These questions will allow free entry 
+        <p class="h6 ">This is an example of a freetext question type.These questions will allow free entry
             of a text response.
         </p>
-       
+
         </p>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>

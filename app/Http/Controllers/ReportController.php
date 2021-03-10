@@ -199,6 +199,6 @@ class ReportController extends Controller
 //            ->get();
 //        }
 
-        return view("ReportResults", ["responses" => $responsesArray, "emails" => $patientsEmail, "names" => $patientsName]);
+        return view("report_result_page", ["responses" => $responsesArray, "emails" => $patientsEmail, "names" => $patientsName]);
     }
 }

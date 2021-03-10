@@ -23,5 +23,6 @@ class EditSurveyController extends Controller
      */
     public function store()
     {
+        return view("Admin_dashboard_page");
     }
 }
