@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 
 class DB_Seed extends Seeder
 {
@@ -16,16 +17,16 @@ class DB_Seed extends Seeder
     public function run()
     {
         DB::table('ADMIN_PROFILE')->insert([
-            'Email' => 'testroot@test.ca',
-            'Password' => '',
+            'email' => 'testroot@test.ca',
+            'password' => Hash::make('rootPass'),
             'FirstName' => 'TestRootFirst',
             'LastName' => 'TestRootLast',
             'RootAdmin' => true
         ]);
 
         DB::table('ADMIN_PROFILE')->insert([
-            'Email' => 'testadmin@test.ca',
-            'Password' => '',
+            'email' => 'testadmin@test.ca',
+            'password' => Hash::make('adminPass'),
             'FirstName' => 'TestAdminFirst',
             'LastName' => 'TestAdminLast',
             'RootAdmin' => false
@@ -60,8 +61,8 @@ class DB_Seed extends Seeder
         ]);
 
         DB::table('PATIENT_PROFILE')->insert([
-            'Email' => 'testpatientone@test.ca',
-            'Password' => '',
+            'email' => 'testpatientone@test.ca',
+            'password' => Hash::make('patientOne'),
             'FirstName' => 'TestPatientOneFirst',
             'LastName' => 'TestPatientOneLast',
             'DOB' => date_create("30-01-1990"),
@@ -79,7 +80,7 @@ class DB_Seed extends Seeder
 
         DB::table('PATIENT_PROFILE')->insert([
             'Email' => 'testpatientotwo@test.ca',
-            'Password' => '',
+            'Password' => Hash::make('patientTwo'),
             'FirstName' => 'TestPatienttwoFirst',
             'LastName' => 'TestPatienttwoLast',
             'DOB' => date_create("12-01-2000"),

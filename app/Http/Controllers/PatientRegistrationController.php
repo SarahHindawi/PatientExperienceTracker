@@ -6,11 +6,23 @@ use Illuminate\Http\Request;
 use App\Models\Patient;
 use App\Models\Condition_List;
 use App\Models\Medication_List;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth;
+
 
 class PatientRegistrationController extends Controller
 {
     public function index()
     {
+        
+        //Return Redirect to Dashboard if either usertype is logged in.
+        if(Auth::guard('admin')->check()){            
+            return redirect('/');
+        }        
+        else if(Auth::guard('patient')->check()){          
+            return redirect('/');
+        }
+
         $conditionList = Condition_List::all()->pluck('Condition')->toarray();
 
         $medicationList = Medication_List::all()->pluck('MedicationName')->toarray();       
@@ -20,7 +32,14 @@ class PatientRegistrationController extends Controller
 
     public function register(Request $request)
     {
-        
+        if(Auth::guard('admin')->check()){
+            //TODO redirect to Admin Dashboard.
+            return 'admin logged in.';
+        }        
+        else if(Auth::guard('patient')->check()){
+            //TODO redirect to Patient Dashbaord.
+            return 'patient logged in.';
+        }        
         
         $this->validate($request, [
             'email' => 'required',
