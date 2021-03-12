@@ -3,9 +3,9 @@
 
 <head>
     <title>Modify Survey</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./cssFile.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
 </head>
 
 <body>
@@ -47,15 +47,20 @@
             <ul class="nav flex-column" style="width:100%">
                 <li class="nav-item">
                     <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
-                                              href="#">Dashboard</a></p>
+                                              href="#">
+                                       <img src = "Home.png" width="25" height="25" class="d-inline-block align-right">     Dashboard
+                                            </a></p>
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">Complete a Survey
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
+                        <img src = "survey.png" width="25" height="25" class="d-inline-block align-right">Complete a Survey
                             </a></p>
                 </li>
                 <li class="nav-item">
                     <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
-                                              href="#">Change Password</a></p>
+                                              href="#">
+                                              <img src = "key.png" width="25" height="25" class="d-inline-block align-right">Change Password
+                                            </a></p>
                 </li>
             </ul>
         </div>
@@ -67,11 +72,9 @@
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <div style="width: 1100px; margin:20%; margin-top:-27%" class="shadow-lg p-3 mb-5 bg-white rounded">
         <br>
-        
+
         <p class="double"></p>
-        <p class="h6 ">This is an example of a Radio Button Question Type. These Questions will allows election of
-            one
-            item from a list.</p>
+        <p class="h6 ">This is an example of a Radio Button Question Type. These Questions will allows selection of one item from a list.</p>
         <p class="h6"> Typically rating. Example How would you rate how you feel today?</p>
         <div class="form-check form-check-inline" style=" margin-left: 310px">
             <label><input type="radio" name="optradio" checked>Poor</label>
@@ -115,6 +118,35 @@
             <label class="form-check-label" for="inlineCheckbox2">Item5</label>
         </div>
         </p>
+
+        <p class="double"></p>
+        <p class="h6 ">This is an example of a Dropdown Question Type. These Questions will allows selection of a single itme from dropdown list Appropriate for questions with a large amount of selections.</p>
+
+        </p>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Item1
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">Item2</a></li>
+              <li><a class="dropdown-item" href="#">Item3</a></li>
+              <li><a class="dropdown-item" href="#">Item4</a></li>
+            </ul>
+          </div>
+        </p>
+
+        <p class="double"></p>
+        <p class="h6 ">This is an example of a freetext question type.These questions will allow free entry
+            of a text response.
+        </p>
+
+        </p>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+        </p>
+
         <br>
     </div>
 

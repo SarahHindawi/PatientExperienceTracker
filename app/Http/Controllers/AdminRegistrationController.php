@@ -65,7 +65,6 @@ class AdminRegistrationController extends Controller
 
         $admin->save();
 
-        return 'success';
-
+        return view("signreq");
     }
 }

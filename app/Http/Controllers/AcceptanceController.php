@@ -33,7 +33,7 @@ class AcceptanceController extends Controller
         }
 
         //pass the list of new patients to be displayed in the list
-        return view('PatientsAcceptance', ["patients" => $newPatientsInfo]);
+        return view('new_patient_registeration', ["patients" => $newPatientsInfo]);
     }
 
     public function store()
@@ -77,8 +77,7 @@ class AcceptanceController extends Controller
         }
 
 
-        //TODO create a Dashboard view and return it
-        return view("Welcome");
+        return view("Admin_dashboard_page");
 
     }
 }

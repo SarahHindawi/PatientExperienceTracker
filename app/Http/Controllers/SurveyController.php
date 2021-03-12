@@ -75,6 +75,6 @@ class SurveyController extends Controller
 
         $survey_response->save();
 
-        echo "Your response has been saved successfully!";
+        return view("survey");
     }
 }
