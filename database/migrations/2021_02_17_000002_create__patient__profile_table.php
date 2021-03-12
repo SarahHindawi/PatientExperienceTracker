@@ -14,8 +14,8 @@ class CreatePatientProfileTable extends Migration
     public function up()
     {
         Schema::create('PATIENT_PROFILE', function (Blueprint $table) {
-            $table->string('Email')->primary();
-            $table->string('Password');
+            $table->string('email')->primary();
+            $table->string('password');
             $table->string('FirstName');
             $table->string('LastName');
             $table->date('DOB');      //dd-mm-yyyy

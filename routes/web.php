@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\DashboardController@index');
+
+
 
 Route::get('/patientregistration', 'App\Http\Controllers\PatientRegistrationController@index');
 Route::post('/patientregistration', 'App\Http\Controllers\PatientRegistrationController@register');
@@ -36,5 +36,7 @@ Route::get('/accept/create', 'App\Http\Controllers\AcceptanceController@create')
 Route::post('/passwordreset', 'App\Http\Controllers\PasswordController@store');
 Route::get('/passwordreset/create', 'App\Http\Controllers\PasswordController@create');
 
+
+Route::get('/debuglogout', 'App\Http\Controllers\LogoutController@debuglogout');
 
 

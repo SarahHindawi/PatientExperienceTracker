@@ -9,12 +9,23 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Patient;
 use Illuminate\Http\Request;
 use \Datetime;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth;
 
 class ReportController extends Controller
 {
 
     public function create()
     {
+        if(!Auth::guard('admin')->check()){
+
+            if(Auth::guard('patient')->check()){
+                //TODO redirect to Patient Dashbaord with unauthorized message.
+                return redirect('/');
+            }
+            return redirect('/adminlogin');
+        }  
+
         //get a list of the available surveys
         $surveys = Survey_Questions::select('SurveyName')->get();
         $surveyList = [];
@@ -35,6 +46,14 @@ class ReportController extends Controller
 
     public function store()
     {
+        if(!Auth::guard('admin')->check()){
+
+            if(Auth::guard('patient')->check()){
+                //TODO redirect to Patient Dashbaord with unauthorized message.
+            }
+            return redirect('/adminlogin');
+        }  
+        
         $submittedData = $_POST;
         unset($submittedData["_token"]);
 
