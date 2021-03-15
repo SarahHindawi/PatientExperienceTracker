@@ -102,7 +102,7 @@
     <div style=" position:absolute;  left:38%; top:22%; ">
         <div class="card" style="width: 17rem;height: 16rem;">
             <div class="rounded mx-auto d-block">
-                <img src="./Scale.png" class="card-img-top" alt="Scale"
+                <img src="{{asset('assets/images/Scale.png')}}" class="card-img-top" alt="Scale"
                      style="width: 4cm;height: 4cm;margin-top:0.5cm;">
             </div>
             <div class="card-body shadow-lg p-3 mb-5 bg-body rounded2">
@@ -121,7 +121,7 @@
     <div style=" position:absolute;  left:58%; top:22%; ">
         <div class="card" style="width: 17rem;height: 16rem;">
             <div class="rounded mx-auto d-block">
-                <img src="./Meter.png" class="card-img-top" alt="Scale"
+                <img src="{{asset('assets/images/Meter.png')}}" class="card-img-top" alt="Scale"
                      style="width: 4cm;height: 4cm;margin-top:0.5cm;">
             </div>
             <div class="shadow-lg p-3 mb-5 bg-body rounded card-body">

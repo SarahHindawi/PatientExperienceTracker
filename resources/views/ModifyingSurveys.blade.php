@@ -91,11 +91,11 @@
     </button>
     <div style="width: 1100px; margin:20%; margin-top:-27%" class="shadow-lg p-3 mb-5 bg-white rounded">
         <br>
-        <a href="#"> <img alt="Qries" src="./blue cross.png" width="5%" height="5%"></a>
+        <a href="#"> <img alt="Qries" src="{{asset('assets/images/blue cross.png')}}" width="5%" height="5%"></a>
 
         <p class="double"></p>
         <a href="#">
-            <img alt="Qries" src="./red X.png" width="2%" height="2%"></a>
+            <img alt="Qries" src="{{asset('assets/images/red X.png')}}" width="2%" height="2%"></a>
         <p class="h6 ">This is an example of a Radio Button Question Type. These Questions will allows election of
             one
             item from a list.</p>
@@ -116,10 +116,10 @@
             <label><input type="radio" name="optradio">Excellent</label>
         </div>
         </p>
-        <a href="#"><img alt="Qries" src="./blue cross.png" width="5%" height="5%"></a>
+        <a href="#"><img alt="Qries" src="{{asset('assets/images/blue cross.png')}}" width="5%" height="5%"></a>
         <p class="double"></p>
         <a href="#">
-            <img alt="Qries" src="./red X.png" width="2%" height="2%"></a>
+            <img alt="Qries" src="{{asset('assets/images/red X.png')}}" width="2%" height="2%"></a>
         <p class="h6 ">This is an example of a Checkbox Question type. These Questions will allows selsctio of
             multiple
             items from a list.</p>
