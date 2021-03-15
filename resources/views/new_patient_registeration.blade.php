@@ -49,7 +49,7 @@
     </nav>
 
     <!--The page header and an explanation for how to use the page -->
-    <p class="text-center fs-2">New Patient Registeration</p>
+    <p class="text-center fs-2">New Patient Registration</p>
 
 
     <p  class="text-center h6" style="text-align:right; padding-right: 500px">Selecting the green check marks will approve the new
