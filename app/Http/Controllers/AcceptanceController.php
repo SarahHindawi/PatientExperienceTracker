@@ -10,17 +10,17 @@ use Auth;
 class AcceptanceController extends Controller
 {
     public function create()
-    {            
-        
-         //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
-         if(!Auth::guard('admin')->check()){
+    {
 
-            if(Auth::guard('patient')->check()){
-                 //If Patient logged in Redirect to Patient Dashboard.
-                 return redirect('/');
-            }
-            return redirect('/adminlogin');
-        }      
+         //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
+//         if(!Auth::guard('admin')->check()){
+//
+//            if(Auth::guard('patient')->check()){
+//                 //If Patient logged in Redirect to Patient Dashboard.
+//                 return redirect('/');
+//            }
+//            return redirect('/adminlogin');
+//        }
 
         //get a list of the newly registered patients
         $newPatients = Patient::select(['FirstName', 'LastName', 'Email'])->where("NewAccount", true)->get();
@@ -47,7 +47,7 @@ class AcceptanceController extends Controller
                  return redirect('/');
             }
             return redirect('/adminlogin');
-        }             
+        }
 
         $submittedData = $_POST['data'];
         unset($submittedData["_token"]);
