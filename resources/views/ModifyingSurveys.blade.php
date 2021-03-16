@@ -1,4 +1,3 @@
-<!-- this page is when admin will be able to add or remove survey questions-->
 <!DOCTYPE html>
 <html>
 <!-- the head has the title of the page and the link for Bootstrap Framework and the link for the css file  -->
@@ -99,12 +98,14 @@
         <br>
         <!-- button to add question-->
         <a href="#"> <img alt="Qries" src="./blue cross.png" width="5%" height="5%"></a>
+        <a href="#"> <img alt="Qries" src="{{asset('assets/images/blue cross.png')}}" width="5%" height="5%"></a>
 
         <p class="double"></p>
         <a href="#">
             <!-- button to remove question-->
             <img alt="Qries" src="./red X.png" width="2%" height="2%"></a>
         <!-- an example of survey question with radio buttons-->
+            <img alt="Qries" src="{{asset('assets/images/red X.png')}}" width="2%" height="2%"></a>
         <p class="h6 ">This is an example of a Radio Button Question Type. These Questions will allows election of
             one
             item from a list.</p>
@@ -128,10 +129,12 @@
         </p>
 
         <a href="#"><img alt="Qries" src="./blue cross.png" width="5%" height="5%"></a>
+        <a href="#"><img alt="Qries" src="{{asset('assets/images/blue cross.png')}}" width="5%" height="5%"></a>
         <p class="double"></p>
         <a href="#">
             <img alt="Qries" src="./red X.png" width="2%" height="2%"></a>
         <!-- another example of survey question with check boxes-->
+            <img alt="Qries" src="{{asset('assets/images/red X.png')}}" width="2%" height="2%"></a>
         <p class="h6 ">This is an example of a Checkbox Question type. These Questions will allows selsctio of
             multiple
             items from a list.</p>

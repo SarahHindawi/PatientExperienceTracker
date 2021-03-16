@@ -27,12 +27,12 @@
                     <ul class="nav flex-column" style="width:10%">
                         <li class="nav-item">
                             <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
-                                <img src = "signup.png" width="25" height="25" class="d-inline-block align-right"> Sign Up
+                                <img src="{{asset('assets/images/signup.png')}}" width="25" height="25" class="d-inline-block align-right"> Sign Up
                             </a></p>
                         </li>
                         <li class="nav-item">
                             <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
-                                    <img src = "key.png" width="25" height="25" class="d-inline-block align-right">  Patient Login
+                                    <img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">  Patient Login
                             </a></p>
                         </li>
                       </ul>
