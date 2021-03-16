@@ -115,7 +115,7 @@
         <div class="card" style="width: 17rem;height: 16rem;">
             <div class="rounded mx-auto d-block">
                 <!-- Image in the middle of the card -->
-                <img src="./Scale.png" class="card-img-top" alt="Scale"
+                <img src="./Scale.png" class="card-img-top" alt="Scale">
                 <img src="{{asset('assets/images/Scale.png')}}" class="card-img-top" alt="Scale"
                      style="width: 4cm;height: 4cm;margin-top:0.5cm;">
             </div>
@@ -139,7 +139,7 @@
         <div class="card" style="width: 17rem;height: 16rem;">
             <div class="rounded mx-auto d-block">
                 <!-- Image in the middle of the card -->
-                <img src="./Meter.png" class="card-img-top" alt="Scale"
+                <img src="./Meter.png" class="card-img-top" alt="Scale">
                 <img src="{{asset('assets/images/Meter.png')}}" class="card-img-top" alt="Scale"
                      style="width: 4cm;height: 4cm;margin-top:0.5cm;">
             </div>
