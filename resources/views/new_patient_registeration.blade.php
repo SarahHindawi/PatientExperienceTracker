@@ -2,10 +2,30 @@
 <html>
 <head>
     <title>new_patient_registeration</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/admin-reset_password.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
+
+    <script src="{{ URL::asset('https://kit.fontawesome.com/a076d05399.js') }}" crossorigin='anonymous'></script>
+
+    <style>
+        [type=radio] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        [type=radio] + img {
+            cursor: pointer;
+        }
+
+        [type=radio]:checked + img {
+            outline: 2px solid #f00;
+        }
+    </style>
+
 </head>
+
 <body>
 
 <section class="container-fluid">
@@ -29,11 +49,11 @@
     </nav>
 
     <!--The page header and an explanation for how to use the page -->
-    <p class="text-center fs-2">New Patient Registeration</p>
+    <p class="text-center fs-2">New Patient Registration</p>
 
 
     <p  class="text-center h6" style="text-align:right; padding-right: 500px">Selecting the green check marks will approve the new
-    <p class="text-center h6" style="text-align:right; padding-right: 500px"> patient and theywill be added to the system. Then will recive thier</p>
+    <p class="text-center h6" style="text-align:right; padding-right: 500px"> patients so they will be added to the system. They will receive their</p>
     <p class="text-center h6" style="text-align:right; padding-right: 500px">  account activation email and the
         ability to set the password</p>
     <br>
@@ -88,30 +108,33 @@
 
     <!-- list of new patinets requests-->
     </div>
-    <ol class="lp">
-        <li>FIRST THING </li>
-        &nbsp;&nbsp;&nbsp;
-        <li>My first item </li>
-        &nbsp;&nbsp;&nbsp;
-        <li>My second item</li>
-        &nbsp;&nbsp;&nbsp;
-        <li>My third item </li>
-        &nbsp;&nbsp;&nbsp;
-        <li>My fourth item </li>
-        &nbsp;&nbsp;&nbsp;
-        <li>My fifth item</li>
-        &nbsp;&nbsp;&nbsp;
-    </ol>
-    <!-- A lsit of the patients requests buttons-->
-    <div style="left:700px; position:absolute; top:275px">
-        <ol class="lp">
-            <li> <button><i class='fas fa-check-circle' style='font-size:36px;color:rgb(15, 121, 11)'></i></button></li>
-            <li><button><i class='fas fa-check-circle' style='font-size:36px;color:rgb(15, 121, 11)'></i></button></button> </li>
-            <li><a href=""></a><button><i class='fas fa-check-circle' style='font-size:36px;color:rgb(15, 121, 11)'></i></button></button></li>
-            <li><a href=""></a> <button><i class='fas fa-check-circle' style='font-size:36px;color:rgb(15, 121, 11)'></i></button></button></li>
-            <li><a href=""></a> <button><i class='fas fa-check-circle' style='font-size:36px;color:rgb(15, 121, 11)'></i></button></button></li>
-            <li><a href=""></a> <button><i class='fas fa-check-circle' style='font-size:36px;color:rgb(15,121,11)'></i></button></button></li>
-        </ol>
+
+
+
+    <!-- A list of the patients requests buttons-->
+    <div style="left:auto; position:absolute; top:275px">
+        <form name="acceptanceForm" method="post" action="/accept" enctype="multipart/form-data" class="lp">
+        @csrf
+
+        <!-- for each name in the passed list of new patients -->
+            @foreach ($patients as $p)
+                <label style="font-size:20px"> {{$p}}</label>
+                <label>
+                    <input type="radio" name="data[{{$p}}]" value="Accept">
+                    <img width="30" height="30" src="https://freeiconshop.com/wp-content/uploads/edd/checkmark-flat.png">
+                </label>
+
+                <label>
+                    <input type="radio" name="data[{{$p}}]" value="Remove">
+                    <img width="30" height="30"
+                         src="https://icons-for-free.com/iconfiles/png/512/cercle+close+delete+dismiss+remove+icon-1320196712448219692.png">
+                </label>
+
+                <br> <br>
+            @endforeach
+
+            <button>Save</button>
+        </form>
     </div>
 
 </section>

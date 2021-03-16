@@ -14,8 +14,8 @@ class CreatePatientProfileTable extends Migration
     public function up()
     {
         Schema::create('PATIENT_PROFILE', function (Blueprint $table) {
-            $table->string('Email')->primary();
-            $table->string('Password');
+            $table->string('email')->primary();
+            $table->string('password');
             $table->string('FirstName');
             $table->string('LastName');
             $table->date('DOB');      //dd-mm-yyyy
@@ -28,6 +28,8 @@ class CreatePatientProfileTable extends Migration
             $table->boolean('PREMFlag')->default(true);
             $table->boolean('PROMFlag')->default(true);
             $table->boolean('NewAccount')->default(true);
+            $table->string('PasswordReset')->default("false");
+
         });
     }
 

@@ -1,27 +1,29 @@
+<!-- this page that when admin need to generate a report for patients -->
 <!DOCTYPE html>
 <html>
-
+<!-- the head has the title of the page and the link for Bootstrap Framework and the link for the css file  -->
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Generate Report</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./cssFile.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
 </head>
-
+<!-- the body has the content of the page  -->
 <body>
+<!-- the navigation bar in the top-->
 <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Default</a>
+        <a class="navbar-brand"></a>
+        <!-- the button of the the drop down for the user in the top right corner-->
         <form class="d-flex">
             @csrf
             <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button"
                     id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
                 Dropdown
             </button>
+            <!-- the option of the drop down button-->
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                 <li>
                     <button class="dropdown-item" type="button">Action</button>
@@ -36,12 +38,12 @@
         </form>
     </div>
 </nav>
-
+<!-- the title in the top middle of the page -->
 <div style=" margin-top:5%; margin-left:10%">
     <p class="text-center h2">Generate Report</p>
 </div>
 
-
+<!-- the Dashboard of the page that has different options-->
 <div class="msb" id="msb">
     <p class="text-center fs-2">PET</p>
 
@@ -49,12 +51,13 @@
         <div class="btn-group-vertical" style=" margin-top:15%; width:100%">
             <ul class="nav flex-column" style="width:100%">
                 <li class="nav-item">
+                    <!-- the Dashboard options-->
                     <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
                                               href="#">Dashboard</a></p>
                 </li>
                 <li class="nav-item">
                     <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">Patient
-                            Registeration</a></p>
+                            Registration</a></p>
                 </li>
                 <li class="nav-item">
                     <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
@@ -89,9 +92,11 @@
 
 <form name="surveyForm" method="post" action="/report" enctype="multipart/form-data">
     @csrf
-    <div style="width:device-widthx; margin:15%; margin-top:3%; height: 12cm;">
+    <!-- the item to collect the report-->
+        <div style=" margin:15%; margin-top:3%; height: 12cm;">
         <br>
-        <p class="h6">Survey Desired:</p>
+            <!-- choose what survey PREMS or PROMS-->
+            <p class="h6">Survey Desired:</p>
         <select class="shadow  bg-body rounded" aria-label="Default select example" name="surveyName">
             @foreach ($surveys as $s)
                 <option value="{{$s}}">{{$s}}</option>
@@ -99,7 +104,8 @@
         </select>
         <br> <br>
         <br>
-        <p class="h6">Gender:</p>
+            <!-- choose Gender form-->
+            <p class="h6">Gender:</p>
         <div class="form-check form-check-inline">
             <label><input type="radio" name="gender" value="all" checked> Any</label>
         </div>
@@ -112,7 +118,8 @@
         <br>
 
         <br>
-        <p class="h6">Age:</p>
+            <!-- choose Age form-->
+            <p class="h6">Age:</p>
         <input type="radio" name="age" value="all" checked>All<br>
         <br><input type="radio" name="age" value="above"> Above: <input type="text" class="shadow  bg-body rounded"
                                                                         name="ageAbove" style="width: 50px ">
@@ -122,7 +129,8 @@
                                                                           name="ageEquals" style="width: 50px"/><br>
 
         <br>
-        <p class="h6">Weight:</p>
+            <!-- the form to choose Weight-->
+            <p class="h6">Weight:</p>
         <input type="radio" name="weight" value="all" checked>All<br>
         <br><input type="radio" name="weight" value="above"> Above: <input type="text" class="shadow  bg-body rounded"
                                                                            name="weightAbove" style="width: 50px ">
@@ -133,10 +141,11 @@
                                                                              name="weightEquals"
                                                                              style="width: 50px"/><br>
 
-
+            <!-- the form to choose Height-->
         <div style="width: 300px; margin:90%; margin-top:-47%; height: 2cm;">
             <p class="h6">Height:</p>
             <input type="radio" name="height" value="all" checked> All<br>
+
             <br><input type="radio" name="height" value="above"> Above: <input type="text"
                                                                                class="shadow  bg-body rounded"
                                                                                name="heightAbove" style="width: 50px ">
@@ -150,9 +159,11 @@
                                                                                  style="width: 50px"/><br>
 
             <br>
+            <!-- the Medication form-->
             <p class="h6">Medication:</p>
             <input type="radio" name="medicationUsage" value="none" checked> None<br>
             <br><input type="radio" name="medicationUsage" value="includes"> Includes<br>
+            <!-- Panel that has the Medications that patients are taken-->
             <div class="panel panel-default">
                 <div style="width: 330px;margin-right: 35px;" class="panel-body shadow p-3">
 

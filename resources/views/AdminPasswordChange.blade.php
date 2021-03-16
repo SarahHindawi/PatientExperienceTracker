@@ -1,12 +1,13 @@
-<!-- this page where admins will put info about a patient and a profile summary about him/her-->
+<!--Here is a page for changing password for Admins when they have to put their old password and the put a new one
+ with confirming-->
 <!DOCTYPE html>
 <html>
 <!-- the head has the title of the page and the link for Bootstrap Framework and the link for the css file  -->
 <head>
-    <title>Patient Report Search</title>
-    <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}" rel="stylesheet"
+    <title>Admin Password Change</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
+    <link rel="stylesheet" type="text/css" href="./cssFile.css">
 
 </head>
 <!-- the body has the content of the page  -->
@@ -30,11 +31,12 @@
         </form>
     </div>
 </nav>
-
-<!-- the title in the top  -->
-<div style=" margin-top:5%; margin-left:10%">
-    <p class="text-center h2">Patient Profile Search</p>
+<!-- the title in the top middle of the page -->
+<div style=" margin-top:4%; margin-left:5cm">
+    <p class="text-center h4">Here you can change the password on your account.</p>
+    <p class="text-center h4">See password rules below</p>
 </div>
+
 
 <!-- the Dashboard of the page that has different options-->
 <div class="msb" id="msb">
@@ -53,16 +55,16 @@
                             Registration</a></p>
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">Password
-                            Reset</a></p>
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
+                                              href="#">Password Reset</a></p>
                 </li>
                 <li class="nav-item">
                     <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">Patient
                             Summary</a></p>
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">Generate
-                            Report</a></p>
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
+                                              href="#">Generate Report</a></p>
                 </li>
                 <li class="nav-item">
                     <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">Modify
@@ -81,35 +83,55 @@
 
     </nav>
 </div>
-
-<form method="post" action="/profilereport" enctype="multipart/form-data" style="width: 600px; margin:15%; margin-top:8%">
-    @csrf
-    <!-- Text box for a patient email that admins will look for -->
-        <div class="mb-3 row">
-        <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-        <div class="col-sm-10">
-            <input type="email" class="form-control shadow-sm" name="inputEmail">
+<!-- the form where Admin have to change the password-->
+<form>
+    <!-- the box for current password-->
+    <div style="width: 550px; margin-left:6cm; margin-top:6%">
+        <div class="mb-7 row">
+            <label for="inputFirstName" class="col-sm-4 col-form-label">Current Password: </label>
+            <div class="col-sm-5">
+                <input type="password" style="width:7cm" class="form-control shadow-lg p-2 mb-3 bg-white rounded"
+                       id="inputFirstName">
+            </div>
         </div>
-    </div>
-        <!-- Text box for a patient first name that admins will look for -->
-        <div class="mb-3 row">
-        <label for="inputFirstName" class="col-sm-2 col-form-label">First Name </label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control shadow-sm" name="inputFirstName">
-            <!-- the search button -->
-            <div style="margin-left:130%; margin-top:-7%; width: 150Px">
-                <button style="width: 200px;" type="submit" class="btn btn-success btn-rounded">Search</button>
+        <!-- the box for new password-->
+        <div class="mb-7 row">
+            <label for="inputFirstName" class="col-sm-4 col-form-label">New Password: </label>
+            <div class="col-sm-5">
+                <input type="password" style="width:7cm" class="form-control shadow-lg p-2 mb-3 bg-white rounded"
+                       id="inputFirstName">
+            </div>
+        </div>
+        <!-- the box for new password conformation -->
+        <div class="mb-7 row">
+            <label for="inputFirstName" class="col-sm-4 col-form-label">Confirm New Password: </label>
+            <div class="col-sm-5">
+                <input type="password" style="width:7cm" class="form-control shadow-lg p-2 mb-3 bg-white rounded"
+                       id="inputFirstName">
             </div>
         </div>
     </div>
-        <!-- Text box for a last first name that admins will look for -->
-        <div class="mb-3 row">
-        <label for="inputLastName" class="col-sm-2 col-form-label ">Last Name</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control shadow-sm" name="inputLastName">
+    <!-- the panel where the rule of the password creation should achieve-->
+    <div class="card panel-body shadow p-3"
+         style="width: 25rem;height: 15rem;;margin-left: 29cm; margin-top: -6cm;">
+        <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">Password needs to be between 8 and 20 charachters</h6>
+            <br><br>
+            <h6 class="card-subtitle mb-2 text-muted">Password Must Contain:</h6>
+            <h6 class="card-subtitle mb-2 text-muted">-Rule 1</h6>
+            <h6 class="card-subtitle mb-2 text-muted">-Rule 2</h6>
+            <h6 class="card-subtitle mb-2 text-muted">-Rule 3</h6>
         </div>
+    </div>
+    <br><br>
+    <!-- the submit button-->
+    <div style="margin-left:20cm;">
+        <button style="width: 200px;" type="button" class="btn btn-success btn-rounded">Submit</button>
     </div>
 </form>
 
+
+
 </body>
+
 </html>
