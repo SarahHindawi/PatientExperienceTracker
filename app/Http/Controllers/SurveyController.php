@@ -18,24 +18,24 @@ class SurveyController extends Controller
      */
     public function create()
     {
-
-        //Check if Patient is logged in.
-        if(!Auth::guard('patient')->check()){
-            if(Auth::guard('admin')->check()){
-               
-                return redirect('/');
-            }
-            //TODO Redirect to PAtient Login Page.
-            return 'Patient not logged in.';
-            //return redirect('/patientlogin');
-        }  
+//
+//        //Check if Patient is logged in.
+//        if(!Auth::guard('patient')->check()){
+//            if(Auth::guard('admin')->check()){
+//
+//                return redirect('/');
+//            }
+//            //TODO Redirect to PAtient Login Page.
+//            return 'Patient not logged in.';
+//            //return redirect('/patientlogin');
+//        }
 
         //TODO get selected survey name
         $surveyName = "IBDPREM_One";
         $survey = Survey_Questions::query()->where("SurveyName", $surveyName)->first();
         $surveyArray = json_decode($survey, true);
         $surveyArray = json_decode($surveyArray["SurveyQuestions"], true);
-        return view('survey.create', ["questions" => $surveyArray]);
+        return view('survey', ["questions" => $surveyArray]);
     }
 
 
@@ -49,7 +49,7 @@ class SurveyController extends Controller
                 //TODO redirect to Admin Dashbaord with unauthorized message.
             }
             return redirect('/patientlogin');
-        }  
+        }
 
         //the fields of the table: id, Email, DateCompleted, SurveyName, FirstName, LastName, Responses
 
@@ -75,6 +75,6 @@ class SurveyController extends Controller
 
         $survey_response->save();
 
-        return view("survey");
+        return view("Thank you for submitting the survey!");
     }
 }

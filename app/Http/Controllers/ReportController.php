@@ -24,7 +24,7 @@ class ReportController extends Controller
                 return redirect('/');
             }
             return redirect('/adminlogin');
-        }  
+        }
 
         //get a list of the available surveys
         $surveys = Survey_Questions::select('SurveyName')->get();
@@ -52,8 +52,8 @@ class ReportController extends Controller
                 //TODO redirect to Patient Dashbaord with unauthorized message.
             }
             return redirect('/adminlogin');
-        }  
-        
+        }
+
         $submittedData = $_POST;
         unset($submittedData["_token"]);
 

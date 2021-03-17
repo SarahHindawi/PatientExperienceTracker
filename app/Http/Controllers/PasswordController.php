@@ -11,8 +11,8 @@ use Auth;
 class PasswordController extends Controller
 {
     public function create()
-    {        
-        
+    {
+
         //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
         if(!Auth::guard('admin')->check()){
 
@@ -21,8 +21,8 @@ class PasswordController extends Controller
                 return redirect('/');
            }
            return redirect('/adminlogin');
-        }      
-        
+        }
+
         //get a list of the patients that submitted a request to reset their password
         $passwordResetRequests = Patient::select(['FirstName', 'LastName', 'Email'])->where("PasswordReset", "true")->get();
 
@@ -33,7 +33,7 @@ class PasswordController extends Controller
             $patientsInfo[] = $patient;
         }
 
-        return view('Admin_reset_password', ["patients" => $patientsInfo]);
+        return view('PasswordReset', ["patients" => $patientsInfo]);
     }
 
     public function store()
@@ -47,7 +47,7 @@ class PasswordController extends Controller
                 return redirect('/');
            }
            return redirect('/adminlogin');
-        }     
+        }
 
         $submittedData = $_POST['data'];
         unset($submittedData["_token"]);
