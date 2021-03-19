@@ -60,17 +60,22 @@
                 @endforeach
             </tr>
 
+
             @foreach ($emails as $p)
                 <tr>
                     <td>{{ $names[$loop->index] }}</td>
                     <td>{{ $emails[$loop->index] }}</td>
                     @foreach ($questions as $q)
-{{--                        <td>{{$responses[$loop->index][$questions[$loop->index]]}}</td>--}}
-                        <td>test</td>
-                    @endforeach
+                        @if(array_key_exists($q['Text'],$responses[$loop->parent->index]))
+                            <td>{{$responses[$loop->parent->index][$q['Text']]}}</td>
+                        @else
+                            <td>N/A</td>
 
+                        @endif
+                    @endforeach
                 </tr>
             @endforeach
+
         </table>
 
         <!-- this button is to save the file-->

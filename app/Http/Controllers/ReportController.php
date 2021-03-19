@@ -238,8 +238,8 @@ class ReportController extends Controller
         //reformat responses that are stored as arrays to strings
         for ($i = 0; $i < count($responsesArray); $i++) {
             foreach ($responsesArray[$i] as $key => $value) {
-                if(is_array($responsesArray[$i][$key])){
-                    $responsesArray[$i][$key]= implode(", ",$responsesArray[$i][$key]);
+                if (is_array($responsesArray[$i][$key])) {
+                    $responsesArray[$i][$key] = implode(", ", $responsesArray[$i][$key]);
                 }
             }
         }
