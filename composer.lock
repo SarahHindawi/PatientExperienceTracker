@@ -56,13 +56,6 @@
                 "cors",
                 "stack"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "issues": "https://github.com/asm89/stack-cors/issues",
-                "source": "https://github.com/asm89/stack-cors/tree/v2.0.3"
-            },
->>>>>>> 1112a396c73dd6302c0c5ce34a6022ad1ec63cee
             "time": "2021-03-11T06:42:03+00:00"
         },
         {
@@ -774,13 +767,6 @@
             "keywords": [
                 "promise"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/1.4.1"
-            },
->>>>>>> 1112a396c73dd6302c0c5ce34a6022ad1ec63cee
             "time": "2021-03-07T09:25:29+00:00"
         },
         {
@@ -1016,13 +1002,6 @@
                 "framework",
                 "laravel"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "issues": "https://github.com/laravel/framework/issues",
-                "source": "https://github.com/laravel/framework"
-            },
->>>>>>> 1112a396c73dd6302c0c5ce34a6022ad1ec63cee
             "time": "2021-03-16T19:42:32+00:00"
         },
         {
@@ -2108,13 +2087,6 @@
                 "interactive",
                 "shell"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.10.7"
-            },
->>>>>>> 1112a396c73dd6302c0c5ce34a6022ad1ec63cee
             "time": "2021-03-14T02:14:56+00:00"
         },
         {
@@ -2376,13 +2348,6 @@
                 "mail",
                 "mailer"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "issues": "https://github.com/swiftmailer/swiftmailer/issues",
-                "source": "https://github.com/swiftmailer/swiftmailer/tree/v6.2.7"
-            },
->>>>>>> 1112a396c73dd6302c0c5ce34a6022ad1ec63cee
             "funding": [
                 {
                     "url": "https://github.com/fabpot",
@@ -2473,12 +2438,6 @@
                 "console",
                 "terminal"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "source": "https://github.com/symfony/console/tree/v5.2.5"
-            },
->>>>>>> 1112a396c73dd6302c0c5ce34a6022ad1ec63cee
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -3142,12 +3101,6 @@
             ],
             "description": "Provides a structured process for converting a Request into a Response",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-=======
-            "support": {
-                "source": "https://github.com/symfony/http-kernel/tree/v5.2.5"
-            },
->>>>>>> 1112a396c73dd6302c0c5ce34a6022ad1ec63cee
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -3228,12 +3181,6 @@
                 "mime",
                 "mime-type"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "source": "https://github.com/symfony/mime/tree/v5.2.5"
-            },
->>>>>>> 1112a396c73dd6302c0c5ce34a6022ad1ec63cee
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4328,12 +4275,6 @@
             ],
             "description": "Provides tools to internationalize your application",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-=======
-            "support": {
-                "source": "https://github.com/symfony/translation/tree/v5.2.5"
-            },
->>>>>>> 1112a396c73dd6302c0c5ce34a6022ad1ec63cee
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4494,12 +4435,6 @@
                 "debug",
                 "dump"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "source": "https://github.com/symfony/var-dumper/tree/v5.2.5"
-            },
->>>>>>> 1112a396c73dd6302c0c5ce34a6022ad1ec63cee
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4763,13 +4698,6 @@
                 "check",
                 "validate"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "issues": "https://github.com/webmozarts/assert/issues",
-                "source": "https://github.com/webmozarts/assert/tree/1.10.0"
-            },
->>>>>>> 1112a396c73dd6302c0c5ce34a6022ad1ec63cee
             "time": "2021-03-09T10:59:23+00:00"
         }
     ],
@@ -5070,7 +4998,6 @@
         },
         {
             "name": "filp/whoops",
-<<<<<<< HEAD
             "version": "2.11.0",
             "source": {
                 "type": "git",
@@ -5081,18 +5008,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/filp/whoops/zipball/f6e14679f948d8a5cfb866fa7065a30c66bd64d3",
                 "reference": "f6e14679f948d8a5cfb866fa7065a30c66bd64d3",
-=======
-            "version": "2.10.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/filp/whoops.git",
-                "reference": "6ecda5217bf048088b891f7403b262906be5a957"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/6ecda5217bf048088b891f7403b262906be5a957",
-                "reference": "6ecda5217bf048088b891f7403b262906be5a957",
->>>>>>> 1112a396c73dd6302c0c5ce34a6022ad1ec63cee
                 "shasum": ""
             },
             "require": {
@@ -5140,24 +5055,13 @@
                 "throwable",
                 "whoops"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "issues": "https://github.com/filp/whoops/issues",
-                "source": "https://github.com/filp/whoops/tree/2.10.0"
-            },
->>>>>>> 1112a396c73dd6302c0c5ce34a6022ad1ec63cee
             "funding": [
                 {
                     "url": "https://github.com/denis-sokolov",
                     "type": "github"
                 }
             ],
-<<<<<<< HEAD
             "time": "2021-03-19T12:00:00+00:00"
-=======
-            "time": "2021-03-16T12:00:00+00:00"
->>>>>>> 1112a396c73dd6302c0c5ce34a6022ad1ec63cee
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -5260,13 +5164,6 @@
                 "docker",
                 "laravel"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "issues": "https://github.com/laravel/sail/issues",
-                "source": "https://github.com/laravel/sail"
-            },
->>>>>>> 1112a396c73dd6302c0c5ce34a6022ad1ec63cee
             "time": "2021-03-16T16:28:57+00:00"
         },
         {
@@ -5785,13 +5682,6 @@
                 "spy",
                 "stub"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "issues": "https://github.com/phpspec/prophecy/issues",
-                "source": "https://github.com/phpspec/prophecy/tree/1.13.0"
-            },
->>>>>>> 1112a396c73dd6302c0c5ce34a6022ad1ec63cee
             "time": "2021-03-17T13:42:18+00:00"
         },
         {
@@ -6179,13 +6069,6 @@
                 "testing",
                 "xunit"
             ],
-<<<<<<< HEAD
-=======
-            "support": {
-                "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.3"
-            },
->>>>>>> 1112a396c73dd6302c0c5ce34a6022ad1ec63cee
             "funding": [
                 {
                     "url": "https://phpunit.de/donate.html",
