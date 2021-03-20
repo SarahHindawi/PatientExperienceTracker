@@ -1,4 +1,5 @@
 <!-- this page that when admin need to generate a report for patients -->
+
 <!DOCTYPE html>
 <html>
 <!-- the head has the title of the page and the link for Bootstrap Framework and the link for the css file  -->
@@ -9,10 +10,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
+    <style>
+        #wrapper {
+            margin-left:auto;
+            margin-right:auto;
+            width:1519px;
+        }
+    </style>
 </head>
 <!-- the body has the content of the page  -->
-<body>
 <div id="wrapper">
+<body>
 <!-- the navigation bar in the top-->
 <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
@@ -195,7 +203,7 @@
     </button>
 
 </form>
-</div>
-</body>
 
+</body>
+</div>
 </html>
