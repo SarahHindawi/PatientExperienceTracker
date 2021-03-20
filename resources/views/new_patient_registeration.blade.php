@@ -59,12 +59,12 @@
     <!--The page header and an explanation for how to use the page -->
     <p class="text-center fs-2">New Patient Registration</p>
 
-
-    <p class="text-center h6" style="text-align:right; padding-right: 500px">Selecting the green check marks will
+   <!-- padding-right: 500px-->
+    <p class="text-center h6" style="text-align:center">Selecting the green check marks will
         approve new
-    <p class="text-center h6" style="text-align:right; padding-right: 500px"> patients so they will be added to the
+    <p class="text-center h6" style="text-align:center"> patients so they will be added to the
         system. They will receive their</p>
-    <p class="text-center h6" style="text-align:right; padding-right: 500px"> account activation email and the
+    <p class="text-center h6" style="text-align:center"> account activation email and the
         ability to set the password via email.</p>
     <br>
     <br>
@@ -73,7 +73,7 @@
 
     <!-- The dashboard which has all the options for the admin. This dashboard is located in the side of the page-->
     <div class="msb" id="msb">
-        <p class="text-center fs-2">PSS</p>
+        <p class="text-center fs-2">PET</p>
 
         <nav class="navbar navbar-default" role="navigation">
             <div class="btn-group-vertical" style=" margin-top:15%; width:100%">
