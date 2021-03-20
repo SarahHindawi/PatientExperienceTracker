@@ -12,6 +12,7 @@
 </head>
 <!-- the body has the content of the page  -->
 <body>
+<div id="wrapper">
 <!-- the navigation bar in the top-->
 <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
@@ -194,7 +195,7 @@
     </button>
 
 </form>
-
+</div>
 </body>
 
 </html>
