@@ -96,7 +96,7 @@
 </div>
 <!-- the title in the top  -->
 <div style=" margin-top:2%; margin-left:16%">
-    <p class="h3">Patient Profile</p>
+    <p class="h3">Here is the patient summary for {{$Summary['FirstName']}} {{$Summary['LastName']}}</p>
 </div>
 <div style=" margin:17%; margin-top:3%;">
     <!-- text box -->
@@ -107,7 +107,7 @@
         id="exampleFormControlInput1"><strong>Last Name: </strong>{{$Summary['LastName']}}</h2>
 
     <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
-        id="exampleFormControlInput1"><strong>Email: </strong>{{$Summary['Email']}}</h2>
+        id="exampleFormControlInput1"><strong>Email: </strong>{{$Summary['email']}}</h2>
 
     <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
         id="exampleFormControlInput1"><strong>Date of Birth: </strong>{{$Summary['DOB']}}</h2>
@@ -142,8 +142,8 @@
         <div class="card" style="width: 17rem;height: 16rem;">
             <div class="rounded mx-auto d-block">
                 <!-- Image in the middle of the card -->
-                <img src="./Scale.png" class="card-img-top" alt="Scale">
-                <img src="{{asset('assets/images/Scale.png')}}" class="card-img-top" alt="Scale"
+{{--                <img src="./Scale.png" class="card-img-top" alt="Scale">--}}
+                <img src="{{asset('assets/images/key.png')}}" class="card-img-top" alt="Scale"
                      style="width: 4cm;height: 4cm;margin-top:0.5cm;">
             </div>
             <!-- the text box and the label n the card -->
@@ -166,8 +166,8 @@
         <div class="card" style="width: 17rem;height: 16rem;">
             <div class="rounded mx-auto d-block">
                 <!-- Image in the middle of the card -->
-                <img src="./Meter.png" class="card-img-top" alt="Scale">
-                <img src="{{asset('assets/images/Meter.png')}}" class="card-img-top" alt="Scale"
+{{--                <img src="./Meter.png" class="card-img-top" alt="Scale">--}}
+                <img src="{{asset('assets/images/key.png')}}" class="card-img-top" alt="Scale"
                      style="width: 4cm;height: 4cm;margin-top:0.5cm;">
             </div>
 

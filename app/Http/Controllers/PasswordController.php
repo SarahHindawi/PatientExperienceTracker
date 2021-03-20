@@ -52,6 +52,10 @@ class PasswordController extends Controller
         $submittedData = $_POST['data'];
         unset($submittedData["_token"]);
 
+        if (!isset($_POST['data'])) {
+            return view("Admin_dashboard_page");
+        }
+
         $accepted = [];
         $removed = [];
 
