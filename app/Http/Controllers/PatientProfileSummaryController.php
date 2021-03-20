@@ -143,6 +143,6 @@ class PatientProfileSummaryController extends Controller
         }
 
 
-        return view('PatientSummaryResult', ["summary" => $data, "medications" => $medArray, "responses" => $responsesString, "dates" => $dateCompleted, "names" => $surveyName]);
+        return view('PatientSummaryResult', ["Summary" => $data, "medications" => $medArray, "responses" => $responsesString, "dates" => $dateCompleted, "names" => $surveyName]);
     }
 }

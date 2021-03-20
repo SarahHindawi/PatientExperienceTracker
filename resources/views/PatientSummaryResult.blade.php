@@ -101,26 +101,26 @@
 <div style=" margin:17%; margin-top:3%;">
     <!-- text box -->
     <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
-        id="exampleFormControlInput1"><strong>First Name: </strong>{{$summary['FirstName']}}</h2>
+        id="exampleFormControlInput1"><strong>First Name: </strong>{{$Summary['FirstName']}}</h2>
 
     <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
-        id="exampleFormControlInput1"><strong>Last Name: </strong>{{$summary['LastName']}}</h2>
+        id="exampleFormControlInput1"><strong>Last Name: </strong>{{$Summary['LastName']}}</h2>
 
     <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
-        id="exampleFormControlInput1"><strong>Email: </strong>{{$summary['Email']}}</h2>
+        id="exampleFormControlInput1"><strong>Email: </strong>{{$Summary['Email']}}</h2>
 
     <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
-        id="exampleFormControlInput1"><strong>Date of Birth: </strong>{{$summary['DOB']}}</h2>
+        id="exampleFormControlInput1"><strong>Date of Birth: </strong>{{$Summary['DOB']}}</h2>
 
     <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
-        id="exampleFormControlInput1"><strong>Gender: </strong>{{$summary['Gender']}}</h2>
+        id="exampleFormControlInput1"><strong>Gender: </strong>{{$Summary['Gender']}}</h2>
 
     <!-- text box to show the condition -->
     <div class="mb-1 row">
         <label for="inputLastName" class="col-sm-1 col-form-label " style="margin-top:0.3cm;">Condition:</label>
         <div class="col-sm-10">
             <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 4.7cm;"
-                id="exampleFormControlInput4">{{$summary['Condition']}}</h2>
+                id="exampleFormControlInput4">{{$Summary['Condition']}}</h2>
         </div>
     </div>
 
@@ -150,7 +150,7 @@
                     <!-- text box -->
                     <div class="col-sm-3">
                         <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 250%;"
-                            id="exampleFormControlInput4">{{$summary['Weight']}}</h2>
+                            id="exampleFormControlInput4">{{$Summary['Weight']}}</h2>
                     </div>
                 </div>
             </div>
@@ -175,12 +175,12 @@
 
                     <div class="col-sm-3">
                         <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 150%;"
-                            id="exampleFormControlInput4">{{$summary['HeightFeet']}}</h2>
+                            id="exampleFormControlInput4">{{$Summary['HeightFeet']}}</h2>
                     </div>
 
                     <div class="col-sm-3">
                         <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 150%;"
-                            id="exampleFormControlInput4">{{$summary['HeightInches']}}</h2>
+                            id="exampleFormControlInput4">{{$Summary['HeightInches']}}</h2>
                     </div>
                 </div>
             </div>
