@@ -60,7 +60,7 @@
     <p class="text-center fs-2">Password Reset Requests</p>
 
 
-    <p class="text-center h6" style="text-align:right; padding-right: 500px">Selecting the green check marks will
+    <p class="text-center h6" style="text-align:center">Selecting the green check marks will
         approve password reset requests.
         <br>Users will receive the confirmation and a temporary password via email.</p>
     <br>
@@ -70,7 +70,7 @@
 
     <!-- The dashborad which has all the options for the admin. This dashboard is located in the side of the page-->
     <div class="msb" id="msb">
-        <p class="text-center fs-2">PSS</p>
+        <p class="text-center fs-2">PET</p>
 
         <nav class="navbar navbar-default" role="navigation">
             <div class="btn-group-vertical" style=" margin-top:15%; width:100%">
