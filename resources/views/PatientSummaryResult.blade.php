@@ -6,9 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Patient Summary Result</title>
-    <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}" rel="stylesheet"
+    <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}"
+          rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            padding: 15px;
+            text-align:center;
+        }
+    </style>
 
 </head>
 <!-- the body has the content of the page  -->
@@ -25,14 +34,19 @@
             </button>
             <!-- the option of the drop down button-->
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <li><button class="dropdown-item" type="button">Action</button></li>
-                <li><button class="dropdown-item" type="button">Another action</button></li>
-                <li><button class="dropdown-item" type="button">Something else here</button></li>
+                <li>
+                    <button class="dropdown-item" type="button">Action</button>
+                </li>
+                <li>
+                    <button class="dropdown-item" type="button">Another action</button>
+                </li>
+                <li>
+                    <button class="dropdown-item" type="button">Something else here</button>
+                </li>
             </ul>
         </form>
     </div>
 </nav>
-
 
 
 <!-- the Dashboard of the page that has different options-->
@@ -50,7 +64,7 @@
                 </li>
                 <li class="nav-item">
                     <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">Patient
-                            Registeration</a></p>
+                            Registration</a></p>
                 </li>
                 <li class="nav-item">
                     <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
@@ -82,34 +96,43 @@
 </div>
 <!-- the title in the top  -->
 <div style=" margin-top:2%; margin-left:16%">
-    <p class="h3">Here is the patient Summary for </p>
+    <p class="h3">Patient Profile</p>
 </div>
 <div style=" margin:17%; margin-top:3%;">
     <!-- text box -->
-    <input type="text" class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
-           id="exampleFormControlInput1">
-    <!-- text box -->
-    <input type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 7cm;"
-           id="exampleFormControlInput2">
-    <!-- text box -->
-    <input type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 7cm;"
-           id="exampleFormControlInput3">
+    <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
+        id="exampleFormControlInput1"><strong>First Name: </strong>{{$summary['FirstName']}}</h2>
+
+    <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
+        id="exampleFormControlInput1"><strong>Last Name: </strong>{{$summary['LastName']}}</h2>
+
+    <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
+        id="exampleFormControlInput1"><strong>Email: </strong>{{$summary['Email']}}</h2>
+
+    <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
+        id="exampleFormControlInput1"><strong>Date of Birth: </strong>{{$summary['DOB']}}</h2>
+
+    <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
+        id="exampleFormControlInput1"><strong>Gender: </strong>{{$summary['Gender']}}</h2>
+
     <!-- text box to show the condition -->
     <div class="mb-1 row">
         <label for="inputLastName" class="col-sm-1 col-form-label " style="margin-top:0.3cm;">Condition:</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 4.7cm;"
-                   id="exampleFormControlInput4">
+            <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 4.7cm;"
+                id="exampleFormControlInput4">{{$summary['Condition']}}</h2>
         </div>
     </div>
-    <!-- text box to show the Medocation -->
+
+    <!-- text box to show the Medication -->
     <div class="mb-1 row">
         <label for="inputLastName" class="col-sm-1 col-form-label " style="margin-top:0.3cm;">Medication:</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 4.7cm;"
-                   id="exampleFormControlInput5">
+            <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 4.7cm;"
+                id="exampleFormControlInput4">{{$medications}}</h2>
         </div>
     </div>
+
     <div style=" position:absolute;  left:38%; top:22%; ">
         <!-- card that have an image and text box to show the weight -->
         <div class="card" style="width: 17rem;height: 16rem;">
@@ -126,8 +149,8 @@
                            style="margin-top:0.3cm;">Weight:</label>
                     <!-- text box -->
                     <div class="col-sm-3">
-                        <input type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 4cm;"
-                               id="exampleFormControlInput5">
+                        <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 250%;"
+                            id="exampleFormControlInput4">{{$summary['Weight']}}</h2>
                     </div>
                 </div>
             </div>
@@ -143,37 +166,47 @@
                 <img src="{{asset('assets/images/Meter.png')}}" class="card-img-top" alt="Scale"
                      style="width: 4cm;height: 4cm;margin-top:0.5cm;">
             </div>
+
             <!-- the two text boxes and the label n the card -->
             <div class="shadow-lg p-3 mb-5 bg-body rounded card-body">
                 <div class="mb-1 row">
                     <label for="inputLastName" class="col-sm-4 col-form-label "
                            style="margin-top:0.3cm;">Height:</label>
-                    <!-- text box -->
+
                     <div class="col-sm-3">
-                        <input type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 1.5cm;"
-                               id="exampleFormControlInput6" placeholder="ft">
+                        <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 150%;"
+                            id="exampleFormControlInput4">{{$summary['HeightFeet']}}</h2>
                     </div>
-                    <!-- text box -->
+
                     <div class="col-sm-3">
-                        <input type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 1.5cm;"
-                               id="exampleFormControlInput7" placeholder="'">
+                        <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 150%;"
+                            id="exampleFormControlInput4">{{$summary['HeightInches']}}</h2>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- place to show the PREM Survey -->
-<div style="position:absolute;  left:17%; top:12cm;">
-    <label for="inputLastName" class="col-sm-1 col-form-label ">PREM Survey:</label>
-    <div class="modal-dialog modal-lg">...</div>
-</div>
-<!-- place to show the PROM Survey -->
-<div style="position:absolute;  left:17%; top:17cm;">
-    <label for="inputLastName" class="col-sm-1 col-form-label ">PROM Survey:</label>
-    <div class="modal-dialog modal-lg">...</div>
+
+<!-- Area to show the Surveys -->
+<div style="position:absolute; margin-top: 20%; left:17%; top:20%;">
+    <h3>Submitted Surveys</h3>
+    <table>
+        <tr>
+            <th>Survey Name</th>
+            <th>Date Completed</th>
+            <th>Responses</th>
+        </tr>
+
+        @foreach ($names as $p)
+            <tr>
+                <td>{{ $names[$loop->index] }}</td>
+                <td>{{ $dates[$loop->index] }}</td>
+                <td>{{$responses[$loop->index]}}</td>
+            </tr>
+        @endforeach
+    </table>
 </div>
 
 </body>
-
 </html>
