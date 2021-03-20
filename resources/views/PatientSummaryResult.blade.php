@@ -15,7 +15,7 @@
         table, th, td {
             border: 1px solid black;
             padding: 15px;
-            text-align:center;
+            text-align: center;
         }
     </style>
 
@@ -116,6 +116,7 @@
         id="exampleFormControlInput1"><strong>Gender: </strong>{{$Summary['Gender']}}</h2>
 
     <!-- text box to show the condition -->
+    @isset($Condition)
     <div class="mb-1 row">
         <label for="inputLastName" class="col-sm-1 col-form-label " style="margin-top:0.3cm;">Condition:</label>
         <div class="col-sm-10">
@@ -123,15 +124,18 @@
                 id="exampleFormControlInput4">{{$Summary['Condition']}}</h2>
         </div>
     </div>
+    @endisset
 
     <!-- text box to show the Medication -->
-    <div class="mb-1 row">
-        <label for="inputLastName" class="col-sm-1 col-form-label " style="margin-top:0.3cm;">Medication:</label>
-        <div class="col-sm-10">
-            <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 4.7cm;"
-                id="exampleFormControlInput4">{{$medications}}</h2>
+    @isset($medications)
+        <div class="mb-1 row">
+            <label for="inputLastName" class="col-sm-1 col-form-label " style="margin-top:0.3cm;">Medication:</label>
+            <div class="col-sm-10">
+                <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 4.7cm;"
+                    id="exampleFormControlInput4">{{$medications}}</h2>
+            </div>
         </div>
-    </div>
+    @endisset
 
     <div style=" position:absolute;  left:38%; top:22%; ">
         <!-- card that have an image and text box to show the weight -->
@@ -190,22 +194,24 @@
 
 <!-- Area to show the Surveys -->
 <div style="position:absolute; margin-top: 20%; left:17%; top:20%;">
-    <h3>Submitted Surveys</h3>
-    <table>
-        <tr>
-            <th>Survey Name</th>
-            <th>Date Completed</th>
-            <th>Responses</th>
-        </tr>
-
-        @foreach ($names as $p)
+    @isset($responses)
+        <h3>Submitted Surveys</h3>
+        <table>
             <tr>
-                <td>{{ $names[$loop->index] }}</td>
-                <td>{{ $dates[$loop->index] }}</td>
-                <td>{{$responses[$loop->index]}}</td>
+                <th>Survey Name</th>
+                <th>Date Completed</th>
+                <th>Responses</th>
             </tr>
-        @endforeach
-    </table>
+
+            @foreach ($names as $p)
+                <tr>
+                    <td>{{ $names[$loop->index] }}</td>
+                    <td>{{ $dates[$loop->index] }}</td>
+                    <td>{{$responses[$loop->index]}}</td>
+                </tr>
+            @endforeach
+        </table>
+    @endisset
 </div>
 
 </body>
