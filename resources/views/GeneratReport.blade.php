@@ -93,7 +93,7 @@
 <form name="surveyForm" method="post" action="/report" enctype="multipart/form-data">
     @csrf
     <!-- the item to collect the report-->
-        <div style=" margin:15%; margin-top:3%; height: 12cm;">
+        <div style=" margin:20%; margin-top:3%; height: 12cm;">
         <br>
             <!-- choose what survey PREMS or PROMS-->
             <p class="h6">Survey Desired:</p>
@@ -142,7 +142,7 @@
                                                                              style="width: 50px"/><br>
 
             <!-- the form to choose Height-->
-        <div style="width: 300px; margin:90%; margin-top:-47%; height: 2cm;">
+        <div style="width: 300px; margin:90%; margin-top:-68%; height: 2cm;">
             <p class="h6">Height:</p>
             <input type="radio" name="height" value="all" checked> All<br>
 
