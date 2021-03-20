@@ -50,12 +50,13 @@ class AcceptanceController extends Controller
 //            return redirect('/adminlogin');
 //        }
 
-        $submittedData = $_POST['data'];
-        unset($submittedData["_token"]);
-
         if (!isset($_POST['data'])) {
             return view("Admin_dashboard_page");
         }
+
+
+        $submittedData = $_POST['data'];
+        unset($submittedData["_token"]);
 
         //dd($submittedData);
 
