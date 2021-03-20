@@ -72,12 +72,16 @@ class PatientProfileSummaryController extends Controller
 
         $data = (array)$data[0];
 
-        //create a string of the medications (instead of an array)remove the first character "[" and last one "]" from the "Medications" column
-        $medArray = explode(",", substr($data["Medications"], 1, -1));
+        //if the patient uses any medications
+        if (strlen($data["Medications"]) > 4) {
 
-        //remove the first character " and last one " for each medication string
-        for ($j = 0; $j < count($medArray); $j++) {
-            $medArray[$j] = substr($medArray[$j], 1, -1);
+            //create a string of the medications (instead of an array)remove the first character "[" and last one "]" from the "Medications" column
+            $medArray = explode(",", substr($data["Medications"], 1, -1));
+
+            //remove the first character " and last one " for each medication string
+            for ($j = 0; $j < count($medArray); $j++) {
+                $medArray[$j] = substr($medArray[$j], 1, -1);
+            }
         }
 
         $responses = DB::table('Survey_Responses');
@@ -87,10 +91,10 @@ class PatientProfileSummaryController extends Controller
         $responses = (array)$responses->toArray();
 
         //if the patient has not submitted any surveys yet
-        if (count($responses) == 0 & count($medArray) > 0) {
+        if (count($responses) == 0 & isset($medArray)) {
             return view('PatientSummaryResult', ["Summary" => $data, "medications" => implode(", ", $medArray)]);
         } //if the patient has not submitted any surveys yet and does not use any medications
-        elseif (count($responses) == 0 & count($medArray) == 0) {
+        elseif (count($responses) == 0 & !isset($medArray) == 0) {
             return view('PatientSummaryResult', ["Summary" => $data]);
         }
 
@@ -144,7 +148,6 @@ class PatientProfileSummaryController extends Controller
             }
             $responsesString[] = $res;
         }
-
 
         return view('PatientSummaryResult', ["Summary" => $data, "medications" => $medArray, "responses" => $responsesString, "dates" => $dateCompleted, "names" => $surveyName]);
     }
