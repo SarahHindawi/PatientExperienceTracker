@@ -2,23 +2,27 @@
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Patient extends Model
+class Patient extends Authenticatable
 {
     use HasFactory;
+    use Notifiable;
 
-    protected $table = 'PATIENT_PROFILE';
-    protected $primaryKey = 'Email';
+    protected $table = 'PATIENT_PROFILE';    
+    protected $primaryKey = 'email';
     protected $keyType = 'string';
-    protected $hidden = ['Password'];
+    protected $hidden = ['password'];
     public $incrementing = false;
     public $timestamps = false;
 
     protected $fillable = [
-        "Email",
-        "Password",
+        "email",
+        "password",
         "FirstName",
         "LastName",
         "DOB",

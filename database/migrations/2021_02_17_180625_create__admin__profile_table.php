@@ -14,8 +14,8 @@ class CreateAdminProfileTable extends Migration
     public function up()
     {
         Schema::create('ADMIN_PROFILE', function (Blueprint $table) {
-            $table->string('Email')->primary();
-            $table->string('Password');
+            $table->string('email')->primary();
+            $table->string('password');
             $table->string('FirstName');
             $table->string('LastName');
             $table->boolean('RootAdmin')->default(false);            

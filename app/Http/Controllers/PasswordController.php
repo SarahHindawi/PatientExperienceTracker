@@ -5,11 +5,24 @@ namespace App\Http\Controllers;
 use App\Models\Patient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth;
 
 class PasswordController extends Controller
 {
     public function create()
     {
+
+        //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
+        if(!Auth::guard('admin')->check()){
+
+           if(Auth::guard('patient')->check()){
+                //If Patient logged in Redirect to Patient Dashboard.
+                return redirect('/');
+           }
+           return redirect('/adminlogin');
+        }
+
         //get a list of the patients that submitted a request to reset their password
         $passwordResetRequests = Patient::select(['FirstName', 'LastName', 'Email'])->where("PasswordReset", "true")->get();
 
@@ -25,6 +38,16 @@ class PasswordController extends Controller
 
     public function store()
     {
+
+        //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
+        if(!Auth::guard('admin')->check()){
+
+            if(Auth::guard('patient')->check()){
+                //If Patient logged in Redirect to Patient Dashboard.
+                return redirect('/');
+           }
+           return redirect('/adminlogin');
+        }
 
         $submittedData = $_POST['data'];
         unset($submittedData["_token"]);
@@ -54,6 +77,6 @@ class PasswordController extends Controller
             Patient::where('Email', $removedEmail)->update(array('PasswordReset' => "false"));
         }
 
-        return view("Welcome");
+        return view("Admin_dashboard_page");
     }
 }

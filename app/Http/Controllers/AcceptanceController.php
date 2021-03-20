@@ -3,11 +3,25 @@
 namespace App\Http\Controllers;
 use App\Models\Patient;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth;
+
 
 class AcceptanceController extends Controller
 {
     public function create()
     {
+
+         //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
+         if(!Auth::guard('admin')->check()){
+
+            if(Auth::guard('patient')->check()){
+                 //If Patient logged in Redirect to Patient Dashboard.
+                 return redirect('/');
+            }
+            return redirect('/adminlogin');
+        }
+
         //get a list of the newly registered patients
         $newPatients = Patient::select(['FirstName', 'LastName', 'Email'])->where("NewAccount", true)->get();
 
@@ -19,11 +33,21 @@ class AcceptanceController extends Controller
         }
 
         //pass the list of new patients to be displayed in the list
-        return view('PatientsAcceptance', ["patients" => $newPatientsInfo]);
+        return view('new_patient_registeration', ["patients" => $newPatientsInfo]);
     }
 
     public function store()
     {
+
+         //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
+         if(!Auth::guard('admin')->check()){
+
+            if(Auth::guard('patient')->check()){
+                 //If Patient logged in Redirect to Patient Dashboard.
+                 return redirect('/');
+            }
+            return redirect('/adminlogin');
+        }
 
         $submittedData = $_POST['data'];
         unset($submittedData["_token"]);
@@ -53,8 +77,7 @@ class AcceptanceController extends Controller
         }
 
 
-        //TODO create a Dashboard view and return it
-        return view("Welcome");
+        return view("Admin_dashboard_page");
 
     }
 }

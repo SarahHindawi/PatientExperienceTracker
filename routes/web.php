@@ -13,16 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\DashboardController@index');
+
+
 
 Route::get('/patientregistration', 'App\Http\Controllers\PatientRegistrationController@index');
 Route::post('/patientregistration', 'App\Http\Controllers\PatientRegistrationController@register');
 Route::get('/adminregistration', 'App\Http\Controllers\AdminRegistrationController@index');
 Route::post('/adminregistration', 'App\Http\Controllers\AdminRegistrationController@register');
 Route::get('/profilesearch', 'App\Http\Controllers\PatientProfileSummaryController@index');
-Route::post('/profilesearch/report', 'App\Http\Controllers\PatientProfileSummaryController@search');
+Route::post('/profilereport', 'App\Http\Controllers\PatientProfileSummaryController@search');
 Route::get('/form/create', 'App\Http\Controllers\SurveyController@create');
 Route::post('/form', 'App\Http\Controllers\SurveyController@store');
 Route::get('/adminlogin', 'App\Http\Controllers\AdminLoginController@index');
@@ -36,5 +36,7 @@ Route::get('/accept/create', 'App\Http\Controllers\AcceptanceController@create')
 Route::post('/passwordreset', 'App\Http\Controllers\PasswordController@store');
 Route::get('/passwordreset/create', 'App\Http\Controllers\PasswordController@create');
 
+
+Route::get('/debuglogout', 'App\Http\Controllers\LogoutController@debuglogout');
 
 
