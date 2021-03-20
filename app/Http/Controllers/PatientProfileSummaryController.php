@@ -80,8 +80,6 @@ class PatientProfileSummaryController extends Controller
             $medArray[$j] = substr($medArray[$j], 1, -1);
         }
 
-        $medArray = implode(", ", $medArray);
-
         $responses = DB::table('Survey_Responses');
 
         $responses = $responses->where('Email', 'LIKE', "%" . $request->inputEmail . "%")->get();
@@ -89,9 +87,14 @@ class PatientProfileSummaryController extends Controller
         $responses = (array)$responses->toArray();
 
         //if the patient has not submitted any surveys yet
-        if (count($responses) == 0) {
+        if (count($responses) == 0 & count($medArray) > 0) {
+            return view('PatientSummaryResult', ["Summary" => $data, "medications" => implode(", ", $medArray)]);
+        } //if the patient has not submitted any surveys yet and does not use any medications
+        elseif (count($responses) == 0 & count($medArray) == 0) {
             return view('PatientSummaryResult', ["Summary" => $data]);
         }
+
+        $medArray = implode(", ", $medArray);
 
         //convert Stdclass to array
         for ($i = 0; $i < count($responses); $i++) {
