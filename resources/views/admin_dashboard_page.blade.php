@@ -17,7 +17,7 @@
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Default</a>
+            <a class="navbar-brand"></a>
             <form class="d-flex">
                 <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa fa-user"></i> Mystery Admin
@@ -31,75 +31,80 @@
         </div>
     </nav>
 
-    <p class="text-center h2" style="padding-right: 600px" >Hello Mystery Admin</p>
+    <p class="text-center fs-2">Hello Mystery Admin</p>
 
 
-    <p  class="text-center h6" style="text-align:right; padding-right: 500px">Here are you r administration option </p>
+    <p class="text-center h6" style="text-align:center">Here are your administration option </p>
 
     <p>Default list:</p>
 
     <!-- The dashborad options in the centere of the page-->
 
     <ul class="lp">
-        <li><button class="block" onclick="location.href='new_patient_registeration'" type="button"><i class='fas fa-user-plus'></i> New Patient Registeration Click here to review
+        <li><button class="block" onclick="location.href='/accept/create'" type="button"><img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">New Patient Registeration Click here to review
             </button></li>
         &nbsp;&nbsp;&nbsp;
-        <li><button  class="block" onclick="location.href='admin_reset_password'" type="button"> <i class='fas fa-user-lock'></i> Patient Password Reset Requests. Click here to review
+        <li><button  class="block" onclick="location.href='/passwordreset/create'" type="button"> <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right"> Patient Password Reset Requests. Click here to review
             </button> </li>
         &nbsp;&nbsp;&nbsp;
-        <li><a href=""></a> <button  class="block"> <i class='fas fa-pen'></i> View Summary of Patient</button></li>
+        <li> <button  class="block" onclick="location.href='/profilesearch'"> <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right">View Summary of Patient</button></li>
         &nbsp;&nbsp;&nbsp;
-        <li><a href=""></a> <button class="block"> <i class='fas fa-pen'></i> Generate Report of PERMS and PROMS Survey Data</button></li>
+        <li><a href=""></a> <button class="block" onclick="location.href='/report/create'"> <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right"> Generate Report of PERMS and PROMS Survey Data</button></li>
         &nbsp;&nbsp;&nbsp;
-        <li><a href=""></a> <button  class="block"> <i class='far fa-file-alt' style='font-size:24px'></i> Modify Survey Add or Remove Questions</button></li>
+        <li><a href=""></a> <button  class="block" onclick="location.href='admin_reset_password'"> <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Modify Survey Add or Remove Questions</button></li>
         &nbsp;&nbsp;&nbsp;
-        <li><a href=""></a> <button class="block" ><i class='fas fa-key'></i> Change Your Password</button></li>
+        <li><a href=""></a> <button class="block" onclick="location.href='admin_reset_password'"><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Change Your Password</button></li>
         &nbsp;&nbsp;&nbsp;
-        <li><a href=""></a> <button  class="block"> <i class='fas fa-question'></i> ADMIN Help</button></li>
+        <li><a href=""></a> <button  class="block" onclick="location.href='admin_reset_password'"> <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">ADMIN Help</button></li>
     </ul>
 
 
     <!-- The dashborad which has all the options for the admin. This dashboard is located in the side of the page-->
     <div class="msb" id="msb">
-        <p class="text-center fs-2">PSS</p>
+        <p class="text-center fs-2">PET</p>
 
         <nav class="navbar navbar-default" role="navigation">
             <div class="btn-group-vertical" style=" margin-top:15%; width:100%">
                 <ul class="nav flex-column" style="width:100%">
                     <li class="nav-item">
-                        <p class="text-center"><a class="text-center text-dark nav-link active" aria-current="page" href="admin_dashboard_page.html"><i class='fas fa-home'></i>Dashboard</a></p>
+                        <!-- the Dashboard options-->
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page"  href="{{ url('/')}}" >
+                                <img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right">Dashboard</a></p>
                     </li>
                     <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="new_patient_registeration.html"><i class='fas fa-user-plus'></i>Patient Registeration</a></p>
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/accept/create')}}" >
+                                <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">Patient Registration</a></p>
                     </li>
                     <li class="nav-item">
-                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="admin_reset_password.html"> <i class='fas fa-user-lock'></i>Password Reset</a></p>
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/passwordreset/create')}}">
+                                <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">Password Reset</a></p>
                     </li>
                     <li class="nav-item">
-                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#"><i class='fas fa-pen'></i>Patient Summary</a></p>
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/profilesearch')}}">
+                                <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right">Patient Summary</a></p>
                     </li>
                     <li class="nav-item">
-                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#"><i class='fas fa-pen'></i>Generate Report</a></p>
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/report/create')}}">
+                                <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right">Generate Report</a></p>
                     </li>
                     <li class="nav-item">
-                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#"><i class='far fa-file-alt' style='font-size:24px'></i> Modify Survey</a></p>
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
+                                <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Modify Survey</a></p>
                     </li>
                     <li class="nav-item">
-                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#"><i class='fas fa-key'></i>Change Password</a></p>
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
+                                <img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Change Password</a></p>
                     </li>
                     <li class="nav-item">
-                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#"><i class='fas fa-question'></i>ADMIN Help</a></p>
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
+                                <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">Admin Help</a></p>
                     </li>
-                    &nbsp;&nbsp;&nbsp;
-                    <li class="nav-item">
-                        <p  class="text-center"> <i class='fas fa-plus' style='font-size:48px;color:red'></i></p>
-                    </li>
-
-
                 </ul>
             </div>
+
         </nav>
     </div>
+
 
 
 

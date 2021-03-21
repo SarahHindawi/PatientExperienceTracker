@@ -22,12 +22,12 @@
     transition: 0.3s;
     font-size: 17px;
   }
-  
+
   .navbar-default {
     background-color: #FFF;
     margin-left: 200px;
   }
-  
+
   /*main side bar*/
   .msb {
     width: 200px;
@@ -55,15 +55,15 @@
       margin-bottom: 20px;
       background: #fff;
     }
-    
-      
+
+
   .msb, .mnb {
       -moz-animation: slidein 300ms forwards;
       -o-animation: slidein 300ms forwards;
       -webkit-animation: slidein 300ms forwards;
       animation: slidein 300ms forwards;
       -webkit-transform-style: preserve-3d;
-      transform-style: preserve-3d;  
+      transform-style: preserve-3d;
   }
     .msb {
       -moz-animation: slideout 300ms forwards;
@@ -79,7 +79,7 @@
       padding: 3px 20px !important;
       text-align: left !important;
     }
-    
+
     .drop{
       color: rgba(45, 87, 45, 0.75);
     }
@@ -105,10 +105,10 @@
               left: 50%;
             }
 
-            
 
 
-            
+
+
 ul {
   column-count: 2;
   column-gap: 2rem;

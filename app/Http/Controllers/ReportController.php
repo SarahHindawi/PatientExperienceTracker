@@ -17,14 +17,14 @@ class ReportController extends Controller
 
     public function create()
     {
-        if(!Auth::guard('admin')->check()){
-
-            if(Auth::guard('patient')->check()){
-                //TODO redirect to Patient Dashbaord with unauthorized message.
-                return redirect('/');
-            }
-            return redirect('/adminlogin');
-        }
+//        if(!Auth::guard('admin')->check()){
+//
+//            if(Auth::guard('patient')->check()){
+//                //TODO redirect to Patient Dashbaord with unauthorized message.
+//                return redirect('/');
+//            }
+//            return redirect('/adminlogin');
+//        }
 
         //get a list of the available surveys
         $surveys = Survey_Questions::select('SurveyName')->get();
@@ -46,13 +46,13 @@ class ReportController extends Controller
 
     public function store()
     {
-        if(!Auth::guard('admin')->check()){
-
-            if(Auth::guard('patient')->check()){
-                //TODO redirect to Patient Dashbaord with unauthorized message.
-            }
-            return redirect('/adminlogin');
-        }
+//        if(!Auth::guard('admin')->check()){
+//
+//            if(Auth::guard('patient')->check()){
+//                //TODO redirect to Patient Dashbaord with unauthorized message.
+//            }
+//            return redirect('/adminlogin');
+//        }
 
         $submittedData = $_POST;
         unset($submittedData["_token"]);
@@ -208,7 +208,7 @@ class ReportController extends Controller
         for ($i = 0; $i < count($responses); $i++) {
             $responsesArray[] = json_decode($responses[$i]["Responses"], true);
             $patientsEmail[] = $responses[$i]["Email"];
-            $patientsName[] = $responses[$i]["FirstName"] . " ". $responses[$i]["LastName"];
+            $patientsName[] = $responses[$i]["FirstName"] . " " . $responses[$i]["LastName"];
 
         }
 
@@ -218,6 +218,32 @@ class ReportController extends Controller
 //            ->get();
 //        }
 
-        return view("report_result_page", ["responses" => $responsesArray, "emails" => $patientsEmail, "names" => $patientsName]);
+        //Get the questions of the current version of the survey (as column headers)
+        //TODO get selected survey name
+        $surveyName = "IBDPREM_One";
+        $survey = Survey_Questions::query()->where("SurveyName", $surveyName)->first();
+        $surveyArray = json_decode($survey, true);
+        $surveyArray = json_decode($surveyArray["SurveyQuestions"], true);
+
+
+        //convert underscore characters to space characters
+        for ($i = 0; $i < count($responsesArray); $i++) {
+            foreach ($responsesArray[$i] as $key => $value) {
+                $question = str_replace("_", " ", $key);
+                $responsesArray[$i][$question] = $responsesArray[$i][$key];
+                unset($responsesArray[$i][$key]);
+            }
+        }
+
+        //reformat responses that are stored as arrays to strings
+        for ($i = 0; $i < count($responsesArray); $i++) {
+            foreach ($responsesArray[$i] as $key => $value) {
+                if (is_array($responsesArray[$i][$key])) {
+                    $responsesArray[$i][$key] = implode(", ", $responsesArray[$i][$key]);
+                }
+            }
+        }
+
+        return view("report_result_page", ["responses" => $responsesArray, "emails" => $patientsEmail, "names" => $patientsName, "questions" => $surveyArray]);
     }
 }

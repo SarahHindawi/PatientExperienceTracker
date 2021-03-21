@@ -14,14 +14,14 @@ class PasswordController extends Controller
     {
 
         //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
-        if(!Auth::guard('admin')->check()){
-
-           if(Auth::guard('patient')->check()){
-                //If Patient logged in Redirect to Patient Dashboard.
-                return redirect('/');
-           }
-           return redirect('/adminlogin');
-        }
+//        if(!Auth::guard('admin')->check()){
+//
+//           if(Auth::guard('patient')->check()){
+//                //If Patient logged in Redirect to Patient Dashboard.
+//                return redirect('/');
+//           }
+//           return redirect('/adminlogin');
+//        }
 
         //get a list of the patients that submitted a request to reset their password
         $passwordResetRequests = Patient::select(['FirstName', 'LastName', 'Email'])->where("PasswordReset", "true")->get();
@@ -40,17 +40,23 @@ class PasswordController extends Controller
     {
 
         //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
-        if(!Auth::guard('admin')->check()){
+//        if(!Auth::guard('admin')->check()){
+//
+//            if(Auth::guard('patient')->check()){
+//                //If Patient logged in Redirect to Patient Dashboard.
+//                return redirect('/');
+//           }
+//           return redirect('/adminlogin');
+//        }
 
-            if(Auth::guard('patient')->check()){
-                //If Patient logged in Redirect to Patient Dashboard.
-                return redirect('/');
-           }
-           return redirect('/adminlogin');
+        if (!isset($_POST['data'])) {
+            return view("Admin_dashboard_page");
         }
 
         $submittedData = $_POST['data'];
         unset($submittedData["_token"]);
+
+
 
         $accepted = [];
         $removed = [];

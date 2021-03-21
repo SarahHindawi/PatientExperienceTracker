@@ -6,9 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Patient Summary Result</title>
-    <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}" rel="stylesheet"
+    <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}"
+          rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
 
 </head>
 <!-- the body has the content of the page  -->
@@ -25,14 +34,19 @@
             </button>
             <!-- the option of the drop down button-->
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <li><button class="dropdown-item" type="button">Action</button></li>
-                <li><button class="dropdown-item" type="button">Another action</button></li>
-                <li><button class="dropdown-item" type="button">Something else here</button></li>
+                <li>
+                    <button class="dropdown-item" type="button">Action</button>
+                </li>
+                <li>
+                    <button class="dropdown-item" type="button">Another action</button>
+                </li>
+                <li>
+                    <button class="dropdown-item" type="button">Something else here</button>
+                </li>
             </ul>
         </form>
     </div>
 </nav>
-
 
 
 <!-- the Dashboard of the page that has different options-->
@@ -45,36 +59,37 @@
 
                 <!-- the Dashboard options-->
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
-                                              href="#">Dashboard</a></p>
+                    <!-- the Dashboard options-->
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page"  href="#">
+                            <img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right">Dashboard</a></p>
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">Patient
-                            Registeration</a></p>
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/accept/create')}}" >
+                            <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">Patient Registration</a></p>
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
-                                              href="#">Password Reset</a></p>
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/passwordreset/create')}}">
+                            <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">Password Reset</a></p>
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">Patient
-                            Summary</a></p>
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/profilesearch')}}">
+                            <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right">Patient Summary</a></p>
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
-                                              href="#">Generate Report</a></p>
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/report/create')}}">
+                            <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right">Generate Report</a></p>
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">Modify
-                            Survey</a></p>
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
+                            <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Modify Survey</a></p>
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">Change
-                            Password</a></p>
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
+                            <img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Change Password</a></p>
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">Admin
-                            Help</a></p>
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
+                            <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">Admin Help</a></p>
                 </li>
             </ul>
         </div>
@@ -82,40 +97,53 @@
 </div>
 <!-- the title in the top  -->
 <div style=" margin-top:2%; margin-left:16%">
-    <p class="h3">Here is the patient Summary for </p>
+    <p class="h3">Here is the patient summary for {{$Summary['FirstName']}} {{$Summary['LastName']}}</p>
 </div>
 <div style=" margin:17%; margin-top:3%;">
     <!-- text box -->
-    <input type="text" class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
-           id="exampleFormControlInput1">
-    <!-- text box -->
-    <input type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 7cm;"
-           id="exampleFormControlInput2">
-    <!-- text box -->
-    <input type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 7cm;"
-           id="exampleFormControlInput3">
+    <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
+        id="exampleFormControlInput1"><strong>First Name: </strong>{{$Summary['FirstName']}}</h2>
+
+    <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
+        id="exampleFormControlInput1"><strong>Last Name: </strong>{{$Summary['LastName']}}</h2>
+
+    <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
+        id="exampleFormControlInput1"><strong>Email: </strong>{{$Summary['email']}}</h2>
+
+    <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
+        id="exampleFormControlInput1"><strong>Date of Birth: </strong>{{$Summary['DOB']}}</h2>
+
+    <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
+        id="exampleFormControlInput1"><strong>Gender: </strong>{{$Summary['Gender']}}</h2>
+
     <!-- text box to show the condition -->
+    @isset($Condition)
     <div class="mb-1 row">
         <label for="inputLastName" class="col-sm-1 col-form-label " style="margin-top:0.3cm;">Condition:</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 4.7cm;"
-                   id="exampleFormControlInput4">
+            <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 4.7cm;"
+                id="exampleFormControlInput4">{{$Summary['Condition']}}</h2>
         </div>
     </div>
-    <!-- text box to show the Medocation -->
-    <div class="mb-1 row">
-        <label for="inputLastName" class="col-sm-1 col-form-label " style="margin-top:0.3cm;">Medication:</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 4.7cm;"
-                   id="exampleFormControlInput5">
+    @endisset
+
+    <!-- text box to show the Medication -->
+    @isset($medications)
+        <div class="mb-1 row">
+            <label for="inputLastName" class="col-sm-1 col-form-label " style="margin-top:0.3cm;">Medication:</label>
+            <div class="col-sm-10">
+                <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 4.7cm;"
+                    id="exampleFormControlInput4">{{$medications}}</h2>
+            </div>
         </div>
-    </div>
+    @endisset
+
     <div style=" position:absolute;  left:38%; top:22%; ">
         <!-- card that have an image and text box to show the weight -->
         <div class="card" style="width: 17rem;height: 16rem;">
             <div class="rounded mx-auto d-block">
                 <!-- Image in the middle of the card -->
-                <img src="./Scale.png" class="card-img-top" alt="Scale">
+{{--                <img src="./Scale.png" class="card-img-top" alt="Scale">--}}
                 <img src="{{asset('assets/images/Scale.png')}}" class="card-img-top" alt="Scale"
                      style="width: 4cm;height: 4cm;margin-top:0.5cm;">
             </div>
@@ -126,8 +154,8 @@
                            style="margin-top:0.3cm;">Weight:</label>
                     <!-- text box -->
                     <div class="col-sm-3">
-                        <input type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 4cm;"
-                               id="exampleFormControlInput5">
+                        <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 250%;"
+                            id="exampleFormControlInput4">{{$Summary['Weight']}}</h2>
                     </div>
                 </div>
             </div>
@@ -139,41 +167,53 @@
         <div class="card" style="width: 17rem;height: 16rem;">
             <div class="rounded mx-auto d-block">
                 <!-- Image in the middle of the card -->
-                <img src="./Meter.png" class="card-img-top" alt="Scale">
+{{--                <img src="./Meter.png" class="card-img-top" alt="Scale">--}}
                 <img src="{{asset('assets/images/Meter.png')}}" class="card-img-top" alt="Scale"
                      style="width: 4cm;height: 4cm;margin-top:0.5cm;">
             </div>
+
             <!-- the two text boxes and the label n the card -->
             <div class="shadow-lg p-3 mb-5 bg-body rounded card-body">
                 <div class="mb-1 row">
                     <label for="inputLastName" class="col-sm-4 col-form-label "
                            style="margin-top:0.3cm;">Height:</label>
-                    <!-- text box -->
+
                     <div class="col-sm-3">
-                        <input type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 1.5cm;"
-                               id="exampleFormControlInput6" placeholder="ft">
+                        <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 150%;"
+                            id="exampleFormControlInput4">{{$Summary['HeightFeet']}}</h2>
                     </div>
-                    <!-- text box -->
+
                     <div class="col-sm-3">
-                        <input type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 1.5cm;"
-                               id="exampleFormControlInput7" placeholder="'">
+                        <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 150%;"
+                            id="exampleFormControlInput4">{{$Summary['HeightInches']}}</h2>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- place to show the PREM Survey -->
-<div style="position:absolute;  left:17%; top:12cm;">
-    <label for="inputLastName" class="col-sm-1 col-form-label ">PREM Survey:</label>
-    <div class="modal-dialog modal-lg">...</div>
-</div>
-<!-- place to show the PROM Survey -->
-<div style="position:absolute;  left:17%; top:17cm;">
-    <label for="inputLastName" class="col-sm-1 col-form-label ">PROM Survey:</label>
-    <div class="modal-dialog modal-lg">...</div>
+
+<!-- Area to show the Surveys -->
+<div style="position:absolute; margin-top: 20%; left:17%; top:20%;">
+    @isset($responses)
+        <h3>Submitted Surveys</h3>
+        <table>
+            <tr>
+                <th>Survey Name</th>
+                <th>Date Completed</th>
+                <th>Responses</th>
+            </tr>
+
+            @foreach ($names as $p)
+                <tr>
+                    <td>{{ $names[$loop->index] }}</td>
+                    <td>{{ $dates[$loop->index] }}</td>
+                    <td>{{$responses[$loop->index]}}</td>
+                </tr>
+            @endforeach
+        </table>
+    @endisset
 </div>
 
 </body>
-
 </html>

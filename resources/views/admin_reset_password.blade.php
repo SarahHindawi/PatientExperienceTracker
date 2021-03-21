@@ -7,8 +7,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <!--Get your own code at fontawesome.com
-        Here is the link to find all the important icons
-    https://www.w3schools.com/icons/icons_reference.asp
+        Here is the link to find all the important iconsclicking the green checkmark will approve the
+    https://www.w3schools.com/icons/icons_reference.aspPlease review password reset requests.After review
     -->
 </head>
 <body>
@@ -65,44 +65,49 @@
 
     <!-- The dashborad which has all the options for the rootadmin. This dashboard is located in the side of the page-->
     <div class="msb" id="msb">
-        <p class="text-center fs-2">PSS</p>
+        <p class="text-center fs-2">PET</p>
 
         <nav class="navbar navbar-default" role="navigation">
             <div class="btn-group-vertical" style=" margin-top:15%; width:100%">
                 <ul class="nav flex-column" style="width:100%">
+                    <!-- the Dashboard options-->
                     <li class="nav-item">
-                        <p class="text-center"><a class="text-center text-dark nav-link active" aria-current="page" href="admin_dashboard_page.blade.php"><i class='fas fa-home'></i>Dashboard</a></p>
+                        <!-- the Dashboard options-->
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page"  href="#">
+                                <img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right">Dashboard</a></p>
                     </li>
                     <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="new_patient_registeration.blade.php"><i class='fas fa-user-plus'></i>Patient Registeration</a></p>
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/accept/create')}}" >
+                                <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">Patient Registration</a></p>
                     </li>
                     <li class="nav-item">
-                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="admin_reset_password.blade.php"> <i class='fas fa-user-lock'></i>Password Reset</a></p>
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/passwordreset/create')}}">
+                                <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">Password Reset</a></p>
                     </li>
                     <li class="nav-item">
-                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#"><i class='fas fa-pen'></i>Patient Summary</a></p>
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/profilesearch')}}">
+                                <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right">Patient Summary</a></p>
                     </li>
                     <li class="nav-item">
-                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#"><i class='fas fa-pen'></i>Generate Report</a></p>
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/report/create')}}">
+                                <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right">Generate Report</a></p>
                     </li>
                     <li class="nav-item">
-                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#"><i class='far fa-file-alt' style='font-size:24px'></i> Modify Survey</a></p>
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
+                                <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Modify Survey</a></p>
                     </li>
                     <li class="nav-item">
-                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#"><i class='fas fa-key'></i>Change Password</a></p>
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
+                                <img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Change Password</a></p>
                     </li>
                     <li class="nav-item">
-                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#"><i class='fas fa-question'></i>ADMIN Help</a></p>
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
+                                <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">Admin Help</a></p>
                     </li>
                     <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="new_patient_registeration.blade.php"><i class='fas fa-user-plus'></i>Register Admin</a></p>
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/adminregistration')}}">
+                                <img src="{{asset('assets/images/signup.png')}}" width="25" height="25" class="d-inline-block align-right">Register Admin</a></p>
                     </li>
-                    &nbsp;&nbsp;&nbsp;
-                    <li class="nav-item">
-                        <p  class="text-center"> <i class='fas fa-plus' style='font-size:48px;color:red'></i></p>
-                    </li>
-
-
                 </ul>
             </div>
         </nav>
