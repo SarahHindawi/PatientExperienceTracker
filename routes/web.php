@@ -27,6 +27,7 @@ Route::get('/form/create', 'App\Http\Controllers\SurveyController@create');
 Route::post('/form', 'App\Http\Controllers\SurveyController@store');
 Route::get('/adminlogin', 'App\Http\Controllers\AdminLoginController@index');
 Route::post('/adminloginpage', 'App\Http\Controllers\AdminLoginController@login');
+Route::post('/rootadminloginpage', 'App\Http\Controllers\AdminLoginController@root');
 Route::get('/patientlogin', 'App\Http\Controllers\PatientLoginController@index');
 Route::post('/patientloginpage', 'App\Http\Controllers\PatientLoginController@login');
 Route::get('/editSurvey/create', 'App\Http\Controllers\EditSurveyController@create');
