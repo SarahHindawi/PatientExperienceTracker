@@ -53,8 +53,9 @@
             {{Form::label('gender', 'Gender')}}
             {{Form::select('gender', ['Male' => 'Male' ,'Female' => 'Female'], ['class' => 'form-control', 'placeholder' => 'Gender'])}}
          </div>
-        {{Form::label('condition', 'Condition')}}
-        {!! Form::select('condition',  $conditionList, null,['class' => 'form-control', 'placeholder' => 'Select Condition']) !!}       
+         
+         {{Form::label('condition', 'Condition')}}
+         {!! Form::select('condition',  $conditionList, null,['class' => 'form-control', 'placeholder' => 'Select Condition']) !!}
         
         {{Form::label('medications', 'Select any medicaitons you are taking from this list.')}}
         <div class = 'container'>

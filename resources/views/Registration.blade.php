@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <title>Sign Up Page</title>
+        <title> Patient Registration Page</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
@@ -39,43 +39,76 @@
                     </div>
                 </nav>
             </div>
-            <form method = "post" action = "">
+            <!--<form method = "post" action = "">--->
+            {!! Form::open(['action' => 'App\Http\Controllers\PatientRegistrationController@register', 'method' => 'POST']) !!}
                 <br><br><br>
                 <p style = "color:red;"><strong>All fields are required</strong> </p>
                 <!-- create four text boxes for user input -->
-                <div><label>First name:</label>
-                   <input type = "text" name = "fname" placeholder = "First Name" ></div>
-                <div><label>Last name:</label>
-                   <input type = "text" name = "lname" placeholder = "Last Name"></div>
-                <div><label>Email:</label>
-                   <input type = "text" name = "email" placeholder = "user@example.com"></div>
+                <div class="form-group">
+                {{Form::label('firstname', 'First Name ')}}
+                {{Form::text('firstName', '' , ['class' => 'form-control', 'placeholder' => 'First Name'])}}
+                 </div>
+
+                 <br>
+
+                <div class="form-group">
+                {{Form::label('lastname', 'Last Name')}}
+                {{Form::text('lastName', '' , ['class' => 'form-control', 'placeholder' => 'Last Name'])}}
+                </div>
+
+                <div class="form-group">
+                {{Form::label('dob', 'Date of Birth')}}
+                {{Form::text('dob', '' , ['class' => 'form-control', 'placeholder' => 'DOB: dd-mm-yyyy'])}}
+                </div>
+
                 <br>
-                <form class="row row-cols-lg-auto g-3 align-items-center">
-                      <div class="col-12">
-                          <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-                          <select class="form-select" id="inlineFormSelectPref">
-                            <option selected>Choose...</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
+
+                 <div class="form-group">    
+                {{Form::label('weight', 'Weight')}}
+                {{Form::number('weight', '' , ['class' => 'form-control', 'placeholder' => 'Weight' , 'width' => '25'])}}
+
+               <br>
+                
+             <div class="form-group">    
+             {{Form::label('height', 'Height')}}           
+             {{Form::number('heightFeet', '' , ['class' => 'form-control', 'placeholder' => 'Feet'])}}         
+             {{Form::number('heightInches', '' , ['class' => 'form-control', 'placeholder' => 'Inches'])}} 
+             }            
+             <br>
+
+
+           <div class="form-group">    
+            {{Form::label('gender', 'Gender')}}
+            {{Form::select('gender', ['Male' => 'Male' ,'Female' => 'Female'], ['class' => 'form-control', 'placeholder' => 'Gender'])}}
+         </div>
+
+         <br>
+
+             <div class="form-group">
+                {{Form::label('email', 'Email')}}
+                {{Form::text('email', '' , ['class' => 'form-control', 'placeholder' => 'Email'])}}
+                 </div>
+
+                <br>
+            
+                {{Form::label('condition', 'Condition')}}
+                {!! Form::select('condition',  $conditionList, null,['class' => 'form-control', 'placeholder' => 'Select Condition']) !!}  
+
                           <br>
-                          <div class="row">
-                                <div class="col">
-                                  <input type="text" class="form-control" placeholder="Your Height" aria-label="Your Height">
-                                </div>
-                                <div class="col">
-                                  <input type="text" class="form-control" placeholder="Your Weight" aria-label="Your Weight">
-                                </div>
-                              </div>
-                        </div>
-                        <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Medications</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                              </div>
-                        <br>
-                        <button type="submit" class="btn btn-success">Submit</button>
-                      </form>
-              </form>
+          {{Form::label('medications', 'Select any medicaitons you are taking from this list.')}}
+          <div class = 'container'>
+          @foreach($medicationList as $meds)            
+                <div class="checkbox">
+                    <label>
+                        {!! Form::checkbox("medication[]", $meds) !!} {{$meds}}
+                    </label>
+                </div>                
+        @endforeach
+         </div>        
+                       
+         <br>
+         
+         {{Form::submit('Submit' , ['class' => 'btn btn-success'])}}
+         {!! Form::close() !!}
     </body>
 </html>
