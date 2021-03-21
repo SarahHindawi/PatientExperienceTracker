@@ -48,11 +48,18 @@
             border-radius: 40px;
             background: transparent;
             transition: all 0.3s ease 0s;
+
         }
+        #wrapper {
+            margin-left:auto;
+            margin-right:auto;
+            width:1519px;
+        }
+
     </style>
 
 </head>
-
+<div id="wrapper">
 <body>
 
 <section class="container-fluid">
@@ -60,7 +67,7 @@
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Default</a>
+            <a class="navbar-brand"></a>
             <form class="d-flex">
                 <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button"
                         id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -141,7 +148,6 @@
 
     <br>
     <!-- list of password reset requests-->
-    </div>
 
 
     <ol class="lp">
@@ -181,6 +187,7 @@
                     class="btn btn-success btn-rounded">Save
             </button>
         </form>
+    </div>
 
 </section>
 
@@ -195,6 +202,7 @@
         integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
         crossorigin="anonymous"></script>
 </body>
+</div>
 </html>
 
 

@@ -17,9 +17,17 @@
             padding: 15px;
             text-align: center;
         }
+         #wrapper {
+             margin-left:auto;
+             margin-right:auto;
+             width:1519px;
+         }
+
     </style>
 
 </head>
+<div id="wrapper">
+
 <!-- the body has the content of the page  -->
 <body>
 <!-- the navigation bar in the top-->
@@ -216,4 +224,6 @@
 </div>
 
 </body>
+</div>
+
 </html>
