@@ -61,36 +61,36 @@
             <ul class="nav flex-column" style="width:100%">
                 <li class="nav-item">
                     <!-- the Dashboard options-->
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
-                                              href="#">Dashboard</a></p>
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page"  href="#">
+                            <img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right">Dashboard</a></p>
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">Patient
-                            Registration</a></p>
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
+                            <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">Patient Registration</a></p>
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
-                                              href="#">Password Reset</a></p>
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
+                            <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">Password Reset</a></p>
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">Patient
-                            Summary</a></p>
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
+                            <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right">Patient Summary</a></p>
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
-                                              href="#">Generate Report</a></p>
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
+                            <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right">Generate Report</a></p>
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">Modify
-                            Survey</a></p>
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
+                            <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Modify Survey</a></p>
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">Change
-                            Password</a></p>
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
+                            <img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Change Password</a></p>
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">Admin
-                            Help</a></p>
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
+                            <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">Admin Help</a></p>
                 </li>
             </ul>
         </div>
@@ -151,7 +151,7 @@
                                                                              style="width: 50px"/><br>
 
             <!-- the form to choose Height-->
-        <div style="width: 300px; margin:90%; margin-top:-68%; height: 2cm;">
+        <div style="width: 300px; margin:90%; margin-top:-69%; height: 2cm;">
             <p class="h6">Height:</p>
             <input type="radio" name="height" value="all" checked> All<br>
 

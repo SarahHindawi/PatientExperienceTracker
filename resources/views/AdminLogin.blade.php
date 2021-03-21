@@ -27,21 +27,20 @@
             <div class="btn-group-vertical" style=" margin-top:15%; width:100%">
                 <ul class="nav flex-column" style="width:100%">
                     <!-- the Dashboard options-->
-
                     <!-- Sign Up option-->
                     <li class="nav-item">
                         <p class="text-center"><a class="text-center text-dark nav-link active" aria-current="page"
-                                                  href="#">Sign Up</a></p>
+                                                  href="#"><img src="{{asset('assets/images/signup.png')}}" width="25" height="25" class="d-inline-block align-right">Sign Up</a></p>
                     </li>
                     <!-- Patient Login option-->
                     <li class="nav-item">
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
-                                                  href="#">Patient Login</a></p>
+                                                  href="#"><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Patient Login</a></p>
                     </li>
                     <!-- Administrator Login option-->
                     <li class="nav-item">
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
-                                                  href= "{{ url('/adminlogin')}}" >Administrator Login</a></p>
+                                                  href= "{{ url('/adminlogin')}}" ><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Administrator Login</a></p>
                     </li>
                 </ul>
             </div>
