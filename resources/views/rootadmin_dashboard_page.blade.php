@@ -31,33 +31,33 @@
         </div>
     </nav>
 
-    <p class="text-center h2" style="padding-right: 600px" >Hello Mystery Admin</p>
+    <p class="text-center fs-2">Hello Mystery Admin</p>
 
 
-    <p  class="text-center h6" style="text-align:right; padding-right: 500px">Here are your administration option </p>
+    <p class="text-center h6" style="text-align:center">Here are your administration option </p>
 
     <p>Default list:</p>
 
     <!-- The dashborad options in the centere of the page-->
 
     <ul class="lp">
-        <li><button class="block" onclick="location.href='new_patient_registeration'" type="button"><i class='fas fa-user-plus'></i> New Patient Registeration Click here to review
+        <li><button class="block" onclick="location.href='/accept/create'" type="button"><img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">New Patient Registeration Click here to review
             </button></li>
         &nbsp;&nbsp;&nbsp;
-        <li><button  class="block" onclick="location.href='admin_reset_password'" type="button"> <i class='fas fa-user-lock'></i> Patient Password Reset Requests. Click here to review
+        <li><button  class="block" onclick="location.href='/passwordreset/create'" type="button"> <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right"> Patient Password Reset Requests. Click here to review
             </button> </li>
         &nbsp;&nbsp;&nbsp;
-        <li><a href=""></a> <button  class="block"> <i class='fas fa-pen'></i> View Summary of Patient</button></li>
+        <li> <button  class="block" onclick="location.href='/profilesearch'"> <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right">View Summary of Patient</button></li>
         &nbsp;&nbsp;&nbsp;
-        <li><a href=""></a> <button class="block"> <i class='fas fa-pen'></i> Generate Report of PERMS and PROMS Survey Data</button></li>
+        <li><a href=""></a> <button class="block" onclick="location.href='/report/create'"> <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right"> Generate Report of PERMS and PROMS Survey Data</button></li>
         &nbsp;&nbsp;&nbsp;
-        <li><a href=""></a> <button  class="block"> <i class='far fa-file-alt' style='font-size:24px'></i> Modify Survey Add or Remove Questions</button></li>
+        <li><a href=""></a> <button  class="block" onclick="location.href='admin_reset_password'"> <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Modify Survey Add or Remove Questions</button></li>
         &nbsp;&nbsp;&nbsp;
-        <li><a href=""></a> <button class="block" ><i class='fas fa-key'></i> Change Your Password</button></li>
+        <li><a href=""></a> <button class="block" onclick="location.href='admin_reset_password'"><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Change Your Password</button></li>
         &nbsp;&nbsp;&nbsp;
-        <li><a href=""></a> <button  class="block"> <i class='fas fa-question'></i> ADMIN Help</button></li>
+        <li><a href=""></a> <button  class="block" onclick="location.href='admin_reset_password'"> <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">ADMIN Help</button></li>
         &nbsp;&nbsp;&nbsp;
-        <li><button class="block" type="button"><i class='fas fa-user-plus'></i> Register Admin
+        <li><button class="block" type="button"><img src="{{asset('assets/images/signup.png')}}" width="25" height="25" class="d-inline-block align-right">Register Admin
             </button></li>
 
     </ul>
