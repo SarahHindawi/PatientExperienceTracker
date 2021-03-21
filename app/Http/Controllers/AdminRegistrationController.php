@@ -13,38 +13,38 @@ class AdminRegistrationController extends Controller
 
     public function index()
     {
-        
-        //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
-        if(!Auth::guard('admin')->check()){
 
-            if(Auth::guard('patient')->check()){                
+        //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
+        /*if(!Auth::guard('admin')->check()){
+
+            if(Auth::guard('patient')->check()){
                 //If Patient logged in Redirect to Patient Dashboard.
                 return redirect('/');
             }
             return redirect('/adminlogin');
-        }       
-        
-        return view ('Registration.AdminRegistration');
+        }       */
+
+        return view ('RegisterAdmin');
     }
 
     public function register(Request $request)
-    {    
-       
+    {
+
         //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
-        if(!Auth::guard('admin')->check()){
+       /* if(!Auth::guard('admin')->check()){
 
             if(Auth::guard('patient')->check()){
                  //If Patient logged in Redirect to Patient Dashboard.
                  return redirect('/');
             }
             return redirect('/adminlogin');
-        }      
-        
+        } */
+
         $this->validate($request, [
-            'email' => 'required',
+            'firstname' => 'required',
             'password' => 'required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',
-            'firstName' => 'required',
-            'lastName' => 'required',
+            'lastname' => 'required',
+            'email' => 'required',
         ]);
 
 
@@ -60,8 +60,8 @@ class AdminRegistrationController extends Controller
 
         $admin->email = $request->input('email');
         $admin->password = Hash::make($request->input('password'));
-        $admin->FirstName = $request->input('firstName');
-        $admin->LastName = $request->input('lastName');
+        $admin->firstname = $request->input('firstname');
+        $admin->lastname = $request->input('lastname');
 
         $admin->save();
 
