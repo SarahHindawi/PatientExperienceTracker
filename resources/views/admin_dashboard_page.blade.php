@@ -31,10 +31,10 @@
         </div>
     </nav>
 
-    <p class="text-center h2" style="padding-right: 600px" >Hello Mystery Admin</p>
+    <p class="text-center fs-2">Hello Mystery Admin</p>
 
 
-    <p  class="text-center h6" style="text-align:right; padding-right: 500px">Here are you r administration option </p>
+    <p class="text-center h6" style="text-align">Here are your administration option </p>
 
     <p>Default list:</p>
 
@@ -61,7 +61,7 @@
 
     <!-- The dashborad which has all the options for the admin. This dashboard is located in the side of the page-->
     <div class="msb" id="msb">
-        <p class="text-center fs-2">PSS</p>
+        <p class="text-center fs-2">PET</p>
 
         <nav class="navbar navbar-default" role="navigation">
             <div class="btn-group-vertical" style=" margin-top:15%; width:100%">
