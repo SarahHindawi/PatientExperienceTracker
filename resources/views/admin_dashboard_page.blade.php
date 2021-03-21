@@ -34,7 +34,7 @@
     <p class="text-center fs-2">Hello Mystery Admin</p>
 
 
-    <p class="text-center h6" style="text-align">Here are your administration option </p>
+    <p class="text-center h6" style="text-align:center">Here are your administration option </p>
 
     <p>Default list:</p>
 
