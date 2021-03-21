@@ -49,9 +49,17 @@
             background: transparent;
             transition: all 0.3s ease 0s;
         }
+
+         #wrapper {
+             margin-left:auto;
+             margin-right:auto;
+             width:1519px;
+         }
+
     </style>
 
 </head>
+<div id="wrapper">
 
 <body>
 
@@ -145,7 +153,6 @@
 
 
     <!-- list of new patients requests-->
-    </div>
 
 
     <ol class="lp">
@@ -184,6 +191,7 @@
                     class="btn btn-success btn-rounded">Save
             </button>
         </form>
+    </div>
 
 </section>
 
@@ -198,5 +206,6 @@
         integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
         crossorigin="anonymous"></script>
 </body>
+</div>
 </html>
 

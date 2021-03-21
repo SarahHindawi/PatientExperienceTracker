@@ -8,9 +8,16 @@
           rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
           crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
+    <style>
+        #wrapper {
+            margin-left:auto;
+            margin-right:auto;
+            width:1519px;
+        }
+    </style>
 
 </head>
-
+<div id="wrapper">
 <!-- the body has the content of the page  -->
 <body>
 <!-- the navigation bar in the top-->
@@ -126,5 +133,5 @@
 
 
 </body>
-
+</div>
 </html>

@@ -18,9 +18,16 @@
             text-align: center;
 
         }
+
+         #wrapper {
+             margin-left:auto;
+             margin-right:auto;
+             width:1519px;
+
     </style>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
+<div id="wrapper">
 <body>
 
 <section class="container-fluid">
@@ -146,5 +153,6 @@
         integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
         crossorigin="anonymous"></script>
 </body>
+</div>
 </html>
 
