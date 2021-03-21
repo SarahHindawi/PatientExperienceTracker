@@ -17,7 +17,7 @@
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Default</a>
+            <a class="navbar-brand"></a>
             <form class="d-flex">
                 <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa fa-user"></i> Mystery Admin
