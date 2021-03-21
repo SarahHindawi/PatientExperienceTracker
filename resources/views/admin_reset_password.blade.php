@@ -7,8 +7,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <!--Get your own code at fontawesome.com
-        Here is the link to find all the important icons
-    https://www.w3schools.com/icons/icons_reference.asp
+        Here is the link to find all the important iconsclicking the green checkmark will approve the
+    https://www.w3schools.com/icons/icons_reference.aspPlease review password reset requests.After review
     -->
 </head>
 <body>
