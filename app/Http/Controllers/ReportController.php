@@ -212,6 +212,12 @@ class ReportController extends Controller
 
         }
 
+        if (count($patientsName) == 0) {
+            echo '<script type="text/javascript">alert("No records match the specified data.")</script>';
+            return $this->create();
+        }
+
+
 //        for ($i = 0; $i< count($patientEmail); $i++) {
 //            $query = DB::table('Patient_Profile')
 //            ->where('Email', "LIKE", $patientEmail[$i])

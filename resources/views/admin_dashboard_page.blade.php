@@ -21,13 +21,13 @@
 <div id="wrapper">
 <body>
 
-<section class="container-fluid">    
+<section class="container-fluid">
     @if(Session::has('message'))
     <p class="alert alert-info" style="text-align:center">{{ Session::get('message') }}</p>
     @endif
 
 
-    <p class="text-center fs-2" style="color:seagreen">Hello {{$name}}</p>
+    <p class="text-center fs-2" style="color:seagreen">Hello {{Auth::guard('admin')->user()->FirstName}}</p>
 
 
     <p class="text-center h6" style="text-align:center">Here are your administration options </p>
@@ -37,22 +37,22 @@
     <!-- The dashborad options in the centere of the page-->
 
     <ul class="lp">
-        <li><button class="block" onclick="location.href='/accept/create'" type="button"><img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">New Patient Registeration Click here to review
+        <li><button class="block" onclick="location.href='/accept/create'" type="button"><img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right"> New Patient Registration<br> Click here to review
             </button></li>
         &nbsp;&nbsp;&nbsp;
-        <li><button  class="block" onclick="location.href='/passwordreset/create'" type="button"> <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right"> Patient Password Reset Requests. Click here to review
+        <li><button  class="block" onclick="location.href='/passwordreset/create'" type="button"> <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right"> Patient Password Reset Requests<br> Click here to review
             </button> </li>
         &nbsp;&nbsp;&nbsp;
-        <li> <button  class="block" onclick="location.href='/profilesearch'"> <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right">View Summary of Patient</button></li>
+        <li> <button  class="block" onclick="location.href='/profilesearch'"> <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right"> View Summary of Patient</button></li>
         &nbsp;&nbsp;&nbsp;
         <li><a href=""></a> <button class="block" onclick="location.href='/report/create'"> <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right"> Generate Report of PERMS and PROMS Survey Data</button></li>
         &nbsp;&nbsp;&nbsp;
-        <!--Commented out due to not MVP            
+        <!--Commented out due to not MVP
         <li><a href=""></a> <button  class="block" onclick="location.href='admin_reset_password'"> <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Modify Survey Add or Remove Questions</button></li>
         &nbsp;&nbsp;&nbsp;
-        -->        
-        <li><a href=""></a> <button class="block" onclick="location.href='/adminpasswordchange'"><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Change Your Password</button></li>
-        &nbsp;&nbsp;&nbsp;        
+        -->
+        <li><a href=""></a> <button class="block" onclick="location.href='/passwordchangeadmin'"><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Change Your Password</button></li>
+        &nbsp;&nbsp;&nbsp;
         <!-- Commented out due to not MVP
         <li><a href=""></a> <button  class="block" onclick="location.href='admin_reset_password'"> <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">ADMIN Help</button></li>
         -->

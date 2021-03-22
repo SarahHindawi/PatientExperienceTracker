@@ -88,9 +88,15 @@
 
             </table>
 
+            <a style="text-decoration: none" href="{{ url('/report/create')}}">
+                <button style="width: 5cm; margin-bottom:1cm; margin-top: 10px; margin-left:270px"
+                        class="btn btn-success btn-rounded">Back
+                </button>
+            </a>
+
             <!-- this button is to save the file-->
-{{--            <button class="greenbutton" onclick="window.print();" style="margin: 3%"><i class='fas fa-save'></i> Save to file--}}
-{{--            </button>--}}
+            {{--            <button class="greenbutton" onclick="window.print();" style="margin: 3%"><i class='fas fa-save'></i> Save to file--}}
+            {{--            </button>--}}
         </div>
 
 
@@ -130,11 +136,6 @@
                                                       href="{{ url('/report/create')}}">
                                     <img src="{{asset('assets/images/pen.png')}}" width="25" height="25"
                                          class="d-inline-block align-right">Generate Report</a></p>
-                        </li>
-                        <li class="nav-item">
-                            <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
-                                    <img src="{{asset('assets/images/survey.png')}}" width="25" height="25"
-                                         class="d-inline-block align-right">Modify Survey</a></p>
                         </li>
                         <li class="nav-item">
                             <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">

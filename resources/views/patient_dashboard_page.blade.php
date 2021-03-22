@@ -12,10 +12,10 @@
     -->
 </head>
 <body>
-    
+
 
 <section class="container-fluid">
-   
+
     @if(Session::has('message'))
     <p class="alert alert-info" style="text-align:center">{{ Session::get('message') }}</p>
     @endif
@@ -31,12 +31,12 @@
     <!-- The dashborad options in the center of the page-->
     <div>
     <ul class="lp">
-        <li><button class="block" onclick="location.href='/'" type="button"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Click here complete a survey.
+        <li><button class="block" onclick="location.href='form/create'" type="button"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Click here complete a survey.
             </button></li>
-        &nbsp;&nbsp;&nbsp;        
+        &nbsp;&nbsp;&nbsp;
         <li><button  class="block" onclick="location.href='/passwordchangepatient'" type="button"> <img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Change Password
             </button> </li>
-        &nbsp;&nbsp;&nbsp;             
+        &nbsp;&nbsp;&nbsp;
     </ul>
     </div>
 
@@ -57,7 +57,7 @@
                     </li>
                     <li class="nav-item">
                         <p class="text-center"><a class="text-center text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/')}}"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Complete Survey</a></p>
+                                                  href="{{ url('/form/create')}}"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Complete Survey</a></p>
                     </li>
                     <!-- Password Change Option-->
                     <li class="nav-item">
@@ -74,7 +74,7 @@
 
         </nav>
     </div>
-    
+
 
 
 </section>
