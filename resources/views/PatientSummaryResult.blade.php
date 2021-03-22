@@ -107,7 +107,7 @@
 <div style=" margin-top:2%; margin-left:16%">
     <p class="h3">Here is the patient summary for {{$Summary['FirstName']}} {{$Summary['LastName']}}</p>
 </div>
-<div style=" margin:17%; margin-top:3%;">
+<div style=" margin-left:17%; margin-top:3%;">
     <!-- text box -->
     <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
         id="exampleFormControlInput1"><strong>First Name: </strong>{{$Summary['FirstName']}}</h2>
@@ -125,7 +125,6 @@
         id="exampleFormControlInput1"><strong>Gender: </strong>{{$Summary['Gender']}}</h2>
 
     <!-- text box to show the condition -->
-    @isset($Condition)
     <div class="mb-1 row">
         <label for="inputLastName" class="col-sm-1 col-form-label " style="margin-top:0.3cm;">Condition:</label>
         <div class="col-sm-10">
@@ -133,7 +132,6 @@
                 id="exampleFormControlInput4">{{$Summary['Condition']}}</h2>
         </div>
     </div>
-    @endisset
 
     <!-- text box to show the Medication -->
     @isset($medications)
@@ -188,12 +186,7 @@
 
                     <div class="col-sm-3">
                         <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 150%;"
-                            id="exampleFormControlInput4">{{$Summary['HeightFeet']}}</h2>
-                    </div>
-
-                    <div class="col-sm-3">
-                        <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 150%;"
-                            id="exampleFormControlInput4">{{$Summary['HeightInches']}}</h2>
+                            id="exampleFormControlInput4">{{$Summary['Height']}} </h2>
                     </div>
                 </div>
             </div>
@@ -202,7 +195,7 @@
 </div>
 
 <!-- Area to show the Surveys -->
-<div style="position:absolute; margin-top: 20%; left:17%; top:20%;">
+<div style="position:absolute; margin-top:2%; left:17%;">
     @isset($responses)
         <h3>Submitted Surveys</h3>
         <table>
