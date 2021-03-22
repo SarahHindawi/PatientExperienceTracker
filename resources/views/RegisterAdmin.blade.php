@@ -8,9 +8,16 @@
           rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
           crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
+    <style>
+        #wrapper {
+            margin-left:auto;
+            margin-right:auto;
+            width:1519px;
+        }
+    </style>
 
 </head>
-
+<div id="wrapper">
 <!-- the body has the content of the page  -->
 <body>
 <!-- the navigation bar in the top-->
@@ -88,34 +95,43 @@
     </nav>
 </div>
 <!-- form to put the name, last name and email of the new admin-->
-<form style="width: 600px; margin-left:16cm; margin-top:7%">
+<form style="width: 600px; margin-left:16cm; margin-top:7%" method="post" action="{{ url('/adminregistration')}}">
+    @csrf
     <!-- text box for the new Admin First name-->
     <div class="mb-3 row">
-        <label for="inputFirstName" class="col-sm-2 col-form-label">First Name </label>
         <div class="col-sm-10">
-            <input type="text" style="width:10cm" class="form-control shadow-lg p-2 mb-3 bg-white rounded" id="inputFirstName">
+            {{Form::label('firstname', 'First Name')}}
+            {{Form::text('firstname', '' , ['class' => 'form-control', 'placeholder' => 'First Name'])}}
         </div>
     </div>
     <!-- text box for the new Admin Last name-->
     <div class="mb-3 row">
-        <label for="inputLastName" class="col-sm-2 col-form-label ">Last Name</label>
         <div class="col-sm-10">
-            <input type="text" style="width:10cm" class="form-control shadow-lg p-2 mb-3 bg-white rounded" id="inputLastName">
+            {{Form::label('lastname', 'Last Name')}}
+            {{Form::text('lastname', '' , ['class' => 'form-control', 'placeholder' => 'Last Name'])}}
         </div>
     </div>
-    <!-- text box for the new Admin Email-->
+    <!-- text box for the new Admin Password-->
     <div class="mb-3 row">
-        <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-10">
-            <input type="email" style="width:10cm" class="form-control shadow-lg p-2 mb-3 bg-white rounded" id="inputEmail">
+            {{Form::label('password', 'Password')}}
+            {{Form::text('password', '' , ['class' => 'form-control', 'placeholder' => 'Password'])}}
         </div>
     </div>
+        <div class="mb-3 row">
+            <div class="col-sm-10">
+                {{Form::label('email', 'Email')}}
+                {{Form::text('email', '' , ['class' => 'form-control', 'placeholder' => 'Email'])}}
+            </div>
+        </div>
     <!-- submit button-->
     <br><div style="margin-left:4cm">
-        <button style="width: 200px;" type="button" class="btn btn-success btn-rounded">Submit</button>
+            {{Form::submit('Submit' , ['class' => 'btn btn-primary'])}}
+            {!! Form::close() !!}
     </div>
 </form>
 
-</body>
 
+</body>
+</div>
 </html>
