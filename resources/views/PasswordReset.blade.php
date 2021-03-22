@@ -169,7 +169,7 @@
             @endforeach
         </ol>
 
-        <div style="margin-left: 300px; position:absolute; top:275px">
+        <div style="margin-left: 300px; position:absolute; top:205px">
 
             <!-- If there are no password reset requests, then don't print a list -->
             @if (count($patients) > 0)
