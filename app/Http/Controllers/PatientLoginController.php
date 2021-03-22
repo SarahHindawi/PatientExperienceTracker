@@ -52,8 +52,9 @@ class PatientLoginController extends Controller
             ->where('email', 'LIKE', $_POST["email"])
             ->where('password', 'LIKE', $_POST["password"])->count();
 
+
         if ($queryPatient != 0) {
-            //Auth::guard('patient')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')]);
+            Auth::guard('patient')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')]);
             return redirect('/');
         } else {
             return redirect('/patientlogin')->with('message', 'Invalid login details');
@@ -61,7 +62,8 @@ class PatientLoginController extends Controller
 
 
 //        if (!Auth::guard('patient')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
-//            return back()->with('status', 'Invalid login details');}
-        //return "SUCCESS";
+//            return redirect('/patientlogin')->with('message', 'Invalid login details');
+//        }
+//        return redirect('/');
     }
 }
