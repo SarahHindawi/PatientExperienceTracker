@@ -44,5 +44,6 @@ Route::get('/passwordchangeadmin', 'App\Http\Controllers\PasswordController@admi
 Route::post('/passwordchangeadminsave', 'App\Http\Controllers\PasswordController@adminsave');
 
 Route::get('/logout', 'App\Http\Controllers\LogoutController@logout');
-
+Route::post('/setpassword', 'App\Http\Controllers\PatientPasswordController@store');
+Route::get('/setpassword/create', 'App\Http\Controllers\PatientPasswordController@create');
 

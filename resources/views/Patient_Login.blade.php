@@ -13,7 +13,7 @@
 
 <body>
     @if(Session::has('message'))
-    <p class="alert alert-info"style="text-align:center">{{ Session::get('message') }}</p>
+    <p class="alert alert-info"style="text-align:center; height: 40px">{{ Session::get('message') }}</p>
     @endif
 
      <!-- The dashborad which has all the options for the admin. This dashboard is located in the side of the page-->
@@ -54,7 +54,7 @@
         <p class="text-center h1" style="color:seagreen">Welcome to Patient Experience Tracker</p>
         <p class="text-center h3">Enter your Email and Password to Login</p>
     </div>
-   
+
 
     <section class="row justify-content-center">
         <section class="col-12 col-sm-6 col-md-3">
