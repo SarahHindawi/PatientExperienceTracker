@@ -131,25 +131,34 @@
     <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
         id="exampleFormControlInput1"><strong>Gender: </strong>{{$Summary['Gender']}}</h2>
 
-    <!-- text box to show the condition -->
-    <div class="mb-1 row">
-        <label for="inputLastName" class="col-sm-1 col-form-label " style="margin-top:0.3cm;">Condition:</label>
-        <div class="col-sm-10">
-            <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 4.7cm;"
-                id="exampleFormControlInput4">{{$Summary['Condition']}}</h2>
-        </div>
-    </div>
+    <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
+        id="exampleFormControlInput4"><strong>Condition: </strong>{{$Summary['Condition']}}</h2>
 
-    <!-- text box to show the Medication -->
     @isset($medications)
-        <div class="mb-1 row">
-            <label for="inputLastName" class="col-sm-1 col-form-label " style="margin-top:0.3cm;">Medication:</label>
-            <div class="col-sm-10">
-                <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 4.7cm;"
-                    id="exampleFormControlInput4">{{$medications}}</h2>
-            </div>
-        </div>
+    <h2 class="form-control shadow-lg" style="margin-top:0.3cm;width: 7cm;"
+        id="exampleFormControlInput4"><strong>Medication: </strong>{{$medications}}</h2>
     @endisset
+
+
+<!-- text box to show the condition -->
+{{--   <div class="mb-1 row">--}}
+{{--        <label for="inputLastName" class="col-sm-1 col-form-label " style="margin-top:0.3cm;">Condition:</label>--}}
+{{--        <div class="col-sm-10">--}}
+{{--            <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 4.7cm;"--}}
+{{--                id="exampleFormControlInput4">{{$Summary['Condition']}}</h2>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+
+{{--    <!-- text box to show the Medication -->--}}
+{{--    @isset($medications)--}}
+{{--        <div class="mb-1 row">--}}
+{{--            <label for="inputLastName" class="col-sm-1 col-form-label " style="margin-top:0.3cm;">Medication:</label>--}}
+{{--            <div class="col-sm-10">--}}
+{{--                <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 4.7cm;"--}}
+{{--                    id="exampleFormControlInput4">{{$medications}}</h2>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    @endisset--}}
 
     <div style=" position:absolute;  left:38%; top:22%; ">
         <!-- card that have an image and text box to show the weight -->
