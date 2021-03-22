@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
+use Illuminate\Support\Facades\Hash;
 
 class PasswordController extends Controller
 {
@@ -14,14 +15,14 @@ class PasswordController extends Controller
     {
 
         //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
-//        if(!Auth::guard('admin')->check()){
-//
-//           if(Auth::guard('patient')->check()){
-//                //If Patient logged in Redirect to Patient Dashboard.
-//                return redirect('/');
-//           }
-//           return redirect('/adminlogin');
-//        }
+        if(!Auth::guard('admin')->check()){
+
+           if(Auth::guard('patient')->check()){
+                //If Patient logged in Redirect to Patient Dashboard.
+               return redirect('/');
+           }
+           return redirect('/adminlogin');
+       }
 
         //get a list of the patients that submitted a request to reset their password
         $passwordResetRequests = Patient::select(['FirstName', 'LastName', 'Email'])->where("PasswordReset", "true")->get();
@@ -40,14 +41,14 @@ class PasswordController extends Controller
     {
 
         //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
-//        if(!Auth::guard('admin')->check()){
-//
-//            if(Auth::guard('patient')->check()){
-//                //If Patient logged in Redirect to Patient Dashboard.
-//                return redirect('/');
-//           }
-//           return redirect('/adminlogin');
-//        }
+        if(!Auth::guard('admin')->check()){
+
+            if(Auth::guard('patient')->check()){
+                //If Patient logged in Redirect to Patient Dashboard.
+                return redirect('/');
+           }
+           return redirect('/adminlogin');
+        }
 
         if (!isset($_POST['data'])) {
             return view("Admin_dashboard_page");
@@ -84,5 +85,100 @@ class PasswordController extends Controller
         }
 
         return view("Admin_dashboard_page");
+    }
+
+    public function patientchange(){
+
+          //Check if Patient is logged in.
+        if(!Auth::guard('patient')->check()){
+            if(Auth::guard('admin')->check()){
+                return redirect('/');
+            }            
+            return redirect('/')->with('message', 'No user logged in.');            
+        }
+
+        return view('patient_password_change');
+    }
+
+    public function patientsave(Request $request){
+          
+        //Check if Patient is logged in.
+           if(!Auth::guard('patient')->check()){
+            if(Auth::guard('admin')->check()){
+                return redirect('/');
+            }            
+            return redirect('/')->with('message', 'No user logged in.');            
+        }
+
+        
+        
+        //Password Requirements and Confirmation.
+        $this->validate($request, [
+            'currentpass' => 'required',          
+            'password' => 'required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',
+            'password2' => 'same:password',            
+        ]);
+
+        //As user is currently logged in get the currently authenticated user and change their password.
+        $currentUser = Auth::guard('patient')->user();
+        $currentEmail = $currentUser->email;
+
+        if(!Auth::guard('patient')->validate(['email' => $currentEmail , 'password' => $request->input('currentpass')])){
+            return redirect('/passwordchangepatient')->with('message', 'Current Password is incorrect.');
+        }
+
+        $currentUser->password = Hash::make($request->input('password'));
+        $currentUser->save();
+        
+        //Redirect to dash with success message.
+        return redirect('/')->with('message', 'Password changed successfully.');
+    }
+
+    public function adminchange(){
+
+          //Check if Admin is logged in.
+          if(!Auth::guard('admin')->check()){
+            if(Auth::guard('patient')->check()){
+                return redirect('/');
+            }            
+            return redirect('/')->with('message', 'No user logged in.');            
+        }
+
+        return view('admin_password_change');
+
+
+    }
+
+    public function adminsave(Request $request){
+    //Check if Admin is logged in.
+    if(!Auth::guard('admin')->check()){
+        if(Auth::guard('patient')->check()){
+            return redirect('/');
+        }            
+        return redirect('/')->with('message', 'No user logged in.');            
+    }
+
+    
+    
+    //Password Requirements and Confirmation.
+    $this->validate($request, [
+        'currentpass' => 'required',          
+        'password' => 'required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',
+        'password2' => 'same:password',            
+    ]);
+
+    //As user is currently logged in get the currently authenticated user and change their password.
+    $currentUser = Auth::guard('admin')->user();
+    $currentEmail = $currentUser->email;
+
+    if(!Auth::guard('admin')->validate(['email' => $currentEmail , 'password' => $request->input('currentpass')])){
+        return redirect('/passwordchangepatient')->with('message', 'Current Password is incorrect.');
+    }
+
+    $currentUser->password = Hash::make($request->input('password'));
+    $currentUser->save();
+    
+    //Redirect to dash with success message.
+    return redirect('/')->with('message', 'Password changed successfully.');
     }
 }

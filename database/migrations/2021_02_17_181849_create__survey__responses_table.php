@@ -16,9 +16,9 @@ class CreateSurveyResponsesTable extends Migration
         Schema::create('SURVEY_RESPONSES', function (Blueprint $table) {
             $table->id();
             $table->string('Email');
-            $table->date('DateCompleted');
-            $table->unique(['Email', 'DateCompleted']);
+            $table->date('DateCompleted');            
             $table->string('SurveyName');
+            $table->unique(['Email', 'DateCompleted', 'SurveyName']);
             $table->string('FirstName');
             $table->string('LastName');            
             $table->json('Responses');            

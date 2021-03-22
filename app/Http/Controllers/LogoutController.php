@@ -10,10 +10,10 @@ class LogoutController extends Controller
 {
    
 
-    public function debuglogout(Request $request){
+    public function logout(Request $request){
         
            
-        //Logout function without page to redirect.
+        //Logout function or either user type. All usertypes logged out by this function.
        
         Auth::guard('admin')->logout();
         $request->session()->invalidate();
@@ -21,11 +21,7 @@ class LogoutController extends Controller
         
         Auth::guard('patient')->logout();
         $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        //Line to test Patient Auth without implemented Patient Login page.
-        //Auth::guard('patient')->attempt(['email' => 'testpatientone@test.ca' , 'password' => 'patientOne']);
-         
+        $request->session()->regenerateToken();          
 
         return redirect('/');    
     }

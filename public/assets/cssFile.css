@@ -105,10 +105,6 @@
     left: 50%;
 }
 
-
-
-
-
 ul {
     column-count: 2;
     column-gap: 2rem;
@@ -120,5 +116,29 @@ ul {
 .size img {
     width: 60%;
     height: auto;
+}
+
+.dash {
+    width: calc(100% - 200px);
+    position: absolute;
+    left: 200px;
+}
+
+.dashcontainer {
+    width: calc(100% - 200px);
+    position: absolute;
+    left: 200px;
+    top: 100px
+}
+
+.guestelement {
+    position: absolute;
+    outline-style: solid;
+    outline-color:rgb(0 , 0 , 0);
+    width: 250px;
+    height: 50px;     
+}
+.guestelementtext {
+    padding-left:25px;
 }
 
