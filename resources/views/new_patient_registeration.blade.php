@@ -163,7 +163,7 @@
         @endforeach
     </ol>
 
-    <div style="left:700px; position:absolute; top:275px">
+    <div style="margin-left: 300px; position:absolute; top:275px">
 
         <form name="acceptanceForm" method="post" action="/accept" enctype="multipart/form-data" class="lp">
             @csrf
@@ -187,7 +187,7 @@
                 @endforeach
             </ol>
 
-            <button style="width: 5cm; margin:-8cm"type="submit"
+            <button style="width: 5cm; margin-top: 8px; margin-left: -60px"type="submit"
                     class="btn btn-success btn-rounded">Save
             </button>
         </form>

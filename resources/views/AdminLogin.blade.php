@@ -20,6 +20,9 @@
 <div id="wrapper">
 
 <body>
+@if(Session::has('message'))
+    <p class="alert alert-info"style="text-align:center; height: 40px">{{ Session::get('message') }}</p>
+@endif
 
 <section class="container-fluid">
     <!-- the title in the top middle of the page -->
@@ -37,10 +40,10 @@
                 <ul class="nav flex-column" style="width:100%">
                     <!-- the Dashboard options-->
                     <!-- Home Option-->
-                    <li class="nav-item">                        
+                    <li class="nav-item">
                         <p class="text-center"><a class="text-center text-dark nav-link active" aria-current="page"
                                                   href="{{ url('/')}}"><img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right">Home</a></p>
-                    </li>            
+                    </li>
                     <!-- Sign Up option-->
                     <li class="nav-item">
                         <p class="text-center"><a class="text-center text-dark nav-link active" aria-current="page"

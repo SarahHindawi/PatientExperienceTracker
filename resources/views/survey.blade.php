@@ -36,7 +36,7 @@
 <div style=" margin-top:2%; margin-left:10%">
     <h3 style="color:seagreen; text-align:center;">Patient Experience Tracker</h3>
     <p class="text-center h2">PREM SURVEY</p>
-    <p style="text-align:center; color:red" ;>Please Fill the form corretcly and press Submit</p>
+    <p style="text-align:center; color:red" ;>Please Fill the form correctly and press Submit</p>
 </div>
 
 
@@ -70,7 +70,7 @@
     </nav>
 </div>
 
-<form name="surveyForm" method="post" action="/form" enctype="multipart/form-data">
+<form name="surveyForm" method="post" action="/form" enctype="multipart/form-data" style="margin-left: -10%">
     <br style="line-height:100;">
 
     @csrf
