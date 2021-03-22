@@ -24,36 +24,43 @@
             </button>
             <!-- the option of the drop down button-->
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <li><button class="dropdown-item" type="button">Action</button></li>
-                <li><button class="dropdown-item" type="button">Another action</button></li>
-                <li><button class="dropdown-item" type="button">Something else here</button></li>
+                <li>
+                    <button class="dropdown-item" type="button">Action</button>
+                </li>
+                <li>
+                    <button class="dropdown-item" type="button">Another action</button>
+                </li>
+                <li>
+                    <button class="dropdown-item" type="button">Something else here</button>
+                </li>
             </ul>
         </form>
     </div>
 </nav>
 <!-- the title in the top middle of the page -->
 <div style=" margin-top:4%; margin-left:-1cm">
-    <p class="text-center h4">Here you can change the password on your account.</p>
+    <p class="text-center h4">Here you can change the password of your account.</p>
     <p class="text-center h4">See password rules below</p>
 </div>
 
 <!-- the form where patient have to change the password-->
-<form>
+<form method="post" action="/setpassword" enctype="multipart/form-data">
+    @csrf
     <div style="width: 550px; margin-left:4cm; margin-top:6%">
         <!-- the box for new password-->
         <div class="mb-7 row">
             <label for="inputFirstName" class="col-sm-4 col-form-label">New Password: </label>
             <div class="col-sm-5">
                 <input type="password" style="width:7cm" class="form-control shadow-lg p-2 mb-3 bg-white rounded"
-                       id="inputFirstName">
+                       id="newPassword" name="newPassword">
             </div>
         </div>
-        <!-- the box for new password conformation -->
+        <!-- the box for new password confirmation -->
         <div class="mb-7 row">
             <label for="inputFirstName" class="col-sm-4 col-form-label">Confirm New Password: </label>
             <div class="col-sm-5">
                 <input type="password" style="width:7cm" class="form-control shadow-lg p-2 mb-3 bg-white rounded"
-                       id="inputFirstName">
+                       id="confirmPassword">
             </div>
         </div>
     </div>
@@ -64,18 +71,17 @@
             <h6 class="card-subtitle mb-2 text-muted">Password needs to be between 8 and 20 charachters</h6>
             <br><br>
             <h6 class="card-subtitle mb-2 text-muted">Password Must Contain:</h6>
-            <h6 class="card-subtitle mb-2 text-muted">-Rule 1</h6>
-            <h6 class="card-subtitle mb-2 text-muted">-Rule 2</h6>
-            <h6 class="card-subtitle mb-2 text-muted">-Rule 3</h6>
+            <h6 class="card-subtitle mb-2 text-muted">-At least one lowercase letter</h6>
+            <h6 class="card-subtitle mb-2 text-muted">-At least one uppercase letter</h6>
+            <h6 class="card-subtitle mb-2 text-muted">-At least one digit</h6>
         </div>
     </div>
     <br><br>
     <!-- the submit button-->
     <div style="margin-left:18cm;">
-        <button style="width: 200px;" type="button" class="btn btn-success btn-rounded">Submit</button>
+        <button style="width: 200px;" type="submit" class="btn btn-success btn-rounded">Submit</button>
     </div>
 </form>
-
 
 
 </body>

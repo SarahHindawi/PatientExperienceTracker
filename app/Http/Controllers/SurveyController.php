@@ -44,12 +44,12 @@ class SurveyController extends Controller
      */
     public function store()
     {
-        if(!Auth::guard('patient')->check()){
-            if(Auth::guard('admin')->check()){
-                //TODO redirect to Admin Dashbaord with unauthorized message.
-            }
-            return redirect('/patientlogin');
-        }
+//        if(!Auth::guard('patient')->check()){
+//            if(Auth::guard('admin')->check()){
+//                //TODO redirect to Admin Dashbaord with unauthorized message.
+//            }
+//            return redirect('/patientlogin');
+//        }
 
         //the fields of the table: id, Email, DateCompleted, SurveyName, FirstName, LastName, Responses
 
@@ -66,7 +66,7 @@ class SurveyController extends Controller
 
         $survey_response = new SURVEY_RESPONSES;
 
-        $survey_response->Email = "testpatientOne@test.ca"; //the same email is allowed to submit the same survey only once a day
+        $survey_response->Email = "testpatientotwo@test.ca"; //the same email is allowed to submit the same survey only once a day
         $survey_response->DateCompleted = date("Y-m-d");
         $survey_response->SurveyName = "IBDPREM_One";
         $survey_response->FirstName = "John";
@@ -75,6 +75,6 @@ class SurveyController extends Controller
 
         $survey_response->save();
 
-        return view("Thank you for submitting the survey!");
+        return "Thank you for submitting the survey!";
     }
 }

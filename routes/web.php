@@ -36,13 +36,12 @@ Route::post('/report', 'App\Http\Controllers\ReportController@store');
 Route::get('/report/create', 'App\Http\Controllers\ReportController@create');
 Route::post('/accept', 'App\Http\Controllers\AcceptanceController@store');
 Route::get('/accept/create', 'App\Http\Controllers\AcceptanceController@create');
-Route::post('/passwordreset', 'App\Http\Controllers\PasswordController@store');
-Route::get('/passwordreset/create', 'App\Http\Controllers\PasswordController@create');
 Route::get('/passwordchangepatient', 'App\Http\Controllers\PasswordController@patientchange');
 Route::post('/passwordchangepatientsave', 'App\Http\Controllers\PasswordController@patientsave');
 Route::get('/passwordchangeadmin', 'App\Http\Controllers\PasswordController@adminchange');
 Route::post('/passwordchangeadminsave', 'App\Http\Controllers\PasswordController@adminsave');
 
 Route::get('/logout', 'App\Http\Controllers\LogoutController@logout');
-
+Route::post('/setpassword', 'App\Http\Controllers\PatientPasswordController@store');
+Route::get('/setpassword/create', 'App\Http\Controllers\PatientPasswordController@create');
 
