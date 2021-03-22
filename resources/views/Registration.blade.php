@@ -94,7 +94,7 @@
                 
              <div class="form-group">    
              {{Form::label('height', 'Height (cm )')}}           
-             {{Form::number('height', '' , ['class' => 'form-control', 'placeholder' => 'Feet'])}}                              
+             {{Form::number('height', '' , ['class' => 'form-control', 'placeholder' => '(cm)'])}}                              
              <br>
 
 

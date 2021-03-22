@@ -48,20 +48,18 @@ class PatientLoginController extends Controller
             'password' => 'required',
         ]);
 
-        $queryPatient = DB::table('Patient_Profile')
-            ->where('email', 'LIKE', $_POST["email"])
-            ->where('password', 'LIKE', $_POST["password"])->count();
 
-        if ($queryPatient != 0) {
-            //Auth::guard('patient')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')]);
-            return redirect('/');
-        } else {
+        //Check if Registration has been accepted if not redirect to'/' with alert.
+        $acceptanceCheck = Patient::select('NewAccount')->where('email', $request->input('email'))->first();
+        
+        
+        if($acceptanceCheck['NewAccount']){
+            return redirect('/')->with('message', 'Account registration not yet reviewed.');
+        }    
+        //Attempt auth if password is incorrect redirect bacsk to page.
+        if (!Auth::guard('patient')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
             return redirect('/patientlogin')->with('message', 'Invalid login details');
+        } 
+        return redirect('/');
         }
-
-
-//        if (!Auth::guard('patient')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
-//            return back()->with('status', 'Invalid login details');}
-        //return "SUCCESS";
-    }
 }
