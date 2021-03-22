@@ -81,9 +81,7 @@ class PatientRegistrationController extends Controller
         $patient->Height = $request->input('height');        
         $patient->Gender = $request->input('gender');
         $patient->Condition = $conditionValue;
-        $patient->Medications = json_encode($request->input('medication'));
-        $randomNumber = mt_rand(1000,9999);
-        $patient->EmailValidated = $randomNumber;
+        $patient->Medications = json_encode($request->input('medication'));        
 
         $patient->save();
 
