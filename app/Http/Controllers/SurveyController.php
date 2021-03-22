@@ -30,7 +30,7 @@ class SurveyController extends Controller
         }
 
         //TODO get selected survey name
-        $surveyName = "IBDPREM_Two";
+        $surveyName = "IBDPREM_One";
 
         //check whether the patient has already submitted the survey on the same day
         $responses = DB::table('Survey_Responses')
