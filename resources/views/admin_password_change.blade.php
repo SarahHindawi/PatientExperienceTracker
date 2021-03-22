@@ -115,12 +115,12 @@
      <div class="card panel-body shadow p-3"
           style="width: 25rem;height: 15rem;;margin-left: 29cm; margin-top: -6cm;">
          <div class="card-body">
-             <h6 class="card-subtitle mb-2 text-muted">Password needs to be between 6 and 20 charachters</h6>
+             <h6 class="card-subtitle mb-2 text-muted">Password needs to be between 6 and 20 characters</h6>
              <br><br>
              <h6 class="card-subtitle mb-2 text-muted">Password Must Contain:</h6>
              <h6 class="card-subtitle mb-2 text-muted">-At least 1 Uppercase Letter</h6>
              <h6 class="card-subtitle mb-2 text-muted">-At least 1 Lowercase Letter</h6>
-             <h6 class="card-subtitle mb-2 text-muted">-At Least 1 Number</h6>
+             <h6 class="card-subtitle mb-2 text-muted">-At least 1 Number</h6>
          </div>
      </div>
      <br><br>

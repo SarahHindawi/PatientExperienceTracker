@@ -35,68 +35,70 @@
 
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid" style="height: 30px; width: 800px">
-{{--                <a class="navbar-brand" href="#">Default</a>--}}
-{{--                <form class="d-flex">--}}
-{{--                    <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button"--}}
-{{--                            id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">--}}
-{{--                        <!-- The drop down button for the user with many options-->--}}
-{{--                        <i class="fa fa-user"></i> Mystery Admin--}}
-{{--                    </button>--}}
-{{--                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">--}}
-{{--                        <li>--}}
-{{--                            <button class="dropdown-item" type="button">Action</button>--}}
-{{--                        </li>--}}
-{{--                        <li>--}}
-{{--                            <button class="dropdown-item" type="button">Another action</button>--}}
-{{--                        </li>--}}
-{{--                        <li>--}}
-{{--                            <button class="dropdown-item" type="button">Something else here</button>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </form>--}}
+                {{--                <a class="navbar-brand" href="#">Default</a>--}}
+                {{--                <form class="d-flex">--}}
+                {{--                    <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button"--}}
+                {{--                            id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">--}}
+                {{--                        <!-- The drop down button for the user with many options-->--}}
+                {{--                        <i class="fa fa-user"></i> Mystery Admin--}}
+                {{--                    </button>--}}
+                {{--                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">--}}
+                {{--                        <li>--}}
+                {{--                            <button class="dropdown-item" type="button">Action</button>--}}
+                {{--                        </li>--}}
+                {{--                        <li>--}}
+                {{--                            <button class="dropdown-item" type="button">Another action</button>--}}
+                {{--                        </li>--}}
+                {{--                        <li>--}}
+                {{--                            <button class="dropdown-item" type="button">Something else here</button>--}}
+                {{--                        </li>--}}
+                {{--                    </ul>--}}
+                {{--                </form>--}}
             </div>
         </nav>
         <!--The page header -->
-        <p class="text-center h2">Report Result</p>
+        <div id="wrapper">
+            <p class="text-center h2">Report Result</p>
 
 
-        <div class="cent" style="margin-top: -36%">
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Email Address</th>
-                    @foreach ($questions as $q)
-                        <th>{{$q["Text"]}}</th>
-                    @endforeach
-                </tr>
-
-
-                @foreach ($emails as $p)
+            <div class="cent" style="margin-top: -566px">
+                <table>
                     <tr>
-                        <td>{{ $names[$loop->index] }}</td>
-                        <td>{{ $emails[$loop->index] }}</td>
+                        <th>Name</th>
+                        <th>Email Address</th>
                         @foreach ($questions as $q)
-                            @if(array_key_exists($q['Text'],$responses[$loop->parent->index]))
-                                <td>{{$responses[$loop->parent->index][$q['Text']]}}</td>
-                            @else
-                                <td>N/A</td>
-
-                            @endif
+                            <th>{{$q["Text"]}}</th>
                         @endforeach
                     </tr>
-                @endforeach
 
-            </table>
 
-            <a style="text-decoration: none" href="{{ url('/report/create')}}">
-                <button style="width: 5cm; margin-bottom:1cm; margin-top: 10px; margin-left:270px"
-                        class="btn btn-success btn-rounded">Back
-                </button>
-            </a>
+                    @foreach ($emails as $p)
+                        <tr>
+                            <td>{{ $names[$loop->index] }}</td>
+                            <td>{{ $emails[$loop->index] }}</td>
+                            @foreach ($questions as $q)
+                                @if(array_key_exists($q['Text'],$responses[$loop->parent->index]))
+                                    <td>{{$responses[$loop->parent->index][$q['Text']]}}</td>
+                                @else
+                                    <td>N/A</td>
 
-            <!-- this button is to save the file-->
-            {{--            <button class="greenbutton" onclick="window.print();" style="margin: 3%"><i class='fas fa-save'></i> Save to file--}}
-            {{--            </button>--}}
+                                @endif
+                            @endforeach
+                        </tr>
+                    @endforeach
+
+                </table>
+
+                <a style="text-decoration: none; margin-left: 25px" href="{{ url('/report/create')}}">
+                    <button style="width: 5cm; margin-bottom:1cm; margin-top: 10px; margin-left:270px"
+                            class="btn btn-success btn-rounded">Back
+                    </button>
+                </a>
+
+                <!-- this button is to save the file-->
+                {{--            <button class="greenbutton" onclick="window.print();" style="margin: 3%"><i class='fas fa-save'></i> Save to file--}}
+                {{--            </button>--}}
+            </div>
         </div>
 
 
@@ -109,24 +111,34 @@
                     <ul class="nav flex-column" style="width:100%">
                         <li class="nav-item">
                             <!-- the Dashboard options-->
-                            <p class="text-center"><a class="text-dark nav-link active" aria-current="page"  href="{{ url('/')}}" >
-                                    <img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right">Dashboard</a></p>
+                            <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
+                                                      href="{{ url('/')}}">
+                                    <img src="{{asset('assets/images/Home.png')}}" width="25" height="25"
+                                         class="d-inline-block align-right">Dashboard</a></p>
                         </li>
                         <li class="nav-item">
-                            <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/accept/create')}}" >
-                                    <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">Patient Registration</a></p>
+                            <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
+                                                      href="{{ url('/accept/create')}}">
+                                    <img src="{{asset('assets/images/request.png')}}" width="25" height="25"
+                                         class="d-inline-block align-right">Patient Registration</a></p>
                         </li>
                         <li class="nav-item">
-                            <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/passwordreset/create')}}">
-                                    <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">Password Reset</a></p>
+                            <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
+                                                      href="{{ url('/passwordreset/create')}}">
+                                    <img src="{{asset('assets/images/request.png')}}" width="25" height="25"
+                                         class="d-inline-block align-right">Password Reset</a></p>
                         </li>
                         <li class="nav-item">
-                            <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/profilesearch')}}">
-                                    <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right">Patient Summary</a></p>
+                            <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
+                                                      href="{{ url('/profilesearch')}}">
+                                    <img src="{{asset('assets/images/pen.png')}}" width="25" height="25"
+                                         class="d-inline-block align-right">Patient Summary</a></p>
                         </li>
                         <li class="nav-item">
-                            <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/report/create')}}">
-                                    <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right">Generate Report</a></p>
+                            <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
+                                                      href="{{ url('/report/create')}}">
+                                    <img src="{{asset('assets/images/pen.png')}}" width="25" height="25"
+                                         class="d-inline-block align-right">Generate Report</a></p>
                         </li>
                     <!-- Comment Out due to not MVP
                     <li class="nav-item">
@@ -135,8 +147,10 @@
                     </li>
                     -->
                         <li class="nav-item">
-                            <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{url('/passwordchangeadmin')}}">
-                                    <img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Change Password</a></p>
+                            <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
+                                                      href="{{url('/passwordchangeadmin')}}">
+                                    <img src="{{asset('assets/images/key.png')}}" width="25" height="25"
+                                         class="d-inline-block align-right">Change Password</a></p>
                         </li>
                     <!-- Comment Out Due to not MVP
                     <li class="nav-item">
@@ -147,7 +161,9 @@
                         <!--Logout Option-->
                         <li class="nav-item">
                             <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
-                                                      href= "{{ url('/logout')}}" ><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Logout</a></p>
+                                                      href="{{ url('/logout')}}"><img
+                                        src="{{asset('assets/images/key.png')}}" width="25" height="25"
+                                        class="d-inline-block align-right">Logout</a></p>
                         </li>
                     </ul>
                 </div>

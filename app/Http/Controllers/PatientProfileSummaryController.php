@@ -16,14 +16,14 @@ class PatientProfileSummaryController extends Controller
     {
 
         //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
-//        if(!Auth::guard('admin')->check()){
-//
-//            if(Auth::guard('patient')->check()){
-//                //If Patient logged in Redirect to Patient Dashboard.
-//                return redirect('/');
-//            }
-//            return redirect('/adminlogin');
-//        }
+        if(!Auth::guard('admin')->check()){
+
+            if(Auth::guard('patient')->check()){
+                //If Patient logged in Redirect to Patient Dashboard.
+                return redirect('/');
+            }
+            return redirect('/adminlogin');
+        }
 
         $data = Patient::paginate(10);
         return view('ProfileSummary')->with('data', $data);

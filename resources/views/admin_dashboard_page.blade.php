@@ -29,7 +29,7 @@
     @endif
 
 
-    <p class="text-center fs-2" style="color:seagreen">Hello {{Auth::guard('admin')->user()->FirstName}}</p>
+    <p class="text-center h2" style="color:seagreen; margin-top: 15px">Hello {{Auth::guard('admin')->user()->FirstName}}</p>
 
 
     <p class="text-center h6" style="text-align:center">Here are your administration options </p>
@@ -38,7 +38,7 @@
 
     <!-- The dashboard options in the center of the page-->
 
-    <ul class="lp">
+    <ul class="lp" style="margin-left: 260px">
         <li><button class="block button button1" onclick="location.href='/accept/create'" type="button"><span><img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right"> New Patient Registration<br> Click here to review</span>
             </button></li>
         &nbsp;&nbsp;&nbsp;
@@ -53,7 +53,7 @@
         <li><a href=""></a> <button  class="block button button1" onclick="location.href='admin_reset_password'"><span> <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify Survey Add or Remove Questions</span></button></li>
         &nbsp;&nbsp;&nbsp;
         -->
-        <li><a href=""></a> <button class="block button button1" onclick="location.href='/passwordchangeadmin'"><span><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Change Your Password</button></li>
+        <li><a href=""></a> <button class="block button button1" onclick="location.href='/passwordchangeadmin'"><span><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Change Your Password</span></button></li>
         &nbsp;&nbsp;&nbsp;
         <!-- Commented out due to not MVP
         <li><a href=""></a> <button  class="block button button1" onclick="location.href='admin_reset_password'"><span> <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right"> ADMIN Help</span></button></li>
