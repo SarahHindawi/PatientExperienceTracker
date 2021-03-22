@@ -44,6 +44,14 @@ class PatientLoginController extends Controller
             'password' => 'required',
         ]);
 
+        //Check if Registration has been accepted if not redirect to'/' with alert.
+        $acceptanceCheck = Patient::select('NewAccount')->where('email', $request->input('email'))->first();
+        
+        
+        if($acceptanceCheck['NewAccount']){
+            return redirect('/')->with('message', 'Account registration not yet reviewed.');
+        }
+
 
         if(!Auth::guard('patient')->attempt(['email' => $request->input('email') , 'password' => $request->input('password')])) {
             return redirect('/patientlogin')->with('message', 'Invalid login details');
