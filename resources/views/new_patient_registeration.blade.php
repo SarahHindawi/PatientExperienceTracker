@@ -208,7 +208,7 @@
                     </button>
                 </form>
             @else
-                <h5 style="margin-left: 277px; color: red">There are no password reset requests </h5>
+                <h5 style="margin-left: 277px; color: red">There are no new registered patients </h5>
             @endif
         </div>
 
