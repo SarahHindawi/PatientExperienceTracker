@@ -126,7 +126,7 @@
         </div>
     <!-- submit button-->
     <br><div style="margin-left:4cm">
-            {{Form::submit('Submit' , ['class' => 'btn btn-primary'])}}
+            {{Form::submit('Submit' , ['class' => 'btn btn-success btn-rounded'])}}
             {!! Form::close() !!}
     </div>
 </form>
