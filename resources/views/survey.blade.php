@@ -35,7 +35,7 @@
 
 <div style=" margin-top:2%; margin-left:10%">
     <h3 style="color:seagreen; text-align:center;">Patient Experience Tracker</h3>
-    <p class="text-center h2">PREM SURVEY</p>
+    <p class="text-center h2">{{$name}} SURVEY</p>
     <p style="text-align:center; color:red" ;>Please Fill the form correctly and press Submit</p>
 </div>
 
@@ -101,11 +101,11 @@
                 <br>
                 <br> <br>
 
-            @elseif ($q["Type"]  == "Radio")
+            @elseif ($q["Type"]  == "RadioButtons")
 
                 @foreach(explode(",",$q['PossibleResponses']) as $option)
                     <input type="radio" name="{{$q["Text"]}}" value="{{$option}}">
-                        <label>{{$option}}</label>
+                        <label>{{$option}}</label>&nbsp;&nbsp;&nbsp;
                 @endforeach
                 <br>
                 <br> <br>
@@ -115,10 +115,10 @@
                 <br>
                 <br> <br>
 
-            @elseif ($q["Type"]  == "TextArea")
+            @elseif ($q["Type"]  == "FreeText")
                 <div class="mb-3">
-                    <div class="form-check form-check-inline" style=" margin-left: 310px">
-                        <textarea class="form-control" name="{{$q["Text"]}}" rows="3"></textarea>
+                    <div class="form-check form-check-inline" style=" margin-left: -10px">
+                        <textarea class="form-control" name="{{$q["Text"]}}" rows="3" cols="300"></textarea>
                     </div>
                 </div>
                 <br> <br>

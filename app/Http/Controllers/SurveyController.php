@@ -30,12 +30,13 @@ class SurveyController extends Controller
         }
 
         //TODO get selected survey name
-        $surveyName = "IBDPREM_One";
+        $surveyName = "IBDPREM_Two";
 
         //check whether the patient has already submitted the survey on the same day
         $responses = DB::table('Survey_Responses')
             ->where('Email', 'LIKE', Auth::guard('patient')->user()->email)
-            ->where('DateCompleted', 'LIKE', date("Y-m-d"))->count();
+            ->where('DateCompleted', 'LIKE', date("Y-m-d"))
+            ->where('SurveyName', 'LIKE', $surveyName)->count();
 
         if ($responses > 0) {
             return redirect('/')->with('message', 'Sorry, you cannot resubmit the survey on the same day.');
@@ -45,7 +46,8 @@ class SurveyController extends Controller
         $survey = Survey_Questions::query()->where("SurveyName", $surveyName)->first();
         $surveyArray = json_decode($survey, true);
         $surveyArray = json_decode($surveyArray["SurveyQuestions"], true);
-        return view('survey', ["questions" => $surveyArray]);
+
+        return view('survey', ["questions" => $surveyArray, "name" => $surveyName]);
     }
 
 
