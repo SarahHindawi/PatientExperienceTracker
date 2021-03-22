@@ -41,7 +41,7 @@
     </div>
 
 
-    <!-- The dashborad which has all the options for the Patient. This dashboard is located in the side of the page-->
+    <!-- The dashboarad which has all the options for the Patient. This dashboard is located in the side of the page-->
     <div class="msb" id="msb">
         <p class="text-center fs-2">PET</p>
 

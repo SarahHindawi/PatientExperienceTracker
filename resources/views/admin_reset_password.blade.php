@@ -25,17 +25,17 @@
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Default</a>
-            <form class="d-flex">
-                <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-user"></i> Mystery Admin
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <li><button class="dropdown-item" type="button">Action</button></li>
-                    <li><button class="dropdown-item" type="button">Another action</button></li>
-                    <li><button class="dropdown-item" type="button">Something else here</button></li>
-                </ul>
-            </form>
+{{--            <a class="navbar-brand" href="#">Default</a>--}}
+{{--            <form class="d-flex">--}}
+{{--                <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">--}}
+{{--                    <i class="fa fa-user"></i> Mystery Admin--}}
+{{--                </button>--}}
+{{--                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">--}}
+{{--                    <li><button class="dropdown-item" type="button">Action</button></li>--}}
+{{--                    <li><button class="dropdown-item" type="button">Another action</button></li>--}}
+{{--                    <li><button class="dropdown-item" type="button">Something else here</button></li>--}}
+{{--                </ul>--}}
+{{--            </form>--}}
         </div>
     </nav>
 
@@ -46,10 +46,10 @@
 
     <p>Default list:</p>
 
-    <!-- The dashborad options in the centere of the page-->
+    <!-- The dashboard options in the centere of the page-->
 
     <ul class="lp">
-        <li><button class="block" onclick="location.href='new_patient_registeration'" type="button"><i class='fas fa-user-plus'></i> New Patient Registeration Click here to review
+        <li><button class="block" onclick="location.href='new_patient_registeration'" type="button"><i class='fas fa-user-plus'></i> New Patient Registration Click here to review
             </button></li>
         &nbsp;&nbsp;&nbsp;
         <li><button  class="block" onclick="location.href='admin_reset_password'" type="button"> <i class='fas fa-user-lock'></i> Patient Password Reset Requests. Click here to review
