@@ -15,18 +15,18 @@
  <!-- the navigation bar in the top-->
     @if(Session::has('message'))
     <p class="alert alert-info"style="text-align:center">{{ Session::get('message') }}</p>
-    @endif 
+    @endif
  <!-- the title in the top middle of the page -->
- <div style=" margin-top:4%"">
+ <div style=" margin-top:4%">
      <p class="text-center h4">Here you can change the password on your account.</p>
      <p class="text-center h4">See password rules below</p>
  </div>
- 
- 
+
+
  <!-- the Dashboard of the page that has different options-->
  <div class="msb" id="msb">
      <p class="text-center fs-2">PET</p>
-     
+
          <div class="btn-group-vertical" style=" margin-top:15%; width:100%">
              <ul class="nav flex-column" style="width:100%">
                  <!-- the Dashboard options-->
@@ -51,7 +51,7 @@
                                               href= "{{ url('/logout')}}" ><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Logout</a></p>
                 </li>
              </ul>
-         </div>   
+         </div>
  </div>
  <!-- the form where Patient have to change the password-->
  <form class="form-container" method = "POST" action = "{{ url('/passwordchangepatientsave')}}">
@@ -96,13 +96,14 @@
      </div>
      <br><br>
      <!-- the submit button-->
-     <div style="margin-left:20cm;">
-        <button class="btn btn-success btn-rounded w-50 btn-lg ">Change Password</button>
-     </div>
+        <div style="margin-left:20cm;">
+            <button class="btn btn-success btn-rounded  btn-lg "style="width: 200px;">Change Password</button>
+        </div>
+
  </form>
- 
- 
- 
+
+
+
  </body>
- 
+
  </html>
