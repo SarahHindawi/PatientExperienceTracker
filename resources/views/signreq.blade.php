@@ -1,11 +1,21 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Home Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./cssFile.css">
+    <title>Response Page</title>
+    <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="{{asset('assets/cssFile.css')}}">
+
+    <style>
+        #wrapper {
+            margin-left:auto;
+            margin-right:auto;
+            width:1519px;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -17,7 +27,6 @@
 
 <div style=" margin-top:5%; margin-left:10%">
     <h3 style = "color:seagreen; text-align:center;">Welcome to The Patient Experience Tracker</h3>
-    <p style = "color:red; text-align:center;">Select a Option From Below</p>
 </div>
 
 
@@ -50,19 +59,20 @@
     </nav>
 </div>
 
+<br><br><br><br><br>
 
-<a href = "https://www.google.ca/">
-    <img src="sign.png" class="rounded float-end" alt="Admin Login">
- </a>
+    
+    <div class="border border-light p-3 mb-4">
+    
+      <div class="text-center">
+        <h4 style = "color:blue;text-align:center;"> Your request for creating account is submitted!!</h4>
+        <h5 style = "color:red; text-align: center;">Thanks for joining us, You will be notified soon.</h5>
+      </div>
+    
+    </div>
 
-<a href = "https://www.google.ca/">
-<img src="patient.png" class="rounded mx-auto d-block" alt="Admin Login">
-</a>
+  </div>
 
-
-<a href = "https://www.google.ca/">
-    <img src="admin.png" class="rounded mx-auto d-block" alt="Admin Login">
-    </a>  
 </body>
 
 </html>
