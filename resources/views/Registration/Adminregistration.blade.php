@@ -29,12 +29,16 @@
     {{Form::text('email', '' , ['class' => 'form-control', 'placeholder' => 'Email'])}}
 </div>
 <div class="form-group">
+    {{Form::label('password', 'Password')}}
+    {{Form::text('password', '' , ['class' => 'form-control', 'placeholder' => 'Password'])}}
+</div>
+<div class="form-group">
     {{Form::label('firstname', 'First Name')}}
-    {{Form::text('firstName', '' , ['class' => 'form-control', 'placeholder' => 'First Name'])}}
+    {{Form::text('firstname', '' , ['class' => 'form-control', 'placeholder' => 'First Name'])}}
 </div>
 <div class="form-group">
     {{Form::label('lastname', 'Last Name')}}
-    {{Form::text('lastName', '' , ['class' => 'form-control', 'placeholder' => 'Last Name'])}}
+    {{Form::text('lastname', '' , ['class' => 'form-control', 'placeholder' => 'Last Name'])}}
 </div>
 {{Form::submit('Submit' , ['class' => 'btn btn-primary'])}}
 {!! Form::close() !!}
