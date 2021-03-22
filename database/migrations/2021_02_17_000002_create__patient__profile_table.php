@@ -21,15 +21,13 @@ class CreatePatientProfileTable extends Migration
             $table->date('DOB');      //dd-mm-yyyy
             $table->string('Gender');
             $table->integer('Weight');
-            $table->integer('HeightFeet');
-            $table->integer('HeightInches');
+            $table->integer('Height');            
             $table->string('Condition');
             $table->json('Medications');
             $table->boolean('PREMFlag')->default(true);
             $table->boolean('PROMFlag')->default(true);
             $table->boolean('NewAccount')->default(true);
-            $table->string('PasswordReset')->default("false");
-
+            $table->string('PasswordReset')->default("false");            
         });
     }
 

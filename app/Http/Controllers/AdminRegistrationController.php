@@ -17,13 +17,19 @@ class AdminRegistrationController extends Controller
         //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
         if(!Auth::guard('admin')->check()){
 
-            if(Auth::guard('patient')->check()){                
+            if(Auth::guard('patient')->check()){               
                 //If Patient logged in Redirect to Patient Dashboard.
                 return redirect('/');
             }
             return redirect('/adminlogin');
-        }       
-        
+        }
+
+
+        //Check Authenticated Administrator type redirect to dashboard if authenticated admin is not Root.
+        $adminType = Auth::guard('admin')->user()->RootAdmin;
+        if(!$adminType){
+            return redirect('/')->with('message', 'Unauthorized Admin');
+        }        
         return view ('Registration.AdminRegistration');
     }
 
@@ -38,7 +44,13 @@ class AdminRegistrationController extends Controller
                  return redirect('/');
             }
             return redirect('/adminlogin');
-        }      
+        }
+        
+        //Check Authenticated Administrator type redirect to dashboard if authenticated admin is not Root.
+        $adminType = Auth::guard('admin')->user()->RootAdmin;
+        if(!$adminType){
+            return redirect('/')->with('message', 'Unauthorized Admin');
+        }        
         
         $this->validate($request, [
             'email' => 'required',
@@ -52,7 +64,7 @@ class AdminRegistrationController extends Controller
 
         if($existanceTest)
         {
-            return "Registration Failure: Admin already exists.";
+            return redirect('/')->with('message', 'Admin registration failed Email already exists.');
         }
 
 
@@ -65,6 +77,6 @@ class AdminRegistrationController extends Controller
 
         $admin->save();
 
-        return view("signreq");
+        return redirect('/')->with('message', 'Admin registration successful.');
     }
 }

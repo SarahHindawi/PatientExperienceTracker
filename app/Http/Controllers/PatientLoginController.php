@@ -46,10 +46,10 @@ class PatientLoginController extends Controller
 
 
         if(!Auth::guard('patient')->attempt(['email' => $request->input('email') , 'password' => $request->input('password')])) {
-            return back()->with('status', 'Invalid login details');
+            return redirect('/patientlogin')->with('message', 'Invalid login details');
         }
 
-        return view("Admin_dashboard_page");
+        return redirect('/');
 
     }
 

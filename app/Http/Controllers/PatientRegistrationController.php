@@ -8,20 +8,23 @@ use App\Models\Condition_List;
 use App\Models\Medication_List;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 
-class PatientRegistrationController extends Controller
+
+class PatientRegistrationController extends Controller 
 {
     public function index()
     {
 
         //Return Redirect to Dashboard if either usertype is logged in.
-//        if(Auth::guard('admin')->check()){
-//            return redirect('/');
-//        }
-//        else if(Auth::guard('patient')->check()){
-//            return redirect('/');
-//        }
+        if(Auth::guard('admin')->check()){
+            return redirect('/');
+        }
+        else if(Auth::guard('patient')->check()){
+            return redirect('/');
+        }
 
         $conditionList = Condition_List::all()->pluck('Condition')->toarray();
 
@@ -32,24 +35,22 @@ class PatientRegistrationController extends Controller
 
     public function register(Request $request)
     {
-        if(Auth::guard('admin')->check()){
-            //TODO redirect to Admin Dashboard.
-            return 'admin logged in.';
+        if(Auth::guard('admin')->check()){            
+            return redirect('/');
         }
         else if(Auth::guard('patient')->check()){
-            //TODO redirect to Patient Dashbaord.
-            return 'patient logged in.';
+            
+            return redirect(' /');
         }
 
         $this->validate($request, [
             'email' => 'required',
-            //'password' => 'required',       //TODO impletement password hashing when authentication is implemented.
+            'password' => 'required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',       
             'firstName' => 'required',
             'lastName' => 'required',
             'dob' => 'required',
             'weight' => 'required',
-            'heightFeet' => 'required',
-            'heightInches' =>'required',
+            'height' => 'required',            
             'gender' => 'required',
             'condition' => 'required',
             'medication' => 'required'
@@ -60,8 +61,8 @@ class PatientRegistrationController extends Controller
 
         if($existanceTest)
         {
-            //TODO Replace with redirect to homepage with error message when homepage is complete.
-            return "Registration Failure: Patient already exists.";
+            
+            return redirect('/')->with('message', 'Registration Failed Email Profile with email already exists.');
         }
 
 
@@ -71,22 +72,24 @@ class PatientRegistrationController extends Controller
         $conditionValue = $conditionElements[0];
 
 
-        $patient->Email = $request->input('email');
-        $patient->Password = '';                                 //TODO impletement password hashing when authentication is implemented.
+        $patient->email = $request->input('email');
+        $patient->password = Hash::make($request->input('password'));                               
         $patient->FirstName = $request->input('firstName');
         $patient->LastName = $request->input('lastName');
         $patient->DOB = date_create($request->input('dob'));     //dd-mm-yyyy
         $patient->Weight = $request->input('weight');
-        $patient->HeightFeet = $request->input('heightFeet');
-        $patient->HeightInches = $request->input('heightInches');
+        $patient->Height = $request->input('height');        
         $patient->Gender = $request->input('gender');
         $patient->Condition = $conditionValue;
         $patient->Medications = json_encode($request->input('medication'));
+        $randomNumber = mt_rand(1000,9999);
+        $patient->EmailValidated = $randomNumber;
 
         $patient->save();
 
-        //TODO Replace with redirect to Non-Logged in homepage with success message when implemented.
-        return 'success';
+        //Registration success redirect to homepage with message.          
+        
+        return redirect('/')->with('message', 'Registration successfully sent for Adminstrator review.'); 
 
-    }
+    } 
 }

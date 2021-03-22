@@ -27,7 +27,6 @@ Route::get('/form/create', 'App\Http\Controllers\SurveyController@create');
 Route::post('/form', 'App\Http\Controllers\SurveyController@store');
 Route::get('/adminlogin', 'App\Http\Controllers\AdminLoginController@index');
 Route::post('/adminloginpage', 'App\Http\Controllers\AdminLoginController@login');
-Route::post('/rootadminloginpage', 'App\Http\Controllers\AdminLoginController@root');
 Route::get('/patientlogin', 'App\Http\Controllers\PatientLoginController@index');
 Route::post('/patientloginpage', 'App\Http\Controllers\PatientLoginController@login');
 Route::get('/editSurvey/create', 'App\Http\Controllers\EditSurveyController@create');
@@ -39,8 +38,11 @@ Route::post('/accept', 'App\Http\Controllers\AcceptanceController@store');
 Route::get('/accept/create', 'App\Http\Controllers\AcceptanceController@create');
 Route::post('/passwordreset', 'App\Http\Controllers\PasswordController@store');
 Route::get('/passwordreset/create', 'App\Http\Controllers\PasswordController@create');
+Route::get('/passwordchangepatient', 'App\Http\Controllers\PasswordController@patientchange');
+Route::post('/passwordchangepatientsave', 'App\Http\Controllers\PasswordController@patientsave');
+Route::get('/passwordchangeadmin', 'App\Http\Controllers\PasswordController@adminchange');
+Route::post('/passwordchangeadminsave', 'App\Http\Controllers\PasswordController@adminsave');
 
-
-Route::get('/debuglogout', 'App\Http\Controllers\LogoutController@debuglogout');
+Route::get('/logout', 'App\Http\Controllers\LogoutController@logout');
 
 

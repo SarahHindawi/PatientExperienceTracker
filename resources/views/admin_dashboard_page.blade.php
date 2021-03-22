@@ -13,28 +13,16 @@
 </head>
 <body>
 
-<section class="container-fluid">
-
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand"></a>
-            <form class="d-flex">
-                <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-user"></i> Mystery Admin
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <li><button class="dropdown-item" type="button">Action</button></li>
-                    <li><button class="dropdown-item" type="button">Another action</button></li>
-                    <li><button class="dropdown-item" type="button">Something else here</button></li>
-                </ul>
-            </form>
-        </div>
-    </nav>
-
-    <p class="text-center fs-2">Hello Mystery Admin</p>
+<section class="container-fluid">    
+    @if(Session::has('message'))
+    <p class="alert alert-info" style="text-align:center">{{ Session::get('message') }}</p>
+    @endif
 
 
-    <p class="text-center h6" style="text-align:center">Here are your administration option </p>
+    <p class="text-center fs-2" style="color:seagreen">Hello {{$name}}</p>
+
+
+    <p class="text-center h6" style="text-align:center">Here are your administration options </p>
 
     <p>Default list:</p>
 
@@ -51,11 +39,15 @@
         &nbsp;&nbsp;&nbsp;
         <li><a href=""></a> <button class="block" onclick="location.href='/report/create'"> <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right"> Generate Report of PERMS and PROMS Survey Data</button></li>
         &nbsp;&nbsp;&nbsp;
+        <!--Commented out due to not MVP            
         <li><a href=""></a> <button  class="block" onclick="location.href='admin_reset_password'"> <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Modify Survey Add or Remove Questions</button></li>
         &nbsp;&nbsp;&nbsp;
-        <li><a href=""></a> <button class="block" onclick="location.href='admin_reset_password'"><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Change Your Password</button></li>
-        &nbsp;&nbsp;&nbsp;
+        -->        
+        <li><a href=""></a> <button class="block" onclick="location.href='/adminpasswordchange'"><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Change Your Password</button></li>
+        &nbsp;&nbsp;&nbsp;        
+        <!-- Commented out due to not MVP
         <li><a href=""></a> <button  class="block" onclick="location.href='admin_reset_password'"> <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">ADMIN Help</button></li>
+        -->
     </ul>
 
 
@@ -87,17 +79,26 @@
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/report/create')}}">
                                 <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right">Generate Report</a></p>
                     </li>
+                    <!-- Comment Out due to not MVP
                     <li class="nav-item">
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
                                 <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Modify Survey</a></p>
                     </li>
+                    -->
                     <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{url('/passwordchangeadmin')}}">
                                 <img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Change Password</a></p>
                     </li>
+                    <!-- Comment Out Due to not MVP
                     <li class="nav-item">
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
                                 <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">Admin Help</a></p>
+                    </li>
+                    -->
+                      <!--Logout Option-->
+                      <li class="nav-item">
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
+                                                  href= "{{ url('/logout')}}" ><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Logout</a></p>
                     </li>
                 </ul>
             </div>

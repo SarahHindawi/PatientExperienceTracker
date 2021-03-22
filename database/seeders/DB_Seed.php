@@ -68,8 +68,7 @@ class DB_Seed extends Seeder
             'DOB' => date_create("30-01-1990"),
             'Gender' => 'Male',
             'Weight' => 240,
-            'HeightFeet' => 6,
-            'HeightInches' => 0,
+            'Height' => 6,            
             'Condition' =>'IBD',
             'Medications' => json_encode(array('Test Medication 1', 'Test Medication 4')),
             'PREMFlag' => true,
@@ -86,15 +85,14 @@ class DB_Seed extends Seeder
             'DOB' => date_create("12-01-2000"),
             'Gender' => 'Female',
             'Weight' => 180,
-            'HeightFeet' => 5,
-            'HeightInches' => 7,
+            'Height' => 5,            
             'Condition' =>'IBD',
             'Medications' => json_encode(array('Test Medication 2')),
             'PREMFlag' => true,
             'PROMFlag' => true,
             'NewAccount' => true,
             'PasswordReset' => "false",
-        ]);
+            ]);
 
         $testQuestions1 = array(array('Text' => 'Text for test question 1' , 'Type' => 'DropDown' , 'PossibleResponses' => 'Option1,Option2,Option3'),
                             array('Text' => 'Text for test question 2' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'));
