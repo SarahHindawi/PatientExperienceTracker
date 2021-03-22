@@ -1,3 +1,4 @@
+/* css class for the part where we put the results of the report */
 .cc{
     position: relative;
     float:left;
@@ -9,6 +10,7 @@
     margin-left: 250px;
     margin-bottom: 0px;
 }
+/* css for save to file button */
 .greenbutton {
     background-color: Green;
     border: none;
@@ -22,6 +24,7 @@
     border-radius: 16px;
     /*padding-right: 500px;*/
 }
+/* css for the save to file box */
 .cent {
     margin: 0;
     position: absolute;
