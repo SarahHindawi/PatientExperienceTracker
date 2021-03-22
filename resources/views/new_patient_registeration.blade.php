@@ -24,9 +24,42 @@
         [type=radio]:checked + img {
             outline: 2px solid #f00;
         }
+        .btn-logout {
+            width: 100%;
+            padding: 3px 20px !important;
+            text-align: left !important;
+        }
+
+        .drop{
+            color: rgba(45, 87, 45, 0.75);
+        }
+
+        .btn-success:hover {
+            color: rgb(255, 255, 255);
+            background: rgba(44, 92, 44, 0.75);
+            border: 2px solid rgba(38, 83, 38, 0.75);
+        }
+        .btn-success {
+            font-size: 13px;
+            color: rgba(45, 87, 45, 0.75);
+            letter-spacing: 1px;
+            line-height: 15px;
+            border: 2px solid rgba(48, 80, 48, 0.75);
+            border-radius: 40px;
+            background: transparent;
+            transition: all 0.3s ease 0s;
+        }
+
+         #wrapper {
+             margin-left:auto;
+             margin-right:auto;
+             width:1519px;
+         }
+
     </style>
 
 </head>
+<div id="wrapper">
 
 <body>
 
@@ -120,7 +153,6 @@
 
 
     <!-- list of new patients requests-->
-    </div>
 
 
     <ol class="lp">
@@ -155,9 +187,11 @@
                 @endforeach
             </ol>
 
-
-            <button>Save</button>
+            <button style="width: 5cm; margin:-8cm"type="submit"
+                    class="btn btn-success btn-rounded">Save
+            </button>
         </form>
+    </div>
 
 </section>
 
@@ -172,5 +206,6 @@
         integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
         crossorigin="anonymous"></script>
 </body>
+</div>
 </html>
 
