@@ -1,0 +1,117 @@
+.form-container{
+    position:absolute;
+    top: 20vh;
+}
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 15%;
+    height: 300px;
+}
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+
+  .navbar-default {
+    background-color: #FFF;
+    margin-left: 200px;
+  }
+
+  /*main side bar*/
+  .msb {
+    width: 200px;
+    background-color: #F5F7F9;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: auto;
+    min-height: 100%;
+    overflow-y: auto;
+    white-space: nowrap;
+    height: 100%;
+    z-index: 1;
+    border-right: 1px solid #ddd;
+  }
+
+    .navbar {
+      border: none;
+      margin-left: 0;
+      background-color: inherit;
+    }
+    .navbar-header {
+      width: 100%;
+      border-bottom: 1px solid #e7e7e7;
+      margin-bottom: 20px;
+      background: #fff;
+    }
+
+
+  .msb, .mnb {
+      -moz-animation: slidein 300ms forwards;
+      -o-animation: slidein 300ms forwards;
+      -webkit-animation: slidein 300ms forwards;
+      animation: slidein 300ms forwards;
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+  }
+    .msb {
+      -moz-animation: slideout 300ms forwards;
+      -o-animation: slideout 300ms forwards;
+      -webkit-animation: slideout 300ms forwards;
+      animation: slideout 300ms forwards;
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+    }
+
+    .btn-logout {
+      width: 100%;
+      padding: 3px 20px !important;
+      text-align: left !important;
+    }
+
+    .drop{
+      color: rgba(45, 87, 45, 0.75);
+    }
+
+    .btn-success:hover {
+            color: rgb(255, 255, 255);
+            background: rgba(44, 92, 44, 0.75);
+            border: 2px solid rgba(38, 83, 38, 0.75);
+          }
+          .btn-success {
+              font-size: 13px;
+              color: rgba(45, 87, 45, 0.75);
+              letter-spacing: 1px;
+              line-height: 15px;
+              border: 2px solid rgba(48, 80, 48, 0.75);
+              border-radius: 40px;
+              background: transparent;
+              transition: all 0.3s ease 0s;
+            }
+            .centered {
+              position: fixed; /* or absolute */
+              top: 50%;
+              left: 50%;
+            }
+
+
+
+
+
+ul {
+  column-count: 2;
+  column-gap: 2rem;
+  list-style: none;
+}
+
