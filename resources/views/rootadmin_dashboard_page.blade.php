@@ -5,6 +5,7 @@
     <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin_dashboard_page.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/buttons.css')}}">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <!--Get your own code at fontawesome.com
         Here is the link to find all the important icons
@@ -35,27 +36,27 @@
     <!-- The dashborad options in the centere of the page-->
 
     <ul class="lp">
-        <li><button class="block" onclick="location.href='/accept/create'" type="button"><img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">New Patient Registeration Click here to review
+        <li><button class="block button button1" onclick="location.href='/accept/create'" type="button"><span><img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">New Patient Registeration Click here to review</span>
             </button></li>
         &nbsp;&nbsp;&nbsp;
-        <li><button  class="block" onclick="location.href='/resetreview/create'" type="button"> <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right"> Patient Password Reset Requests. Click here to review
+        <li><button  class="block button button1" onclick="location.href='/resetreview/create'" type="button"> <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right"> Patient Password Reset Requests. Click here to review
             </button> </li>
         &nbsp;&nbsp;&nbsp;
-        <li> <button  class="block" onclick="location.href='/profilesearch'"> <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right">View Summary of Patient</button></li>
+        <li><button  class="block button button1" onclick="location.href='/profilesearch'"> <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right">View Summary of Patient</button></li>
         &nbsp;&nbsp;&nbsp;
-        <li><a href=""></a> <button class="block" onclick="location.href='/report/create'"> <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right"> Generate Report of PERMS and PROMS Survey Data</button></li>
+        <li><button class="block button button1" onclick="location.href='/report/create'"> <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right"> Generate Report of PERMS and PROMS Survey Data</button></li>
         &nbsp;&nbsp;&nbsp;
         <!-- Commented out due to not MVP
-        <li><a href=""></a> <button  class="block" onclick="location.href='admin_reset_password'"> <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Modify Survey Add or Remove Questions</button></li>
+        <li><button  class="block buutton button1" onclick="location.href='admin_reset_password'"> <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Modify Survey Add or Remove Questions</button></li>
         &nbsp;&nbsp;&nbsp;
         -->
-        <li><a href=""></a> <button class="block" onclick="location.href='/passwordchangeadmin'"><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Change Your Password</button></li>
+        <li><button class="block button button1" onclick="location.href='/passwordchangeadmin'"><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Change Your Password</button></li>
         &nbsp;&nbsp;&nbsp;
         <!--Commented out due to not MVP
-        <li><a href=""></a> <button  class="block" onclick="location.href='admin_reset_password'"> <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">ADMIN Help</button></li>
+        <li><button  class="block button button1" onclick="location.href='admin_reset_password'"> <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">ADMIN Help</button></li>
         &nbsp;&nbsp;&nbsp;
         -->
-        <li><button class="block" type="button"><img src="{{asset('assets/images/signup.png')}}" width="25" height="25" class="d-inline-block align-right">Register Admin
+        <li><button class="block button button1" onclick="location.href='/adminregistration'""><img src="{{asset('assets/images/signup.png')}}" width="25" height="25" class="d-inline-block align-right">Register Admin
             </button></li>
 
     </ul>
@@ -73,7 +74,7 @@
                         <!-- the Dashboard options-->
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page"  href="{{url('.')}}">
                                 <img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right">Dashboard</a></p>
-                    </li>+
+                    </li>
                     <li class="nav-item">
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/accept/create')}}" >
                                 <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">Patient Registration</a></p>

@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <!---
 <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Default</a>
@@ -32,6 +33,7 @@
         </form>
     </div>
 </nav>
+-->
 
 <div style=" margin-top:2%; margin-left:10%">
     <h3 style="color:seagreen; text-align:center;">Patient Experience Tracker</h3>
@@ -77,6 +79,7 @@
     <br style="line-height:100;">
 
     @csrf
+    <input type="hidden" id="surveyname" name="surveyname" value="{{$name}}">
     <div style="width: 1100px; margin-left:27%; " class="shadow-lg p-3 mb-5 bg-white rounded">
 
         @foreach ($questions as $q)

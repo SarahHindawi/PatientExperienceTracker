@@ -44,7 +44,7 @@
             </button></li>
         &nbsp;&nbsp;&nbsp;
 
-        <li><button  class="block" onclick="location.href='/resetreview/create'" type="button"> <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right"> Patient Password Reset Requests. Click here to review
+        <li><button  class="block button button1" onclick="location.href='/resetreview/create'" type="button"> <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right"> Patient Password Reset Requests. Click here to review
 
             </button> </li>
         &nbsp;&nbsp;&nbsp;

@@ -19,8 +19,7 @@ class ReportController extends Controller
     {
         if(!Auth::guard('admin')->check()){
 
-            if(Auth::guard('patient')->check()){
-                //TODO redirect to Patient Dashbaord with unauthorized message.
+            if(Auth::guard('patient')->check()){                
                 return redirect('/');
             }
             return redirect('/adminlogin');
@@ -49,7 +48,7 @@ class ReportController extends Controller
         if(!Auth::guard('admin')->check()){
 
             if(Auth::guard('patient')->check()){
-                //TODO redirect to Patient Dashbaord with unauthorized message.
+                return redirect(' /');
             }
             return redirect('/adminlogin');
         }
@@ -226,7 +225,7 @@ class ReportController extends Controller
 
         //Get the questions of the current version of the survey (as column headers)
         //TODO get selected survey name
-        $surveyName = "IBDPREM_One";
+        $surveyName = $_POST["surveyName"];
         $survey = Survey_Questions::query()->where("SurveyName", $surveyName)->first();
         $surveyArray = json_decode($survey, true);
         $surveyArray = json_decode($surveyArray["SurveyQuestions"], true);
