@@ -53,6 +53,5 @@ Route::get('/patientreset', 'App\Http\Controllers\PasswordController@patientrese
 Route::post('/adminresetmail', 'App\Http\Controllers\PasswordController@adminresetemail');
 Route::post('/patientresetrequest', 'App\Http\Controllers\PasswordController@patientresetrequest');
 Route::get('/logout', 'App\Http\Controllers\LogoutController@logout');
-Route::post('/setpassword', 'App\Http\Controllers\PatientPasswordController@store');
-Route::get('/setpassword/create', 'App\Http\Controllers\PatientPasswordController@create');
+
 
