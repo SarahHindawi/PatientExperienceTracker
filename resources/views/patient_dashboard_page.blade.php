@@ -33,7 +33,7 @@
     <!-- The dashborad options in the center of the page-->
     <div style="margin-left: -105px">
     <ul class="lp">
-        <li><button class="block button button1" onclick="location.href='form/create'" type="button"><span><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Click here complete a survey</span>
+        <li><button class="block button button1" onclick="location.href='/surveyselection'" type="button"><span><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Click here complete a survey</span>
             </button></li>
         &nbsp;&nbsp;&nbsp;
         <li><button  class="block button button1" onclick="location.href='/passwordchangepatient'" type="button"> <span> <img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Change Password </span>
@@ -59,7 +59,7 @@
                     </li>
                     <li class="nav-item">
                         <p class="text-center"><a class="text-center text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/form/create')}}"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Complete Survey</a></p>
+                                                  href="{{ url('/surveyselection')}}"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Complete Survey</a></p>
                     </li>
                     <!-- Password Change Option-->
                     <li class="nav-item">
