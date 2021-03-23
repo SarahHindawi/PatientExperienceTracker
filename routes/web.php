@@ -43,6 +43,9 @@ Route::get('/passwordchangepatient', 'App\Http\Controllers\PasswordController@pa
 Route::post('/passwordchangepatientsave', 'App\Http\Controllers\PasswordController@patientsave');
 Route::get('/passwordchangeadmin', 'App\Http\Controllers\PasswordController@adminchange');
 Route::post('/passwordchangeadminsave', 'App\Http\Controllers\PasswordController@adminsave');
+Route::post('/passwordreset', 'App\Http\Controllers\PasswordController@store');
+Route::get('/passwordreset/create', 'App\Http\Controllers\PasswordController@create');
+
 
 Route::get('/adminreset', 'App\Http\Controllers\PasswordController@adminresetindex');
 Route::get('/patientreset', 'App\Http\Controllers\PasswordController@patientresetindex');

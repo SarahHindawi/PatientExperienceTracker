@@ -27,6 +27,7 @@ class PasswordController extends Controller
            return redirect('/adminlogin');
        }
 
+
         //get a list of the patients that submitted a request to reset their password
         $passwordResetRequests = Patient::select(['FirstName', 'LastName', 'Email'])->where("PasswordReset", "true")->get();
 
@@ -102,30 +103,30 @@ class PasswordController extends Controller
         if(!Auth::guard('patient')->check()){
             if(Auth::guard('admin')->check()){
                 return redirect('/');
-            }            
-            return redirect('/')->with('message', 'No user logged in.');            
+            }
+            return redirect('/')->with('message', 'No user logged in.');
         }
 
         return view('patient_password_change');
     }
 
     public function patientsave(Request $request){
-          
+
         //Check if Patient is logged in.
            if(!Auth::guard('patient')->check()){
             if(Auth::guard('admin')->check()){
                 return redirect('/');
-            }            
-            return redirect('/')->with('message', 'No user logged in.');            
+            }
+            return redirect('/')->with('message', 'No user logged in.');
         }
 
-        
-        
+
+
         //Password Requirements and Confirmation.
         $this->validate($request, [
-            'currentpass' => 'required',          
+            'currentpass' => 'required',
             'password' => 'required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',
-            'password2' => 'same:password',            
+            'password2' => 'same:password',
         ]);
 
         //As user is currently logged in get the currently authenticated user and change their password.
@@ -147,7 +148,7 @@ class PasswordController extends Controller
         }
 
         $currentUser->save();
-        
+
         //Redirect to dash with success message.
         return redirect('/')->with('message', 'Password changed successfully.');
     }
@@ -158,8 +159,8 @@ class PasswordController extends Controller
           if(!Auth::guard('admin')->check()){
             if(Auth::guard('patient')->check()){
                 return redirect('/');
-            }            
-            return redirect('/')->with('message', 'No user logged in.');            
+            }
+            return redirect('/')->with('message', 'No user logged in.');
         }
 
         return view('admin_password_change');
@@ -172,17 +173,17 @@ class PasswordController extends Controller
     if(!Auth::guard('admin')->check()){
         if(Auth::guard('patient')->check()){
             return redirect('/');
-        }            
-        return redirect('/')->with('message', 'No user logged in.');            
+        }
+        return redirect('/')->with('message', 'No user logged in.');
     }
 
-    
-    
+
+
     //Password Requirements and Confirmation.
     $this->validate($request, [
-        'currentpass' => 'required',          
+        'currentpass' => 'required',
         'password' => 'required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',
-        'password2' => 'same:password',            
+        'password2' => 'same:password',
     ]);
 
     //As user is currently logged in get the currently authenticated user and change their password.
@@ -195,7 +196,7 @@ class PasswordController extends Controller
 
     $currentUser->password = Hash::make($request->input('password'));
     $currentUser->save();
-    
+
     //Redirect to dash with success message.
     return redirect('/')->with('message', 'Password changed successfully.');
     }

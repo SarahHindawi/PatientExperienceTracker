@@ -35,8 +35,8 @@
 
 <div style=" margin-top:2%; margin-left:10%">
     <h3 style="color:seagreen; text-align:center;">Patient Experience Tracker</h3>
-    <p class="text-center h2">PREM SURVEY</p>
-    <p style="text-align:center; color:red" ;>Please Fill the form corretcly and press Submit</p>
+    <p class="text-center h2">{{$name}} SURVEY</p>
+    <p style="text-align:center; color:red" ;>Please Fill the form correctly and press Submit</p>
 </div>
 
 
@@ -46,23 +46,26 @@
     <nav class="navbar navbar-default" role="navigation">
         <div class="btn-group-vertical" style=" margin-top:15%; width:100%">
             <ul class="nav flex-column" style="width:100%">
+                <!-- the Dashboard options-->
+                <!-- Dashboard Option-->
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
-                                              href="#">
-                            <img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right"> Dashboard
-                        </a></p>
+                    <p class="text-center"><a class="text-center text-dark nav-link active" aria-current="page"
+                                              href="{{ url('/')}}"><img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right"> Dashboard</a></p>
+                    <!--Survey Option-->
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
-                            <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Complete a
-                            Survey
-                        </a></p>
+                    <p class="text-center"><a class="text-center text-dark nav-link active" aria-current="page"
+                                              href="{{ url('/form/create')}}"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Complete Survey</a></p>
                 </li>
+                <!-- Password Change Option-->
                 <li class="nav-item">
                     <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
-                                              href="#">
-                            <img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Change Password
-                        </a></p>
+                                              href="{{ url('/passwordchangepatient')}}"><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Change Password</a></p>
+                </li>
+                <!--Logout Option-->
+                <li class="nav-item">
+                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
+                                              href= "{{ url('/logout')}}" ><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Logout</a></p>
                 </li>
             </ul>
         </div>
@@ -70,7 +73,7 @@
     </nav>
 </div>
 
-<form name="surveyForm" method="post" action="/form" enctype="multipart/form-data">
+<form name="surveyForm" method="post" action="/form" enctype="multipart/form-data" style="margin-left: -10%">
     <br style="line-height:100;">
 
     @csrf
@@ -101,11 +104,11 @@
                 <br>
                 <br> <br>
 
-            @elseif ($q["Type"]  == "Radio")
+            @elseif ($q["Type"]  == "RadioButtons")
 
                 @foreach(explode(",",$q['PossibleResponses']) as $option)
                     <input type="radio" name="{{$q["Text"]}}" value="{{$option}}">
-                        <label>{{$option}}</label>
+                        <label>{{$option}}</label>&nbsp;&nbsp;&nbsp;
                 @endforeach
                 <br>
                 <br> <br>
@@ -115,10 +118,10 @@
                 <br>
                 <br> <br>
 
-            @elseif ($q["Type"]  == "TextArea")
+            @elseif ($q["Type"]  == "FreeText")
                 <div class="mb-3">
-                    <div class="form-check form-check-inline" style=" margin-left: 310px">
-                        <textarea class="form-control" name="{{$q["Text"]}}" rows="3"></textarea>
+                    <div class="form-check form-check-inline" style=" margin-left: -10px">
+                        <textarea class="form-control" name="{{$q["Text"]}}" rows="3" cols="300"></textarea>
                     </div>
                 </div>
                 <br> <br>

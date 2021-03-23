@@ -73,7 +73,7 @@
                         <!-- the Dashboard options-->
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page"  href="{{url('.')}}">
                                 <img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right">Dashboard</a></p>
-                    </li>
+                    </li>+
                     <li class="nav-item">
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/accept/create')}}" >
                                 <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">Patient Registration</a></p>

@@ -17,14 +17,14 @@ class ReportController extends Controller
 
     public function create()
     {
-//        if(!Auth::guard('admin')->check()){
-//
-//            if(Auth::guard('patient')->check()){
-//                //TODO redirect to Patient Dashbaord with unauthorized message.
-//                return redirect('/');
-//            }
-//            return redirect('/adminlogin');
-//        }
+        if(!Auth::guard('admin')->check()){
+
+            if(Auth::guard('patient')->check()){
+                //TODO redirect to Patient Dashbaord with unauthorized message.
+                return redirect('/');
+            }
+            return redirect('/adminlogin');
+        }
 
         //get a list of the available surveys
         $surveys = Survey_Questions::select('SurveyName')->get();
@@ -46,13 +46,13 @@ class ReportController extends Controller
 
     public function store()
     {
-//        if(!Auth::guard('admin')->check()){
-//
-//            if(Auth::guard('patient')->check()){
-//                //TODO redirect to Patient Dashbaord with unauthorized message.
-//            }
-//            return redirect('/adminlogin');
-//        }
+        if(!Auth::guard('admin')->check()){
+
+            if(Auth::guard('patient')->check()){
+                //TODO redirect to Patient Dashbaord with unauthorized message.
+            }
+            return redirect('/adminlogin');
+        }
 
         $submittedData = $_POST;
         unset($submittedData["_token"]);
@@ -85,11 +85,11 @@ class ReportController extends Controller
         $height = $_POST["height"];
 
         if ($height == 'above') {
-            $queryPatients->where('HeightInches', '>', $_POST["heightAbove"]);
+            $queryPatients->where('Height', '>', $_POST["heightAbove"]);
         } else if ($height == 'below') {
-            $queryPatients->where('HeightInches', '<', $_POST["heightBelow"]);
+            $queryPatients->where('Height', '<', $_POST["heightBelow"]);
         } else if ($height == 'equals') {
-            $queryPatients->where('HeightInches', '=', $_POST["heightEquals"]);
+            $queryPatients->where('Height', '=', $_POST["heightEquals"]);
         }
 
         //get the email, medications, and date of birth of the filtered patients
@@ -211,6 +211,12 @@ class ReportController extends Controller
             $patientsName[] = $responses[$i]["FirstName"] . " " . $responses[$i]["LastName"];
 
         }
+
+        if (count($patientsName) == 0) {
+            echo '<script type="text/javascript">alert("No records match the specified data.")</script>';
+            return $this->create();
+        }
+
 
 //        for ($i = 0; $i< count($patientEmail); $i++) {
 //            $query = DB::table('Patient_Profile')
