@@ -261,3 +261,35 @@ In order to do the test using postman, I need to have a request  in the method. 
           The method: get
 
         -----------------------------------------------------------------------------------------------------------------------------------------
+
+         The path: Route::get('/logout', 'App\Http\Controllers\LogoutController@logout');
+          The URL in postman: http://127.0.0.1:8000/logout
+          The method: get
+
+        -----------------------------------------------------------------------------------------------------------------------------------------
+         The path: Route::get('/passwordreset/create', 'App\Http\Controllers\PasswordController@create');
+          The URL in postman: http://127.0.0.1:8000/passwordreset/create
+          The method: get
+
+        -----------------------------------------------------------------------------------------------------------------------------------------
+          The path: Route::get('/passwordchangeadmin', 'App\Http\Controllers\PasswordController@adminchange');
+          The URL in postman: http://127.0.0.1:8000/passwordchangeadmin
+          The method: get
+
+        -----------------------------------------------------------------------------------------------------------------------------------------
+         
+        The path: Route::get('/passwordchangeadmin', 'App\Http\Controllers\PasswordController@adminchange');
+          The URL in postman: http://127.0.0.1:8000/passwordchangeadmin
+          The method: get
+
+        -----------------------------------------------------------------------------------------------------------------------------------------The path: Route::get('/passwordchangeadmin', 'App\Http\Controllers\PasswordController@adminchange');
+          The URL in postman: http://127.0.0.1:8000/passwordchangeadmin
+          The method: get
+
+        -----------------------------------------------------------------------------------------------------------------------------------------
+
+        The path: Route::get('/passwordchangeadmin', 'App\Http\Controllers\PasswordController@adminchange');
+          The URL in postman: http://127.0.0.1:8000/passwordchangeadmin
+          The method: get
+
+        -----------------------------------------------------------------------------------------------------------------------------------------
