@@ -61,7 +61,7 @@
             <p class="text-center h2">Report Result</p>
 
 
-            <div class="cent" style="margin-top: -566px">
+            <div class="cent" style="margin-top: -566px; width:60em;overflow-x: auto;white-space: nowrap;">
                 <table>
                     <tr>
                         <th style="width:150px">Name</th>
@@ -91,18 +91,19 @@
                         </tr>
                     @endforeach
 
-                </table>
-
-                <a style="text-decoration: none; margin-left: 25px" href="{{ url('/report/create')}}">
-                    <button style="width: 5cm; margin-bottom:1cm; margin-top: 10px; margin-left:270px"
-                            class="btn btn-success btn-rounded">Back
-                    </button>
-                </a>
+                </table>                
 
                 <!-- this button is to save the file-->
                 {{--            <button class="greenbutton" onclick="window.print();" style="margin: 3%"><i class='fas fa-save'></i> Save to file--}}
                 {{--            </button>--}}
             </div>
+            <div class="cent" style="margin-top: -750px">
+            <a style="text-decoration: none; margin-left: -235px" href="{{ url('/report/create')}}">
+                <button style="width: 5cm; margin-bottom:1cm; margin-top: 10px; margin-left:270px"
+                        class="btn btn-success btn-rounded">Back
+                </button>
+            </a>
+        </div>
         </div>
 
 

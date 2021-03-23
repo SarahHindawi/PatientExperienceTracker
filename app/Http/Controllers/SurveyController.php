@@ -132,7 +132,8 @@ class SurveyController extends Controller
         $responses = json_encode($submittedData);
 
 
-        $surveyName = "IBDPREM_One";
+        $surveyName = $submittedData['surveyname'];
+        
         $firstName = Auth::guard('patient')->user()->FirstName;
         $lastName = Auth::guard('patient')->user()->LastName;
         $email = Auth::guard('patient')->user()->email;

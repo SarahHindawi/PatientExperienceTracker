@@ -95,7 +95,34 @@ class DB_Seed extends Seeder
             ]);
 
         $testQuestions1 = array(array('Text' => 'Text for test question 1' , 'Type' => 'DropDown' , 'PossibleResponses' => 'Option1,Option2,Option3'),
-                            array('Text' => 'Text for test question 2' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'));
+                            array('Text' => 'Text for test question 2' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 3' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 4' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 5' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 6' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 7' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 8' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 9' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 10' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 11' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 12' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 13' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 14' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 15' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 16' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 17' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 18' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 19' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 20' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 21' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 22' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 23' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 24' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 25' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 26' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 27' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+                            array('Text' => 'Text for test question 28' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3')
+                        );
 
         $testQuestions2 = array(array('Text' => 'Text for test question 1' , 'Type' => 'RadioButtons' , 'PossibleResponses' => 'Option1,Option2,Option3'),
                             array('Text' => 'Text for test question 2' , 'Type' => 'FreeText' , 'PossibleResponses' => ''));
