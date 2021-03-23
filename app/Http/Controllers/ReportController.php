@@ -17,9 +17,8 @@ class ReportController extends Controller
 
     public function create()
     {
-        if(!Auth::guard('admin')->check()){
-
-            if(Auth::guard('patient')->check()){                
+        if (!Auth::guard('admin')->check()){           
+            if (Auth::guard('patient')->check()) { 
                 return redirect('/');
             }
             return redirect('/adminlogin');
@@ -45,10 +44,9 @@ class ReportController extends Controller
 
     public function store()
     {
-        if(!Auth::guard('admin')->check()){
-
+        if (!Auth::guard('admin')->check()) {
             if(Auth::guard('patient')->check()){
-                return redirect(' /');
+                return redirect(' /');           
             }
             return redirect('/adminlogin');
         }
@@ -202,13 +200,14 @@ class ReportController extends Controller
         //an array of emails of the selected patients
         $patientsEmail = [];
         $patientsName = [];
+        $dateCompleted = [];
 
 
         for ($i = 0; $i < count($responses); $i++) {
             $responsesArray[] = json_decode($responses[$i]["Responses"], true);
             $patientsEmail[] = $responses[$i]["Email"];
+            $dateCompleted[] = $responses[$i]["DateCompleted"];
             $patientsName[] = $responses[$i]["FirstName"] . " " . $responses[$i]["LastName"];
-
         }
 
         if (count($patientsName) == 0) {
@@ -249,6 +248,6 @@ class ReportController extends Controller
             }
         }
 
-        return view("report_result_page", ["responses" => $responsesArray, "emails" => $patientsEmail, "names" => $patientsName, "questions" => $surveyArray]);
+        return view("report_result_page", ["responses" => $responsesArray, "emails" => $patientsEmail, "names" => $patientsName, "dates" => $dateCompleted, "questions" => $surveyArray]);
     }
 }
