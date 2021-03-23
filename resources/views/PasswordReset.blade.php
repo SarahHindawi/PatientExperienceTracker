@@ -160,7 +160,7 @@
 
     <div style="left:700px; position:absolute; top:275px">
 
-        <form name="acceptanceForm" method="post" action="/passwordreset" enctype="multipart/form-data" class="lp">
+        <form name="acceptanceForm" method="POST" action="{{ url('/resetreview/store')}}" enctype="multipart/form-data" class="lp">
             @csrf
             <ol class="lp">
 

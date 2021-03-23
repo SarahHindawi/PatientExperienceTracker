@@ -19,6 +19,7 @@ Route::get('/', 'App\Http\Controllers\DashboardController@index');
 
 Route::get('/patientregistration', 'App\Http\Controllers\PatientRegistrationController@index');
 Route::post('/patientregistration', 'App\Http\Controllers\PatientRegistrationController@register');
+Route::post('/verifyemail', 'App\Http\Controllers\PatientRegistrationController@emailverification');
 Route::get('/adminregistration', 'App\Http\Controllers\AdminRegistrationController@index');
 Route::post('/adminregistration', 'App\Http\Controllers\AdminRegistrationController@register');
 Route::get('/profilesearch', 'App\Http\Controllers\PatientProfileSummaryController@index');
@@ -36,11 +37,17 @@ Route::post('/report', 'App\Http\Controllers\ReportController@store');
 Route::get('/report/create', 'App\Http\Controllers\ReportController@create');
 Route::post('/accept', 'App\Http\Controllers\AcceptanceController@store');
 Route::get('/accept/create', 'App\Http\Controllers\AcceptanceController@create');
+Route::get('/resetreview/create', 'App\Http\Controllers\PasswordController@create');
+Route::post('/resetreview/store', 'App\Http\Controllers\PasswordController@store');
 Route::get('/passwordchangepatient', 'App\Http\Controllers\PasswordController@patientchange');
 Route::post('/passwordchangepatientsave', 'App\Http\Controllers\PasswordController@patientsave');
 Route::get('/passwordchangeadmin', 'App\Http\Controllers\PasswordController@adminchange');
 Route::post('/passwordchangeadminsave', 'App\Http\Controllers\PasswordController@adminsave');
 
+Route::get('/adminreset', 'App\Http\Controllers\PasswordController@adminresetindex');
+Route::get('/patientreset', 'App\Http\Controllers\PasswordController@patientresetindex');
+Route::post('/adminresetmail', 'App\Http\Controllers\PasswordController@adminresetemail');
+Route::post('/patientresetrequest', 'App\Http\Controllers\PasswordController@patientresetrequest');
 Route::get('/logout', 'App\Http\Controllers\LogoutController@logout');
 Route::post('/setpassword', 'App\Http\Controllers\PatientPasswordController@store');
 Route::get('/setpassword/create', 'App\Http\Controllers\PatientPasswordController@create');

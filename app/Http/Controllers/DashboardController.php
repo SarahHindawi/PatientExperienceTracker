@@ -27,6 +27,11 @@ class DashboardController extends Controller
         else if(Auth::guard('patient')->check()){
             //Get Authenticated Patient First name to display on dashboard.
             $patientName = Auth::guard('patient')->user()->FirstName;
+            $tempPassCheck = Auth::guard('patient')->user()->PasswordReset;
+            
+            if((strcmp($tempPassCheck, "pending") === 0)){
+                return redirect('/passwordchangepatient')->with('message', 'Temporary password detected please change below.');
+            }
             return  view('patient_dashboard_page')->with('name', $patientName);
         }        
 

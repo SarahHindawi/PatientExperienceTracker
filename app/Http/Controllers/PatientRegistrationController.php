@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 use App\Models\Patient;
 use App\Models\Condition_List;
 use App\Models\Medication_List;
+use Illuminate\Support\Str;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\EmailVerification;
 
 
 
@@ -44,7 +46,7 @@ class PatientRegistrationController extends Controller
         }
 
         $this->validate($request, [
-            'email' => 'required',
+            'email' => 'required|email',
             'password' => 'required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',       
             'firstName' => 'required',
             'lastName' => 'required',
@@ -60,8 +62,7 @@ class PatientRegistrationController extends Controller
         $existanceTest = Patient::where('Email', $request->input('email'))->first();
 
         if($existanceTest)
-        {
-            
+        {            
             return redirect('/')->with('message', 'Registration Failed Email Profile with email already exists.');
         }
 
@@ -81,13 +82,48 @@ class PatientRegistrationController extends Controller
         $patient->Height = $request->input('height');        
         $patient->Gender = $request->input('gender');
         $patient->Condition = $conditionValue;
-        $patient->Medications = json_encode($request->input('medication'));        
+        $patient->Medications = json_encode($request->input('medication'));
+        
+        $verificationCode = Str::random(4);
+        
+        $patient->EmailVerification = $verificationCode;        
 
         $patient->save();
 
-        //Registration success redirect to homepage with message.          
+        //Registration success redirect to homepage with message.
         
-        return redirect('/')->with('message', 'Registration successfully sent for Adminstrator review.'); 
+        $details = [
+            'verificationCode' => $verificationCode
+        ];
+    
+        Mail::to($request->input('email'))->send(new EmailVerification($details));
+        
+        return view('verification')->with('email', $request->input('email'));
 
     } 
+
+    public function emailverification(Request $request){
+
+        if(Auth::guard('admin')->check()){            
+            return redirect('/');
+        }
+        else if(Auth::guard('patient')->check()){            
+            return redirect(' /');
+        }
+
+        $patient = Patient::where('Email', $request->input('email'))->first();
+
+        $verificationCode = $patient->EmailVerification;
+
+        if((strcmp($verificationCode, $request->input('code')) !== 0)){
+            return view('verification')->with('email', $request->input('email'))->with('message', 'Incorrect Verification Code');
+        }
+
+        $patient->EmailVerification = 'true';
+        $patient->save();
+
+
+        return redirect('/')->with('message', 'Registration and email verification successful. Registration has been sent for Administrator review.');
+
+    }
 }

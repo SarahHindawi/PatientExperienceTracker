@@ -18,7 +18,6 @@
     https://www.w3schools.com/icons/icons_reference.asp
     -->
 </head>
-<div id="wrapper">
 <body>
 
 <section class="container-fluid">    
@@ -32,15 +31,14 @@
 
     <p class="text-center h6" style="text-align:center">Here are your administration options </p>
 
-    <p>Default list:</p>
-
-    <!-- The dashborad options in the centere of the page-->
+    
+    <!-- The dashboard options in the centere of the page-->
 
     <ul class="lp">
         <li><button class="block" onclick="location.href='/accept/create'" type="button"><img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">New Patient Registeration Click here to review
             </button></li>
         &nbsp;&nbsp;&nbsp;
-        <li><button  class="block" onclick="location.href='/passwordreset/create'" type="button"> <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right"> Patient Password Reset Requests. Click here to review
+        <li><button  class="block" onclick="location.href='/resetreview/create'" type="button"> <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right"> Patient Password Reset Requests. Click here to review
             </button> </li>
         &nbsp;&nbsp;&nbsp;
         <li> <button  class="block" onclick="location.href='/profilesearch'"> <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right">View Summary of Patient</button></li>
@@ -76,7 +74,7 @@
                                 <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">Patient Registration</a></p>
                     </li>
                     <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/passwordreset/create')}}">
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/resetreview/create')}}">
                                 <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">Password Reset</a></p>
                     </li>
                     <li class="nav-item">

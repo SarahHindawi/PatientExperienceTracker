@@ -1,9 +1,9 @@
-<!-- this page is for the admin to login where they are going to put their email and password -->
+<!-- this page is for the patient to verify their email post registration This will verify that contact can be made through provided email. -->
 <!DOCTYPE html>
 <html>
 <!-- the head has the title of the page and the link for Bootstrap Framework and the link for the css file  -->
 <head>
-    <title>Admin Login</title>
+    <title>Email Verification</title>
     <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/cssFile.css')}}">
@@ -19,14 +19,15 @@
 <!-- the body has the content of the page  -->
 
 <body>
-
-    
+    @if(Session::has('message'))
+    <p class="alert alert-info" style="text-align:center">{{ Session::get('message') }}</p>
+    @endif    
 
 <section class="container-fluid">
     <!-- the title in the top middle of the page -->
     <div>
-        <p class="text-center h1" style="color:seagreen">Welcome to Patient Experience Tracker</p>
-        <p class="text-center h3">Enter your Administrator credentials below</p>
+        <p class="text-center h1" style="color:seagreen">Patient Email Verification</p>
+        <p class="text-center h3">An email has been sent to {{$email}}. Enter Verification Code below.</p>
     </div>
     <!-- the Dashboard of the page that has different options-->
     <div class="msb" id="msb">
@@ -63,29 +64,21 @@
         </nav>
     </div>
 
-    <!-- the form where you have to put admin email the password-->
+    <!-- the form where youhave to put the verification code-->
     <section class="row justify-content-center">
         <section class="col-12 col-sm-6 col-md-3">
-            <form class="form-container" method = "POST" action = "{{ url('/adminloginpage')}}">
+            <form class="form-container" method = "POST" action = "{{ url('/verifyemail')}}">
                 @csrf
-                <!-- box for email-->
+                
+                <input type="hidden" id="email" name="email" value="{{$email}}">
+                <!-- box for Code-->
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-group form-inline">Email address</label>
-                    <input type="email" class="form-control shadow-lg p-3 mb-5 bg-white rounded"
-                           id="email" aria-describedby="emailHelp" name = "email">
+                    <label for="exampleInputEmail1" class="form-group form-inline">Verfication Code</label>
+                    <input type="text" class="form-control shadow-lg p-3 mb-5 bg-white rounded"
+                           id="code" name = "code">
                 </div>
-                    <!-- box for password-->
-                    <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-group form-inline">Password</label>
-                    <input type="password" class="form-control shadow-lg p-3 mb-5 bg-white rounded"
-                           id="password" name = "password">
-                        <!-- the paragraph under password if the admin forgot their passwords-->
-                        <p class=" text-center h6">Having trouble remembering your password?</p>
-                    <p class="text-center h6">Enter your email and click <a href="{{url('/adminreset')}}">here</a> to reset your password.
-                    </p>
-
-                        <!-- sign in button-->
-                    <button class="btn btn-success btn-rounded w-100 btn-lg ">Sign in</button>
+                <!-- Submit Button-->
+                    <button class="btn btn-success btn-rounded w-100 btn-lg ">Verify</button>
 
                 </div>
             </form>
