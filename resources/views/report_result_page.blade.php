@@ -64,9 +64,11 @@
             <div class="cent" style="margin-top: -566px">
                 <table>
                     <tr>
-                        <th>Name</th>
+                        <th style="width:150px">Name</th>
                         <th>Email Address</th>
-                        @foreach ($questions as $q)
+                        <th style="width:100px">Date Completed</th>
+
+                    @foreach ($questions as $q)
                             <th>{{$q["Text"]}}</th>
                         @endforeach
                     </tr>
@@ -76,7 +78,9 @@
                         <tr>
                             <td>{{ $names[$loop->index] }}</td>
                             <td>{{ $emails[$loop->index] }}</td>
-                            @foreach ($questions as $q)
+                            <td style="">{{ $dates[$loop->index] }}</td>
+
+                        @foreach ($questions as $q)
                                 @if(array_key_exists($q['Text'],$responses[$loop->parent->index]))
                                     <td>{{$responses[$loop->parent->index][$q['Text']]}}</td>
                                 @else
