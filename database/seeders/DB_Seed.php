@@ -102,28 +102,28 @@ class DB_Seed extends Seeder
 
         DB::table('SURVEY_QUESTIONS')->insert([
             'SurveyName' => 'IBDPREM_One',
-            'ConditionServed' => 'IDB',
+            'ConditionServed' => 'IBD',
             'SurveyType' => 'PREM',
             'SurveyQuestions' => json_encode($testQuestions1)
         ]);
 
         DB::table('SURVEY_QUESTIONS')->insert([
             'SurveyName' => 'IBDPREM_Two',
-            'ConditionServed' => 'IDB',
+            'ConditionServed' => 'IBD',
             'SurveyType' => 'PREM',
             'SurveyQuestions' => json_encode($testQuestions2)
         ]);
 
         DB::table('SURVEY_QUESTIONS')->insert([
             'SurveyName' => 'IBDPROM_One',
-            'ConditionServed' => 'IDB',
+            'ConditionServed' => 'IBD',
             'SurveyType' => 'PROM',
             'SurveyQuestions' => json_encode($testQuestions1)
         ]);
 
         DB::table('SURVEY_QUESTIONS')->insert([
             'SurveyName' => 'IBDPROM_Two',
-            'ConditionServed' => 'IDB',
+            'ConditionServed' => 'IBD',
             'SurveyType' => 'PROM',
             'SurveyQuestions' => json_encode($testQuestions2)
         ]);

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Patient Login</title>
+    <title>Survey Selection</title>
     <link href="{{asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/cssFile.css')}}">
@@ -16,32 +16,33 @@
     <p class="alert alert-info"style="text-align:center; height: 40px">{{ Session::get('message') }}</p>
     @endif
 
-     <!-- The dashborad which has all the options for guest. This dashboard is located in the side of the page-->
+     <!-- The dashborad which has all the options for the Patient. This dashboard is located in the side of the page-->
      <div class="msb" id="msb">
         <p class="text-center fs-2">PET</p>
 
         <nav class="navbar navbar-default" role="navigation">
             <div class="btn-group-vertical" style=" margin-top:15%; width:100%">
                 <ul class="nav flex-column" style="width:100%">
-                    <!-- the Dashboard options-->
-                    <!-- Sign Up option-->
+                   <!-- the Dashboard options-->
+                    <!-- Dashboard Option-->
                     <li class="nav-item">
                         <p class="text-center"><a class="text-center text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/')}}"><img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right"> Home</a></p>
+                                                  href="{{ url('/')}}"><img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right"> Dashboard</a></p>
+                     <!--Survey Option-->
                     </li>
                     <li class="nav-item">
                         <p class="text-center"><a class="text-center text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/patientregistration')}}"><img src="{{asset('assets/images/signup.png')}}" width="25" height="25" class="d-inline-block align-right"> Sign Up</a></p>
+                                                  href="{{ url('/surveyselection')}}"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Complete Survey</a></p>
                     </li>
-                    <!-- Patient Login option-->
+                    <!-- Password Change Option-->
                     <li class="nav-item">
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/patientlogin')}}"><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Patient Login</a></p>
+                                                  href="{{ url('/passwordchangepatient')}}"><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Change Password</a></p>
                     </li>
-                    <!-- Administrator Login option-->
+                    <!--Logout Option-->
                     <li class="nav-item">
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
-                                                  href= "{{ url('/adminlogin')}}" ><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Administrator Login</a></p>
+                                                  href= "{{ url('/logout')}}" ><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Logout</a></p>
                     </li>
                 </ul>
             </div>
@@ -51,33 +52,23 @@
 
     <section class="container-fluid">
     <div>
-        <p class="text-center h1" style="color:seagreen">Welcome to Patient Experience Tracker</p>
-        <p class="text-center h3">Enter your Email and Password to Login</p>
+        <p class="text-center h1" style="color:seagreen">Survey Selection</p>
+        <p class="text-center h3">Please enter a Survey Selection Below</p>
     </div>
 
 
     <section class="row justify-content-center">
         <section class="col-12 col-sm-6 col-md-3">
-            <form class="form-container" method = "POST" action = "{{ url('/patientloginpage')}}">
+            <form class="form-container" method = "POST" action = "{{ url('/form/create')}}">
                 @csrf
-                <!-- box for email-->
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-group form-inline">Email address</label>
-                    <input type="email" class="form-control shadow-lg p-3 mb-5 bg-white rounded"
-                           id="email" aria-describedby="emailHelp" name = "email">
+                <!-- Box for Survey Selection-->
+                <div class="mb-3" style="margin-left:3cm">
+                    <label for="exampleInputEmail1" class="form-group form-inline">SurveyName</label>
+                    {!! Form::select('surveyName',  $surveys, null,['class' => 'form-control', 'placeholder' => 'Select Survey Name']) !!}
                 </div>
-                    <!-- box for password-->
-                    <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-group form-inline">Password</label>
-                    <input type="password" class="form-control shadow-lg p-3 mb-5 bg-white rounded"
-                           id="password" name = "password">
-                        <!-- the paragraph under password if the admin forgot their passwords-->
-                        <p class=" text-center h6">Having trouble remembering your password?</p>
-                    <p class="text-center h6">Enter your email and click <a href="{{url('/patientreset')}}">here</a> to reset your password.
-                    </p>
-
-                        <!-- sign in button-->
-                    <button class="btn btn-success btn-rounded w-100 btn-lg ">Sign in</button>
+                <br><br>
+                <!-- Submission button-->
+                    <button class="btn btn-success btn-rounded w-100 btn-lg" style="margin-left:3cm">Select</button>
 
                 </div>
             </form>

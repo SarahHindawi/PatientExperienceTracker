@@ -12,6 +12,14 @@ class Survey_Questions extends Model
     protected $table = 'SURVEY_QUESTIONS';
     protected $primaryKey = 'SurveyName';
     protected $keyType = 'string';   
+    protected $fillable = [
+        "SurveyName",
+        "ConditionServed",
+        "SurveyType",
+        "SurveyQuestions"
+    ];
+
+    
     public $incrementing = false;
     public $timestamps = false;
 }

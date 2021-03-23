@@ -17,7 +17,37 @@ class SurveyController extends Controller
      * This method that will create the form
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function create()
+    
+    public function surveyselection(){
+
+        //Check if Patient is logged in.
+        if(!Auth::guard('patient')->check()){
+            if(Auth::guard('admin')->check()){
+ 
+                 return redirect('/');
+             }            
+             return redirect('/')->with('message', 'No Patient Logged in');
+        }
+         //Check if password is temporary redirect to password change if so.
+         $tempPassCheck = Auth::guard('patient')->user()->PasswordReset;
+         if((strcmp($tempPassCheck, "pending")) === 0){
+             return redirect('/passwordchangepatient')->with('message', 'Temporary password detected please change below.'); 
+         }
+
+         
+         //Check Condition and only provide survey names that serve the authenticaticated users condition
+         $userCondition = Auth::guard('patient')->user()->Condition;           
+         
+         $surveyList = Survey_Questions::select('SurveyName')
+         ->where('ConditionServed', $userCondition)        
+         ->pluck('SurveyName');                   
+       
+         return view('survey_select')->with('surveys', $surveyList);
+    }
+
+
+    
+     public function create(Request $request)
     {
 
         //Check if Patient is logged in.
@@ -30,13 +60,27 @@ class SurveyController extends Controller
        }
         //Check if password is temporary redirect to password change if so.
         $tempPassCheck = Auth::guard('patient')->user()->PasswordReset;
-        if(strcmp($tempPassCheck, "pending")){
+        if((strcmp($tempPassCheck, "pending")) === 0){
             return redirect('/passwordchangepatient')->with('message', 'Temporary password detected please change below.');
 
         }
 
-        //TODO get selected survey name
-        $surveyName = "IBDPREM_One";
+        $this->validate($request, [
+            'surveyName' => 'required',            
+            ]);
+
+        //Check Condition and only provide survey names that serve the authenticaticated users condition.
+        $userCondition = Auth::guard('patient')->user()->Condition;     
+
+        $surveyIndex = $request->input('surveyName');
+        $surveyList = Survey_Questions::select('SurveyName')
+         ->where('ConditionServed', $userCondition)        
+         ->pluck('SurveyName');
+         
+         //Match the input dropdown index to get the survey name selected.         
+         $surveyName = $surveyList[$surveyIndex];
+
+        
 
         //check whether the patient has already submitted the survey on the same day
         $responses = DB::table('Survey_Responses')
@@ -72,7 +116,7 @@ class SurveyController extends Controller
 
         //Check if password is temporary redirect to password change if so.
         $tempPassCheck = Auth::guard('patient')->user()->PasswordReset;
-        if(strcmp($tempPassCheck, "pending")){
+        if((strcmp($tempPassCheck, "pending")) === 0){
             return redirect('/passwordchangepatient')->with('message', 'Temporary password detected please change below.');
         }
 
