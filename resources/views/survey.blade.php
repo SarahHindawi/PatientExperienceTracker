@@ -75,7 +75,7 @@
     </nav>
 </div>
 
-<form name="surveyForm" method="post" action="/form" enctype="multipart/form-data" style="margin-left: -10%">
+<form name="surveyForm" method="post" action="/form" enctype="multipart/form-data" style="margin-left: 0px">
     <br style="line-height:100;">
 
     @csrf
