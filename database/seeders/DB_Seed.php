@@ -17,9 +17,9 @@ class DB_Seed extends Seeder
     public function run()
     {
         DB::table('ADMIN_PROFILE')->insert([
-            'email' => 'testroot@test.ca',
+            'email' => 'jboelhouwer@upei.ca',
             'password' => Hash::make('rootPass'),
-            'FirstName' => 'TestRootFirst',
+            'FirstName' => 'TestRootFirstRoot',
             'LastName' => 'TestRootLast',
             'RootAdmin' => true
         ]);
@@ -61,7 +61,7 @@ class DB_Seed extends Seeder
         ]);
 
         DB::table('PATIENT_PROFILE')->insert([
-            'email' => 'testpatientone@test.ca',
+            'email' => 'jboelhouwer@upei.ca',
             'password' => Hash::make('patientOne'),
             'FirstName' => 'TestPatientOneFirst',
             'LastName' => 'TestPatientOneLast',

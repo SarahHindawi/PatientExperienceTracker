@@ -21,12 +21,18 @@ class SurveyController extends Controller
     {
 
         //Check if Patient is logged in.
-        if (!Auth::guard('patient')->check()) {
-            if (Auth::guard('admin')->check()) {
+        if(!Auth::guard('patient')->check()){
+           if(Auth::guard('admin')->check()){
 
                 return redirect('/');
-            }
-            return redirect('/patientlogin');
+            }            
+            return redirect('/')->with('message', 'No Patient Logged in');
+       }
+        //Check if password is temporary redirect to password change if so.
+        $tempPassCheck = Auth::guard('patient')->user()->PasswordReset;
+        if(strcmp($tempPassCheck, "pending")){
+            return redirect('/passwordchangepatient')->with('message', 'Temporary password detected please change below.');
+
         }
 
         //TODO get selected survey name
@@ -56,14 +62,22 @@ class SurveyController extends Controller
      */
     public function store()
     {
-        if (!Auth::guard('patient')->check()) {
-            if (Auth::guard('admin')->check()) {
-                //TODO redirect to Admin Dashbaord with unauthorized message.
-            }
-            return redirect('/patientlogin');
+          //Check if Patient is logged in.
+        if(!Auth::guard('patient')->check()){
+            if(Auth::guard('admin')->check()){
+                return redirect('/');
+            }            
+            return redirect('/')->with('message', 'No Patient Logged in');
+        }
+
+        //Check if password is temporary redirect to password change if so.
+        $tempPassCheck = Auth::guard('patient')->user()->PasswordReset;
+        if(strcmp($tempPassCheck, "pending")){
+            return redirect('/passwordchangepatient')->with('message', 'Temporary password detected please change below.');
         }
 
         //the fields of the table: id, Email, DateCompleted, SurveyName, FirstName, LastName, Responses
+
 
         $submittedData = $_POST;
 

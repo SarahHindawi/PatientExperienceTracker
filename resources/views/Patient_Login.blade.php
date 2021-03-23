@@ -73,7 +73,7 @@
                            id="password" name = "password">
                         <!-- the paragraph under password if the admin forgot their passwords-->
                         <p class=" text-center h6">Having trouble remembering your password?</p>
-                    <p class="text-center h6">Enter your email and click <a href="#">here</a> to reset your password.
+                    <p class="text-center h6">Enter your email and click <a href="{{url('/patientreset')}}">here</a> to reset your password.
                     </p>
 
                         <!-- sign in button-->

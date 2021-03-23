@@ -174,11 +174,9 @@
             <!-- If there are no password reset requests, then don't print a list -->
             @if (count($patients) > 0)
 
-                <form name="acceptanceForm" method="post" action="/passwordreset" enctype="multipart/form-data"
-                      class="lp">
-                    @csrf
-                    <ol class="lp">
-
+        <form name="acceptanceForm" method="POST" action="{{ url('/resetreview/store')}}" enctype="multipart/form-data" class="lp">
+            @csrf
+            <ol class="lp">
                         @foreach ($patients as $p)
                             <ul>
                                 <label style="margin-right: 10px">

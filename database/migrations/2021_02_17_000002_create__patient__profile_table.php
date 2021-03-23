@@ -27,7 +27,8 @@ class CreatePatientProfileTable extends Migration
             $table->boolean('PREMFlag')->default(true);
             $table->boolean('PROMFlag')->default(true);
             $table->boolean('NewAccount')->default(true);
-            $table->string('PasswordReset')->default("false");            
+            $table->string('PasswordReset')->default("false");
+            $table->string('EmailVerification')->default('000000');           
         });
     }
 

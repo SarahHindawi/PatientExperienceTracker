@@ -32,11 +32,12 @@ class AdminRegistrationController extends Controller
 
     }
 
-  public function register(Request $request)
+    public function register(Request $request)
     {
 
         //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
-       if(!Auth::guard('admin')->check()){
+
+        if(!Auth::guard('admin')->check()){
             if(Auth::guard('patient')->check()){
                  //If Patient logged in Redirect to Patient Dashboard.
                  return redirect('/');
