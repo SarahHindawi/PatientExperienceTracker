@@ -20,11 +20,11 @@
 <div id="wrapper">
     <!-- the body has the content of the page  -->
     <body>
-    <!-- the navigation bar in the top-->
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-        </div>
-    </nav>
+    <section class="container-fluid">
+        @if(Session::has('message'))
+            <p class="alert alert-info" style="text-align:center">{{ Session::get('message') }}</p>
+    @endif
+
 
     <!-- the title in the top  -->
     <div style=" margin-top:5%;">
