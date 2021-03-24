@@ -47,8 +47,9 @@ class AddSurveyController extends Controller
         $num = DB::table('Survey_Questions')
             ->where('SurveyName', 'LIKE', $request->input('SurveyName'))->count();
 
+
         if ($num > 0) {
-            return view('create_new_survey')->with('message', 'There already exists a survey with the same name. Please change the given Survey Name');
+            return view('create_new_survey',['message' => 'There already exists a survey with the same name. Please change the given Survey Name']);
         }
 
         DB::table('SURVEY_QUESTIONS')->insert([

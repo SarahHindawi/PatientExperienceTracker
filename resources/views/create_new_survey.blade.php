@@ -21,9 +21,9 @@
     <!-- the body has the content of the page  -->
     <body>
     <section class="container-fluid">
-        @if(Session::has('message'))
-            <p class="alert alert-info" style="text-align:center">{{ Session::get('message') }}</p>
-    @endif
+        @isset($message)
+            <p class="alert alert-info" style="text-align:center">{{ $message}}</p>
+    @endisset
 
 
     <!-- the title in the top  -->
@@ -111,14 +111,14 @@
         <div class="mb-3 row">
             <label class="col-sm-9 col-form-label">Survey Name</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control shadow-sm" name="SurveyName">
+                <input type="text" class="form-control shadow-sm" name="SurveyName" required>
             </div>
         </div>
         <!-- Text box for the condition served by the survey -->
         <div class="mb-3 row">
             <label class="col-sm-9 col-form-label">Condition Served </label>
             <div class="col-sm-10">
-                <input type="text" class="form-control shadow-sm" name="ConditionServed">
+                <input type="text" class="form-control shadow-sm" name="ConditionServed" required>
                 <!-- the search button -->
                 <div style="margin-left:130%; margin-top:-7%; width: 150Px">
                     <button style="width: 200px;" type="submit" class="btn btn-success btn-rounded">Create</button>
