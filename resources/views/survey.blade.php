@@ -99,21 +99,32 @@
                 <br> <br>
 
             @elseif ($q["Type"]  == "Checkbox")
+            
+            <div style="width:60em;overflow-x: auto;white-space: nowrap;">  
+                <input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="None Apply" checked>
+                <label class="form-check form-check-inline">None Apply</label>              
 
-                @foreach(explode(",",$q['PossibleResponses']) as $option)
+                @foreach(explode(",",$q['PossibleResponses']) as $option)                 
                     <input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="{{$option}}">
                         <label class="form-check form-check-inline">{{$option}}</label>
-                @endforeach
+                       
+                @endforeach                       
+            </div>
                 <br>
                 <br> <br>
 
             @elseif ($q["Type"]  == "RadioButtons")
 
+            <div style="width:60em;overflow-x: auto;white-space: nowrap;">
+                <input type="radio" name="{{$q["Text"]}}" value="None" checked>
+                        <label>None Apply</label>&nbsp;&nbsp;&nbsp;
                 @foreach(explode(",",$q['PossibleResponses']) as $option)
                     <input type="radio" name="{{$q["Text"]}}" value="{{$option}}">
                         <label>{{$option}}</label>&nbsp;&nbsp;&nbsp;
                 @endforeach
-                <br>
+            </div>
+                
+                <br>           
                 <br> <br>
 
             @elseif ($q["Type"]  == "Text")
