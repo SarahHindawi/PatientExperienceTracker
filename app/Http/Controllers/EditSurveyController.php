@@ -45,12 +45,17 @@ class EditSurveyController extends Controller
             'SurveyName' => 'required',
         ]);
 
-        $surveyName = $request->input('SurveyName');
+        $surveyIndex = $request->input('SurveyName');
+        $surveyList = Survey_Questions::select('SurveyName')
+            ->pluck('SurveyName');
 
+        //Match the input dropdown index to get the survey name selected.
+        $surveyName = $surveyList[$surveyIndex];
 
         $survey = Survey_Questions::query()->where("SurveyName", $surveyName)->first();
         $surveyArray = json_decode($survey, true);
         $surveyArray = json_decode($surveyArray["SurveyQuestions"], true);
+
         return view('ModifyingSurveys', ["questions" => $surveyArray, "name" => $surveyName]);
     }
 
