@@ -46,12 +46,13 @@ Route::get('/passwordchangeadmin', 'App\Http\Controllers\PasswordController@admi
 Route::post('/passwordchangeadminsave', 'App\Http\Controllers\PasswordController@adminsave');
 Route::post('/passwordreset', 'App\Http\Controllers\PasswordController@store');
 Route::get('/passwordreset/create', 'App\Http\Controllers\PasswordController@create');
-
-
 Route::get('/adminreset', 'App\Http\Controllers\PasswordController@adminresetindex');
 Route::get('/patientreset', 'App\Http\Controllers\PasswordController@patientresetindex');
 Route::post('/adminresetmail', 'App\Http\Controllers\PasswordController@adminresetemail');
 Route::post('/patientresetrequest', 'App\Http\Controllers\PasswordController@patientresetrequest');
 Route::get('/logout', 'App\Http\Controllers\LogoutController@logout');
+
+Route::get('/addsurvey/create', 'App\Http\Controllers\AddSurveyController@create');
+Route::post('/addsurvey', 'App\Http\Controllers\AddSurveyController@store');
 
 

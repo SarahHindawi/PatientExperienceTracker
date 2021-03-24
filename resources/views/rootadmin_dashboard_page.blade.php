@@ -21,21 +21,21 @@
 </head>
 <body>
 
-<section class="container-fluid">  
+<section class="container-fluid">
     @if(Session::has('message'))
     <p class="alert alert-info" style="text-align:center">{{ Session::get('message') }}</p>
     @endif
- 
+
 
     <p class="text-center fs-2" style="color:seagreen">Hello {{$name}}</p>
 
 
     <p class="text-center h6" style="text-align:center">Here are your administration options </p>
-    
+
 
     <!-- The dashborad options in the centere of the page-->
 
-    <ul class="lp">
+    <ul class="lp" style="margin-top: 40px;">
         <li><button class="block button button1" onclick="location.href='/accept/create'" type="button"><span><img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">New Patient Registeration Click here to review</span>
             </button></li>
         &nbsp;&nbsp;&nbsp;
@@ -56,7 +56,11 @@
         <li><button  class="block button button1" onclick="location.href='admin_reset_password'"> <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">ADMIN Help</button></li>
         &nbsp;&nbsp;&nbsp;
         -->
-        <li><button class="block button button1" onclick="location.href='/adminregistration'""><img src="{{asset('assets/images/signup.png')}}" width="25" height="25" class="d-inline-block align-right">Register Admin
+        <li><button class="block button button1" onclick="location.href='/adminregistration'"><img src="{{asset('assets/images/signup.png')}}" width="25" height="25" class="d-inline-block align-right">Register Admin
+            </button></li>
+
+        <br>
+        <li><button class="block button button1" onclick="location.href='/addsurvey/create'"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Create a New Survey
             </button></li>
 
     </ul>
