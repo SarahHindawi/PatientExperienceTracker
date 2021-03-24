@@ -94,8 +94,8 @@ class DB_Seed extends Seeder
             'PasswordReset' => "false",
             ]);
 
-        $testQuestions1 = array(array('Text' => 'Text for test question 1' , 'Type' => 'DropDown' , 'PossibleResponses' => 'Option1,Option2,Option3'),
-                            array('Text' => 'Text for test question 2' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
+        $testQuestions1 = array(array('Text' => 'Text for test question 1' , 'Type' => 'DropDown' , 'PossibleResponses' => 'Option1,Option2,Option3,Option4,Option5,Optopn6,Option7,Option8,Optopm9,Option10,Option11,Option12'),
+                            array('Text' => 'Text for test question 2' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3,Optopn6,Option7,Option8,Option9,Option10,Option11,Option12'),
                             array('Text' => 'Text for test question 3' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
                             array('Text' => 'Text for test question 4' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
                             array('Text' => 'Text for test question 5' , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Option1,Option2,Option3'),
