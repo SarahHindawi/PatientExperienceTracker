@@ -63,6 +63,10 @@
         <li><button class="block button button1" onclick="location.href='/addsurvey/create'"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Create a New Survey
             </button></li>
 
+        <br>
+        <li><button class="block button button1" onclick="location.href='/editSurveySelect'"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify a Survey
+            </button></li>
+
     </ul>
 
 
@@ -77,33 +81,29 @@
                     <li class="nav-item">
                         <!-- the Dashboard options-->
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page"  href="{{url('.')}}">
-                                <img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right">Dashboard</a></p>
+                                <img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right"> Dashboard</a></p>
                     </li>
                     <li class="nav-item">
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/accept/create')}}" >
-                                <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">Patient Registration</a></p>
+                                <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right"> Patient Registration</a></p>
                     </li>
                     <li class="nav-item">
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/resetreview/create')}}">
-                                <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right">Password Reset</a></p>
+                                <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right"> Password Reset</a></p>
                     </li>
                     <li class="nav-item">
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/profilesearch')}}">
-                                <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right">Patient Summary</a></p>
+                                <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right"> Patient Summary</a></p>
                     </li>
                     <li class="nav-item">
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/report/create')}}">
-                                <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right">Generate Report</a></p>
+                                <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right"> Generate Report</a></p>
                     </li>
-                    <!-- Comment out due to not MVP
-                    <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
-                                <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Modify Survey</a></p>
-                    </li>
-                    -->
+
+
                     <li class="nav-item">
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{url('/passwordchangeadmin')}}">
-                                <img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Change Password</a></p>
+                                <img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Change Password</a></p>
                     </li>
                     <!-- Cooment out due to not MVP
                     <li class="nav-item">
@@ -113,12 +113,23 @@
                     -->
                     <li class="nav-item">
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/adminregistration')}}">
-                                <img src="{{asset('assets/images/signup.png')}}" width="25" height="25" class="d-inline-block align-right">Register Admin</a></p>
+                                <img src="{{asset('assets/images/signup.png')}}" width="25" height="25" class="d-inline-block align-right"> Register Admin</a></p>
                     </li>
+
+                    <li class="nav-item">
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
+                                                  href= "{{ url('/addsurvey/create')}}" ><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Create New Survey</a></p>
+                    </li>
+
+                    <li class="nav-item">
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/editSurveySelect')}}">
+                                <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify a Survey</a></p>
+                    </li>
+
                       <!--Logout Option-->
                       <li class="nav-item">
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
-                                                  href= "{{ url('/logout')}}" ><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Logout</a></p>
+                                                  href= "{{ url('/logout')}}" ><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Logout</a></p>
                     </li>
                 </ul>
             </div>

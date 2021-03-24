@@ -20,25 +20,6 @@
 <!-- the navigation bar in the top-->
 <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand"></a>
-        <!-- the button of the the drop down for the user in the top right corner-->
-        <form class="d-flex">
-            <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button"
-                    id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-            </button>
-            <!-- the option of the drop down button-->
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <li>
-                    <button class="dropdown-item" type="button">Action</button>
-                </li>
-                <li>
-                    <button class="dropdown-item" type="button">Another action</button>
-                </li>
-                <li>
-                    <button class="dropdown-item" type="button">Something else here</button>
-                </li>
-            </ul>
         </form>
     </div>
 </nav>
@@ -94,19 +75,12 @@
     </nav>
 </div>
 <!-- an example on how to add or remove survey questions-->
-<form>
-    <!-- button to edit PROM survey questions-->
-    <button style="width: 200px; margin:28%; margin-top:3%" type="button" class="btn btn-success btn-rounded">Edit
-        PROM
-    </button>
-    <!-- button to edit PREM survey questions-->
-    <button style="width: 200px; margin-right:12%; margin-top:-25%" type="button"
-            class="btn btn-success btn-rounded">Edit PREM
-    </button>
-    <div style="width: 1100px; margin:20%; margin-top:-27%" class="shadow-lg p-3 mb-5 bg-white rounded">
+<form class="form-container" method = "POST" action = "{{ url('/editSurvey')}}">
+    @csrf
+
+    <div style="width: 1100px; margin:20%; margin-top:2%" class="shadow-lg p-3 mb-5 bg-white rounded">
         <br>
         <!-- button to add question-->
-        <a href="#"> <img alt="Qries" src="./blue cross.png" width="5%" height="5%"></a>
         <a href="#"> <img alt="Qries" src="{{asset('assets/images/blue cross.png')}}" width="5%" height="5%"></a>
 
         <p class="double"></p>
@@ -210,7 +184,7 @@
     </div>
     <!-- a submit button-->
     <div style=" height: 4cm;">
-        <button style="width: 5cm; margin-left: 19cm; margin-top:2cm; " type="button"
+        <button style="width: 5cm; margin-left: 19cm; margin-top:2cm; " type="submit"
                 class="btn btn-success btn-rounded">Submit
         </button>
     </div>

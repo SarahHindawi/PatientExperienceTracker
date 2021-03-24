@@ -91,7 +91,13 @@
             </button>
         </li>
 
+        <br>
+        <li><button class="block button button1" onclick="location.href='/editSurveySelect'"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify a Survey
+            </button></li>
+
     </ul>
+
+
 
 
     <!-- The dashboard which has all the options for the admin. This dashboard is located in the side of the page-->
@@ -152,6 +158,18 @@
                                 <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">Admin Help</a></p>
                     </li>
                     -->
+
+                    <li class="nav-item">
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
+                                                  href= "{{ url('/addsurvey/create')}}" ><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Create New Survey</a></p>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{ url('/editSurveySelect')}}">
+                                <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify a Survey</a></p>
+                    </li>
+
                     <!--Logout Option-->
                     <li class="nav-item">
                         <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
