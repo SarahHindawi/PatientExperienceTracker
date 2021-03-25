@@ -91,18 +91,31 @@
                         </tr>
                     @endforeach
 
-                </table>                
+                </table>
 
                 <!-- this button is to save the file-->
                 {{--            <button class="greenbutton" onclick="window.print();" style="margin: 3%"><i class='fas fa-save'></i> Save to file--}}
                 {{--            </button>--}}
             </div>
-            <div class="cent" style="margin-top: -750px">
+            <div class="cent" style="margin-top: -370px">
             <a style="text-decoration: none; margin-left: -235px" href="{{ url('/report/create')}}">
                 <button style="width: 5cm; margin-bottom:1cm; margin-top: 10px; margin-left:270px"
                         class="btn btn-success btn-rounded">Back
                 </button>
             </a>
+
+
+                <a style="text-decoration: none; margin-left: -235px" href="{{ url('/report/create')}}">
+                    <button style="width: 5cm; margin-bottom:1cm; margin-top: 10px; margin-left:270px"
+                            class="btn btn-success btn-rounded">Save
+                    </button>
+                </a>
+
+                <?php
+                $fileurl = 'storage/ReportCSVs/report[1616702791].csv';
+                readfile( $fileurl );
+                ?>
+
         </div>
         </div>
 
