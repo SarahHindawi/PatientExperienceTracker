@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Storage;
 class ReportController extends Controller
 {
 
-    public function create()
+    public function create(...$message)
     {
         if (!Auth::guard('admin')->check()) {
             if (Auth::guard('patient')->check()) {
@@ -40,7 +40,11 @@ class ReportController extends Controller
         }
 
         //pass the list of survey names and medications to the view be displayed in the form (to be listed in the drop-down menus)
-        return view('GeneratReport', ["surveys" => $surveyList, "medications" => $medicationList]);
+        if (count($message) == 0) {
+            return view('GeneratReport', ["surveys" => $surveyList, "medications" => $medicationList]);
+        } else {
+            return view('GeneratReport', ["surveys" => $surveyList, "medications" => $medicationList, "message" => $message[0]]);
+        }
     }
 
     public function store()
@@ -182,8 +186,7 @@ class ReportController extends Controller
         }
 
         if (count($finalPatients) == 0) {
-            echo '<script type="text/javascript">alert("No records match the specified data.")</script>';
-            return $this->create();
+            return $this->create("No records match the specified data.");
         }
 
         //Get the responses of the patients that match the required filters
@@ -212,8 +215,7 @@ class ReportController extends Controller
         }
 
         if (count($patientsName) == 0) {
-            echo '<script type="text/javascript">alert("No records match the specified data.")</script>';
-            return $this->create();
+            return $this->create("No records match the specified data.");
         }
 
 
@@ -264,14 +266,14 @@ class ReportController extends Controller
                     $row .= "|N/A";
                 }
             }
-            $list[]= explode("|", $row);
+            $list[] = explode("|", $row);
         }
 
         $path = storage_path('ReportCSVs\\');
 
-        $name = "report[".time()."].csv";
+        $name = "report[" . time() . "].csv";
 
-        $file = fopen($path.$name,"w");
+        $file = fopen($path . $name, "w");
 
         foreach ($list as $line) {
             fputcsv($file, $line);
@@ -280,11 +282,8 @@ class ReportController extends Controller
         //a new CSV file is created in storage/ReportCSVs
         fclose($file);
 
-        $filePath = 'report[1616703247].csv';
-        $content = Storage::disk('local_public')->get($filePath);
-        dd($content);
-
-        dd(Storage::get($path.$name));
+        //$path = storage_path('ReportCSVs');
+        //dd(Storage::disk('storage')->url($name));
 
         return view("report_result_page", ["responses" => $responsesArray, "emails" => $patientsEmail, "names" => $patientsName, "dates" => $dateCompleted, "questions" => $surveyArray]);
     }

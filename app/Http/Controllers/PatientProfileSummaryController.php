@@ -26,6 +26,7 @@ class PatientProfileSummaryController extends Controller
         }
 
         $data = Patient::paginate(10);
+
         return view('ProfileSummary')->with('data', $data);
     }
 
@@ -66,8 +67,7 @@ class PatientProfileSummaryController extends Controller
 
         //if there are no registered patients with the given name/email
         if (count($data) == 0) {
-            echo '<script type="text/javascript">alert("No records match the specified data.")</script>';
-            return view('ProfileSummary');
+            return view('ProfileSummary' ,['message' => "No records match the specified data."]);
         }
 
         $data = (array)$data[0];

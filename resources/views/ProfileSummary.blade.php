@@ -18,25 +18,13 @@
 <!-- the body has the content of the page  -->
 <div id="wrapper">
 <body>
-<!-- the navigation bar in the top-->
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid" style="height: 30px; width: 800px">
-{{--        <a class="navbar-brand"></a>--}}
-{{--        <!-- the button of the the drop down for the user in the top right corner-->--}}
-{{--        <form class="d-flex">--}}
-{{--            <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button"--}}
-{{--                    id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">--}}
-{{--                Dropdown--}}
-{{--            </button>--}}
-{{--            <!-- the option of the drop down button-->--}}
-{{--            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">--}}
-{{--                <li><button class="dropdown-item" type="button">Action</button></li>--}}
-{{--                <li><button class="dropdown-item" type="button">Another action</button></li>--}}
-{{--                <li><button class="dropdown-item" type="button">Something else here</button></li>--}}
-{{--            </ul>--}}
-{{--        </form>--}}
-    </div>
-</nav>
+
+@if(isset($message))
+    <p class="alert alert-info" style="text-align:center">{{ $message}}</p>
+@else
+    <p style="text-align:center; height:35px; background-color: #f5f5f5"></p>
+
+@endif
 
 <!-- the title in the top  -->
 <div style=" margin-left:10%">
