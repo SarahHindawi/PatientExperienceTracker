@@ -269,7 +269,7 @@ class ReportController extends Controller
             $list[] = explode("|", $row);
         }
 
-        $path = storage_path('ReportCSVs\\');
+        $path = storage_path('app\\');
 
         $name = "report[" . time() . "].csv";
 
@@ -282,9 +282,12 @@ class ReportController extends Controller
         //a new CSV file is created in storage/ReportCSVs
         fclose($file);
 
-        //$path = storage_path('ReportCSVs');
-        //dd(Storage::disk('storage')->url($name));
+        return view("report_result_page", ["responses" => $responsesArray, "emails" => $patientsEmail, "names" => $patientsName, "dates" => $dateCompleted, "questions" => $surveyArray, "fileName" => $name]);
+    }
 
-        return view("report_result_page", ["responses" => $responsesArray, "emails" => $patientsEmail, "names" => $patientsName, "dates" => $dateCompleted, "questions" => $surveyArray]);
+    public function download(){
+
+        return Storage::download($_POST['fileName']);
+
     }
 }

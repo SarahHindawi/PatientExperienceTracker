@@ -55,6 +55,7 @@ Route::get('/logout', 'App\Http\Controllers\LogoutController@logout');
 Route::get('/addsurvey/create', 'App\Http\Controllers\AddSurveyController@create');
 Route::post('/addsurvey', 'App\Http\Controllers\AddSurveyController@store');
 Route::get('/editSurveySelect', 'App\Http\Controllers\EditSurveyController@surveyselection');
+Route::post('/report/download', 'App\Http\Controllers\ReportController@download');
 
 
 

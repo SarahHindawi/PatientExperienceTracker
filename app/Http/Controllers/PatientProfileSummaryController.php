@@ -32,13 +32,13 @@ class PatientProfileSummaryController extends Controller
 
     public function search(Request $request)
     {
-//        if(!Auth::guard('admin')->check()){
-//
-//            if(Auth::guard('patient')->check()){
-//                //TODO redirect to Patient Dashbaord with unauthorized message.
-//            }
-//            return redirect('/adminlogin');
-//        }
+        if(!Auth::guard('admin')->check()){
+
+            if(Auth::guard('patient')->check()){
+                //TODO redirect to Patient Dashbaord with unauthorized message.
+            }
+            return redirect('/adminlogin');
+        }
 
         $this->validate($request, [
             'inputEmail' => 'required|email',
