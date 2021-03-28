@@ -26,18 +26,19 @@ class PatientProfileSummaryController extends Controller
         }
 
         $data = Patient::paginate(10);
+
         return view('ProfileSummary')->with('data', $data);
     }
 
     public function search(Request $request)
     {
-//        if(!Auth::guard('admin')->check()){
-//
-//            if(Auth::guard('patient')->check()){
-//                //TODO redirect to Patient Dashbaord with unauthorized message.
-//            }
-//            return redirect('/adminlogin');
-//        }
+        if(!Auth::guard('admin')->check()){
+
+            if(Auth::guard('patient')->check()){
+                //TODO redirect to Patient Dashbaord with unauthorized message.
+            }
+            return redirect('/adminlogin');
+        }
 
         $this->validate($request, [
             'inputEmail' => 'required|email',
@@ -66,8 +67,7 @@ class PatientProfileSummaryController extends Controller
 
         //if there are no registered patients with the given name/email
         if (count($data) == 0) {
-            echo '<script type="text/javascript">alert("No records match the specified data.")</script>';
-            return view('ProfileSummary');
+            return view('ProfileSummary' ,['message' => "No records match the specified data."]);
         }
 
         $data = (array)$data[0];

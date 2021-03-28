@@ -11,14 +11,15 @@ use Illuminate\Http\Request;
 use \Datetime;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ReportController extends Controller
 {
 
-    public function create()
+    public function create(...$message)
     {
-        if (!Auth::guard('admin')->check()){           
-            if (Auth::guard('patient')->check()) { 
+        if (!Auth::guard('admin')->check()) {
+            if (Auth::guard('patient')->check()) {
                 return redirect('/');
             }
             return redirect('/adminlogin');
@@ -39,14 +40,18 @@ class ReportController extends Controller
         }
 
         //pass the list of survey names and medications to the view be displayed in the form (to be listed in the drop-down menus)
-        return view('GeneratReport', ["surveys" => $surveyList, "medications" => $medicationList]);
+        if (count($message) == 0) {
+            return view('GeneratReport', ["surveys" => $surveyList, "medications" => $medicationList]);
+        } else {
+            return view('GeneratReport', ["surveys" => $surveyList, "medications" => $medicationList, "message" => $message[0]]);
+        }
     }
 
     public function store()
     {
         if (!Auth::guard('admin')->check()) {
-            if(Auth::guard('patient')->check()){
-                return redirect(' /');           
+            if (Auth::guard('patient')->check()) {
+                return redirect(' /');
             }
             return redirect('/adminlogin');
         }
@@ -163,12 +168,12 @@ class ReportController extends Controller
                     $above = $_POST["ageAbove"];
 
                     //get all the patients that are older or have the same age as the one specified
-                    if ($ageYears >= $above) {
+                    if ($ageYears > $above) {
                         $finalPatients[] = $matchedPatientsEmails[$i];
                     }
                 } else if ($age == 'below') {
                     $below = $_POST["ageBelow"];
-                    if ($ageYears <= $below) {
+                    if ($ageYears < $below) {
                         $finalPatients[] = $matchedPatientsEmails[$i];
                     }
                 } else if ($age == 'equals') {
@@ -181,8 +186,7 @@ class ReportController extends Controller
         }
 
         if (count($finalPatients) == 0) {
-            echo '<script type="text/javascript">alert("No records match the specified data.")</script>';
-            return $this->create();
+            return $this->create("No records match the specified data.");
         }
 
         //Get the responses of the patients that match the required filters
@@ -211,8 +215,7 @@ class ReportController extends Controller
         }
 
         if (count($patientsName) == 0) {
-            echo '<script type="text/javascript">alert("No records match the specified data.")</script>';
-            return $this->create();
+            return $this->create("No records match the specified data.");
         }
 
 
@@ -223,7 +226,6 @@ class ReportController extends Controller
 //        }
 
         //Get the questions of the current version of the survey (as column headers)
-        //TODO get selected survey name
         $surveyName = $_POST["surveyName"];
         $survey = Survey_Questions::query()->where("SurveyName", $surveyName)->first();
         $surveyArray = json_decode($survey, true);
@@ -248,6 +250,44 @@ class ReportController extends Controller
             }
         }
 
-        return view("report_result_page", ["responses" => $responsesArray, "emails" => $patientsEmail, "names" => $patientsName, "dates" => $dateCompleted, "questions" => $surveyArray]);
+        $header = "Name|Email Address|Date Completed";
+
+        foreach ($surveyArray as $q) {
+            $header .= "|" . ($q["Text"]);
+        }
+
+        $list = [explode("|", $header)];
+        for ($i = 0; $i < count($patientsEmail); $i++) {
+            $row = $patientsName[$i] . "|" . $patientsEmail[$i] . "|" . $dateCompleted[$i];
+            foreach ($surveyArray as $q) {
+                if (array_key_exists($q['Text'], $responsesArray[$i])) {
+                    $row .= "|" . $responsesArray[$i][$q['Text']];
+                } else {
+                    $row .= "|N/A";
+                }
+            }
+            $list[] = explode("|", $row);
+        }
+
+        $path = storage_path('app\\');
+
+        $name = "report[" . time() . "].csv";
+
+        $file = fopen($path . $name, "w");
+
+        foreach ($list as $line) {
+            fputcsv($file, $line);
+        }
+
+        //a new CSV file is created in storage/ReportCSVs
+        fclose($file);
+
+        return view("report_result_page", ["responses" => $responsesArray, "emails" => $patientsEmail, "names" => $patientsName, "dates" => $dateCompleted, "questions" => $surveyArray, "fileName" => $name]);
+    }
+
+    public function download(){
+
+        return Storage::download($_POST['fileName']);
+
     }
 }

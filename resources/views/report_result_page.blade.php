@@ -91,20 +91,22 @@
                         </tr>
                     @endforeach
 
-                </table>                
+                </table>
 
                 <!-- this button is to save the file-->
                 {{--            <button class="greenbutton" onclick="window.print();" style="margin: 3%"><i class='fas fa-save'></i> Save to file--}}
                 {{--            </button>--}}
             </div>
-            <div class="cent" style="margin-top: -750px">
-            <a style="text-decoration: none; margin-left: -235px" href="{{ url('/report/create')}}">
-                <button style="width: 5cm; margin-bottom:1cm; margin-top: 10px; margin-left:270px"
-                        class="btn btn-success btn-rounded">Back
-                </button>
-            </a>
-        </div>
-        </div>
+
+
+                <form method="post" action="/report/download" enctype="multipart/form-data" style="margin-top: 350px; margin-left: 400px">
+                    @csrf
+                    <input type="hidden" name="fileName" value="{{$fileName}}">
+                    <button style="width: 5cm; margin-bottom:1cm; margin-top: 10px; margin-left:270px"
+                            class="btn btn-success btn-rounded">Save
+                    </button>
+                </form>
+            </div>
 
 
         <!-- The dashboard which has all the options for the admin. This dashboard is located in the side of the page-->
