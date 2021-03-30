@@ -83,7 +83,7 @@
     <div style="width: 1100px; margin-left:27%; " class="shadow-lg p-3 mb-5 bg-white rounded">
 
         @foreach ($questions as $q)
-            <p class="h4"> {{$q["Text"]}}</p> <!--Display the question-->
+            <p class="h4"> {{str_replace("|",".",$q["Text"])}}</p> <!--Display the question-->
 
             @if ( $q["Type"]  == "DropDown")
                 <select name="{{$q["Text"]}}">
@@ -99,16 +99,16 @@
                 <br> <br>
 
             @elseif ($q["Type"]  == "Checkbox")
-            
-            <div style="width:60em;overflow-x: auto;white-space: nowrap;">  
-                <input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="None Apply" checked>
-                <label class="form-check form-check-inline">None Apply</label>              
 
-                @foreach(explode(",",$q['PossibleResponses']) as $option)                 
+            <div style="width:60em;overflow-x: auto;white-space: nowrap;">
+                <input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="None Apply" checked>
+                <label class="form-check form-check-inline">None Apply</label>
+
+                @foreach(explode(",",$q['PossibleResponses']) as $option)
                     <input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="{{$option}}">
                         <label class="form-check form-check-inline">{{$option}}</label>
-                       
-                @endforeach                       
+
+                @endforeach
             </div>
                 <br>
                 <br> <br>
@@ -123,8 +123,8 @@
                         <label>{{$option}}</label>&nbsp;&nbsp;&nbsp;
                 @endforeach
             </div>
-                
-                <br>           
+
+                <br>
                 <br> <br>
 
             @elseif ($q["Type"]  == "Text")
