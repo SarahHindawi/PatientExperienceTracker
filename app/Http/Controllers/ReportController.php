@@ -271,7 +271,9 @@ class ReportController extends Controller
 
         $path = storage_path('app\\');
 
-        $name = "report[" . time() . "].csv";
+        $date = new DateTime("now", new \DateTimeZone('America/Halifax') );
+
+        $name = "report[" . $date->format('d-m-Y@H-i-s') . "].csv";
 
         $file = fopen($path . $name, "w");
 
