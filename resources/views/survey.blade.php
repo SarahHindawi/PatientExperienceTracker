@@ -8,7 +8,16 @@
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
 </head>
+<style>   
 
+    #wrapper {
+        margin-left: auto;
+        margin-right: auto;
+        width: 1519px;            
+    }
+
+</style>
+<div id="wrapper">
 <body>
     <!---
 <nav class="navbar navbar-light bg-light">
@@ -36,8 +45,8 @@
 -->
 
 <div style=" margin-top:2%; margin-left:10%">
-    <h3 style="color:seagreen; text-align:center;">Patient Experience Tracker</h3>
-    <p class="text-center h2">{{$name}} SURVEY</p>
+    <h3 style="font-size:32pt; color:seagreen; text-align:center;">Patient Experience Tracker</h3>
+    <p class="text-center h2">{{$name}}</p>
     <p style="text-align:center; color:red" ;>Please Fill the form correctly and press Submit</p>
 </div>
 
@@ -80,7 +89,7 @@
 
     @csrf
     <input type="hidden" id="surveyname" name="surveyname" value="{{$name}}">
-    <div style="width: 1100px; margin-left:27%; " class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div style="width: 1200px; margin-left:15%; " class="shadow-lg p-3 mb-5 bg-white rounded">
 
         @foreach ($questions as $q)
             <p class="h4"> {{str_replace("|",".",$q["Text"])}}</p> <!--Display the question-->
@@ -154,5 +163,6 @@
 </form>
 
 </body>
+</div>
 
 </html>

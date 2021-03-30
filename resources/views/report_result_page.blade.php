@@ -14,15 +14,15 @@
     <style>
         table, th, td {
             border: 1px solid black;
-            padding: 10px;
+            padding: 10px;            
             text-align: center;
-
+            white-space:normal;
         }
 
         #wrapper {
             margin-left: auto;
             margin-right: auto;
-            width: 1519px;
+            width: 1519px;            
         }
 
     </style>
@@ -32,44 +32,21 @@
     <body>
 
     <section class="container-fluid">
-
-        <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid" style="height: 30px; width: 800px">
-                {{--                <a class="navbar-brand" href="#">Default</a>--}}
-                {{--                <form class="d-flex">--}}
-                {{--                    <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button"--}}
-                {{--                            id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">--}}
-                {{--                        <!-- The drop down button for the user with many options-->--}}
-                {{--                        <i class="fa fa-user"></i> Mystery Admin--}}
-                {{--                    </button>--}}
-                {{--                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">--}}
-                {{--                        <li>--}}
-                {{--                            <button class="dropdown-item" type="button">Action</button>--}}
-                {{--                        </li>--}}
-                {{--                        <li>--}}
-                {{--                            <button class="dropdown-item" type="button">Another action</button>--}}
-                {{--                        </li>--}}
-                {{--                        <li>--}}
-                {{--                            <button class="dropdown-item" type="button">Something else here</button>--}}
-                {{--                        </li>--}}
-                {{--                    </ul>--}}
-                {{--                </form>--}}
-            </div>
-        </nav>
+        
         <!--The page header -->
         <div id="wrapper">
             <p class="text-center h2">Report Result</p>
 
 
-            <div class="cent" style="margin-top: -566px; width:60em;overflow-x: auto;white-space: nowrap;">
+            <div class="cent" style="top: 350px; width:80em;overflow-x: auto;white-space: nowrap;">
                 <table>
                     <tr>
-                        <th style="width:150px">Name</th>
+                        <th>Name</th>
                         <th>Email Address</th>
                         <th style="width:100px">Date Completed</th>
 
                     @foreach ($questions as $q)
-                            <th>{{$q["Text"]}}</th>
+                            <th style = "min-width: 300px; max-width: 300px;">{{$q["Text"]}}</th>
                         @endforeach
                     </tr>
 
@@ -78,7 +55,7 @@
                         <tr>
                             <td>{{ $names[$loop->index] }}</td>
                             <td>{{ $emails[$loop->index] }}</td>
-                            <td style="">{{ $dates[$loop->index] }}</td>
+                            <td>{{ $dates[$loop->index] }}</td>
 
                         @foreach ($questions as $q)
                                 @if(array_key_exists($q['Text'],$responses[$loop->parent->index]))
@@ -98,8 +75,8 @@
                 {{--            </button>--}}
             </div>
 
-
-                <form method="post" action="/report/download" enctype="multipart/form-data" style="margin-top: 350px; margin-left: 400px">
+            <div>
+                <form method="post" action="/report/download" enctype="multipart/form-data" style="margin-top: 75px; margin-left: 400px">
                     @csrf
                     <input type="hidden" name="fileName" value="{{$fileName}}">
                     <button style="width: 5cm; margin-bottom:1cm; margin-top: 10px; margin-left:270px"
