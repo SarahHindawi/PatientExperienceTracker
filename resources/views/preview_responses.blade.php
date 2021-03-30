@@ -8,45 +8,36 @@
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
 </head>
-<style>   
 
-    #wrapper {
-        margin-left: auto;
-        margin-right: auto;
-        width: 1519px;            
-    }
-
-</style>
-<div id="wrapper">
 <body>
-    <!---
+<!---
 <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Default</a>
-        <form class="d-flex">
-            <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button"
-                    id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                John Doe
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <li>
-                    <button class="dropdown-item" type="button">Action</button>
-                </li>
-                <li>
-                    <button class="dropdown-item" type="button">Another action</button>
-                </li>
-                <li>
-                    <button class="dropdown-item" type="button">Something else here</button>
-                </li>
-            </ul>
-        </form>
-    </div>
+<div class="container-fluid">
+    <a class="navbar-brand" href="#">Default</a>
+    <form class="d-flex">
+        <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button"
+                id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+            John Doe
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li>
+                <button class="dropdown-item" type="button">Action</button>
+            </li>
+            <li>
+                <button class="dropdown-item" type="button">Another action</button>
+            </li>
+            <li>
+                <button class="dropdown-item" type="button">Something else here</button>
+            </li>
+        </ul>
+    </form>
+</div>
 </nav>
 -->
 
 <div style=" margin-top:2%; margin-left:10%">
-    <h3 style="font-size:32pt; color:seagreen; text-align:center;">Patient Experience Tracker</h3>
-    <p class="text-center h2">{{$name}}</p>
+    <h3 style="color:seagreen; text-align:center;">Patient Experience Tracker</h3>
+    <p class="text-center h2">{{$name}} SURVEY</p>
     <p style="text-align:center; color:red" ;>Please Fill the form correctly and press Submit</p>
 </div>
 
@@ -89,10 +80,10 @@
 
     @csrf
     <input type="hidden" id="surveyname" name="surveyname" value="{{$name}}">
-    <div style="width: 1200px; margin-left:15%; " class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div style="width: 1100px; margin-left:27%; " class="shadow-lg p-3 mb-5 bg-white rounded">
 
         @foreach ($questions as $q)
-            <p class="h4"> {{str_replace("|",".",$q["Text"])}}</p> <!--Display the question-->
+            <p class="h4"> {{$q["Text"]}}</p> <!--Display the question-->
 
             @if ( $q["Type"]  == "DropDown")
                 <select name="{{$q["Text"]}}">
@@ -109,35 +100,35 @@
 
             @elseif ($q["Type"]  == "Checkbox")
 
-            <div style="width:60em;overflow-x: auto;white-space: nowrap;">
-                <input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="None Apply" checked>
-                <label class="form-check form-check-inline">None Apply</label>
+                <div style="width:60em;overflow-x: auto;white-space: nowrap;">
+                    <input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="None Apply" checked>
+                    <label class="form-check form-check-inline">None Apply</label>
 
-                @foreach(explode(",",$q['PossibleResponses']) as $option)
-                    <input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="{{$option}}">
+                    @foreach(explode(",",$q['PossibleResponses']) as $option)
+                        <input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="{{$option}}">
                         <label class="form-check form-check-inline">{{$option}}</label>
 
-                @endforeach
-            </div>
+                    @endforeach
+                </div>
                 <br>
                 <br> <br>
 
             @elseif ($q["Type"]  == "RadioButtons")
 
-            <div style="width:60em;overflow-x: auto;white-space: nowrap;">
-                <input type="radio" name="{{$q["Text"]}}" value="None" checked>
-                        <label>None Apply</label>&nbsp;&nbsp;&nbsp;
-                @foreach(explode(",",$q['PossibleResponses']) as $option)
-                    <input type="radio" name="{{$q["Text"]}}" value="{{$option}}">
+                <div style="width:60em;overflow-x: auto;white-space: nowrap;">
+                    <input type="radio" name="{{$q["Text"]}}" value="None" checked>
+                    <label>None Apply</label>&nbsp;&nbsp;&nbsp;
+                    @foreach(explode(",",$q['PossibleResponses']) as $option)
+                        <input type="radio" name="{{$q["Text"]}}" value="{{$option}}">
                         <label>{{$option}}</label>&nbsp;&nbsp;&nbsp;
-                @endforeach
-            </div>
+                    @endforeach
+                </div>
 
                 <br>
                 <br> <br>
 
             @elseif ($q["Type"]  == "Text")
-                    <input type="text" name="{{$q["Text"]}}"><br>
+                <input type="text" name="{{$q["Text"]}}"><br>
                 <br>
                 <br> <br>
 
@@ -163,6 +154,5 @@
 </form>
 
 </body>
-</div>
 
 </html>
