@@ -12,12 +12,12 @@ class AddSurveyController extends Controller
 {
     public function create()
     {
-        if (!Auth::guard('admin')->check()) {
+        /*if (!Auth::guard('admin')->check()) {
             if (Auth::guard('patient')->check()) {
                 return redirect(' /');
             }
             return redirect('/adminlogin');
-        }
+        }*/
 
         return view('create_new_survey');
     }
@@ -26,12 +26,12 @@ class AddSurveyController extends Controller
     public function store(Request $request)
     {
 
-        if (!Auth::guard('admin')->check()) {
+       /* if (!Auth::guard('admin')->check()) {
             if (Auth::guard('patient')->check()) {
                 return redirect(' /');
             }
             return redirect('/adminlogin');
-        }
+        }*/
 
         //retrieve the submitted data
         $this->validate($request, [
