@@ -75,28 +75,28 @@
             <div class="btn-group-vertical" style=" margin-top:15%; width:100%">
                 <ul class="nav flex-column" style="width:100%">
                     <li class="nav-item">
-                        <p class="text-center"><a class="text-center text-dark nav-link active" aria-current="page" href="admin_dashboard_page.blade.php"><i class='fas fa-home'></i>Dashboard</a></p>
+                        <p><a class=" text-dark nav-link active" aria-current="page" href="admin_dashboard_page.blade.php"><i class='fas fa-home'></i> Dashboard</a></p>
                     </li>
                     <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="new_patient_registeration.blade.php"><i class='fas fa-user-plus'></i>Patient Registeration</a></p>
+                        <p><a class="text-dark nav-link active" aria-current="page" href="new_patient_registeration.blade.php"><i class='fas fa-user-plus'></i> Patient Registeration</a></p>
                     </li>
                     <li class="nav-item">
-                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="admin_reset_password.blade.php"> <i class='fas fa-user-lock'></i>Password Reset</a></p>
+                        <p><a class="text-dark nav-link active" aria-current="page" href="admin_reset_password.blade.php"> <i class='fas fa-user-lock'></i> Password Reset</a></p>
                     </li>
                     <li class="nav-item">
-                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#"><i class='fas fa-pen'></i>Patient Summary</a></p>
+                        <p><a class="text-dark nav-link active" aria-current="page" href="#"><i class='fas fa-pen'></i> Patient Summary</a></p>
                     </li>
                     <li class="nav-item">
-                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#"><i class='fas fa-pen'></i>Generate Report</a></p>
+                        <p><a class="text-dark nav-link active" aria-current="page" href="#"><i class='fas fa-pen'></i> Generate Report</a></p>
                     </li>
                     <li class="nav-item">
-                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#"><i class='far fa-file-alt' style='font-size:24px'></i> Modify Survey</a></p>
+                        <p><a class="text-dark nav-link active" aria-current="page" href="#"><i class='far fa-file-alt' style='font-size:24px'></i> Modify Survey</a></p>
                     </li>
                     <li class="nav-item">
-                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#"><i class='fas fa-key'></i>Change Password</a></p>
+                        <p><a class="text-dark nav-link active" aria-current="page" href="#"><i class='fas fa-key'></i> Change Password</a></p>
                     </li>
                     <li class="nav-item">
-                        <p  class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#"><i class='fas fa-question'></i>ADMIN Help</a></p>
+                        <p><a class="text-dark nav-link active" aria-current="page" href="#"><i class='fas fa-question'></i> ADMIN Help</a></p>
                     </li>
                     <!--</li>-->
                     &nbsp;&nbsp;&nbsp;

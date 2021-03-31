@@ -21,7 +21,7 @@
 <body>
     @if(Session::has('message'))
     <p class="alert alert-info" style="text-align:center">{{ Session::get('message') }}</p>
-    @endif    
+    @endif
 
 <section class="container-fluid">
     <!-- the title in the top middle of the page -->
@@ -39,24 +39,24 @@
                 <ul class="nav flex-column" style="width:100%">
                     <!-- the Dashboard options-->
                     <!-- Home Option-->
-                    <li class="nav-item">                        
-                        <p class="text-center"><a class="text-center text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/')}}"><img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right">Home</a></p>
-                    </li>            
+                    <li class="nav-item">
+                        <p><a class=" text-dark nav-link active" aria-current="page"
+                                                  href="{{ url('/')}}"><img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right"> Home</a></p>
+                    </li>
                     <!-- Sign Up option-->
                     <li class="nav-item">
-                        <p class="text-center"><a class="text-center text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/patientregistration')}}"><img src="{{asset('assets/images/signup.png')}}" width="25" height="25" class="d-inline-block align-right">Sign Up</a></p>
+                        <p><a class=" text-dark nav-link active" aria-current="page"
+                                                  href="{{ url('/patientregistration')}}"><img src="{{asset('assets/images/signup.png')}}" width="25" height="25" class="d-inline-block align-right"> Sign Up</a></p>
                     </li>
                     <!-- Patient Login option-->
                     <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/patientlogin')}}"><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Patient Login</a></p>
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                                                  href="{{ url('/patientlogin')}}"><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Patient Login</a></p>
                     </li>
                     <!-- Administrator Login option-->
                     <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
-                                                  href= "{{ url('/adminlogin')}}" ><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right">Administrator Login</a></p>
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                                                  href= "{{ url('/adminlogin')}}" ><img src="{{asset('assets/images/key.png')}}" width="22" height="25" class="d-inline-block align-right"> Administrator Login</a></p>
                     </li>
                 </ul>
             </div>
@@ -69,7 +69,7 @@
         <section class="col-12 col-sm-6 col-md-3">
             <form class="form-container" method = "POST" action = "{{ url('/verifyemail')}}">
                 @csrf
-                
+
                 <input type="hidden" id="email" name="email" value="{{$email}}">
                 <!-- box for Code-->
                 <div class="mb-3">
