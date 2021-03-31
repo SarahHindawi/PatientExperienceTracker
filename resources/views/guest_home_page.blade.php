@@ -26,7 +26,7 @@
     @endif
 
 
-    <p class="text-center h1" style="color:seagreen; margin-left: 4cm; margin-top: 5%">Welcome to the Patient Experience Tracker </p>
+    <p class="text-center h1" style="color:seagreen;margin-left: 4cm; margin-top: 5%">Welcome to the Patient Experience Tracker </p>
 
     <p class="text-center h4" style="margin-left: 4cm;margin-top: 5%; text-align:center" >Please select from one of the options below </p>
 
