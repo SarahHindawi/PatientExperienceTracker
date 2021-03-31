@@ -37,20 +37,20 @@
         <div class="btn-group-vertical" style=" margin-top:15%; width:100%">
             <ul class="nav flex-column" style="width:100%">
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
+                    <p><a class="text-dark nav-link active" aria-current="page"
                                               href="#">
-                                       <img src = "signup.png" width="25" height="25" class="d-inline-block align-right">     signup
+                                       <img src = "signup.png" width="25" height="25" class="d-inline-block align-right"> signup
                                             </a></p>
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
-                        <img src = "key.png" width="25" height="25" class="d-inline-block align-right">Patient Login
+                    <p><a class="text-dark nav-link active" aria-current="page" href="#">
+                        <img src = "key.png" width="25" height="25" class="d-inline-block align-right"> Patient Login
                             </a></p>
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
+                    <p><a class="text-dark nav-link active" aria-current="page"
                                               href="#">
-                                              <img src = "key.png" width="25" height="25" class="d-inline-block align-right">Adminstration Login
+                                              <img src = "key.png" width="22" height="25" class="d-inline-block align-right"> Administrator Login
                                             </a></p>
                 </li>
             </ul>
@@ -61,14 +61,14 @@
 
 <br><br><br><br><br>
 
-    
+
     <div class="border border-light p-3 mb-4">
-    
+
       <div class="text-center">
         <h4 style = "color:blue;text-align:center;"> Your request for creating account is submitted!!</h4>
         <h5 style = "color:red; text-align: center;">Thanks for joining us, You will be notified soon.</h5>
       </div>
-    
+
     </div>
 
   </div>

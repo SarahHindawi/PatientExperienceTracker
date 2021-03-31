@@ -8,12 +8,12 @@
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
 </head>
-<style>   
+<style>
 
     #wrapper {
         margin-left: auto;
         margin-right: auto;
-        width: 1519px;            
+        width: 1519px;
     }
 
 </style>
@@ -60,22 +60,22 @@
                 <!-- the Dashboard options-->
                 <!-- Dashboard Option-->
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-center text-dark nav-link active" aria-current="page"
+                    <p><a class=" text-dark nav-link active" aria-current="page"
                                               href="{{ url('/')}}"><img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right"> Dashboard</a></p>
                     <!--Survey Option-->
                 </li>
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-center text-dark nav-link active" aria-current="page"
+                    <p><a class=" text-dark nav-link active" aria-current="page"
                                               href="{{ url('/form/create')}}"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Complete Survey</a></p>
                 </li>
                 <!-- Password Change Option-->
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
+                    <p><a class="text-dark nav-link active" aria-current="page"
                                               href="{{ url('/passwordchangepatient')}}"><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Change Password</a></p>
                 </li>
                 <!--Logout Option-->
                 <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page"
+                    <p><a class="text-dark nav-link active" aria-current="page"
                                               href= "{{ url('/logout')}}" ><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Logout</a></p>
                 </li>
             </ul>
