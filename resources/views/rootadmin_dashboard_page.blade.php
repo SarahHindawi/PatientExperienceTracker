@@ -70,7 +70,7 @@
     </ul>
 
 
-    <!-- The dashborad which has all the options for the rootadmin. This dashboard is located in the side of the page-->
+    <!-- The dashboard which has all the options for the rootadmin. This dashboard is located in the side of the page-->
     <div class="msb" id="msb">
         <p class="text-center fs-2">PET</p>
 
@@ -79,8 +79,8 @@
                 <ul class="nav flex-column" style="width:100%">
                     <!-- the Dashboard options-->
                     <li class="nav-item">
-                        <!-- the Dashboard options-->
-                        <p><a class="text-dark nav-link active" aria-current="page"  href="{{url('.')}}">
+                        <!-- the Dashboard options--> 
+                        <p><a class="text-dark nav-link active" aria-current="page"  href="{{url('/')}}">
                                 <img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right"> Dashboard</a></p>
                     </li>
                     <li class="nav-item">

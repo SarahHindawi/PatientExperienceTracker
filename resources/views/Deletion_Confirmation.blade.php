@@ -1,34 +1,59 @@
 <!DOCTYPE html>
 <html>
-<!-- the head has the title of the page and the link for Bootstrap Framework and the link for the css file  -->
+    <?php echo
+    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+    header("Cache-Control: post-check=0, pre-check=0", false);
+    header("Pragma: no-cache");
+    header('Content-Type: text/html');?>
 <head>
-    <title>Modify Survey</title>
-    <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}" rel="stylesheet"
+    <title> Question Deletion Confirmation</title>
+    <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}"
+          rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
-    <style>
-        #wrapper {
-            margin-left:auto;
-            margin-right:auto;
-            width:1519px;
-        }
-    </style>
 </head>
-<!-- the body has the content of the page  -->
+<style>
+
+    #wrapper {
+        margin-left: auto;
+        margin-right: auto;
+        width: 1519px;
+    }
+
+</style>
 <div id="wrapper">
 <body>
-<!-- the navigation bar in the top-->
-    <div class="container-fluid"> 
-        @if(Session::has('message'))
-        <p class="alert alert-info" style="text-align:center">{{ Session::get('message') }}</p>
-        @endif   
+    <!---
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Default</a>
+        <form class="d-flex">
+            <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button"
+                    id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                John Doe
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li>
+                    <button class="dropdown-item" type="button">Action</button>
+                </li>
+                <li>
+                    <button class="dropdown-item" type="button">Another action</button>
+                </li>
+                <li>
+                    <button class="dropdown-item" type="button">Something else here</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+</nav>
+-->
 
-<!-- the title in the top middle of the page -->
-<div style=" margin-top:5%; margin-left:10%">
-    <p class="text-center h2">Modify Survey</p>
+<div style=" margin-top:2%; margin-left:10%">
+    <h3 style="font-size:32pt; color:seagreen; text-align:center;">Patient Experience Tracker</h3>
+    <p class="text-center h2">{{$name}}</p>
+    <p style="text-align:center; color:red" ;>Confirm Question Deletion Below</p>
 </div>
 
-<!-- the Dashboard of the page that has different options-->
 
 <div class="msb" id="msb">
     <p class="text-center fs-2">PET</p>
@@ -87,22 +112,16 @@
         </div>
     </nav>
 </div>
-<!-- an example on how to add or remove survey questions-->
-<br style="line-height:100;">    
-   
-    <div style="width: 1200px; margin-left:15%; " class="shadow-lg p-3 mb-5 bg-white rounded">
+
+<form name="surveyForm" method="post" action="{{url('/delete')}}" style="margin-left: 0px">
+    <br style="line-height:100;">
+
+    @csrf
+    <input type="hidden" id="SurveyName" name="SurveyName" value="{{$name}}">
+    <input type="hidden" id="QuestionIndex" name="QuestionIndex" value="{{$questionIndex}}">   
+    <div style="width: 1200px; margin-left:15%;" class="shadow-lg p-3 mb-5 bg-white rounded">
 
         @foreach ($questions as $q)
-        <form name="deleteQuestion" method="post" action="{{url('/deletion-confirmation')}}" enctype="multipart/form-data" style="margin-left: 0px">
-            @csrf
-            <input type="hidden" id="SurveyName" name="SurveyName" value="{{$name}}">            
-            <input type="hidden" id="QuestionIndex" name="QuestionIndex" value="{{$loop->iteration}}">
-            <div>
-                <button type="submit" style="width: 30px; height: 30px;"><img style="width: 100%; height: 100%;" src="{{asset('assets/images/redX.png')}}"></button>
-                </button>
-            </div>
-        </form>
-
             <p class="h4"> {{str_replace("|",".",$q["Text"])}}</p> <!--Display the question-->
 
             @if ( $q["Type"]  == "DropDown")
@@ -123,7 +142,7 @@
             <div style="width:60em;overflow-x: auto;white-space: nowrap;">                
 
                 @foreach(explode(",",$q['PossibleResponses']) as $option)
-                    <input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="{{$option}}">
+                    <input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="{{$option}}" checked>
                         <label class="form-check form-check-inline">{{$option}}</label>
 
                 @endforeach
@@ -159,57 +178,25 @@
             @endif
             <p class="double"></p>
 
-        @endforeach        
-    </div>
-    <!-- to add a new question to a survey-->
-    <div style="margin:15%; margin-top:3% ;">
-        <form name="addQuestion" method="post" action="{{url('/addQuestion')}}" enctype="multipart/form-data" style="margin-left: 0px">
-            @csrf
-            <input type="hidden" id="SurveyName" name="SurveyName" value="{{$name}}">            
-            
-        <br>
-        <p style=" margin-left: 60px" class="h4">Add Question:</p>
-        <!-- question position in a survey-->
-        <label for="input" style=" width: 220px" class="col-sm-2 col-form-label">New Question Number</label>
-        <input type="number" style=" width: 100px" class=" shadow  bg-body rounded" id="qNumber" name="qNumber" min="1" max="{{(count($questions) + 1)}}">
+        @endforeach
 
-        <!-- question type in a survey-->
-        <br><label for="input" style=" width: 200px" class="col-sm-2 col-form-label">Question Type</label>
-        <select style=" width: 200px" class="shadow  bg-body rounded" id="qType" name="qType">
-            <option selected>Choose...</option>
-            <option value="FreeText">FreeText</option>
-            <option value="DropDown">DropDown</option>
-            <option value="Checkbox">Checkbox</option>
-            <option value="RadioButtons">RadioButtons</option>
-        </select>
+        <p style="text-align:center; font-size:32pt">Deletion Confirmation</p>
+        <p style="text-align:center; color:red; font-size: 24pt">Caution: this cannot be undone</p>
 
-        <div style="width: 400px; margin-left:70%; margin-top:-8%; height: 20px;">
-            <!--  text of the question that needs to be added in a survey-->
-            <label for="input" style=" width: 200px" class="col-sm-2 col-form-label">Question text:</label>
-            <div class="form-floating">
-                <!-- text area-->
-                <textarea style="height: 2cm; " class="shadow-sm form-control" placeholder="Leave a comment here"
-                              id="qText" name="qText"></textarea>
-                
-            </div>
-            <!-- how the answer of the question would be-->
-            <br><label for="input" style=" width: 500px" class="col-sm-2 col-form-label">Question Responses(If
-                required., Seperate with a Comma No Spaces:</label>
-            <div class="form-floating">
-                <!-- text area-->
-                <textarea style="height: 2cm; " class="shadow-sm form-control" placeholder="Leave a comment here"
-                              id="qResponses" name="qResponses"></textarea>
-            </div>
+
+        <input class="form-check-input" type="checkbox" name="Confirmation" value="True">
+                        <label class="form-check form-check-inline">I confirm deletion of the above question.</label>
+
+        <div style=" height: 4cm;">
+            <button style="width: 5cm; margin-left: 40%; margin-top:2cm; " type="submit"
+                    class="btn btn-success btn-rounded">Submit
+            </button>
         </div>
     </div>
-    <!-- a submit button-->
-    <div style=" height: 4cm;">
-        <button style="width: 5cm; margin-left: 19cm; margin-top:2cm; " type="submit"
-                class="btn btn-success btn-rounded">Submit
-        </button>
-    </div>
+
 </form>
 
 </body>
 </div>
+
 </html>

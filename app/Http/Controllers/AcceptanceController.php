@@ -6,7 +6,8 @@ use App\Models\Patient;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PatientRegAccept;
 
 class AcceptanceController extends Controller
 {
@@ -78,6 +79,10 @@ class AcceptanceController extends Controller
         //for each accepted patient, change the value of its corresponding "New Account" attribute to false
         foreach ($accepted as $acceptedEmail) {
             Patient::where('Email', $acceptedEmail)->update(array('NewAccount' => false));
+            
+    
+            Mail::to($acceptedEmail)->send(new PatientRegAccept());
+
         }
 
         foreach ($removed as $removedEmail) {

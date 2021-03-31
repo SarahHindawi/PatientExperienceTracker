@@ -54,23 +54,127 @@ class EditSurveyController extends Controller
 
         $survey = Survey_Questions::query()->where("SurveyName", $surveyName)->first();
         $surveyArray = json_decode($survey, true);
-        $surveyArray = json_decode($surveyArray["SurveyQuestions"], true);
+        $surveyArray = json_decode($surveyArray["SurveyQuestions"], true);        
 
         return view('ModifyingSurveys', ["questions" => $surveyArray, "name" => $surveyName]);
     }
 
-    /**
-     * The method that will update the survey with the new additions and deletions
-     */
-    public function store()
+    
+    //Function to diliver deletion confirmation page.
+    public function deletionConfirmation(Request $request){
+
+        $this->validate($request, [
+            'SurveyName' => 'required',
+            'QuestionIndex' => 'required',
+        ]);
+
+        //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
+        if (!Auth::guard('admin')->check()) {
+
+            if (Auth::guard('patient')->check()) {
+                //If Patient logged in Redirect to Patient Dashboard.
+                return redirect('/');
+            }
+            return redirect('/adminlogin');
+        }
+        
+        $survey = Survey_Questions::query()->where("SurveyName", $request->input('SurveyName'))->first();
+        $surveyArray = json_decode($survey, true);        
+        $surveyArray = json_decode($surveyArray["SurveyQuestions"], true);
+        $surveyArray = array($surveyArray[($request->input('QuestionIndex') - 1)]);        
+        
+        return view('Deletion_Confirmation', ["questions" => $surveyArray, "name" => $request->input('SurveyName'), "questionIndex" => ($request->input('QuestionIndex') - 1)]);        
+    }    
+    
+    
+    //Fuunction to Delete scelected Question after confirmation page.
+    public function deleteQuestion(Request $request)
     {
-        $surveyName = "IBDPREM_One";
+        $this->validate($request, [
+            'SurveyName' => 'required',
+            'QuestionIndex' => 'required',            
+        ]);
 
-        //TODO get the updated survey and reformat it
-        $listQuestions = array(array('Text' => 'Text for test question 1', 'Type' => 'DropDown', 'PossibleResponses' => 'Option1,Option2,Option3,Option4'),
-            array('Text' => 'Text for test question 2', 'Type' => 'Checkbox', 'PossibleResponses' => 'Option1,Option2,Option3'));
+        //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
+        if (!Auth::guard('admin')->check()) {
 
-        Survey_Questions::where('SurveyName', $surveyName)->update(array('SurveyQuestions' => json_encode($listQuestions)));
+            if (Auth::guard('patient')->check()) {
+                //If Patient logged in Redirect to Patient Dashboard.
+                return redirect('/');
+            }
+            return redirect('/adminlogin');
+        }
+
+        if($request->input('Confirmation') !== 'True')
+        {
+            return redirect('')->with('message', 'Question deletion aborted: No Confirmation');
+        }
+
+        $survey = Survey_Questions::query()->where("SurveyName", $request->input('SurveyName'))->first();
+
+        $surveyArray = json_decode($survey, true);        
+        $surveyArray = json_decode($surveyArray["SurveyQuestions"], true);
+
+        //remove selected question and reindex.
+
+        unset($surveyArray[$request->input('QuestionIndex')]);
+        $newQuestions = array_values($surveyArray);
+
+        $survey->SurveyQuestions = json_encode($newQuestions);    
+        $survey->save();  
+
+
+        return redirect('/')->with('message', 'Survey has been updated successfully.');
+    }
+
+    public function addQuestion(Request $request)
+
+    {
+        $this->validate($request, [
+            'SurveyName' => 'required',
+            'qNumber' => 'required',
+            'qType' => 'required',
+            'qText' => 'required',                                
+        ]);
+
+        if (!Auth::guard('admin')->check()) {
+
+            if (Auth::guard('patient')->check()) {
+                //If Patient logged in Redirect to Patient Dashboard.
+                return redirect('/');
+            }
+            return redirect('/adminlogin');
+        }
+
+
+        //Verify responses exist for non FreeText questions
+        if($request->input('qResponses') === null)
+        {
+            if($request->input('qType') !== 'FreeText'){
+                return back()->with('message', 'Respnses required for non FreeText Questions');
+            }
+        }
+
+        //Create new question and submit incorporate into the supplied survey name at the new question index.
+
+        $newQuestion = array(array('Text' => $request->input('qText')
+                                     , 'Type' => $request->input('qType') , 'PossibleResponses' => $request->input('qResponses'))
+                        );
+        
+        if($request->input('qType') === 'FreeText')        
+        {            
+            $newQuestion[0]['PossibleResponses'] = '';
+        }
+
+        $survey = Survey_Questions::query()->where("SurveyName", $request->input('SurveyName'))->first();
+          
+        $surveyArray = json_decode($survey, true);        
+        $surveyArray = json_decode($surveyArray["SurveyQuestions"], true);
+
+        array_splice($surveyArray, ($request->input('qNumber') - 1), 0, $newQuestion);
+
+        $survey->SurveyQuestions = json_encode($surveyArray);
+        $survey->save();
 
         return redirect('/')->with('message', 'Survey has been updated successfully.');
     }
