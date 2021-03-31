@@ -31,7 +31,7 @@ Route::get('/adminlogin', 'App\Http\Controllers\AdminLoginController@index');
 Route::post('/adminloginpage', 'App\Http\Controllers\AdminLoginController@login');
 Route::get('/patientlogin', 'App\Http\Controllers\PatientLoginController@index');
 Route::post('/patientloginpage', 'App\Http\Controllers\PatientLoginController@login');
-Route::post('/editSurvey/create', 'App\Http\Controllers\EditSurveyController@create');
+Route::get('/editSurvey/create', 'App\Http\Controllers\EditSurveyController@create');
 Route::post('/editSurvey', 'App\Http\Controllers\EditSurveyController@store');
 Route::delete('surveyquestions/{id}', 'App\Http\Controllers\EditSurveyController@destroy');
 Route::post('/report', 'App\Http\Controllers\ReportController@store');
@@ -51,6 +51,9 @@ Route::get('/patientreset', 'App\Http\Controllers\PasswordController@patientrese
 Route::post('/adminresetmail', 'App\Http\Controllers\PasswordController@adminresetemail');
 Route::post('/patientresetrequest', 'App\Http\Controllers\PasswordController@patientresetrequest');
 Route::get('/logout', 'App\Http\Controllers\LogoutController@logout');
+Route::post('/deletion-confirmation', 'App\Http\Controllers\EditSurveyController@deletionConfirmation');
+Route::post('/delete', 'App\Http\Controllers\EditSurveyController@deleteQuestion');
+Route::post('/addQuestion', 'App\Http\Controllers\EditSurveyController@addQuestion');
 
 Route::get('/addsurvey/create', 'App\Http\Controllers\AddSurveyController@create');
 Route::post('/addsurvey', 'App\Http\Controllers\AddSurveyController@store');

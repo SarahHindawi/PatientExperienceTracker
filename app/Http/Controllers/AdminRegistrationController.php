@@ -7,6 +7,8 @@ use App\Models\Admin;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\AdminReg;
 
 class AdminRegistrationController extends Controller
 {
@@ -75,6 +77,13 @@ class AdminRegistrationController extends Controller
         $admin->lastname = $request->input('lastname');
 
         $admin->save();
+
+        $details = [
+            'temppass' => $request->input('password')
+        ];
+
+        Mail::to($request->input('email'))->send(new AdminReg($details));
+
 
         return redirect('/')->with('message', 'Admin registration successful.');
     }
