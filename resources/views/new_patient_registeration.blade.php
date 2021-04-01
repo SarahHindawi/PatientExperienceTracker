@@ -93,7 +93,7 @@
         </nav>
 
         <!--The page header and an explanation for how to use the page -->
-        <p class="text-center h1" style="color:seagreen;margin-left: 3cm">New Patient Registration</p>
+        <p class="text-center h2" style="color:seagreen;margin-left: 3cm">New Patient Registration</p>
 
     @if (count($patients) > 0)
 

@@ -17,8 +17,10 @@
     <p class="alert alert-info"style="text-align:center">{{ Session::get('message') }}</p>
     @endif
  <!-- the title in the top middle of the page -->
- <div style=" margin-top:4%">
-     <p class="text-center h4"style="margin-left: 4cm">Here you can change the password on your account.</p>
+ <div >
+     <p class="text-center h2" style="color:seagreen; margin-top: 20px; margin-left: 4cm">Change Password</p>
+
+     <p class="text-center h4"style="margin-left: 4cm; margin-top: 1cm; margin-bottom: 1cm">Here you can change the password on your account.</p>
 {{--     <p class="text-center h4"style="margin-left: 4cm">See password rules below</p>--}}
  </div>
 
@@ -54,7 +56,7 @@
          </div>
  </div>
  <!-- the form where Patient have to change the password-->
- <form class="form-container" method = "POST" action = "{{ url('/passwordchangepatientsave')}}">
+ <form class="form-container" method = "POST" action = "{{ url('/passwordchangepatientsave')}}" style="margin-left: -60px">
     @csrf
      <!-- the box for current password-->
      <div style="width: 550px; margin-left:18cm; margin-top:6%">

@@ -16,14 +16,12 @@
     <p class="alert alert-info"style="text-align:center">{{ Session::get('message') }}</p>
     @endif
 
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid" style="height: 30px; width: 800px">
-        </div>
-    </nav>
 
  <!-- the title in the top middle of the page -->
  <div>
-     <p class="text-center h4"style="margin-left: 4cm">Here you can change the password on your account.</p>
+     <p class="text-center h2" style="color:seagreen; margin-top: 20px;margin-top: 1cm; margin-left: 4cm">Change Password</p>
+
+     <p class="text-center h4"style="margin-left: 4cm; margin-top: 1cm">Here you can change the password on your account.</p>
 {{--     <p class="text-center h4">See password rules below</p>--}}
  </div>
 
@@ -104,7 +102,7 @@
 
 
  <!-- the form where Admin have to change the password-->
- <form class="form-container" method = "POST" action = "{{ url('/passwordchangeadminsave')}}">
+ <form class="form-container" method = "POST" action = "{{ url('/passwordchangeadminsave')}}" style="margin-left: -60px">
     @csrf
      <!-- the box for current password-->
         <div style="width: 550px; margin-left:18cm; margin-top:6%">

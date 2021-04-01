@@ -29,10 +29,12 @@
     @endif
 
 
-    <p class="text-center h2" style="color:seagreen; margin-top: .2cm; margin-left: 4cm">Hello {{$name}}</p>
 
 
-    <p class="text-center h3" style="text-align:center; margin-top:2cm; margin-left: 4cm">Here are your administration options </p>
+        <p class="text-center h2" style="color:seagreen; margin-top: .5cm; margin-left: 4cm">Hello {{$name}}</p>
+
+
+    <p class="text-center h4" style="text-align:center; margin-top:1.5cm; margin-left: 4cm">Here are your administration options </p>
 
 
     <!-- The dashborad options in the centere of the page-->

@@ -52,7 +52,7 @@
 
     <section class="container-fluid">
     <div>
-        <p class="text-center h1" style="color:seagreen; margin-top: 20px;margin-top: 1cm; margin-left: 4cm">Survey Selection</p>
+        <p class="text-center h2" style="color:seagreen; margin-top: 20px;margin-top: 1cm; margin-left: 4cm">Survey Selection</p>
         <p class="text-center h3"style="text-align:center; margin-top:2cm; margin-left: 4cm">Please enter a Survey Selection Below</p>
     </div>
 
