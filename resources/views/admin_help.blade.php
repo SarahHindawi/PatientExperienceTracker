@@ -55,11 +55,11 @@
                 <ul class="list-group" style="margin-left: 100px">
                     <li><a href="#create">Create a New Survey</a></li>
                     <li><a href="#modify">Modify a Survey</a></li>
-                    <li><a href="#delete">Delete a question</a></li>
-                    <li><a href="#add">Add a question</a></li>
-                    <li><a href="#genrate">Generate a report of the responses</a></li>
-                    <li><a href="#accept">Accept new patients</a></li>
-                    <li><a href="#change">Accept password reset request</a></li>
+                    <li><a href="#delete">Delete a Question</a></li>
+                    <li><a href="#add">Add a Question</a></li>
+                    <li><a href="#genrate">Generate a Report of the Responses</a></li>
+                    <li><a href="#accept">Accept New Patients</a></li>
+                    <li><a href="#change">Accept Password Reset Request</a></li>
                 </ul>
 
                 <br>
@@ -86,7 +86,7 @@
                     </h6>
 
                     <br><br>
-                    <h4 style="margin-top: 30px; color:blue" id="delete">Deleting a question</h4><br>
+                    <h4 style="margin-top: 30px; color:blue" id="delete">Deleting a Question</h4><br>
 
                     <h6>
 
@@ -104,7 +104,7 @@
                     </h6>
 
                     <br><br>
-                    <h4 style="margin-top: 30px; color:blue" id="add">Adding a question</h4><br>
+                    <h4 style="margin-top: 30px; color:blue" id="add">Adding a Question</h4><br>
 
                     <h6>
 
