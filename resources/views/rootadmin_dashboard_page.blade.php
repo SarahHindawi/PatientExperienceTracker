@@ -29,15 +29,15 @@
     @endif
 
 
-    <p class="text-center h2" style="color:seagreen; margin-top: 40px">Hello {{$name}}</p>
+    <p class="text-center h2" style="color:seagreen; margin-top: .2cm; margin-left: 4cm">Hello {{$name}}</p>
 
 
-    <p class="text-center h6" style="text-align:center">Here are your administration options </p>
+    <p class="text-center h3" style="text-align:center; margin-top:2cm; margin-left: 4cm">Here are your administration options </p>
 
 
     <!-- The dashborad options in the centere of the page-->
 
-    <ul class="lp" style="margin-top: 40px; margin-left: 230px">
+    <ul class="lp" style="margin-top: 50px; margin-left: 10cm">
         <li>
             <button class="block button button1" onclick="location.href='/accept/create'" type="button"><span><img
                         src="{{asset('assets/images/request.png')}}" width="25" height="25"
@@ -53,7 +53,7 @@
         </li>
         &nbsp;&nbsp;&nbsp;
         <li>
-            <button class="block button button1" onclick="location.href='/profilesearch'"><span> <img
+            <button style="height: 2.2cm"class="block button button1" onclick="location.href='/profilesearch'"><span> <img
                         src="{{asset('assets/images/pen.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> View Summary of Patient</span></button>
         </li>
@@ -67,14 +67,14 @@
         &nbsp;&nbsp;&nbsp;
 
         <li>
-            <button class="block button button1" onclick="location.href='/passwordchangeadmin'"><span><img
+            <button style="height: 2.2cm"class="block button button1" onclick="location.href='/passwordchangeadmin'"><span><img
                         src="{{asset('assets/images/key.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> Change Your Password</span></button>
         </li>
         &nbsp;&nbsp;&nbsp;
 
         <li>
-            <button class="block button button1" onclick="location.href='/adminregistration'"><span><img
+            <button style="margin-top: -20px;height: 2.2cm" class="block button button1" onclick="location.href='/adminregistration'"><span><img
                         src="{{asset('assets/images/signup.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> Register Admin</span>
             </button>
@@ -82,7 +82,7 @@
 
         <br>
         <li>
-            <button class="block button button1" onclick="location.href='/addsurvey/create'"><span><img
+            <button style="height: 2.2cm" class="block button button1" onclick="location.href='/addsurvey/create'"><span><img
                         src="{{asset('assets/images/survey.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> Create a New Survey
             </span></button>
@@ -90,7 +90,7 @@
 
         <br>
         <li>
-            <button class="block button button1" onclick="location.href='/editSurveySelect'"><span><img
+            <button style="height: 2.2cm" class="block button button1" onclick="location.href='/editSurveySelect'"><span><img
                         src="{{asset('assets/images/survey.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> Modify a Survey
            </span></button>
@@ -98,7 +98,7 @@
 
         <br>
         <li>
-            <button class="block button button1" onclick="location.href='/adminsurveyselection'"><span><img
+            <button style="height: 2.2cm"class="block button button1" onclick="location.href='/adminsurveyselection'"><span><img
                         src="{{asset('assets/images/survey.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> Fill Out a Survey
             </span></button>
@@ -106,7 +106,7 @@
 
         <br>
         <li>
-            <button class="block button button1" onclick="location.href='/adminhelp'"><span><img
+            <button style="height: 2.2cm"class="block button button1" onclick="location.href='/adminhelp'"><span><img
                         src="{{asset('assets/images/questionmark.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> Admin Help
             </span></button>

@@ -30,17 +30,17 @@
     @endif
 
 
-    <p class="text-center h2" style="color:seagreen; margin-top: 15px">
+    <p class="text-center h2" style="color:seagreen; margin-top: .2cm; margin-left: 4cm">
         Hello {{Auth::guard('admin')->user()->FirstName}}</p>
 
 
-    <p class="text-center h6" style="text-align:center">Here are your administration options </p>
+    <p class="text-center h3" style="text-align:center; margin-top:2cm; margin-left: 4cm">Here are your administration options </p>
 
 
     <!-- The dashboard options in the centere of the page-->
 
 
-    <ul class="lp" style="margin-left: 260px">
+    <ul class="lp" style="margin-top: 50px; margin-left: 10cm">
         <li>
             <button class="block button button1" onclick="location.href='/accept/create'" type="button"><span><img
                         src="{{asset('assets/images/request.png')}}" width="25" height="25"
@@ -58,7 +58,7 @@
         </li>
         &nbsp;&nbsp;&nbsp;
         <li>
-            <button class="block button button1" onclick="location.href='/profilesearch'"><span> <img
+            <button style="height: 2.2cm" class="block button button1" onclick="location.href='/profilesearch'"><span> <img
                         src="{{asset('assets/images/pen.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> View Summary of Patient</span></button>
         </li>
@@ -71,7 +71,7 @@
         &nbsp;&nbsp;&nbsp;
 
         <li><a href=""></a>
-            <button class="block button button1" onclick="location.href='/passwordchangeadmin'"><span><img
+            <button style="height: 2.2cm"class="block button button1" onclick="location.href='/passwordchangeadmin'"><span><img
                         src="{{asset('assets/images/key.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> Change Your Password</span></button>
         </li>
@@ -80,21 +80,21 @@
 
         <br>
         <li>
-            <button class="block button button1" onclick="location.href='/addsurvey/create'"><span><img
+            <button style="margin-top: 1px;height: 2.2cm"class="block button button1" onclick="location.href='/addsurvey/create'"><span><img
                     src="{{asset('assets/images/survey.png')}}" width="25" height="25"
                     class="d-inline-block align-right"> Create a New Survey</span>
             </button>
         </li>
 
         <br>
-        <li><button class="block button button1" onclick="location.href='/editSurveySelect'"><span><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify a Survey
+        <li><button style="height: 2.2cm"class="block button button1" onclick="location.href='/editSurveySelect'"><span><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify a Survey
             </span></button></li>
 
         <br>
-        <li><button class="block button button1" onclick="location.href='/adminsurveyselection'"><span><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Fill Out a Survey
+        <li><button style="height: 2.2cm"class="block button button1" onclick="location.href='/adminsurveyselection'"><span><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Fill Out a Survey
             </span></button></li>
         <br>
-        <li><button class="block button button1" onclick="location.href='/adminhelp'"><span><img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right"> Admin Help
+        <li><button style="height: 2.2cm"class="block button button1" onclick="location.href='/adminhelp'"><span><img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right"> Admin Help
             </span></button></li>
 
 {{--        <br>--}}

@@ -28,15 +28,15 @@ header('Content-Type: text/html');?>
     @endif
 
 
-    <p class="text-center h2" style="color:seagreen; margin-top: 15px">Hello {{$name}} </p>
+    <p class="text-center h2" style="color:seagreen; margin-top: .2cm; margin-left: 4cm">Hello {{$name}} </p>
 
 
-    <p class="text-center h6" style="text-align:center">Please select from one of the options below </p>
+    <p class="text-center h4" style="text-align:center; margin-top:2cm; margin-left: 4cm">Please select from one of the options below </p>
 
     <p>Default list:</p>
 
     <!-- The dashborad options in the center of the page-->
-    <div style="margin-left: -105px">
+    <div style="margin-left: -30px">
     <ul class="lp">
         <li><button class="block button button1" onclick="location.href='/surveyselection'" type="button"><span><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Click here complete a survey</span>
             </button></li>

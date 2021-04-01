@@ -44,14 +44,14 @@
             </li>
             &nbsp;&nbsp;&nbsp;
             <li>
-                <button class="block button button1" onclick="location.href='/patientlogin'" type="button"><span><img
+                <button  class="block button button1" onclick="location.href='/patientlogin'" type="button"><span><img
                         src="{{asset('assets/images/key.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> Patient Login</span>
                 </button>
             </li>
             &nbsp;&nbsp;&nbsp;
             <li>
-                <button class="block button button1" onclick="location.href='/adminlogin'"><span><img
+                <button style="margin-top:-0.5cm; margin-top: 1px "class="block button button1" onclick="location.href='/adminlogin'"><span><img
                         src="{{asset('assets/images/key.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> Administrator Login</span>
                 </button>

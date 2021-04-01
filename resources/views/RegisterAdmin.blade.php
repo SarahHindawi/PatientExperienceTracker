@@ -42,7 +42,7 @@
 
 <!-- the title in the top  -->
 <div style=" margin-top:5%; margin-left:10%">
-    <p class="text-center h2">Register a New Admin Account</p>
+    <p class="text-center h2"style="color:seagreen; margin-top: 20px; margin-left: 2cm">Register a New Admin Account</p>
 </div>
 
 <div class="msb" id="msb">
@@ -109,27 +109,27 @@
     <!-- text box for the new Admin First name-->
     <div class="mb-3 row">
         <div class="col-sm-10">
-            {{Form::label('firstname', 'First Name')}}
+            {{Form::label('firstname', 'First Name:')}}
             {{Form::text('firstname', '' , ['class' => 'form-control', 'placeholder' => 'First Name'])}}
         </div>
     </div>
     <!-- text box for the new Admin Last name-->
     <div class="mb-3 row">
         <div class="col-sm-10">
-            {{Form::label('lastname', 'Last Name')}}
+            {{Form::label('lastname', 'Last Name:')}}
             {{Form::text('lastname', '' , ['class' => 'form-control', 'placeholder' => 'Last Name'])}}
         </div>
     </div>
     <!-- text box for the new Admin Password-->
     <div class="mb-3 row">
         <div class="col-sm-10">
-            {{Form::label('password', 'Password')}}
+            {{Form::label('password', 'Password:')}}
             {{Form::text('password', '' , ['class' => 'form-control', 'placeholder' => 'Password'])}}
         </div>
     </div>
         <div class="mb-3 row">
             <div class="col-sm-10">
-                {{Form::label('email', 'Email')}}
+                {{Form::label('email', 'Email:')}}
                 {{Form::text('email', '' , ['class' => 'form-control', 'placeholder' => 'Email'])}}
             </div>
         </div>

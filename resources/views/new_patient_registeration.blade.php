@@ -93,12 +93,12 @@
         </nav>
 
         <!--The page header and an explanation for how to use the page -->
-        <p class="text-center h2" style="margin-left: 3cm">New Patient Registration</p>
+        <p class="text-center h1" style="color:seagreen;margin-left: 3cm">New Patient Registration</p>
 
     @if (count($patients) > 0)
 
         <!-- padding-right: 500px-->
-            <p class="text-center h6" style="text-align:center; font-size: 15px">Selecting the green check marks will
+            <p class="text-center h6" style="text-align:center; margin-left: 3cm;margin-top:2cm">Selecting the green check marks will
                 approve new  patients so they will be added to the system. <br> They will receive their account activation email and the
                 ability to set the password via email.</p>
         @endif
@@ -203,7 +203,7 @@
 
                         @foreach ($patients as $p)
                             <ul>
-                                <label style="margin-right: 10px">
+                                <label style="margin-right: 10px; margin-top: 2.1cm">
                                     <input type="radio" name="data[{{$p}}]" value="Accept">
                                     <img width="30" height="30"
                                          src="https://freeiconshop.com/wp-content/uploads/edd/checkmark-flat.png">

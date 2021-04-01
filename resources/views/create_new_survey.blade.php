@@ -28,7 +28,7 @@
 
     <!-- the title in the top  -->
     <div style=" margin-top:5%;">
-        <p class="text-center h2">Create a New Survey</p>
+        <p class="text-center h2"style="color:seagreen; margin-top: 20px;margin-top: 1cm; margin-left: 4cm">Create a New Survey</p>
     </div>
 
             <!-- The dashboard which has all the options for the admin. This dashboard is located in the side of the page-->
@@ -104,18 +104,18 @@
                 </nav>
             </div>
 
-    <form style="width: 600px; margin-left:10cm; margin-top:7%" method="post" enctype="multipart/form-data"
+    <form style="width: 600px; margin-left:11cm; margin-top:7%" method="post" enctype="multipart/form-data"
           action="{{ url('/addsurvey')}}">
         @csrf
         <div class="mb-3 row">
-            <label class="col-sm-9 col-form-label">Survey Name</label>
+            <label class="col-sm-9 col-form-label">Survey Name:</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control shadow-sm" name="SurveyName" required>
             </div>
         </div>
         <!-- Text box for the condition served by the survey -->
         <div class="mb-3 row">
-            <label class="col-sm-9 col-form-label">Condition Served </label>
+            <label class="col-sm-9 col-form-label">Condition Served:</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control shadow-sm" name="ConditionServed" required>
                 <!-- the search button -->

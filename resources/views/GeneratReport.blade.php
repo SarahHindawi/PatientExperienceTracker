@@ -34,7 +34,7 @@
 
     <!-- the title in the top middle of the page -->
     <div style=" margin-left:10%">
-        <p class="text-center h2">Generate Report</p>
+        <p class="text-center h2 "style="color:seagreen">Generate Report</p>
     </div>
 
     <!-- The dashboard which has all the options for the admin. This dashboard is located in the side of the page-->

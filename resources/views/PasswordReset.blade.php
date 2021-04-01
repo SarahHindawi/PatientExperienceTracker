@@ -96,7 +96,7 @@
         </nav>
 
         <!--The page header and an explanation for how to use the page -->
-        <p class="text-center h2" style="margin-left: 3cm">Password Reset Requests</p>
+        <p class="text-center h2 style="style="color:seagreen;margin-left: 3.5cm">Password Reset Requests</p>
 
         @if (count($patients) > 0)
             <p class="text-center h6" style="text-align:center; font-size: 15px">Selecting the green check marks will

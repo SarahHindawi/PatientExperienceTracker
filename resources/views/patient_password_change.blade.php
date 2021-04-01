@@ -57,7 +57,7 @@
  <form class="form-container" method = "POST" action = "{{ url('/passwordchangepatientsave')}}">
     @csrf
      <!-- the box for current password-->
-     <div style="width: 550px; margin-left:16cm; margin-top:6%">
+     <div style="width: 550px; margin-left:18cm; margin-top:6%">
          <div class="mb-7 row">
              <label for="inputFirstName" class="col-sm-4 col-form-label">Current Password: </label>
              <div class="col-sm-5">
@@ -96,7 +96,7 @@
 {{--     </div>--}}
 {{--     <br><br>--}}
      <!-- the submit button-->
-        <div style="margin-left:20cm;">
+        <div style="margin-left:22cm;">
             <button class="btn btn-success btn-rounded  btn-lg "style="width: 200px; margin-top: 1cm">Change Password</button>
         </div>
 

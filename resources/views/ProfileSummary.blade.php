@@ -28,7 +28,7 @@
 
 <!-- the title in the top  -->
 <div style=" margin-left:10%">
-    <p class="text-center h2">Patient Profile Search</p>
+    <p class="text-center h2 "style="color:seagreen">Patient Profile Search</p>
 </div>
 
 <!-- The dashboard which has all the options for the admin. This dashboard is located in the side of the page-->
