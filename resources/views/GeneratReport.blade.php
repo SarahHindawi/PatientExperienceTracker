@@ -213,55 +213,6 @@
                 </div>
             </div>
 
-            <!-- the form to choose Height-->
-{{--            <div style="width: 300px; margin:90%; margin-top:-69%; height: 2cm;">--}}
-{{--                <p class="h6">Height:</p>--}}
-{{--                <input type="radio" name="height" value="all" checked> All<br>--}}
-
-{{--                <br><input type="radio" name="height" value="above"> Above: <input type="text"--}}
-{{--                                                                                   class="shadow  bg-body rounded"--}}
-{{--                                                                                   name="heightAbove"--}}
-{{--                                                                                   style="width: 50px ">--}}
-{{--                <br><br><input type="radio" name="height" value="below"> Below: <input type="text"--}}
-{{--                                                                                       class="shadow  bg-body rounded"--}}
-{{--                                                                                       name="heightBelow"--}}
-{{--                                                                                       style="width: 50px "/><br>--}}
-{{--                <br><input type="radio" name="height" value="equals"> Equals: <input type="text"--}}
-{{--                                                                                     class="shadow  bg-body rounded"--}}
-{{--                                                                                     name="heightEquals"--}}
-{{--                                                                                     style="width: 50px"/><br>--}}
-
-{{--                <br>--}}
-{{--                <!-- the Medication form-->--}}
-{{--                <p class="h6">Medication:</p>--}}
-{{--                <input type="radio" name="medicationUsage" value="none" checked> None<br>--}}
-{{--                <br><input type="radio" name="medicationUsage" value="includes"> Includes<br>--}}
-{{--                <!-- Panel that has the Medications that patients are taken-->--}}
-{{--                <div class="panel panel-default">--}}
-{{--                    <div style="width: 330px;margin-right: 35px;" class="panel-body shadow p-3">--}}
-
-{{--                        <div class="container">--}}
-{{--                            <div class="row align-items-start">--}}
-
-{{--                                @foreach ($medications as $m)--}}
-
-{{--                                    <div class="col">--}}
-{{--                                        <div class="form-check">--}}
-{{--                                            <input class="form-check-input" type="checkbox" name="medication[]"--}}
-{{--                                                   value="{{$m}}" id="flexCheckDefault">--}}
-{{--                                            <label class="form-check-label" for="flexCheckDefault">--}}
-{{--                                                {{$m}}--}}
-{{--                                            </label>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                @endforeach--}}
-
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
             <div class="text-center">
                         <button style="width: 5cm; margin-bottom:.5cm;margin-top:1cm; " type="submit"
                     class="btn btn-success btn-rounded">Submit

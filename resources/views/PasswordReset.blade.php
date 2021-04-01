@@ -58,6 +58,26 @@
             margin-right: auto;
             width: 1519px;
         }
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
 
     </style>
 
@@ -92,7 +112,7 @@
         </nav>
 
         <!--The page header and an explanation for how to use the page -->
-        <p class="text-center h2">Password Reset Requests</p>
+        <p class="text-center h2"style="margin-left: 3cm">Password Reset Requests</p>
 
         @if (count($patients) > 0)
             <p class="text-center h6" style="text-align:center; font-size: 15px">Selecting the green check marks will
@@ -202,7 +222,11 @@
                 </form>
 
             @else
-                <h5 style="margin-left: 277px; color: red">There are no password reset requests </h5>
+{{--                <h5 style="margin-left: 277px; color: red">There are no password reset requests </h5>--}}
+                <div class="alert" style="margin-left: 8.8cm ">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <strong> There are no password reset requests </strong>
+                </div>
             @endif
 
         </div>
