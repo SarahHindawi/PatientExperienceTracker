@@ -219,7 +219,7 @@
                                 <input type="hidden" name="name" value="{{ $names[$loop->index] }}">
                                 <input type="hidden" name="date" value="{{ $dates[$loop->index] }}">
 
-                                <button class="block button button1" type="submit" style="padding: 5px 10px"><span>Preview</span></button>
+                                <button class="block button button1" type="submit" style="padding: 5px 10px"><span>View Survey</span></button>
                             </form>
 
                         </td>
