@@ -67,3 +67,4 @@ Route::post('/report/download', 'App\Http\Controllers\ReportController@download'
 Route::get('/adminsurveyselection', 'App\Http\Controllers\AdminSurveyController@surveyselection');
 Route::post('/adminform/create', 'App\Http\Controllers\AdminSurveyController@create');
 Route::post('/adminform', 'App\Http\Controllers\AdminSurveyController@store');
+Route::get('/adminhelp', 'App\Http\Controllers\AdminHelpController@index');
