@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\DashboardController@index');
 
-Route::get('/adminhelp', function () {
-    return view('admin_help');
-});
 
 
 Route::get('/patientregistration', 'App\Http\Controllers\PatientRegistrationController@index');
