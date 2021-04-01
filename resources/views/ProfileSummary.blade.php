@@ -93,7 +93,7 @@
         <div class="col-sm-10">
             <input type="email" class="form-control shadow-sm" name="inputEmail">
             <div style="margin-left:130%; margin-top:-7%; width: 150Px">
-                <button style="width: 200px;" type="submit" class="btn btn-success btn-rounded">Search</button>
+                <button style="width: 200px;" type="submit" class="btn btn-success btn-rounded">Search By Email</button>
             </div>
         </div>
     </div>
