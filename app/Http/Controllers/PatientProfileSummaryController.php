@@ -16,9 +16,9 @@ class PatientProfileSummaryController extends Controller
     {
 
         //Checking if an Admin is not logged in if they are not redirect to adminlogin page.
-        if(!Auth::guard('admin')->check()){
+        if (!Auth::guard('admin')->check()) {
 
-            if(Auth::guard('patient')->check()){
+            if (Auth::guard('patient')->check()) {
                 //If Patient logged in Redirect to Patient Dashboard.
                 return redirect('/');
             }
@@ -32,9 +32,9 @@ class PatientProfileSummaryController extends Controller
 
     public function search(Request $request)
     {
-        if(!Auth::guard('admin')->check()){
+        if (!Auth::guard('admin')->check()) {
 
-            if(Auth::guard('patient')->check()){
+            if (Auth::guard('patient')->check()) {
                 //TODO redirect to Patient Dashbaord with unauthorized message.
             }
             return redirect('/adminlogin');
@@ -42,8 +42,6 @@ class PatientProfileSummaryController extends Controller
 
         $this->validate($request, [
             'inputEmail' => 'required|email',
-            /*'inputFirstName' => 'required',
-            'inputLastName' => 'required',*/
         ]);
 
 
@@ -54,20 +52,10 @@ class PatientProfileSummaryController extends Controller
             }
         }
 
-        /*if (!empty($request->inputFirstName)) {
-            if ($request->inputFirstName) {
-                $data = $data->where('FirstName', 'LIKE', "%" . $request->inputFirstName . "%");
-            }
-        }
-        if (!empty($request->inputLastName)) {
-            if ($request->inputLastName) {
-                $data = $data->where('LastName', 'LIKE', "%" . $request->inputLastName)->get();
-            }
-        }*/
 
         //if there are no registered patients with the given name/email
         if (count($data) == 0) {
-            return view('ProfileSummary' ,['message' => "No records match the specified data."]);
+            return view('ProfileSummary', ['message' => "No records match the specified data."]);
         }
 
         $data = (array)$data[0];
@@ -153,17 +141,17 @@ class PatientProfileSummaryController extends Controller
 
     public function nameSearch(Request $request)
     {
-        if(!Auth::guard('admin')->check()){
+        if (!Auth::guard('admin')->check()) {
 
-            if(Auth::guard('patient')->check()){
+            if (Auth::guard('patient')->check()) {
                 //TODO redirect to Patient Dashbaord with unauthorized message.
             }
             return redirect('/adminlogin');
         }
 
         $this->validate($request, [
-            'inputFirstName' => 'required',
-            'inputLastName' => 'required',
+            'inputFirstName' => '',
+            'inputLastName' => '',
         ]);
 
 
@@ -175,19 +163,33 @@ class PatientProfileSummaryController extends Controller
         }
         if (!empty($request->inputLastName)) {
             if ($request->inputLastName) {
-                $data = $data->where('LastName', 'LIKE', "%" . $request->inputLastName)->get();
+                $data = $data->where('LastName', 'LIKE', "%" . $request->inputLastName);
             }
         }
 
-        //if there are no registered patients with the given name/email
+
+        $data = $data->get()->toArray();
+
+        //if there are no registered patients with the given name
         if (count($data) == 0) {
-            return view('ProfileSummary' ,['message' => "No records match the specified data."]);
+            return view('ProfileSummary', ['message' => "No records match the specified data."]);
         }
 
-        $data = (array)$data[0];
+        //an array of arrays (each element represents a patient, with an array of the patient's info)
+        $patients = [];
+        $age = [];
+        for ($i = 0; $i < count($data); $i++){
+            $row = json_encode($data[$i], true);
+            $rowArray = json_decode($row, true);
+            $patients[] = $rowArray;
+            $date = strtotime($rowArray["DOB"]);
+            $now = time();
+            $diff = abs($date - $now);
+            $ageYears = floor($diff / (365 * 60 * 60 * 24));
+            $age[]=$ageYears;
+        }
 
-
-        return view('ResultByName', ["Summary" => $data ]);
+        return view('ReportSearchByName', ["data" => $patients, "age" => $age]);
     }
 
 }
