@@ -97,9 +97,9 @@
         <li><button style="height: 2.2cm"class="block button button1" onclick="location.href='/adminhelp'"><span><img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right"> Admin Help
             </span></button></li>
 
-{{--        <br>--}}
-{{--        <li><button class="block button button1" onclick="location.href='/addmedication'"><span><img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right"> Add a Medication--}}
-{{--            </span></button></li>--}}
+        <br>
+        <li><button class="block button button1" onclick="location.href='/medication/create'"><span><img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right"> Add a Medication
+            </span></button></li>
 
 
     </ul>

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Medication_List;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth;
+use DB;
 
 class MedicationController extends Controller
 {
@@ -16,8 +19,7 @@ class MedicationController extends Controller
             return redirect('/adminlogin');
         }
 
-        //TODO create view
-        //return view('/');
+        return view('Medication');
 
     }
 
@@ -30,11 +32,26 @@ class MedicationController extends Controller
             return redirect('/adminlogin');
         }
 
-        $medication = new Medication_List();
-        $medication->MedicationName = $request->input('MedicationName');
-        $medication->save();
+        $this->validate($request, [
+            'medication' => 'required',
+        ]);
 
-        return view('/')->with('message', "Medication has been added.");
+        $medication = $request->input('medication');
+
+        $medicationsList = Medication_List::select("MedicationName")->get()->toArray();
+
+        for ($i = 0; $i < count($medicationsList); $i++) {
+            if (strtolower($medicationsList[$i]['MedicationName']) == strtolower($medication)) {
+                return view('Medication')->with('message', "Medication already exists.");
+            }
+        }
+
+
+        $newmedication = new Medication_List();
+        $newmedication->MedicationName = $medication;
+        $newmedication->save();
+
+        return redirect('/')->with('message', "Medication has been added.");
 
     }
 }
