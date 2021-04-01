@@ -24,7 +24,7 @@
             <ul class="nav flex-column" style="width:100%">
                 <!-- the Dashboard options-->
                 <li class="nav-item">
-                    <!-- the Dashboard options--> 
+                    <!-- the Dashboard options-->
                     <p><a class="text-dark nav-link active" aria-current="page"  href="{{url('/')}}">
                             <img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right"> Dashboard</a></p>
                 </li>
@@ -48,7 +48,7 @@
                     <p><a class="text-dark nav-link active" aria-current="page" href="{{url('/passwordchangeadmin')}}">
                             <img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Change Password</a></p>
                 </li>
-                <!-- Cooment out due to not MVP
+            <!-- Cooment out due to not MVP
                 <li class="nav-item">
                     <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{url('/passwordchangeadmin')}}">
                             <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">Admin Help</a></p>
@@ -56,7 +56,7 @@
                 -->
                 <li class="nav-item">
                     <p><a class="text-dark nav-link active" aria-current="page"
-                                              href= "{{ url('/addsurvey/create')}}" ><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Create New Survey</a></p>
+                          href= "{{ url('/addsurvey/create')}}" ><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Create New Survey</a></p>
                 </li>
 
                 <li class="nav-item">
@@ -64,10 +64,10 @@
                             <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify a Survey</a></p>
                 </li>
 
-                  <!--Logout Option-->
-                  <li class="nav-item">
+                <!--Logout Option-->
+                <li class="nav-item">
                     <p><a class="text-dark nav-link active" aria-current="page"
-                                              href= "{{ url('/logout')}}" ><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Logout</a></p>
+                          href= "{{ url('/logout')}}" ><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Logout</a></p>
                 </li>
             </ul>
         </div>
@@ -83,7 +83,7 @@
 
     <section class="row justify-content-center">
         <section class="col-12 col-sm-6 col-md-3">
-            <form class="form-container" method = "get" action = "{{ url('/editSurvey/create')}}">
+            <form class="form-container" method = "post" action = "{{ url('/adminform/create')}}">
             @csrf
             <!-- Box for Survey Selection-->
                 <div class="mb-3" style="margin-left:3cm; margin-top: 10px">

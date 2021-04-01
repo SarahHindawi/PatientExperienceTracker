@@ -108,7 +108,11 @@
     <form name="surveyForm" method="post" action="/report" enctype="multipart/form-data">
     @csrf
     <!-- the item to collect the report-->
-        <div style=" margin:20%; margin-top:3%; height: 12cm;">
+        <div style=" margin-left:38%; margin-top:3%;">
+            <div class="panel panel-default">
+                <div style="width: 500px;margin-bottom: 1cm;" class="panel-body shadow p-3">
+
+                    <div class="container">
             <br>
             <!-- choose what survey PREMS or PROMS-->
             <p class="h6">Survey Desired:</p>
@@ -162,59 +166,64 @@
                                                                                  name="weightEquals"
                                                                                  style="width: 50px"/><br>
 
-            <!-- the form to choose Height-->
-            <div style="width: 300px; margin:90%; margin-top:-69%; height: 2cm;">
-                <p class="h6">Height:</p>
-                <input type="radio" name="height" value="all" checked> All<br>
+            <br>
+            <p class="h6">Height:</p>
+            <input type="radio" name="height" value="all" checked> All<br>
 
-                <br><input type="radio" name="height" value="above"> Above: <input type="text"
+            <br><input type="radio" name="height" value="above"> Above: <input type="text"
+                                                                               class="shadow  bg-body rounded"
+                                                                               name="heightAbove"
+                                                                               style="width: 50px ">
+            <br><br><input type="radio" name="height" value="below"> Below: <input type="text"
                                                                                    class="shadow  bg-body rounded"
-                                                                                   name="heightAbove"
-                                                                                   style="width: 50px ">
-                <br><br><input type="radio" name="height" value="below"> Below: <input type="text"
-                                                                                       class="shadow  bg-body rounded"
-                                                                                       name="heightBelow"
-                                                                                       style="width: 50px "/><br>
-                <br><input type="radio" name="height" value="equals"> Equals: <input type="text"
-                                                                                     class="shadow  bg-body rounded"
-                                                                                     name="heightEquals"
-                                                                                     style="width: 50px"/><br>
+                                                                                   name="heightBelow"
+                                                                                   style="width: 50px "/><br>
+            <br><input type="radio" name="height" value="equals"> Equals: <input type="text"
+                                                                                 class="shadow  bg-body rounded"
+                                                                                 name="heightEquals"
+                                                                                 style="width: 50px"/><br>
 
-                <br>
-                <!-- the Medication form-->
-                <p class="h6">Medication:</p>
-                <input type="radio" name="medicationUsage" value="none" checked> None<br>
-                <br><input type="radio" name="medicationUsage" value="includes"> Includes<br>
-                <!-- Panel that has the Medications that patients are taken-->
-                <div class="panel panel-default">
-                    <div style="width: 330px;margin-right: 35px;" class="panel-body shadow p-3">
+            <br>
+            <!-- the Medication form-->
+            <p class="h6">Medication:</p>
+            <input type="radio" name="medicationUsage" value="none" checked> None<br>
+            <br><input type="radio" name="medicationUsage" value="includes"> Includes<br>
+            <!-- Panel that has the Medications that patients are taken-->
+            <div class="panel panel-default">
+                <div style="width: 330px;margin-right: 35px;" class="panel-body shadow p-3">
 
-                        <div class="container">
-                            <div class="row align-items-start">
+                    <div class="container">
+                        <div class="row align-items-start">
 
-                                @foreach ($medications as $m)
+                            @foreach ($medications as $m)
 
-                                    <div class="col">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="medication[]"
-                                                   value="{{$m}}" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                {{$m}}
-                                            </label>
-                                        </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="medication[]"
+                                               value="{{$m}}" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            {{$m}}
+                                        </label>
                                     </div>
-                                @endforeach
+                                </div>
+                            @endforeach
 
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="text-center">
+                        <button style="width: 5cm; margin-bottom:.5cm;margin-top:1cm; " type="submit"
+                    class="btn btn-success btn-rounded">Submit
+            </button>
+            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
 
-        <button style="width: 5cm; margin-left: 19cm; margin-bottom:1cm; " type="submit"
-                class="btn btn-success btn-rounded">Submit
-        </button>
+
 
     </form>
 
