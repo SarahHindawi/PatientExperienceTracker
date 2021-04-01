@@ -141,8 +141,8 @@
         <input type="hidden" id="surveyname" name="surveyname" value="{{$name}}">
 
         <div style="width: 1200px; margin-left:15%; " class="shadow-lg p-3 mb-5 bg-white rounded">
-            <label class="h4" for="email">Patient's Email: </label> <input type="text" id="email"
-                                                                                  name="email" size="35" style="margin-left: 10px">
+            <label class="h4" for="email">Patient's Email: </label> <input type="email" id="email"
+                                                                                  name="email" size="35" style="margin-left: 10px" required>
 
             <br><br>
 
