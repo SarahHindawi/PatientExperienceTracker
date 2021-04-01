@@ -10,6 +10,7 @@
           rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/buttons.css')}}">
 
     <style>
         table, th, td {
@@ -23,6 +24,11 @@
             margin-right: auto;
             width: 1519px;
         }
+
+        th, td {
+            width: 230px;
+        }
+
 
     </style>
 
@@ -190,27 +196,31 @@
     </div>
 
     <!-- Area to show the Surveys -->
-    <div style="position:absolute; margin-top:2%; left:17%;">
+    <div style="position:absolute; margin-top:2%; left:27%;">
         @isset($responses)
-            <h3>Submitted Surveys</h3>
+            <h3 style="  text-align: center; color: darkblue">Submitted Surveys</h3>
             <table>
+                <colgroup>
                 <tr>
                     <th>Survey Name</th>
                     <th>Date Completed</th>
-                    <th>Responses</th>
+                    <th style="width:30%">Responses</th>
                 </tr>
 
                 @foreach ($names as $p)
                     <tr>
                         <td>{{ $names[$loop->index] }}</td>
                         <td>{{ $dates[$loop->index] }}</td>
-                        <td>{{$responses[$loop->index]}}
-{{--                            <form method="post" action="/preview" enctype="multipart/form-data">--}}
-{{--                            @csrf--}}
-{{--                                <input type="hidden" name="my_form_data" value="<?php echo htmlspecialchars(serialize({{$responses}})) ?>">--}}
 
-{{--                                <button type="submit">Preview</button>--}}
-{{--                            </form>--}}
+                        <td ><form method="post" action="/preview" enctype="multipart/form-data">
+                            @csrf
+                                <input type="hidden" name="patient" value="{{$Summary['FirstName']}} {{$Summary['LastName']}}">
+                                <input type="hidden" name="responses" value="{{ json_encode($responses[$loop->index],TRUE)}}">
+                                <input type="hidden" name="name" value="{{ $names[$loop->index] }}">
+                                <input type="hidden" name="date" value="{{ $dates[$loop->index] }}">
+
+                                <button class="block button button1" type="submit" style="padding: 5px 10px"><span>Preview</span></button>
+                            </form>
 
                         </td>
                     </tr>

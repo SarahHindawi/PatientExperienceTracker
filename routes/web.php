@@ -67,3 +67,5 @@ Route::post('/adminform', 'App\Http\Controllers\AdminSurveyController@store');
 Route::get('/adminhelp', 'App\Http\Controllers\AdminHelpController@index');
 
 Route::post('/addmedication', 'App\Http\Controllers\MedicationController@create');
+
+Route::post('/preview', 'App\Http\Controllers\ViewResponseController@create');

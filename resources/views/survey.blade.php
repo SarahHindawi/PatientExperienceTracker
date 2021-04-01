@@ -72,7 +72,7 @@
 
     @csrf
     <input type="hidden" id="surveyname" name="surveyname" value="{{$name}}">
-    <div style="width: 1200px; margin-left:15%; " class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div style="width: 1270px; margin-left:15%; " class="shadow-lg p-3 mb-5 bg-white rounded">
 
         @foreach ($questions as $q)
             <p class="h4"> {{str_replace("|",".",$q["Text"])}}</p> <!--Display the question-->

@@ -143,12 +143,11 @@ class PatientProfileSummaryController extends Controller
             $res = "";
             $quesNum = 1;
             foreach ($responsesArray[$i] as $key => $value) {
-                $res .= $quesNum . ") " . $key . ": " . $value . ". ";
+                $res .= $quesNum . ") " . $key . ":: " . $value . "| ";
                 $quesNum += 1;
             }
             $responsesString[] = $res;
         }
-
         return view('PatientSummaryResult', ["Summary" => $data, "medications" => $medArray, "responses" => $responsesString, "dates" => $dateCompleted, "names" => $surveyName]);
     }
 
