@@ -8,15 +8,12 @@ class AdminHelpController extends Controller
 {
     public function index()
     {
-        if (Auth::guard('admin')->check()) {
-
-            $adminType = Auth::guard('admin')->user()->RootAdmin;
-            $adminName = Auth::guard('admin')->user()->FirstName;
-            //Conditional for Root Admin Dashboard instead to Admin Dashboard.
-            if ($adminType || $adminName) {
-                return view('admin_help');
-            }
-        }
+//        if (!Auth::guard('admin')->check()) {
+//            if (Auth::guard('patient')->check()) {
+//                return redirect('/');
+//            }
+        return view('admin_help');
+//        }
+//    }
     }
-
 }

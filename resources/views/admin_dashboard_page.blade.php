@@ -50,9 +50,9 @@
         &nbsp;&nbsp;&nbsp;
 
         <li>
-            <button class="block button button1" onclick="location.href='/resetreview/create'" type="button"><img
+            <button class="block button button1" onclick="location.href='/resetreview/create'" type="button"><span><img
                     src="{{asset('assets/images/request.png')}}" width="25" height="25"
-                    class="d-inline-block align-right"> Patient Password Reset Requests. Click here to review
+                    class="d-inline-block align-right"> Patient Password Reset Requests. Click here to review</span>
 
             </button>
         </li>
@@ -69,38 +69,33 @@
                         class="d-inline-block align-right"> Generate Report of PERM and PROM Survey Data</span></button>
         </li>
         &nbsp;&nbsp;&nbsp;
-    <!--Commented out due to not MVP
-        <li><a href=""></a> <button  class="block button button1" onclick="location.href='admin_reset_password'"><span> <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify Survey Add or Remove Questions</span></button></li>
-        &nbsp;&nbsp;&nbsp;
-        -->
+
         <li><a href=""></a>
             <button class="block button button1" onclick="location.href='/passwordchangeadmin'"><span><img
                         src="{{asset('assets/images/key.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> Change Your Password</span></button>
         </li>
         &nbsp;&nbsp;&nbsp;
-    <!-- Commented out due to not MVP
-        <li><a href=""></a> <button  class="block button button1" onclick="location.href='admin_reset_password'"><span> <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right"> ADMIN Help</span></button></li>
-        -->
+
 
         <br>
         <li>
-            <button class="block button button1" onclick="location.href='/addsurvey/create'"><img
+            <button class="block button button1" onclick="location.href='/addsurvey/create'"><span><img
                     src="{{asset('assets/images/survey.png')}}" width="25" height="25"
-                    class="d-inline-block align-right"> Create a New Survey
+                    class="d-inline-block align-right"> Create a New Survey</span>
             </button>
         </li>
 
         <br>
-        <li><button class="block button button1" onclick="location.href='/editSurveySelect'"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify a Survey
-            </button></li>
+        <li><button class="block button button1" onclick="location.href='/editSurveySelect'"><span><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify a Survey
+            </span></button></li>
 
         <br>
-        <li><button class="block button button1" onclick="location.href='/adminsurveyselection'"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Fill Out a Survey
-            </button></li>
+        <li><button class="block button button1" onclick="location.href='/adminsurveyselection'"><span><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Fill Out a Survey
+            </span></button></li>
         <br>
-        <li><button class="block button button1" onclick="location.href='/adminhelp'"><img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right"> Admin Help
-            </button></li>
+        <li><button class="block button button1" onclick="location.href='/adminhelp'"><span><img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right"> Admin Help
+            </span></button></li>
 
 
     </ul>
