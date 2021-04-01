@@ -67,6 +67,14 @@
         <li><button class="block button button1" onclick="location.href='/editSurveySelect'"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify a Survey
             </button></li>
 
+        <br>
+        <li><button class="block button button1" onclick="location.href='/adminsurveyselection'"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Fill Out a Survey
+            </button></li>
+
+        <br>
+        <li><button class="block button button1" onclick="location.href='/adminhelp'"><img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right"> Admin Help
+            </button></li>
+
     </ul>
 
 
@@ -79,7 +87,7 @@
                 <ul class="nav flex-column" style="width:100%">
                     <!-- the Dashboard options-->
                     <li class="nav-item">
-                        <!-- the Dashboard options--> 
+                        <!-- the Dashboard options-->
                         <p><a class="text-dark nav-link active" aria-current="page"  href="{{url('/')}}">
                                 <img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right"> Dashboard</a></p>
                     </li>
