@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\DashboardController@index');
 
+Route::get('/adminhelp', function () {
+    return view('admin_help');
+});
 
 
 Route::get('/patientregistration', 'App\Http\Controllers\PatientRegistrationController@index');
@@ -61,5 +64,6 @@ Route::post('/addsurvey', 'App\Http\Controllers\AddSurveyController@store');
 Route::get('/editSurveySelect', 'App\Http\Controllers\EditSurveyController@surveyselection');
 Route::post('/report/download', 'App\Http\Controllers\ReportController@download');
 
-
-
+Route::get('/adminsurveyselection', 'App\Http\Controllers\AdminSurveyController@surveyselection');
+Route::post('/adminform/create', 'App\Http\Controllers\AdminSurveyController@create');
+Route::post('/adminform', 'App\Http\Controllers\AdminSurveyController@store');

@@ -38,7 +38,7 @@
             <p class="text-center h2">Report Result</p>
 
 
-            <div class="cent" style="top: 350px; width:80em;overflow-x: auto;white-space: nowrap;">
+            <div class="cent" style="top: 350px; width:80em;overflow-x: auto;white-space: nowrap; margin-left: -100px; margin-top: -5cm">
                 <table>
                     <tr>
                         <th>Name</th>
@@ -70,13 +70,10 @@
 
                 </table>
 
-                <!-- this button is to save the file-->
-                {{--            <button class="greenbutton" onclick="window.print();" style="margin: 3%"><i class='fas fa-save'></i> Save to file--}}
-                {{--            </button>--}}
             </div>
 
             <div>
-                <form method="post" action="/report/download" enctype="multipart/form-data" style="margin-top: 75px; margin-left: 400px">
+                <form method="post" action="/report/download" enctype="multipart/form-data" style="margin-top: 20px; margin-left: 400px">
                     @csrf
                     <input type="hidden" name="fileName" value="{{$fileName}}">
                     <button style="width: 5cm; margin-bottom:1cm; margin-top: 10px; margin-left:270px"

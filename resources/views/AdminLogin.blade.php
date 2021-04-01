@@ -28,8 +28,8 @@
 <section class="container-fluid">
     <!-- the title in the top middle of the page -->
     <div>
-        <p class="text-center h1" style="color:seagreen">Welcome to Patient Experience Tracker</p>
-        <p class="text-center h3">Enter your Administrator credentials below</p>
+        <p class="text-center h1" style="color:seagreen; margin-top: .2cm; margin-left: 4cm">Welcome to Patient Experience Tracker</p>
+        <p class="text-center h3"style="margin-top:.5cm; margin-left: 4cm ">Enter your Administrator credentials below</p>
     </div>
     <!-- the Dashboard of the page that has different options-->
     <div class="msb" id="msb">
@@ -67,7 +67,7 @@
     </div>
 
     <!-- the form where you have to put admin email the password-->
-    <section class="row justify-content-center">
+    <section class="row justify-content-center "style="margin-left: 2cm">
         <section class="col-12 col-sm-6 col-md-3">
             <form class="form-container" method = "POST" action = "{{ url('/adminloginpage')}}">
                 @csrf

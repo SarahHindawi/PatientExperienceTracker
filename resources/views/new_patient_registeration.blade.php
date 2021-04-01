@@ -51,6 +51,26 @@
             background: transparent;
             transition: all 0.3s ease 0s;
         }
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
 
         #wrapper {
             margin-left: auto;
@@ -92,7 +112,7 @@
         </nav>
 
         <!--The page header and an explanation for how to use the page -->
-        <p class="text-center h2">New Patient Registration</p>
+        <p class="text-center h2" style="margin-left: 3cm">New Patient Registration</p>
 
     @if (count($patients) > 0)
 
@@ -204,7 +224,11 @@
                     </button>
                 </form>
             @else
-                <h5 style="margin-left: 277px; color: red">There are no new registered patients </h5>
+{{--                <h5 style="margin-left: 277px; color: red">There are no new registered patients </h5>--}}
+                <div class="alert" style="margin-left: 8.8cm ">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <strong> There are no new registered patients </strong>
+                </div>
             @endif
         </div>
 
