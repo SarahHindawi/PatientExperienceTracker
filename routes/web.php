@@ -66,9 +66,7 @@ Route::post('/adminform/create', 'App\Http\Controllers\AdminSurveyController@cre
 Route::post('/adminform', 'App\Http\Controllers\AdminSurveyController@store');
 Route::get('/adminhelp', 'App\Http\Controllers\AdminHelpController@index');
 
-Route::post('/addmedication', 'App\Http\Controllers\MedicationController@create');
-
 Route::post('/preview', 'App\Http\Controllers\ViewResponseController@create');
 
-Route::get('/medication/create', 'App\Http\Controllers\MedicationController@create');
-Route::post('/medication', 'App\Http\Controllers\MedicationController@add');
+Route::get('/medication', 'App\Http\Controllers\MedicationController@create');
+Route::post('/addmedication', 'App\Http\Controllers\MedicationController@add');

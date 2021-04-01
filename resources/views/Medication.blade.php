@@ -99,7 +99,7 @@
 
 
 <!-- the form where Admin can add the name of the new medication-->
-<form class="form-container" method="POST" action="{{ url('/medication')}}" style="margin-left: -60px">
+<form class="form-container" method="POST" action="{{ url('/addmedication')}}" style="margin-left: -60px">
     @csrf
     <div style="width: 550px; margin-left:18cm; margin-top:6%">
         <div class="mb-7 row">
