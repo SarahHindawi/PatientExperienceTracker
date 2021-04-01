@@ -147,24 +147,14 @@
                                 <img src="{{asset('assets/images/pen.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Generate Report</a></p>
                     </li>
-                <!-- Comment Out due to not MVP
-                    <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
-                                <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Modify Survey</a></p>
-                    </li>
-                    -->
+
                     <li class="nav-item">
                         <p><a class="text-dark nav-link active" aria-current="page"
                                                   href="{{url('/passwordchangeadmin')}}">
                                 <img src="{{asset('assets/images/key.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Change Password</a></p>
                     </li>
-                <!-- Comment Out Due to not MVP
-                    <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
-                                <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">Admin Help</a></p>
-                    </li>
-                    -->
+
 
                     <li class="nav-item">
                         <p><a class="text-dark nav-link active" aria-current="page"
@@ -187,7 +177,6 @@
                     </li>
                 </ul>
             </div>
-
         </nav>
     </div>
 
