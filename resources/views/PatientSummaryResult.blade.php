@@ -10,6 +10,7 @@
           rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/buttons.css')}}">
 
     <style>
         table, th, td {
@@ -24,6 +25,11 @@
             width: 1519px;
         }
 
+        th, td {
+            width: 230px;
+        }
+
+
     </style>
 
 </head>
@@ -37,6 +43,7 @@
     </nav>
 
 
+    <!-- The dashboard which has all the options for the admin. This dashboard is located in the side of the page-->
     <div class="msb" id="msb">
         <p class="text-center fs-2">PET</p>
 
@@ -46,55 +53,61 @@
                     <li class="nav-item">
                         <!-- the Dashboard options-->
                         <p><a class="text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/')}}">
+                              href="{{ url('/')}}">
                                 <img src="{{asset('assets/images/Home.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Dashboard</a></p>
                     </li>
                     <li class="nav-item">
                         <p><a class="text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/accept/create')}}">
+                              href="{{ url('/accept/create')}}">
                                 <img src="{{asset('assets/images/request.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Patient Registration</a></p>
                     </li>
                     <li class="nav-item">
+
                         <p><a class="text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/passwordreset/create')}}">
+                              href="{{ url('/resetreview/create')}}">
                                 <img src="{{asset('assets/images/request.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Password Reset</a></p>
+
                     </li>
                     <li class="nav-item">
                         <p><a class="text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/profilesearch')}}">
+                              href="{{ url('/profilesearch')}}">
                                 <img src="{{asset('assets/images/pen.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Patient Summary</a></p>
                     </li>
                     <li class="nav-item">
                         <p><a class="text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/report/create')}}">
+                              href="{{ url('/report/create')}}">
                                 <img src="{{asset('assets/images/pen.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Generate Report</a></p>
                     </li>
-                <!-- Comment Out due to not MVP
-                    <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
-                                <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Modify Survey</a></p>
-                    </li>
-                    -->
+
                     <li class="nav-item">
                         <p><a class="text-dark nav-link active" aria-current="page"
-                                                  href="{{url('/passwordchangeadmin')}}">
+                              href="{{url('/passwordchangeadmin')}}">
                                 <img src="{{asset('assets/images/key.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Change Password</a></p>
                     </li>
+
+
                     <li class="nav-item">
-                        <p><a class="text-dark nav-link active" aria-current="page" href="#">
-                                <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25"
-                                     class="d-inline-block align-right"> Admin Help</a></p>
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href= "{{ url('/addsurvey/create')}}" ><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Create New Survey</a></p>
                     </li>
+
+
+                    <li class="nav-item">
+                        <p><a class="text-dark nav-link active" aria-current="page" href="{{ url('/editSurveySelect')}}">
+                                <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify a Survey</a></p>
+                    </li>
+
+
                     <!--Logout Option-->
                     <li class="nav-item">
                         <p><a class="text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/logout')}}"><img
+                              href="{{ url('/logout')}}"><img
                                     src="{{asset('assets/images/key.png')}}" width="25" height="25"
                                     class="d-inline-block align-right"> Logout</a></p>
                     </li>
@@ -102,6 +115,7 @@
             </div>
         </nav>
     </div>
+
 
     <!-- the title in the top  -->
     <div style=" margin-top:2%; margin-left:16%">
@@ -182,27 +196,31 @@
     </div>
 
     <!-- Area to show the Surveys -->
-    <div style="position:absolute; margin-top:2%; left:17%;">
+    <div style="position:absolute; margin-top:2%; left:27%;">
         @isset($responses)
-            <h3>Submitted Surveys</h3>
+            <h3 style="  text-align: center; color: darkblue">Submitted Surveys</h3>
             <table>
+                <colgroup>
                 <tr>
                     <th>Survey Name</th>
                     <th>Date Completed</th>
-                    <th>Responses</th>
+                    <th style="width:30%">Responses</th>
                 </tr>
 
                 @foreach ($names as $p)
                     <tr>
                         <td>{{ $names[$loop->index] }}</td>
                         <td>{{ $dates[$loop->index] }}</td>
-                        <td>{{$responses[$loop->index]}}
-{{--                            <form method="post" action="/preview" enctype="multipart/form-data">--}}
-{{--                            @csrf--}}
-{{--                                <input type="hidden" name="my_form_data" value="<?php echo htmlspecialchars(serialize({{$responses}})) ?>">--}}
 
-{{--                                <button type="submit">Preview</button>--}}
-{{--                            </form>--}}
+                        <td ><form method="post" action="/preview" enctype="multipart/form-data">
+                            @csrf
+                                <input type="hidden" name="patient" value="{{$Summary['FirstName']}} {{$Summary['LastName']}}">
+                                <input type="hidden" name="responses" value="{{ json_encode($responses[$loop->index],TRUE)}}">
+                                <input type="hidden" name="name" value="{{ $names[$loop->index] }}">
+                                <input type="hidden" name="date" value="{{ $dates[$loop->index] }}">
+
+                                <button class="block button button1" type="submit" style="padding: 5px 10px"><span>Preview</span></button>
+                            </form>
 
                         </td>
                     </tr>

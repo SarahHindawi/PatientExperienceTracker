@@ -30,17 +30,17 @@
     @endif
 
 
-    <p class="text-center h2" style="color:seagreen; margin-top: 15px">
+    <p class="text-center h2" style="color:seagreen; margin-top: .5cm; margin-left: 4cm">
         Hello {{Auth::guard('admin')->user()->FirstName}}</p>
 
 
-    <p class="text-center h6" style="text-align:center">Here are your administration options </p>
+    <p class="text-center h4" style="text-align:center; margin-top:1.5cm; margin-left: 4cm">Here are your administration options </p>
 
 
     <!-- The dashboard options in the centere of the page-->
 
 
-    <ul class="lp" style="margin-left: 260px">
+    <ul class="lp" style="margin-top: 50px; margin-left: 10cm">
         <li>
             <button class="block button button1" onclick="location.href='/accept/create'" type="button"><span><img
                         src="{{asset('assets/images/request.png')}}" width="25" height="25"
@@ -50,15 +50,15 @@
         &nbsp;&nbsp;&nbsp;
 
         <li>
-            <button class="block button button1" onclick="location.href='/resetreview/create'" type="button"><img
+            <button class="block button button1" onclick="location.href='/resetreview/create'" type="button"><span><img
                     src="{{asset('assets/images/request.png')}}" width="25" height="25"
-                    class="d-inline-block align-right"> Patient Password Reset Requests. Click here to review
+                    class="d-inline-block align-right"> Patient Password Reset Requests. Click here to review</span>
 
             </button>
         </li>
         &nbsp;&nbsp;&nbsp;
         <li>
-            <button class="block button button1" onclick="location.href='/profilesearch'"><span> <img
+            <button style="height: 2.2cm" class="block button button1" onclick="location.href='/profilesearch'"><span> <img
                         src="{{asset('assets/images/pen.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> View Summary of Patient</span></button>
         </li>
@@ -69,31 +69,38 @@
                         class="d-inline-block align-right"> Generate Report of PERM and PROM Survey Data</span></button>
         </li>
         &nbsp;&nbsp;&nbsp;
-    <!--Commented out due to not MVP
-        <li><a href=""></a> <button  class="block button button1" onclick="location.href='admin_reset_password'"><span> <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify Survey Add or Remove Questions</span></button></li>
-        &nbsp;&nbsp;&nbsp;
-        -->
+
         <li><a href=""></a>
-            <button class="block button button1" onclick="location.href='/passwordchangeadmin'"><span><img
+            <button style="height: 2.2cm"class="block button button1" onclick="location.href='/passwordchangeadmin'"><span><img
                         src="{{asset('assets/images/key.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> Change Your Password</span></button>
         </li>
         &nbsp;&nbsp;&nbsp;
-    <!-- Commented out due to not MVP
-        <li><a href=""></a> <button  class="block button button1" onclick="location.href='admin_reset_password'"><span> <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right"> ADMIN Help</span></button></li>
-        -->
+
 
         <br>
         <li>
-            <button class="block button button1" onclick="location.href='/addsurvey/create'"><img
+            <button style="margin-top: 1px;height: 2.2cm"class="block button button1" onclick="location.href='/addsurvey/create'"><span><img
                     src="{{asset('assets/images/survey.png')}}" width="25" height="25"
-                    class="d-inline-block align-right"> Create a New Survey
+                    class="d-inline-block align-right"> Create a New Survey</span>
             </button>
         </li>
 
         <br>
-        <li><button class="block button button1" onclick="location.href='/editSurveySelect'"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify a Survey
-            </button></li>
+        <li><button style="height: 2.2cm"class="block button button1" onclick="location.href='/editSurveySelect'"><span><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify a Survey
+            </span></button></li>
+
+        <br>
+        <li><button style="height: 2.2cm"class="block button button1" onclick="location.href='/adminsurveyselection'"><span><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Fill Out a Survey
+            </span></button></li>
+        <br>
+        <li><button style="height: 2.2cm"class="block button button1" onclick="location.href='/adminhelp'"><span><img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right"> Admin Help
+            </span></button></li>
+
+{{--        <br>--}}
+{{--        <li><button class="block button button1" onclick="location.href='/addmedication'"><span><img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right"> Add a Medication--}}
+{{--            </span></button></li>--}}
+
 
     </ul>
 
@@ -140,24 +147,14 @@
                                 <img src="{{asset('assets/images/pen.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Generate Report</a></p>
                     </li>
-                <!-- Comment Out due to not MVP
-                    <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
-                                <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Modify Survey</a></p>
-                    </li>
-                    -->
+
                     <li class="nav-item">
                         <p><a class="text-dark nav-link active" aria-current="page"
                                                   href="{{url('/passwordchangeadmin')}}">
                                 <img src="{{asset('assets/images/key.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Change Password</a></p>
                     </li>
-                <!-- Comment Out Due to not MVP
-                    <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
-                                <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">Admin Help</a></p>
-                    </li>
-                    -->
+
 
                     <li class="nav-item">
                         <p><a class="text-dark nav-link active" aria-current="page"
@@ -170,6 +167,7 @@
                                 <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify a Survey</a></p>
                     </li>
 
+
                     <!--Logout Option-->
                     <li class="nav-item">
                         <p><a class="text-dark nav-link active" aria-current="page"
@@ -179,7 +177,6 @@
                     </li>
                 </ul>
             </div>
-
         </nav>
     </div>
 

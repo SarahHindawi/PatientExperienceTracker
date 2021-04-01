@@ -24,6 +24,7 @@ Route::get('/adminregistration', 'App\Http\Controllers\AdminRegistrationControll
 Route::post('/adminregistration', 'App\Http\Controllers\AdminRegistrationController@register');
 Route::get('/profilesearch', 'App\Http\Controllers\PatientProfileSummaryController@index');
 Route::post('/profilereport', 'App\Http\Controllers\PatientProfileSummaryController@search');
+Route::post('/reports', 'App\Http\Controllers\PatientProfileSummaryController@nameSearch');
 Route::get('/surveyselection', 'App\Http\Controllers\SurveyController@surveyselection');
 Route::post('/form/create', 'App\Http\Controllers\SurveyController@create');
 Route::post('/form', 'App\Http\Controllers\SurveyController@store');
@@ -60,5 +61,11 @@ Route::post('/addsurvey', 'App\Http\Controllers\AddSurveyController@store');
 Route::get('/editSurveySelect', 'App\Http\Controllers\EditSurveyController@surveyselection');
 Route::post('/report/download', 'App\Http\Controllers\ReportController@download');
 
+Route::get('/adminsurveyselection', 'App\Http\Controllers\AdminSurveyController@surveyselection');
+Route::post('/adminform/create', 'App\Http\Controllers\AdminSurveyController@create');
+Route::post('/adminform', 'App\Http\Controllers\AdminSurveyController@store');
+Route::get('/adminhelp', 'App\Http\Controllers\AdminHelpController@index');
 
+Route::post('/addmedication', 'App\Http\Controllers\MedicationController@create');
 
+Route::post('/preview', 'App\Http\Controllers\ViewResponseController@create');

@@ -17,9 +17,11 @@
     <p class="alert alert-info"style="text-align:center">{{ Session::get('message') }}</p>
     @endif
  <!-- the title in the top middle of the page -->
- <div style=" margin-top:4%">
-     <p class="text-center h4">Here you can change the password on your account.</p>
-     <p class="text-center h4">See password rules below</p>
+ <div >
+     <p class="text-center h2" style="color:seagreen; margin-top: 20px; margin-left: 4cm">Change Password</p>
+
+     <p class="text-center h4"style="margin-left: 4cm; margin-top: 1cm; margin-bottom: 1cm">Here you can change the password on your account.</p>
+{{--     <p class="text-center h4"style="margin-left: 4cm">See password rules below</p>--}}
  </div>
 
 
@@ -54,10 +56,10 @@
          </div>
  </div>
  <!-- the form where Patient have to change the password-->
- <form class="form-container" method = "POST" action = "{{ url('/passwordchangepatientsave')}}">
+ <form class="form-container" method = "POST" action = "{{ url('/passwordchangepatientsave')}}" style="margin-left: -60px">
     @csrf
      <!-- the box for current password-->
-     <div style="width: 550px; margin-left:6cm; margin-top:6%">
+     <div style="width: 550px; margin-left:18cm; margin-top:6%">
          <div class="mb-7 row">
              <label for="inputFirstName" class="col-sm-4 col-form-label">Current Password: </label>
              <div class="col-sm-5">
@@ -83,21 +85,21 @@
          </div>
      </div>
      <!-- the panel where the rule of the password creation should achieve-->
-     <div class="card panel-body shadow p-3"
-          style="width: 25rem;height: 15rem;;margin-left: 29cm; margin-top: -6cm;">
-         <div class="card-body">
-             <h6 class="card-subtitle mb-2 text-muted">Password needs to be between 6 and 20 characters</h6>
-             <br><br>
-             <h6 class="card-subtitle mb-2 text-muted">Password Must Contain:</h6>
-             <h6 class="card-subtitle mb-2 text-muted">-At least 1 Uppercase Letter</h6>
-             <h6 class="card-subtitle mb-2 text-muted">-At least 1 Lowercase Letter</h6>
-             <h6 class="card-subtitle mb-2 text-muted">-At least 1 Number</h6>
-         </div>
-     </div>
-     <br><br>
+{{--     <div class="card panel-body shadow p-3"--}}
+{{--          style="width: 25rem;height: 15rem;;margin-left: 29cm; margin-top: -6cm;">--}}
+{{--         <div class="card-body">--}}
+{{--             <h6 class="card-subtitle mb-2 text-muted">Password needs to be between 6 and 20 characters</h6>--}}
+{{--             <br><br>--}}
+{{--             <h6 class="card-subtitle mb-2 text-muted">Password Must Contain:</h6>--}}
+{{--             <h6 class="card-subtitle mb-2 text-muted">-At least 1 Uppercase Letter</h6>--}}
+{{--             <h6 class="card-subtitle mb-2 text-muted">-At least 1 Lowercase Letter</h6>--}}
+{{--             <h6 class="card-subtitle mb-2 text-muted">-At least 1 Number</h6>--}}
+{{--         </div>--}}
+{{--     </div>--}}
+{{--     <br><br>--}}
      <!-- the submit button-->
-        <div style="margin-left:20cm;">
-            <button class="btn btn-success btn-rounded  btn-lg "style="width: 200px;">Change Password</button>
+        <div style="margin-left:22cm;">
+            <button class="btn btn-success btn-rounded  btn-lg "style="width: 200px; margin-top: 1cm">Change Password</button>
         </div>
 
  </form>

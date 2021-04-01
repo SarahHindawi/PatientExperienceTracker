@@ -42,19 +42,19 @@ class PatientProfileSummaryController extends Controller
 
         $this->validate($request, [
             'inputEmail' => 'required|email',
-            'inputFirstName' => 'required',
-            'inputLastName' => 'required',
+            /*'inputFirstName' => 'required',
+            'inputLastName' => 'required',*/
         ]);
 
 
         $data = DB::table('PATIENT_PROFILE');
         if (!empty($request->inputEmail)) {
             if ($request->inputEmail) {
-                $data = $data->where('Email', 'LIKE', "%" . $request->inputEmail . "%");
+                $data = $data->where('Email', 'LIKE', "%" . $request->inputEmail . "%")->get();
             }
         }
 
-        if (!empty($request->inputFirstName)) {
+        /*if (!empty($request->inputFirstName)) {
             if ($request->inputFirstName) {
                 $data = $data->where('FirstName', 'LIKE', "%" . $request->inputFirstName . "%");
             }
@@ -63,7 +63,7 @@ class PatientProfileSummaryController extends Controller
             if ($request->inputLastName) {
                 $data = $data->where('LastName', 'LIKE', "%" . $request->inputLastName)->get();
             }
-        }
+        }*/
 
         //if there are no registered patients with the given name/email
         if (count($data) == 0) {
@@ -143,12 +143,51 @@ class PatientProfileSummaryController extends Controller
             $res = "";
             $quesNum = 1;
             foreach ($responsesArray[$i] as $key => $value) {
-                $res .= $quesNum . ") " . $key . ": " . $value . ". ";
+                $res .= $quesNum . ") " . $key . ":: " . $value . "| ";
                 $quesNum += 1;
             }
             $responsesString[] = $res;
         }
-
         return view('PatientSummaryResult', ["Summary" => $data, "medications" => $medArray, "responses" => $responsesString, "dates" => $dateCompleted, "names" => $surveyName]);
     }
+
+    public function nameSearch(Request $request)
+    {
+        if(!Auth::guard('admin')->check()){
+
+            if(Auth::guard('patient')->check()){
+                //TODO redirect to Patient Dashbaord with unauthorized message.
+            }
+            return redirect('/adminlogin');
+        }
+
+        $this->validate($request, [
+            'inputFirstName' => 'required',
+            'inputLastName' => 'required',
+        ]);
+
+
+        $data = DB::table('PATIENT_PROFILE');
+        if (!empty($request->inputFirstName)) {
+            if ($request->inputFirstName) {
+                $data = $data->where('FirstName', 'LIKE', "%" . $request->inputFirstName . "%");
+            }
+        }
+        if (!empty($request->inputLastName)) {
+            if ($request->inputLastName) {
+                $data = $data->where('LastName', 'LIKE', "%" . $request->inputLastName)->get();
+            }
+        }
+
+        //if there are no registered patients with the given name/email
+        if (count($data) == 0) {
+            return view('ProfileSummary' ,['message' => "No records match the specified data."]);
+        }
+
+        $data = (array)$data[0];
+
+
+        return view('ResultByName', ["Summary" => $data ]);
+    }
+
 }

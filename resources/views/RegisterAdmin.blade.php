@@ -23,80 +23,82 @@
 <!-- the navigation bar in the top-->
 <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
-{{--        <a class="navbar-brand"></a>--}}
-{{--        <!-- the button of the the drop down for the user in the top right corner-->--}}
-{{--        <form class="d-flex">--}}
-{{--            <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button"--}}
-{{--                    id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">--}}
-{{--                Dropdown--}}
-{{--            </button>--}}
-{{--            <!-- the option of the drop down button-->--}}
-{{--            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">--}}
-{{--                <li><button class="dropdown-item" type="button">Action</button></li>--}}
-{{--                <li><button class="dropdown-item" type="button">Another action</button></li>--}}
-{{--                <li><button class="dropdown-item" type="button">Something else here</button></li>--}}
-{{--            </ul>--}}
-{{--        </form>--}}
+
     </div>
 </nav>
 
 <!-- the title in the top  -->
-<div style=" margin-top:5%; margin-left:10%">
-    <p class="text-center h2">Register a New Admin Account</p>
+<div style=" margin-top:2%; margin-left:10%">
+    <p class="text-center h2"style="color:seagreen; margin-top: 10px; margin-left: 1cm">Register a New Admin Account</p>
 </div>
 
+<!-- The dashboard which has all the options for the admin. This dashboard is located in the side of the page-->
 <div class="msb" id="msb">
     <p class="text-center fs-2">PET</p>
 
     <nav class="navbar navbar-default" role="navigation">
         <div class="btn-group-vertical" style=" margin-top:15%; width:100%">
             <ul class="nav flex-column" style="width:100%">
-                <!-- the Dashboard options-->
                 <li class="nav-item">
                     <!-- the Dashboard options-->
-                    <p><a class="text-dark nav-link active" aria-current="page"  href="{{url('.')}}">
-                            <img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right"> Dashboard</a></p>
-                </li>
-                <li class="nav-item">
-                    <p><a class="text-dark nav-link active" aria-current="page" href="{{ url('/accept/create')}}" >
-                            <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right"> Patient Registration</a></p>
-                </li>
-                <li class="nav-item">
-                    <p><a class="text-dark nav-link active" aria-current="page" href="{{ url('/resetreview/create')}}">
-                            <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right"> Password Reset</a></p>
-                </li>
-                <li class="nav-item">
-                    <p><a class="text-dark nav-link active" aria-current="page" href="{{ url('/profilesearch')}}">
-                            <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right"> Patient Summary</a></p>
-                </li>
-                <li class="nav-item">
-                    <p><a class="text-dark nav-link active" aria-current="page" href="{{ url('/report/create')}}">
-                            <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right"> Generate Report</a></p>
-                </li>
-                <!-- Comment out due to not MVP
-                <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
-                            <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Modify Survey</a></p>
-                </li>
-                -->
-                <li class="nav-item">
-                    <p><a class="text-dark nav-link active" aria-current="page" href="{{url('/passwordchangeadmin')}}">
-                            <img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Change Password</a></p>
-                </li>
-                <!-- Cooment out due to not MVP
-                <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{url('/passwordchangeadmin')}}">
-                            <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">Admin Help</a></p>
-                </li>
-                -->
-                <li class="nav-item">
-                    <p><a class="text-dark nav-link active" aria-current="page" href="{{ url('/adminregistration')}}">
-                            <img src="{{asset('assets/images/signup.png')}}" width="25" height="25" class="d-inline-block align-right"> Register Admin</a></p>
-                </li>
-                  <!--Logout Option-->
-                  <li class="nav-item">
                     <p><a class="text-dark nav-link active" aria-current="page"
-                                              href= "{{ url('/logout')}}" ><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Logout</a></p>
+                          href="{{ url('/')}}">
+                            <img src="{{asset('assets/images/Home.png')}}" width="25" height="25"
+                                 class="d-inline-block align-right"> Dashboard</a></p>
+                </li>
+                <li class="nav-item">
+                    <p><a class="text-dark nav-link active" aria-current="page"
+                          href="{{ url('/accept/create')}}">
+                            <img src="{{asset('assets/images/request.png')}}" width="25" height="25"
+                                 class="d-inline-block align-right"> Patient Registration</a></p>
+                </li>
+                <li class="nav-item">
+
+                    <p><a class="text-dark nav-link active" aria-current="page"
+                          href="{{ url('/resetreview/create')}}">
+                            <img src="{{asset('assets/images/request.png')}}" width="25" height="25"
+                                 class="d-inline-block align-right"> Password Reset</a></p>
+
+                </li>
+                <li class="nav-item">
+                    <p><a class="text-dark nav-link active" aria-current="page"
+                          href="{{ url('/profilesearch')}}">
+                            <img src="{{asset('assets/images/pen.png')}}" width="25" height="25"
+                                 class="d-inline-block align-right"> Patient Summary</a></p>
+                </li>
+                <li class="nav-item">
+                    <p><a class="text-dark nav-link active" aria-current="page"
+                          href="{{ url('/report/create')}}">
+                            <img src="{{asset('assets/images/pen.png')}}" width="25" height="25"
+                                 class="d-inline-block align-right"> Generate Report</a></p>
+                </li>
+
+                <li class="nav-item">
+                    <p><a class="text-dark nav-link active" aria-current="page"
+                          href="{{url('/passwordchangeadmin')}}">
+                            <img src="{{asset('assets/images/key.png')}}" width="25" height="25"
+                                 class="d-inline-block align-right"> Change Password</a></p>
+                </li>
+
+
+                <li class="nav-item">
+                    <p><a class="text-dark nav-link active" aria-current="page"
+                          href= "{{ url('/addsurvey/create')}}" ><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Create New Survey</a></p>
+                </li>
+
+
+                <li class="nav-item">
+                    <p><a class="text-dark nav-link active" aria-current="page" href="{{ url('/editSurveySelect')}}">
+                            <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify a Survey</a></p>
+                </li>
+
+
+                <!--Logout Option-->
+                <li class="nav-item">
+                    <p><a class="text-dark nav-link active" aria-current="page"
+                          href="{{ url('/logout')}}"><img
+                                src="{{asset('assets/images/key.png')}}" width="25" height="25"
+                                class="d-inline-block align-right"> Logout</a></p>
                 </li>
             </ul>
         </div>
@@ -109,27 +111,27 @@
     <!-- text box for the new Admin First name-->
     <div class="mb-3 row">
         <div class="col-sm-10">
-            {{Form::label('firstname', 'First Name')}}
+            {{Form::label('firstname', 'First Name:')}}
             {{Form::text('firstname', '' , ['class' => 'form-control', 'placeholder' => 'First Name'])}}
         </div>
     </div>
     <!-- text box for the new Admin Last name-->
     <div class="mb-3 row">
         <div class="col-sm-10">
-            {{Form::label('lastname', 'Last Name')}}
+            {{Form::label('lastname', 'Last Name:')}}
             {{Form::text('lastname', '' , ['class' => 'form-control', 'placeholder' => 'Last Name'])}}
         </div>
     </div>
     <!-- text box for the new Admin Password-->
     <div class="mb-3 row">
         <div class="col-sm-10">
-            {{Form::label('password', 'Password')}}
+            {{Form::label('password', 'Password:')}}
             {{Form::text('password', '' , ['class' => 'form-control', 'placeholder' => 'Password'])}}
         </div>
     </div>
         <div class="mb-3 row">
             <div class="col-sm-10">
-                {{Form::label('email', 'Email')}}
+                {{Form::label('email', 'Email:')}}
                 {{Form::text('email', '' , ['class' => 'form-control', 'placeholder' => 'Email'])}}
             </div>
         </div>

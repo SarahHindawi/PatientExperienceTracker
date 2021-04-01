@@ -34,10 +34,10 @@
 
     <!-- the title in the top middle of the page -->
     <div style=" margin-left:10%">
-        <p class="text-center h2">Generate Report</p>
+        <p class="text-center h2 "style="color:seagreen">Generate Report</p>
     </div>
 
-    <!-- the Dashboard of the page that has different options-->
+    <!-- The dashboard which has all the options for the admin. This dashboard is located in the side of the page-->
     <div class="msb" id="msb">
         <p class="text-center fs-2">PET</p>
 
@@ -47,56 +47,61 @@
                     <li class="nav-item">
                         <!-- the Dashboard options-->
                         <p><a class="text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/')}}">
+                              href="{{ url('/')}}">
                                 <img src="{{asset('assets/images/Home.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Dashboard</a></p>
                     </li>
                     <li class="nav-item">
                         <p><a class="text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/accept/create')}}">
+                              href="{{ url('/accept/create')}}">
                                 <img src="{{asset('assets/images/request.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Patient Registration</a></p>
                     </li>
                     <li class="nav-item">
+
                         <p><a class="text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/passwordreset/create')}}">
+                              href="{{ url('/resetreview/create')}}">
                                 <img src="{{asset('assets/images/request.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Password Reset</a></p>
+
                     </li>
                     <li class="nav-item">
                         <p><a class="text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/profilesearch')}}">
+                              href="{{ url('/profilesearch')}}">
                                 <img src="{{asset('assets/images/pen.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Patient Summary</a></p>
                     </li>
                     <li class="nav-item">
                         <p><a class="text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/report/create')}}">
+                              href="{{ url('/report/create')}}">
                                 <img src="{{asset('assets/images/pen.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Generate Report</a></p>
                     </li>
-                <!-- Comment Out due to not MVP
-                    <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
-                                <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Modify Survey</a></p>
-                    </li>
-                    -->
+
                     <li class="nav-item">
                         <p><a class="text-dark nav-link active" aria-current="page"
-                                                  href="{{url('/passwordchangeadmin')}}">
+                              href="{{url('/passwordchangeadmin')}}">
                                 <img src="{{asset('assets/images/key.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Change Password</a></p>
                     </li>
-                <!-- Comment Out Due to not MVP
+
+
                     <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
-                                <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">Admin Help</a></p>
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href= "{{ url('/addsurvey/create')}}" ><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Create New Survey</a></p>
                     </li>
-                    -->
+
+
+                    <li class="nav-item">
+                        <p><a class="text-dark nav-link active" aria-current="page" href="{{ url('/editSurveySelect')}}">
+                                <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify a Survey</a></p>
+                    </li>
+
+
                     <!--Logout Option-->
                     <li class="nav-item">
                         <p><a class="text-dark nav-link active" aria-current="page"
-                                                  href="{{ url('/logout')}}"><img
+                              href="{{ url('/logout')}}"><img
                                     src="{{asset('assets/images/key.png')}}" width="25" height="25"
                                     class="d-inline-block align-right"> Logout</a></p>
                     </li>
@@ -212,55 +217,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- the form to choose Height-->
-{{--            <div style="width: 300px; margin:90%; margin-top:-69%; height: 2cm;">--}}
-{{--                <p class="h6">Height:</p>--}}
-{{--                <input type="radio" name="height" value="all" checked> All<br>--}}
-
-{{--                <br><input type="radio" name="height" value="above"> Above: <input type="text"--}}
-{{--                                                                                   class="shadow  bg-body rounded"--}}
-{{--                                                                                   name="heightAbove"--}}
-{{--                                                                                   style="width: 50px ">--}}
-{{--                <br><br><input type="radio" name="height" value="below"> Below: <input type="text"--}}
-{{--                                                                                       class="shadow  bg-body rounded"--}}
-{{--                                                                                       name="heightBelow"--}}
-{{--                                                                                       style="width: 50px "/><br>--}}
-{{--                <br><input type="radio" name="height" value="equals"> Equals: <input type="text"--}}
-{{--                                                                                     class="shadow  bg-body rounded"--}}
-{{--                                                                                     name="heightEquals"--}}
-{{--                                                                                     style="width: 50px"/><br>--}}
-
-{{--                <br>--}}
-{{--                <!-- the Medication form-->--}}
-{{--                <p class="h6">Medication:</p>--}}
-{{--                <input type="radio" name="medicationUsage" value="none" checked> None<br>--}}
-{{--                <br><input type="radio" name="medicationUsage" value="includes"> Includes<br>--}}
-{{--                <!-- Panel that has the Medications that patients are taken-->--}}
-{{--                <div class="panel panel-default">--}}
-{{--                    <div style="width: 330px;margin-right: 35px;" class="panel-body shadow p-3">--}}
-
-{{--                        <div class="container">--}}
-{{--                            <div class="row align-items-start">--}}
-
-{{--                                @foreach ($medications as $m)--}}
-
-{{--                                    <div class="col">--}}
-{{--                                        <div class="form-check">--}}
-{{--                                            <input class="form-check-input" type="checkbox" name="medication[]"--}}
-{{--                                                   value="{{$m}}" id="flexCheckDefault">--}}
-{{--                                            <label class="form-check-label" for="flexCheckDefault">--}}
-{{--                                                {{$m}}--}}
-{{--                                            </label>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                @endforeach--}}
-
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
 
             <div class="text-center">
                         <button style="width: 5cm; margin-bottom:.5cm;margin-top:1cm; " type="submit"

@@ -28,9 +28,10 @@
 
 <!-- the title in the top  -->
 <div style=" margin-left:10%">
-    <p class="text-center h2">Patient Profile Search</p>
+    <p class="text-center h2 "style="color:seagreen">Patient Profile Search</p>
 </div>
 
+<!-- The dashboard which has all the options for the admin. This dashboard is located in the side of the page-->
 <div class="msb" id="msb">
     <p class="text-center fs-2">PET</p>
 
@@ -39,45 +40,64 @@
             <ul class="nav flex-column" style="width:100%">
                 <li class="nav-item">
                     <!-- the Dashboard options-->
-                    <p><a class="text-dark nav-link active" aria-current="page"  href="{{ url('/')}}" >
-                            <img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right"> Dashboard</a></p>
+                    <p><a class="text-dark nav-link active" aria-current="page"
+                          href="{{ url('/')}}">
+                            <img src="{{asset('assets/images/Home.png')}}" width="25" height="25"
+                                 class="d-inline-block align-right"> Dashboard</a></p>
                 </li>
                 <li class="nav-item">
-                    <p><a class="text-dark nav-link active" aria-current="page" href="{{ url('/accept/create')}}" >
-                            <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right"> Patient Registration</a></p>
+                    <p><a class="text-dark nav-link active" aria-current="page"
+                          href="{{ url('/accept/create')}}">
+                            <img src="{{asset('assets/images/request.png')}}" width="25" height="25"
+                                 class="d-inline-block align-right"> Patient Registration</a></p>
                 </li>
                 <li class="nav-item">
-                    <p><a class="text-dark nav-link active" aria-current="page" href="{{ url('/passwordreset/create')}}">
-                            <img src="{{asset('assets/images/request.png')}}" width="25" height="25" class="d-inline-block align-right"> Password Reset</a></p>
+
+                    <p><a class="text-dark nav-link active" aria-current="page"
+                          href="{{ url('/resetreview/create')}}">
+                            <img src="{{asset('assets/images/request.png')}}" width="25" height="25"
+                                 class="d-inline-block align-right"> Password Reset</a></p>
+
                 </li>
                 <li class="nav-item">
-                    <p><a class="text-dark nav-link active" aria-current="page" href="{{ url('/profilesearch')}}">
-                            <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right"> Patient Summary</a></p>
+                    <p><a class="text-dark nav-link active" aria-current="page"
+                          href="{{ url('/profilesearch')}}">
+                            <img src="{{asset('assets/images/pen.png')}}" width="25" height="25"
+                                 class="d-inline-block align-right"> Patient Summary</a></p>
                 </li>
                 <li class="nav-item">
-                    <p><a class="text-dark nav-link active" aria-current="page" href="{{ url('/report/create')}}">
-                            <img src="{{asset('assets/images/pen.png')}}" width="25" height="25" class="d-inline-block align-right"> Generate Report</a></p>
+                    <p><a class="text-dark nav-link active" aria-current="page"
+                          href="{{ url('/report/create')}}">
+                            <img src="{{asset('assets/images/pen.png')}}" width="25" height="25"
+                                 class="d-inline-block align-right"> Generate Report</a></p>
                 </li>
-            <!-- Comment Out due to not MVP
-                    <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
-                                <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right">Modify Survey</a></p>
-                    </li>
-                    -->
+
                 <li class="nav-item">
-                    <p><a class="text-dark nav-link active" aria-current="page" href="{{url('/passwordchangeadmin')}}">
-                            <img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Change Password</a></p>
+                    <p><a class="text-dark nav-link active" aria-current="page"
+                          href="{{url('/passwordchangeadmin')}}">
+                            <img src="{{asset('assets/images/key.png')}}" width="25" height="25"
+                                 class="d-inline-block align-right"> Change Password</a></p>
                 </li>
-            <!-- Comment Out Due to not MVP
-                    <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="#">
-                                <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">Admin Help</a></p>
-                    </li>
-                    -->
+
+
+                <li class="nav-item">
+                    <p><a class="text-dark nav-link active" aria-current="page"
+                          href= "{{ url('/addsurvey/create')}}" ><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Create New Survey</a></p>
+                </li>
+
+
+                <li class="nav-item">
+                    <p><a class="text-dark nav-link active" aria-current="page" href="{{ url('/editSurveySelect')}}">
+                            <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify a Survey</a></p>
+                </li>
+
+
                 <!--Logout Option-->
                 <li class="nav-item">
                     <p><a class="text-dark nav-link active" aria-current="page"
-                                              href= "{{ url('/logout')}}" ><img src="{{asset('assets/images/key.png')}}" width="25" height="25" class="d-inline-block align-right"> Logout</a></p>
+                          href="{{ url('/logout')}}"><img
+                                src="{{asset('assets/images/key.png')}}" width="25" height="25"
+                                class="d-inline-block align-right"> Logout</a></p>
                 </li>
             </ul>
         </div>
@@ -92,16 +112,19 @@
         <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-10">
             <input type="email" class="form-control shadow-sm" name="inputEmail">
+            <div style="margin-left:130%; margin-top:-7%; width: 150Px">
+                <button style="width: 200px;" type="submit" class="btn btn-success btn-rounded">Search By Email</button>
+            </div>
         </div>
     </div>
+        <br>
         <!-- Text box for a patient first name that admins will look for -->
         <div class="mb-3 row">
         <label for="inputFirstName" class="col-sm-2 col-form-label">First Name </label>
         <div class="col-sm-10">
             <input type="text" class="form-control shadow-sm" name="inputFirstName">
-            <!-- the search button -->
             <div style="margin-left:130%; margin-top:-7%; width: 150Px">
-                <button style="width: 200px;" type="submit" class="btn btn-success btn-rounded">Search</button>
+                <button style="width: 200px;" type="submit" class="btn btn-success btn-rounded">Search By Name</button>
             </div>
         </div>
     </div>

@@ -52,8 +52,8 @@
 
     <section class="container-fluid">
     <div>
-        <p class="text-center h1" style="color:seagreen; margin-top: 20px;">Survey Selection</p>
-        <p class="text-center h3">Please enter a Survey Selection Below</p>
+        <p class="text-center h2" style="color:seagreen; margin-top: 20px;margin-top: 1cm; margin-left: 4cm">Survey Selection</p>
+        <p class="text-center h3"style="text-align:center; margin-top:2cm; margin-left: 4cm">Please enter a Survey Selection Below</p>
     </div>
 
 
@@ -62,15 +62,15 @@
             <form class="form-container" method = "POST" action = "{{ url('/form/create')}}">
                 @csrf
                 <!-- Box for Survey Selection-->
-                <div class="mb-3" style="margin-left:3cm; margin-top: 10px">
-                    <label for="exampleInputEmail1" class="form-group form-inline">Survey Name:</label>
+                <div class="mb-3" style="margin-left:4.5cm; margin-top: 4cm">
+                    <label for="exampleInputEmail1" class="form-group form-inline"style="margin-left:-1cm">Survey Name:</label>
                     <div style="margin-left: -21%; margin-top: 10px">
                     {!! Form::select('surveyName',  $surveys, null,['class' => 'form-control', 'placeholder' => 'Select Survey Name']) !!}
                     </div>
                 </div>
                 <br><br>
                 <!-- Submission button-->
-                    <button class="btn btn-success btn-rounded w-100 btn-lg" style="margin-left: 10%">Select</button>
+                    <button class="btn btn-success btn-rounded  btn-lg" style="margin-left: 40%; width: 4cm">Select</button>
 
                 </div>
             </form>

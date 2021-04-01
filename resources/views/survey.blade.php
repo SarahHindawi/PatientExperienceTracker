@@ -22,24 +22,7 @@
     <!---
 <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Default</a>
-        <form class="d-flex">
-            <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button"
-                    id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                John Doe
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <li>
-                    <button class="dropdown-item" type="button">Action</button>
-                </li>
-                <li>
-                    <button class="dropdown-item" type="button">Another action</button>
-                </li>
-                <li>
-                    <button class="dropdown-item" type="button">Something else here</button>
-                </li>
-            </ul>
-        </form>
+
     </div>
 </nav>
 -->
@@ -89,7 +72,7 @@
 
     @csrf
     <input type="hidden" id="surveyname" name="surveyname" value="{{$name}}">
-    <div style="width: 1200px; margin-left:15%; " class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div style="width: 1270px; margin-left:15%; " class="shadow-lg p-3 mb-5 bg-white rounded">
 
         @foreach ($questions as $q)
             <p class="h4"> {{str_replace("|",".",$q["Text"])}}</p> <!--Display the question-->
