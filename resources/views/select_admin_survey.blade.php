@@ -76,14 +76,14 @@
 
 <section class="container-fluid">
     <div>
-        <p class="text-center h1" style="color:seagreen; margin-top: 20px;">Survey Selection</p>
-        <p class="text-center h3">Please enter a Survey Selection Below</p>
+        <p class="text-center h2" style="color:seagreen; margin-top: 1cm;">Survey Selection</p>
+        <p class="text-center h5">Please enter a Survey Selection Below</p>
     </div>
 
 
     <section class="row justify-content-center">
         <section class="col-12 col-sm-6 col-md-3">
-            <form class="form-container" method = "post" action = "{{ url('/adminform/create')}}">
+            <form class="form-container" method = "post" action = "{{ url('/adminform/create')}}" style="margin-top: 2cm">
             @csrf
             <!-- Box for Survey Selection-->
                 <div class="mb-3" style="margin-left:3cm; margin-top: 10px">
@@ -94,7 +94,7 @@
                 </div>
                 <br><br>
                 <!-- Submission button-->
-                <button class="btn btn-success btn-rounded w-100 btn-lg" style="margin-left: 10%">Select</button>
+                <button class="btn btn-success btn-rounded w-75 btn-lg" style="margin-left: 25%;">Select</button>
 
                 </div>
             </form>

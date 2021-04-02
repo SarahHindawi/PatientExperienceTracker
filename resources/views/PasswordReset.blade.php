@@ -86,14 +86,8 @@
 <div id="wrapper">
     <body>
 
-    <section class="container-fluid">
+    <section class="container-fluid"  style="margin-left: -1cm; margin-top: 1cm">
 
-
-        <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid" style="height: 30px; width: 800px">
-                <a class="navbar-brand"></a>
-            </div>
-        </nav>
 
         <!--The page header and an explanation for how to use the page -->
         <p class="text-center h2 style="style="color:seagreen;margin-left: 3.5cm">Password Reset Requests</p>

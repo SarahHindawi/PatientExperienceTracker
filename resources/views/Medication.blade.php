@@ -15,7 +15,7 @@
 
 <!-- the title in the top middle of the page -->
 <div>
-    <p class="text-center h2" style="color:seagreen; margin-top: 1cm; margin-left: 1cm">Adding a Medication</p>
+    <p class="text-center h2" style="color:seagreen; margin-top: 1cm; margin-left: .5cm">Adding a Medication</p>
 
 </div>
 

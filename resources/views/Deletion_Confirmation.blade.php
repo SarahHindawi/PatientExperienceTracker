@@ -23,35 +23,11 @@
 </style>
 <div id="wrapper">
 <body>
-    <!---
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Default</a>
-        <form class="d-flex">
-            <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button"
-                    id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                John Doe
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <li>
-                    <button class="dropdown-item" type="button">Action</button>
-                </li>
-                <li>
-                    <button class="dropdown-item" type="button">Another action</button>
-                </li>
-                <li>
-                    <button class="dropdown-item" type="button">Something else here</button>
-                </li>
-            </ul>
-        </form>
-    </div>
-</nav>
--->
 
-<div style=" margin-top:2%; margin-left:10%">
-    <h3 style="font-size:32pt; color:seagreen; text-align:center;">Patient Experience Tracker</h3>
-    <p class="text-center h2">{{$name}}</p>
-    <p style="text-align:center; color:red" ;>Confirm Question Deletion Below</p>
+
+<div style=" margin-top:1cm; margin-left:5%">
+    <h6 style="font-size:25pt; color:seagreen; text-align:center;">Deletion Confirmation</h6>
+    <p class="text-center h3">{{$name}} Survey</p>
 </div>
 
 
@@ -63,7 +39,7 @@
             <ul class="nav flex-column" style="width:100%">
                 <!-- the Dashboard options-->
                 <li class="nav-item">
-                    <!-- the Dashboard options--> 
+                    <!-- the Dashboard options-->
                     <p><a class="text-dark nav-link active" aria-current="page"  href="{{url('/')}}">
                             <img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right"> Dashboard</a></p>
                 </li>
@@ -118,7 +94,7 @@
 
     @csrf
     <input type="hidden" id="SurveyName" name="SurveyName" value="{{$name}}">
-    <input type="hidden" id="QuestionIndex" name="QuestionIndex" value="{{$questionIndex}}">   
+    <input type="hidden" id="QuestionIndex" name="QuestionIndex" value="{{$questionIndex}}">
     <div style="width: 1200px; margin-left:15%;" class="shadow-lg p-3 mb-5 bg-white rounded">
 
         @foreach ($questions as $q)
@@ -139,7 +115,7 @@
 
             @elseif ($q["Type"]  == "Checkbox")
 
-            <div style="width:60em;overflow-x: auto;white-space: nowrap;">                
+            <div style="width:60em;overflow-x: auto;white-space: nowrap;">
 
                 @foreach(explode(",",$q['PossibleResponses']) as $option)
                     <input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="{{$option}}" checked>
@@ -152,7 +128,7 @@
 
             @elseif ($q["Type"]  == "RadioButtons")
 
-            <div style="width:60em;overflow-x: auto;white-space: nowrap;">                
+            <div style="width:60em;overflow-x: auto;white-space: nowrap;">
                 @foreach(explode(",",$q['PossibleResponses']) as $option)
                     <input type="radio" name="{{$q["Text"]}}" value="{{$option}}" checked>
                         <label>{{$option}}</label>&nbsp;&nbsp;&nbsp;
@@ -181,7 +157,7 @@
         @endforeach
 
         <p style="text-align:center; font-size:32pt">Deletion Confirmation</p>
-        <p style="text-align:center; color:red; font-size: 24pt">Caution: this cannot be undone</p>
+        <p style="text-align:center; color:red; font-size: 20pt">Caution: this cannot be undone</p>
 
 
         <input class="form-check-input" type="checkbox" name="Confirmation" value="True">
@@ -189,7 +165,7 @@
 
         <div style=" height: 4cm;">
             <button style="width: 5cm; margin-left: 40%; margin-top:2cm; " type="submit"
-                    class="btn btn-success btn-rounded">Submit
+                    class="btn btn-success btn-rounded">Confirm
             </button>
         </div>
     </div>

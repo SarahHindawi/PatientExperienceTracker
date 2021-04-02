@@ -43,11 +43,11 @@
 <div id="wrapper">
     <body>
 
-    <section class="container-fluid">
+    <section class="container-fluid"  style="margin-top: 1cm">
 
         <!--The page header -->
         <div id="wrapper">
-            <p class="text-center h2" style="margin-top: 20px; margin-right: -25px">Search Results</p>
+            <p class="text-center h2" style="margin-top: 20px; margin-right: -25px; color:seagreen;">Search Results</p>
 
 
             <div class="cent"
