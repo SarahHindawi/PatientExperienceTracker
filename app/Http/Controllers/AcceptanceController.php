@@ -79,8 +79,8 @@ class AcceptanceController extends Controller
         //for each accepted patient, change the value of its corresponding "New Account" attribute to false
         foreach ($accepted as $acceptedEmail) {
             Patient::where('Email', $acceptedEmail)->update(array('NewAccount' => false));
-            
-    
+
+
             Mail::to($acceptedEmail)->send(new PatientRegAccept());
 
         }
@@ -89,8 +89,6 @@ class AcceptanceController extends Controller
             Patient::where('Email', '=', $removedEmail)->delete();
         }
 
-
-        return view("Admin_dashboard_page");
-
+        return redirect('/');
     }
 }

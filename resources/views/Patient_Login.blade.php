@@ -56,9 +56,9 @@
     </div>
 
 
-    <section class="row justify-content-center" style="margin-left: 2cm">
+    <section class="row justify-content-center" style="margin-left: 2cm;">
         <section class="col-12 col-sm-6 col-md-3">
-            <form class="form-container" method = "POST" action = "{{ url('/patientloginpage')}}">
+            <form class="form-container" method = "POST" action = "{{ url('/patientloginpage')}}" style="margin-top: 1cm">
                 @csrf
                 <!-- box for email-->
                 <div class="mb-3">

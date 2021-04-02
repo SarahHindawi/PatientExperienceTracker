@@ -198,12 +198,12 @@
             @if (count($patients) > 0)
 
                 <form name="acceptanceForm" method="POST" action="{{ url('/resetreview/store')}}"
-                      enctype="multipart/form-data" class="lp">
+                      enctype="multipart/form-data" class="lp" style="margin-right: 2cm">
                     @csrf
                     <ol class="lp">
                         @foreach ($patients as $p)
                             <ul>
-                                <label style="margin-right: 10px">
+                                <label >
                                     <input type="radio" name="data[{{$p}}]" value="Accept">
                                     <img width="30" height="30"
                                          src="https://freeiconshop.com/wp-content/uploads/edd/checkmark-flat.png">

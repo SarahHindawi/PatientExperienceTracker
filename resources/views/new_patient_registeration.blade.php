@@ -194,13 +194,13 @@
             <!-- If there are no new patients, then don't print a list -->
             @if (count($patients) > 0)
 
-                <form name="acceptanceForm" method="post" action="/accept" enctype="multipart/form-data" class="lp">
+                <form name="acceptanceForm" method="post" action="/accept" enctype="multipart/form-data" class="lp" style="margin-top: 2cm">
                     @csrf
                     <ol class="lp">
 
                         @foreach ($patients as $p)
                             <ul>
-                                <label style="margin-right: 10px; margin-top: 2.1cm">
+                                <label style="margin-right: 10px;">
                                     <input type="radio" name="data[{{$p}}]" value="Accept">
                                     <img width="30" height="30"
                                          src="https://freeiconshop.com/wp-content/uploads/edd/checkmark-flat.png">
