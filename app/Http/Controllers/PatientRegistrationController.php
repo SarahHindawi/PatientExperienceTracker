@@ -47,7 +47,7 @@ class PatientRegistrationController extends Controller
 
         $this->validate($request, [
             'email' => 'required|email',
-            'password' => 'required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',       
+            'password' => 'required|min:6',       
             'firstName' => 'required',
             'lastName' => 'required',
             'dob' => 'required',

@@ -55,7 +55,7 @@ class AdminRegistrationController extends Controller
 
         $this->validate($request, [
             'firstname' => 'required',
-            'password' => 'required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',
+            'password' => 'required|min:6',
             'lastname' => 'required',
             'email' => 'required',
         ]);

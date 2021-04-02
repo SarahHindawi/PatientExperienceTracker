@@ -117,10 +117,11 @@
         <div class="mb-3 row">
             <label class="col-sm-9 col-form-label">Condition Served:</label>
             <div class="col-sm-10">
-                <select class="shadow  bg-body rounded" aria-label="Default select example" name="ConditionServed" style="width: 200px; height: 30px" required>
+                <select class="shadow  bg-body rounded" aria-label="Default select example" name="ConditionServed" style="width: 250px; height: 30px" required>
                     @foreach ($conditions as $c)
                         <option value="{{$c}}">{{$c}}</option>
                     @endforeach
+                    <option value="Admin">Physician Survey(Admin only)</option>
                 </select>
 
 

@@ -168,7 +168,7 @@
             <input type="hidden" id="SurveyName" name="SurveyName" value="{{$name}}">            
             
         <br>
-        <p style=" margin-left: 60px" class="h4">Add Question:</p>
+        <p style=" margin-left: 50%" class="h4">Add Question:</p>
         <!-- question position in a survey-->
         <label for="input" style=" width: 220px" class="col-sm-2 col-form-label">New Question Number</label>
         <input type="number" style=" width: 100px" class=" shadow  bg-body rounded" id="qNumber" name="qNumber" min="1" max="{{(count($questions) + 1)}}">
