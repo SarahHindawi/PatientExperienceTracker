@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Condition_List;
 use App\Models\Survey_Questions;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use DB;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
 
@@ -19,7 +20,15 @@ class AddSurveyController extends Controller
             return redirect('/adminlogin');
         }
 
-        return view('create_new_survey');
+        //get a list of the conditions to be displayed in the dropdown of Condition Served
+        $conditionList = Condition_List::select("Condition")->get()->toArray();
+
+        $conditions = [];
+        for ($i = 0; $i < count($conditionList); $i++) {
+            $conditions[] = $conditionList[$i]['Condition'];
+        }
+
+        return view('create_new_survey', ['conditions' => $conditions]);
     }
 
 
@@ -49,7 +58,15 @@ class AddSurveyController extends Controller
 
 
         if ($num > 0) {
-            return view('create_new_survey', ['message' => 'There already exists a survey with the same name. Please change the given Survey Name']);
+
+            $conditionList = Condition_List::select("Condition")->get()->toArray();
+
+            $conditions = [];
+            for ($i = 0; $i < count($conditionList); $i++) {
+                $conditions[] = $conditionList[$i]['Condition'];
+            }
+
+            return view('create_new_survey', ['conditions' => $conditions, 'message' => 'There already exists a survey with the same name. Please change the given Survey Name.']);
         }
 
         DB::table('SURVEY_QUESTIONS')->insert([

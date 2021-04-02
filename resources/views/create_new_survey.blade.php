@@ -28,7 +28,7 @@
 
     <!-- the title in the top  -->
     <div style=" margin-top:5%;">
-        <p class="text-center h2"style="color:seagreen; margin-top: 20px;margin-top: 1cm; margin-left: 4cm">Create a New Survey</p>
+        <p class="text-center h2"style="color:seagreen; margin-top: -1cm; margin-left: 4cm">Create a New Survey</p>
     </div>
 
             <!-- The dashboard which has all the options for the admin. This dashboard is located in the side of the page-->
@@ -110,15 +110,20 @@
         <div class="mb-3 row">
             <label class="col-sm-9 col-form-label">Survey Name:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control shadow-sm" name="SurveyName" required>
+                <input type="text" class="form-control shadow-sm" name="SurveyName" style="width: 400px; height: 40px" required>
             </div>
         </div>
         <!-- Text box for the condition served by the survey -->
         <div class="mb-3 row">
             <label class="col-sm-9 col-form-label">Condition Served:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control shadow-sm" name="ConditionServed" required>
-                <!-- the search button -->
+                <select class="shadow  bg-body rounded" aria-label="Default select example" name="ConditionServed" style="width: 200px; height: 30px" required>
+                    @foreach ($conditions as $c)
+                        <option value="{{$c}}">{{$c}}</option>
+                    @endforeach
+                </select>
+
+
                 <div style="margin-left:130%; margin-top:-7%; width: 150Px">
                     <button style="width: 200px;" type="submit" class="btn btn-success btn-rounded">Create</button>
                 </div>
@@ -126,7 +131,7 @@
         </div>
         <!-- Text box for the type of the survey (PROM/PREM) -->
         <div class="mb-3 row">
-            <label class="col-sm-9 col-form-label ">Survey Type</label>
+            <label class="col-sm-9 col-form-label ">Survey Type:</label>
             <label><input type="radio" name="SurveyType" value="PROM" checked> PROM</label>
             <label><input type="radio" name="SurveyType" value="PREM"> PREM</label>
         </div>
