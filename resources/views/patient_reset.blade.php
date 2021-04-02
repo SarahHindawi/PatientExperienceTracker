@@ -26,8 +26,8 @@
 <section class="container-fluid">
     <!-- the title in the top middle of the page -->
     <div>
-        <p class="text-center h1" style="color:seagreen;margin-top: .2cm; margin-left: 4cm">Reset Patient Password</p>
-        <p class="text-center h3"style="margin-top: 1cm; margin-left: 4cm">Enter your Patient email below</p>
+        <p class="text-center h1" style="color:seagreen;margin-top: 2%; margin-left: 4cm">Reset Patient Password</p>
+        <p class="text-center h3"style="margin-top: 3%; margin-left: 4cm">Enter your Patient email below</p>
     </div>
     <!-- the Dashboard of the page that has different options-->
     <div class="msb" id="msb">

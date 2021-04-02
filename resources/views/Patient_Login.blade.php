@@ -51,14 +51,14 @@
 
     <section class="container-fluid">
     <div>
-        <p class="text-center h1" style="color:seagreen; margin-top: .2cm; margin-left: 4cm">Welcome to Patient Experience Tracker</p>
-        <p class="text-center h3"style="margin-top:.5cm; margin-left: 4cm ">Enter your Email and Password to Login</p>
+        <p class="text-center h1" style="color:seagreen; margin-top: 2%; margin-left: 4cm">Welcome to Patient Experience Tracker</p>
+        <p class="text-center h3"style="margin-top:3%; margin-left: 4cm ">Enter your Email and Password to Login</p>
     </div>
 
 
-    <section class="row justify-content-center" style="margin-left: 2cm;">
+    <section class="row justify-content-center" style="margin-left: 2cm">
         <section class="col-12 col-sm-6 col-md-3">
-            <form class="form-container" method = "POST" action = "{{ url('/patientloginpage')}}" style="margin-top: 1cm">
+            <form style="margin-top: 5%" class="form-container" method = "POST" action = "{{ url('/patientloginpage')}}">
                 @csrf
                 <!-- box for email-->
                 <div class="mb-3">

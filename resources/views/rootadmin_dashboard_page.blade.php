@@ -6,7 +6,7 @@
           rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
           crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin_dashboard_page.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
+    <!--<link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">-->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/buttons.css')}}">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <!--Get your own code at fontawesome.com
@@ -16,11 +16,13 @@
     <style>
         #wrapper {
             margin-left: auto;
-            margin-right: auto;
-            width: 1519px;
+            margin-right: auto;            
+            min-width: 1519px;            
+            overflow-x:auto;
         }
     </style>
 </head>
+<div id="wrapper">
 <body>
 
 <section class="container-fluid">
@@ -218,4 +220,5 @@
         integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
         crossorigin="anonymous"></script>
 </body>
+</div>
 </html>
