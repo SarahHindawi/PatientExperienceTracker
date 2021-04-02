@@ -125,7 +125,7 @@ class PasswordController extends Controller
         //Password Requirements and Confirmation.
         $this->validate($request, [
             'currentpass' => 'required',
-            'password' => 'required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',
+            'password' => 'required|min:6',
             'password2' => 'same:password',
         ]);
 
@@ -182,7 +182,7 @@ class PasswordController extends Controller
     //Password Requirements and Confirmation.
     $this->validate($request, [
         'currentpass' => 'required',
-        'password' => 'required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',
+        'password' => 'required|min:6',
         'password2' => 'same:password',
     ]);
 
