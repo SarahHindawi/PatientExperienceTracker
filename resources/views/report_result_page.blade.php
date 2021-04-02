@@ -31,11 +31,11 @@
 <div id="wrapper">
     <body>
 
-    <section class="container-fluid">
+    <section class="container-fluid" style="margin-top: 1cm">
 
         <!--The page header -->
         <div id="wrapper">
-            <p class="text-center h2" style="margin-top: 20px; margin-right: -25px">Report Result</p>
+            <p class="text-center h2" style="margin-top: 20px; margin-right: -25px; color: seagreen">Report Result</p>
 
 
             <div class="cent" style="top: 350px; width:80em;overflow-x: auto;white-space: nowrap; margin-left: -100px; margin-top: -6cm; margin-bottom: 10px">

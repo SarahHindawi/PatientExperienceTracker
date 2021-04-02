@@ -11,17 +11,17 @@
       <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
  </head>
  <!-- the body has the content of the page  -->
- <body>
+ <body style="margin-top: 1cm; margin-left: -0.6cm">
     @if(Session::has('message'))
-    <p class="alert alert-info"style="text-align:center">{{ Session::get('message') }}</p>
+    <p class="alert alert-info"style="text-align:center; margin-top: -1cm">{{ Session::get('message') }}</p>
     @endif
 
 
  <!-- the title in the top middle of the page -->
  <div>
-     <p class="text-center h2" style="color:seagreen; margin-top: 20px;margin-top: 1cm; margin-left: 4cm">Change Password</p>
+     <p class="text-center h2" style="color:seagreen; margin-left: 1.5cm">Change Password</p>
 
-     <p class="text-center h4"style="margin-left: 4cm; margin-top: 1cm">Here you can change the password on your account.</p>
+     <p class="text-center h5"style="margin-left: 1.5cm; margin-top: .5cm">Here you can change the password of your account.</p>
 {{--     <p class="text-center h4">See password rules below</p>--}}
  </div>
 
@@ -102,7 +102,7 @@
 
 
  <!-- the form where Admin have to change the password-->
- <form class="form-container" method = "POST" action = "{{ url('/passwordchangeadminsave')}}" style="margin-left: -60px">
+ <form class="form-container" method = "POST" action = "{{ url('/passwordchangeadminsave')}}" style="margin-left: -90px">
     @csrf
      <!-- the box for current password-->
         <div style="width: 550px; margin-left:18cm; margin-top:6%">

@@ -89,27 +89,27 @@
     </nav>
 </div>
 
-<section class="container-fluid">
+<section class="container-fluid" style="margin-left: -1cm">
     <div>
         <p class="text-center h2" style="color:seagreen; margin-top: 20px;margin-top: 1cm; margin-left: 4cm">Survey Selection</p>
-        <p class="text-center h4"style="text-align:center; margin-top:1cm; margin-left: 4cm">Please enter a Survey Selection Below</p>
+        <p class="text-center h5"style="text-align:center; margin-top:.5cm; margin-left: 4cm">Please enter a Survey Selection Below</p>
     </div>
 
 
     <section class="row justify-content-center">
         <section class="col-12 col-sm-6 col-md-3">
-            <form class="form-container" method = "get" action = "{{ url('/editSurvey/create')}}">
+            <form class="form-container" method = "get" action = "{{ url('/editSurvey/create')}}" style="margin-left: 30px">
             @csrf
             <!-- Box for Survey Selection-->
-                <div class="mb-3" style="margin-left:4.5cm; margin-top: 4cm">
-                    <label for="exampleInputEmail1" class="form-group form-inline"style="margin-left:-1cm">Survey Name:</label>
+                <div class="mb-3" style="margin-left:4.5cm; margin-top: 2cm">
+                    <label for="exampleInputEmail1" class="form-group form-inline">Survey Name:</label>
                     <div style="margin-left: -21%; margin-top: 10px">
                         {!! Form::select('SurveyName',  $surveys, null,['class' => 'form-control', 'placeholder' => 'Select Survey Name']) !!}
                     </div>
                 </div>
                 <br><br>
                 <!-- Submission button-->
-                <button class="btn btn-success btn-rounded btn-lg" style="margin-left: 40%;width: 4cm">Select</button>
+                <button class="btn btn-success btn-rounded btn-lg" style="margin-left: 3.5cm;width: 5cm">Select</button>
 
                 </div>
             </form>

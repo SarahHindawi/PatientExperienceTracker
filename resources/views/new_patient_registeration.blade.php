@@ -85,12 +85,9 @@
 
     <body>
 
-    <section class="container-fluid">
+    <section class="container-fluid" style="margin-left: -1cm; margin-top: 1cm">
 
 
-        <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid" style="height: 30px; width: 800px"> </div>
-        </nav>
 
         <!--The page header and an explanation for how to use the page -->
         <p class="text-center h2" style="color:seagreen;margin-left: 3cm">New Patient Registration</p>
@@ -184,7 +181,7 @@
         <!-- list of new patients requests-->
 
 
-        <ol class="lp">
+        <ol class="lp" style="margin-bottom: 5px">
             @foreach ($patients as $p)
                 <li style="font-size:20px"> {{$p}}</li>
 
@@ -219,7 +216,7 @@
                         @endforeach
                     </ol>
 
-                    <button style="width: 5cm; margin-top: 8px; margin-left: -60px" type="submit"
+                    <button style="width: 5cm; margin-top: 8px; margin-left: -35px" type="submit"
                             class="btn btn-success btn-rounded">Save
                     </button>
                 </form>

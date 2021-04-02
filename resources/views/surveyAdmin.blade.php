@@ -19,35 +19,12 @@
 </style>
 <div id="wrapper">
     <body>
-    <!---
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Default</a>
-        <form class="d-flex">
-            <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button"
-                    id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                John Doe
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <li>
-                    <button class="dropdown-item" type="button">Action</button>
-                </li>
-                <li>
-                    <button class="dropdown-item" type="button">Another action</button>
-                </li>
-                <li>
-                    <button class="dropdown-item" type="button">Something else here</button>
-                </li>
-            </ul>
-        </form>
-    </div>
-</nav>
--->
 
-    <div style=" margin-top:2%; margin-left:10%">
-        <h3 style="font-size:32pt; color:seagreen; text-align:center;">Patient Experience Tracker</h3>
-        <p class="text-center h2">{{$name}}</p>
-        <p style="text-align:center; color:red" ;>Please Fill the form correctly and press Submit</p>
+
+    <div style=" margin-top:1cm; margin-left:10%">
+{{--        <h3 style="font-size:32pt; color:seagreen; text-align:center;">Patient Experience Tracker</h3>--}}
+        <p class="text-center h2">{{$name}} Survey</p>
+        <p style="text-align:center; color:red">Please fill out the form correctly and press Submit</p>
     </div>
 
 

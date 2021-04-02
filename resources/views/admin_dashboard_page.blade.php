@@ -30,21 +30,21 @@
     @endif
 
 
-    <p class="text-center h2" style="color:seagreen; margin-top: .5cm; margin-left: 4cm">
+    <p class="text-center h2" style="color:seagreen; margin-top: 1cm; margin-left: 2.5cm">
         Hello {{Auth::guard('admin')->user()->FirstName}}</p>
 
 
-    <p class="text-center h4" style="text-align:center; margin-top:1.5cm; margin-left: 4cm">Here are your administration options </p>
+    <p class="text-center h4" style="text-align:center; margin-top:1.2cm; margin-left: 2.5cm">Here are your administration options </p>
 
 
     <!-- The dashboard options in the centere of the page-->
 
 
-    <ul class="lp" style="margin-top: 50px; margin-left: 10cm">
+    <ul class="lp" style="margin-top: 50px; margin-left: 7cm">
         <li>
             <button class="block button button1" onclick="location.href='/accept/create'" type="button"><span><img
                         src="{{asset('assets/images/request.png')}}" width="25" height="25"
-                        class="d-inline-block align-right"> New Patient Registration<br> Click here to review</span>
+                        class="d-inline-block align-right"> New Patient Registration.<br> Click here to review</span>
             </button>
         </li>
         &nbsp;&nbsp;&nbsp;

@@ -18,17 +18,14 @@
 </head>
 <!-- the body has the content of the page  -->
 <div id="wrapper">
-    <body>
+    <body  style="margin-top: 1cm">
 
     @if(isset($message))
-        <p class="alert alert-info" style="text-align:center">{{ $message}}</p>
-    @else
-        <p style="text-align:center; height:35px; background-color: #f5f5f5"></p>
-
+        <p class="alert alert-info" style="text-align:center;margin-top: -1cm">{{ $message}}</p>
     @endif
 
     <!-- the title in the top  -->
-    <div style=" margin-left:10%">
+    <div style=" margin-left:4%">
         <p class="text-center h2 " style="color:seagreen">Patient Profile Search</p>
     </div>
 

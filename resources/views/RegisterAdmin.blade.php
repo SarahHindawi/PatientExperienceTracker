@@ -19,13 +19,8 @@
 </head>
 <div id="wrapper">
 <!-- the body has the content of the page  -->
-<body>
-<!-- the navigation bar in the top-->
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
+<body style="margin-top: 1cm; margin-left: -1cm">
 
-    </div>
-</nav>
 
 <!-- the title in the top  -->
 <div style=" margin-top:2%; margin-left:10%">
@@ -106,38 +101,38 @@
 </div>
 
 <!-- form to put the name, last name and email of the new admin-->
-<form style="width: 600px; margin-left:16cm; margin-top:7%" method="post" action="{{ url('/adminregistration')}}">
+<form style="width: 600px; margin-left:16cm; margin-top:5%" method="post" action="{{ url('/adminregistration')}}">
     @csrf
     <!-- text box for the new Admin First name-->
     <div class="mb-3 row">
         <div class="col-sm-10">
             {{Form::label('firstname', 'First Name:')}}
-            {{Form::text('firstname', '' , ['class' => 'form-control', 'placeholder' => 'First Name'])}}
+            {{Form::text('firstname', '' , ['class' => 'form-control shadow p-2  bg-body rounded', 'placeholder' => 'First Name'])}}
         </div>
     </div>
     <!-- text box for the new Admin Last name-->
     <div class="mb-3 row">
         <div class="col-sm-10">
             {{Form::label('lastname', 'Last Name:')}}
-            {{Form::text('lastname', '' , ['class' => 'form-control', 'placeholder' => 'Last Name'])}}
+            {{Form::text('lastname', '' , ['class' => 'form-control shadow p-2  bg-body rounded', 'placeholder' => 'Last Name'])}}
         </div>
     </div>
     <!-- text box for the new Admin Password-->
     <div class="mb-3 row">
         <div class="col-sm-10">
             {{Form::label('password', 'Password:')}}
-            {{Form::text('password', '' , ['class' => 'form-control', 'placeholder' => 'Password'])}}
+            {{Form::text('password', '' , ['class' => 'form-control shadow p-2  bg-body rounded', 'placeholder' => 'Password'])}}
         </div>
     </div>
         <div class="mb-3 row">
             <div class="col-sm-10">
                 {{Form::label('email', 'Email:')}}
-                {{Form::text('email', '' , ['class' => 'form-control', 'placeholder' => 'Email'])}}
+                {{Form::text('email', '' , ['class' => 'form-control shadow p-2  bg-body rounded', 'placeholder' => 'Email'])}}
             </div>
         </div>
     <!-- submit button-->
     <br><div style="margin-left:4cm">
-            {{Form::submit('Submit' , ['class' => 'btn btn-success btn-rounded'])}}
+            {{Form::submit('Submit' , ['class' => 'btn btn-success btn-rounded', 'style'=>'margin-left:20px; width:190px; height:30px'])}}
             {!! Form::close() !!}
     </div>
 </form>

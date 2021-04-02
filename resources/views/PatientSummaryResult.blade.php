@@ -36,12 +36,7 @@
 <div id="wrapper">
 
     <!-- the body has the content of the page  -->
-    <body>
-    <!-- the navigation bar in the top-->
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid" style="height: 30px; width: 800px"></div>
-    </nav>
-
+    <body style="margin-top: 1cm">
 
     <!-- The dashboard which has all the options for the admin. This dashboard is located in the side of the page-->
     <div class="msb" id="msb">
@@ -196,9 +191,9 @@
     </div>
 
     <!-- Area to show the Surveys -->
-    <div style="position:absolute; margin-top:2%; left:27%;">
+    <div style="position:absolute; margin-top:2%; left:23%;">
         @isset($responses)
-            <h3 style="  text-align: center; color: darkblue">Submitted Surveys</h3>
+            <h3 style="  text-align: center; margin-left: 35px; margin-bottom: 10px">Submitted Surveys</h3>
             <table>
                 <colgroup>
                 <tr>

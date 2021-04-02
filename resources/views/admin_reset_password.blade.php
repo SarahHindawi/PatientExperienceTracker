@@ -21,23 +21,7 @@
 <div id="wrapper">
 <body>
 
-<section class="container-fluid">
-
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-{{--            <a class="navbar-brand" href="#">Default</a>--}}
-{{--            <form class="d-flex">--}}
-{{--                <button class="btn btn-success btn-rounded w-100 btn-lg dropdown-toggle drop" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">--}}
-{{--                    <i class="fa fa-user"></i> Mystery Admin--}}
-{{--                </button>--}}
-{{--                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">--}}
-{{--                    <li><button class="dropdown-item" type="button">Action</button></li>--}}
-{{--                    <li><button class="dropdown-item" type="button">Another action</button></li>--}}
-{{--                    <li><button class="dropdown-item" type="button">Something else here</button></li>--}}
-{{--                </ul>--}}
-{{--            </form>--}}
-        </div>
-    </nav>
+<section class="container-fluid" style="margin-top: 1cm">
 
     <p class="text-center h2" style="padding-right: 600px" >Hello Mystery Admin</p>
 
