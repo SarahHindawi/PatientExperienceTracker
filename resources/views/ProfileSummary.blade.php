@@ -21,7 +21,7 @@
     <body  style="margin-top: 1cm">
 
     @if(isset($message))
-        <p class="alert alert-info" style="text-align:center">{{ $message}}</p>
+        <p class="alert alert-info" style="text-align:center;margin-top: -1cm">{{ $message}}</p>
     @endif
 
     <!-- the title in the top  -->

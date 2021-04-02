@@ -22,7 +22,7 @@
     <body style="margin-top: 1cm; margin-left: -2cm">
     <section class="container-fluid">
         @isset($message)
-            <p class="alert alert-info" style="text-align:center">{{ $message}}</p>
+            <p class="alert alert-info" style="text-align:center; margin-top: -1cm">{{ $message}}</p>
     @endisset
 
 
