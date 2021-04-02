@@ -21,7 +21,7 @@ header('Content-Type: text/html');?>
 <body>
 
 
-<section class="container-fluid">
+<section class="container-fluid" style="margin-top: 1cm">
 
     @if(Session::has('message'))
     <p class="alert alert-info" style="text-align:center">{{ Session::get('message') }}</p>
@@ -31,7 +31,7 @@ header('Content-Type: text/html');?>
     <p class="text-center h2" style="color:seagreen; margin-top: .2cm; margin-left: 4cm">Hello {{$name}} </p>
 
 
-    <p class="text-center h4" style="text-align:center; margin-top:2cm; margin-left: 4cm">Please select from one of the options below </p>
+    <p class="text-center h4" style="text-align:center; margin-top:1cm; margin-left: 4cm">Please select from one of the options below </p>
 
     <p>Default list:</p>
 

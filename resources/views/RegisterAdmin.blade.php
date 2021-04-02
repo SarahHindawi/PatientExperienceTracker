@@ -19,13 +19,8 @@
 </head>
 <div id="wrapper">
 <!-- the body has the content of the page  -->
-<body>
-<!-- the navigation bar in the top-->
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
+<body style="margin-top: 1cm; margin-left: -1cm">
 
-    </div>
-</nav>
 
 <!-- the title in the top  -->
 <div style=" margin-top:2%; margin-left:10%">
@@ -106,7 +101,7 @@
 </div>
 
 <!-- form to put the name, last name and email of the new admin-->
-<form style="width: 600px; margin-left:16cm; margin-top:7%" method="post" action="{{ url('/adminregistration')}}">
+<form style="width: 600px; margin-left:16cm; margin-top:5%" method="post" action="{{ url('/adminregistration')}}">
     @csrf
     <!-- text box for the new Admin First name-->
     <div class="mb-3 row">
@@ -137,7 +132,7 @@
         </div>
     <!-- submit button-->
     <br><div style="margin-left:4cm">
-            {{Form::submit('Submit' , ['class' => 'btn btn-success btn-rounded', 'style'=>'margin-left:20px; width:150px; height:30px'])}}
+            {{Form::submit('Submit' , ['class' => 'btn btn-success btn-rounded', 'style'=>'margin-left:20px; width:190px; height:30px'])}}
             {!! Form::close() !!}
     </div>
 </form>
