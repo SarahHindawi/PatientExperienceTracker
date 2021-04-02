@@ -114,6 +114,10 @@
             </span></button>
         </li>
 
+        <br>
+        <li><button class="block button button1" onclick="location.href='/medication'"><span><img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right"> Add a Medication
+            </span></button></li>
+
     </ul>
 
 
