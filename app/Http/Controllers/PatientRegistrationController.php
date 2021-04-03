@@ -15,7 +15,7 @@ use App\Mail\EmailVerification;
 
 
 
-class PatientRegistrationController extends Controller 
+class PatientRegistrationController extends Controller
 {
     public function index()
     {
@@ -37,22 +37,22 @@ class PatientRegistrationController extends Controller
 
     public function register(Request $request)
     {
-        if(Auth::guard('admin')->check()){            
+        if(Auth::guard('admin')->check()){
             return redirect('/');
         }
         else if(Auth::guard('patient')->check()){
-            
+
             return redirect(' /');
         }
 
         $this->validate($request, [
             'email' => 'required|email',
-            'password' => 'required|min:6',       
+            'password' => 'required|min:6',
             'firstName' => 'required',
             'lastName' => 'required',
             'dob' => 'required',
             'weight' => 'required',
-            'height' => 'required',            
+            'height' => 'required',
             'gender' => 'required',
             'condition' => 'required',
             'medication' => 'required'
@@ -62,52 +62,52 @@ class PatientRegistrationController extends Controller
         $existanceTest = Patient::where('Email', $request->input('email'))->first();
 
         if($existanceTest)
-        {            
+        {
             return redirect('/')->with('message', 'Registration Failed Email Profile with email already exists.');
         }
 
 
         $patient = new Patient();
 
-        $conditionElements = Condition_List::where('id', $request -> input('condition') + 1)->first()->pluck('condition');
+        $conditionElements = Condition_List::where('id', $request -> input('Condition') + 1)->first()->pluck('Condition');
         $conditionValue = $conditionElements[0];
 
 
         $patient->email = $request->input('email');
-        $patient->password = Hash::make($request->input('password'));                               
+        $patient->password = Hash::make($request->input('password'));
         $patient->FirstName = $request->input('firstName');
         $patient->LastName = $request->input('lastName');
         $patient->DOB = date_create($request->input('dob'));     //dd-mm-yyyy
         $patient->Weight = $request->input('weight');
-        $patient->Height = $request->input('height');        
+        $patient->Height = $request->input('height');
         $patient->Gender = $request->input('gender');
         $patient->Condition = $conditionValue;
         $patient->Medications = json_encode($request->input('medication'));
-        
+
         $verificationCode = Str::random(4);
-        
-        $patient->EmailVerification = $verificationCode;        
+
+        $patient->EmailVerification = $verificationCode;
 
         $patient->save();
 
         //Registration success redirect to homepage with message.
-        
+
         $details = [
             'verificationCode' => $verificationCode
         ];
-    
+
         Mail::to($request->input('email'))->send(new EmailVerification($details));
-        
+
         return view('verification')->with('email', $request->input('email'));
 
-    } 
+    }
 
     public function emailverification(Request $request){
 
-        if(Auth::guard('admin')->check()){            
+        if(Auth::guard('admin')->check()){
             return redirect('/');
         }
-        else if(Auth::guard('patient')->check()){            
+        else if(Auth::guard('patient')->check()){
             return redirect(' /');
         }
 

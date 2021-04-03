@@ -20,7 +20,7 @@ class PatientRegAccept extends Mailable
      */
     public function __construct()
     {
-        
+
     }
 
     /**
@@ -30,6 +30,6 @@ class PatientRegAccept extends Mailable
      */
     public function build()
     {
-        return $this->subject('PET REgistration Acceptance')->view('reg_acceptance');
+        return $this->subject('PET Registration Acceptance')->view('reg_acceptance');
     }
 }
