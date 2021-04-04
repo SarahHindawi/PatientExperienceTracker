@@ -17,7 +17,7 @@
 </head>
 
 <!-- the body has the content of the page  -->
-
+<div id="wrapper">
 <body>
     @if(Session::has('message'))
     <p class="alert alert-info" style="text-align:center">{{ Session::get('message') }}</p>
@@ -65,18 +65,18 @@
     </div>
 
     <!-- the form where you have to put in Email for Patient reset request-->
-    <section class="row justify-content-center"style="margin-left: 4cm">
+    <section class="row justify-content-center">
         <section class="col-12 col-sm-6 col-md-3">
-            <form class="form-container" method = "POST" action = "{{ url('/patientresetrequest')}}">
+            <form method = "POST" action = "{{ url('/patientresetrequest')}}">
                 @csrf
                 <!-- box for email-->
-                    <div class="mb-3" style="margin-top: 2cm">
+                    <div class="mb-3" style="margin-left:37%; margin-top: 2cm">
                         <label for="exampleInputEmail1" class="form-group form-inline">Email Address:</label>
                         <input type="email" style="width: 7cm" class="form-control shadow-lg p-2 mb-4 bg-white rounded"
                                id="email" aria-describedby="emailHelp" name = "email">
                     </div>
                 <!-- Submit Button-->
-                    <button class="btn btn-success btn-rounded w-100 btn-lg ">Submit</button>
+                    <button class="btn btn-success btn-rounded" style="margin-left:45%; width:6cm">Submit</button>
 
                 </div>
             </form>

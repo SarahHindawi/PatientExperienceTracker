@@ -8,9 +8,15 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/cssFile.css')}}">
 
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
+    <style>
+        #wrapper {
+            margin-left: auto;
+            margin-right: auto;
+            width: 1519px;
+        }
+    </style>
 </head>
-
+<div id="wrapper">
 <body>
 @if(Session::has('message'))
     <p class="alert alert-info"style="text-align:center; height: 40px">{{ Session::get('message') }}</p>
@@ -74,34 +80,31 @@
     </nav>
 </div>
 
-<section class="container-fluid">
-    <div>
-        <p class="text-center h2" style="color:seagreen; margin-top: 1cm;">Survey Selection</p>
-        <p class="text-center h5">Please enter a Survey Selection Below</p>
-    </div>
 
+<div>
+    <p class="text-center h2" style="color:seagreen; margin-top: 20px;margin-top: 1cm; margin-left: 4cm">Survey Selection</p>
+    <p class="text-center h5"style="text-align:center; margin-top:.5cm; margin-left: 4cm">Please enter a Survey Selection Below</p>
+</div>
 
     <section class="row justify-content-center">
         <section class="col-12 col-sm-6 col-md-3">
-            <form class="form-container" method = "post" action = "{{ url('/adminform/create')}}" style="margin-top: 2cm">
+            <form method = "post" action = "{{ url('/adminform/create')}}">
             @csrf
             <!-- Box for Survey Selection-->
-                <div class="mb-3" style="margin-left:3cm; margin-top: 10px">
-                    <label for="exampleInputEmail1" class="form-group form-inline">Survey Name:</label>
-                    <div style="margin-left: -21%; margin-top: 10px">
-                        {!! Form::select('SurveyName',  $surveys, null,['class' => 'form-control', 'placeholder' => 'Select Survey Name']) !!}
-                    </div>
+                <div class="mb-3" style="margin-left:37%; margin-top: 2cm">
+                    <label for="exampleInputEmail1">Survey Name:</label>                    
+                        {!! Form::select('SurveyName',  $surveys, null,['class' => 'form-control', 'placeholder' => 'Select Survey Name' , 'style' => 'width: 300px;']) !!}                    
                 </div>
                 <br><br>
                 <!-- Submission button-->
-                <button class="btn btn-success btn-rounded w-75 btn-lg" style="margin-left: 25%;">Select</button>
+                <button class="btn btn-success btn-rounded" style="margin-left: 50%; width: 5cm">Select</button>
 
                 </div>
             </form>
 
         </section>
     </section>
-</section>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
@@ -112,5 +115,5 @@
         integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
         crossorigin="anonymous"></script>
 </body>
-
+</div>
 </html>

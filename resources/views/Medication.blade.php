@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin Password Change</title>
+    <title>Add Medication</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin_dashboard_page.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
+
+    <style>
+        #wrapper {
+            margin-left:auto;
+            margin-right:auto;
+            width:1519px;
+        }
+    </style>
 </head>
+<div id="wrapper">
 <!-- the body has the content of the page  -->
 <body>
 @isset($message)
@@ -15,7 +24,7 @@
 
 <!-- the title in the top middle of the page -->
 <div>
-    <p class="text-center h2" style="color:seagreen; margin-top: 1cm; margin-left: .5cm">Adding a Medication</p>
+    <p class="text-center h2" style="color:seagreen; margin-top: 1cm; margin-left: 7%">Adding a Medication</p>
 
 </div>
 
@@ -99,9 +108,9 @@
 
 
 <!-- the form where Admin can add the name of the new medication-->
-<form class="form-container" method="POST" action="{{ url('/addmedication')}}" style="margin-left: -60px">
+<form method="POST" action="{{ url('/addmedication')}}">
     @csrf
-    <div style="width: 550px; margin-left:18cm; margin-top:6%">
+    <div style="width: 550px; margin-left:45%; margin-top:6%">
         <div class="mb-7 row">
             <label for="inputFirstName" class="col-form-label" style="margin-left: 40px">Name of the
                 medication: </label>
@@ -121,5 +130,5 @@
 </form>
 
 </body>
-
+</div>
 </html>

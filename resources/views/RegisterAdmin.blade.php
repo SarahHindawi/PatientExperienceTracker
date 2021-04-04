@@ -8,6 +8,7 @@
           rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
           crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
+    
     <style>
         #wrapper {
             margin-left:auto;
@@ -101,7 +102,7 @@
 </div>
 
 <!-- form to put the name, last name and email of the new admin-->
-<form style="width: 600px; margin-left:16cm; margin-top:5%" method="post" action="{{ url('/adminregistration')}}">
+<form style="width: 600px; margin-left:40%; margin-top:5%" method="post" action="{{ url('/adminregistration')}}">
     @csrf
     <!-- text box for the new Admin First name-->
     <div class="mb-3 row">

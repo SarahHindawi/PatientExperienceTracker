@@ -9,7 +9,16 @@
            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
       <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin_dashboard_page.css')}}">
       <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
+      <style>
+        #wrapper {
+            margin-left:auto;
+            margin-right:auto;
+            width:1519px;
+        }
+    </style>
+
  </head>
+ <div id="wrapper">
  <!-- the body has the content of the page  -->
  <body style="margin-top: 1cm; margin-left: -0.6cm">
     @if(Session::has('message'))
@@ -102,7 +111,7 @@
 
 
  <!-- the form where Admin have to change the password-->
- <form class="form-container" method = "POST" action = "{{ url('/passwordchangeadminsave')}}" style="margin-left: -90px">
+ <form method = "POST" action = "{{ url('/passwordchangeadminsave')}}" style="margin-left: -90px">
     @csrf
      <!-- the box for current password-->
         <div style="width: 550px; margin-left:18cm; margin-top:6%">
@@ -152,5 +161,5 @@
 
 
  </body>
-
+ </div>
  </html>

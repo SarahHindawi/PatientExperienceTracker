@@ -39,7 +39,7 @@
     <p class="text-center h4" style="text-align:center; margin-top:1cm; margin-left: 4cm">Here are your administration options </p>
 
 
-    <!-- The dashborad options in the centere of the page-->
+    <!-- The dashboard options in the centere of the page-->
 
     <ul class="lp" style="margin-top: 50px; margin-left: 10cm">
         <li>
@@ -78,7 +78,7 @@
         &nbsp;&nbsp;&nbsp;
 
         <li>
-            <button style="margin-top: -20px;height: 2.2cm" class="block button button1" onclick="location.href='/adminregistration'"><span><img
+            <button style="height: 2.2cm" class="block button button1" onclick="location.href='/adminregistration'"><span><img
                         src="{{asset('assets/images/signup.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> Register Admin</span>
             </button>
