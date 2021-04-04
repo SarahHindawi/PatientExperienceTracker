@@ -336,3 +336,55 @@ In order to do the test using postman, I need to have a request  in the method. 
         }
 
          -----------------------------------------------------------------------------------------------------------------------------------------
+
+        The path: Route::post('/deletion-confirmation', 'App\Http\Controllers\EditSurveyController@deletionConfirmation');
+         
+         The method: Post
+         JSON OBJECT:
+
+         {
+         "SurveyName" : "Nairouz",
+         "QuestionIndex" : "3"
+
+            }
+
+
+         -----------------------------------------------------------------------------------------------------------------------------------------
+          
+         The path: Route::post('/profilereportName', 'App\Http\Controllers\PatientProfileSummaryController@nameSearch');
+         
+         The method: Post
+         JSON OBJECT:
+
+         {
+           "inputFirstName" : "TestPatientOneFirst",
+           "inputLastName":"TestPatientOneLast"
+          }
+
+
+         -----------------------------------------------------------------------------------------------------------------------------------------
+         
+         -----------------------------------------------------------------------------------------------------------------------------------------
+
+        The path:Route::get('/adminhelp', 'App\Http\Controllers\AdminHelpController@index');
+          The URL in postman: http://127.0.0.1:8000/adminhelp
+          The method: get
+
+        -----------------------------------------------------------------------------------------------------------------------------------------
+        The path:Route::get('/medication', 'App\Http\Controllers\MedicationController@create');
+          The URL in postman: http://127.0.0.1:8000/medication
+          The method: get
+
+        -----------------------------------------------------------------------------------------------------------------------------------------
+       
+        The path: Route::post('/addmedication', 'App\Http\Controllers\MedicationController@add');
+         
+         The method: Post
+         JSON OBJECT:
+
+         {
+           "medication": "Ansolen"
+       }
+
+
+         -----------------------------------------------------------------------------------------------------------------------------------------

@@ -7,7 +7,9 @@
           crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
 
+    <!--
     <script src="{{ URL::asset('https://kit.fontawesome.com/a076d05399.js') }}" crossorigin='anonymous'></script>
+    -->
 
     <style>
         [type=radio] {
@@ -198,12 +200,12 @@
             @if (count($patients) > 0)
 
                 <form name="acceptanceForm" method="POST" action="{{ url('/resetreview/store')}}"
-                      enctype="multipart/form-data" class="lp">
+                      enctype="multipart/form-data" class="lp" style="margin-right: 2cm">
                     @csrf
                     <ol class="lp">
                         @foreach ($patients as $p)
                             <ul>
-                                <label style="margin-right: 10px">
+                                <label >
                                     <input type="radio" name="data[{{$p}}]" value="Accept">
                                     <img width="30" height="30"
                                          src="https://freeiconshop.com/wp-content/uploads/edd/checkmark-flat.png">

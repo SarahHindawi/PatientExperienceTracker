@@ -26,7 +26,7 @@
     @endif
 
 
-    <p class="text-center h1" style="color:seagreen;margin-left: 4cm; margin-top: 5%">Welcome to the Patient Experience Tracker </p>
+    <p class="text-center h1" style="color:seagreen;margin-left: 4cm; margin-top: 2%">Welcome to the Patient Experience Tracker </p>
 
     <p class="text-center h4" style="margin-left: 4cm;margin-top: 5%; text-align:center" >Please select from one of the options below </p>
 
@@ -37,23 +37,23 @@
         <ul class="lp">
 
             <li>
-                <button class="block button button1" onclick="location.href='/patientregistration'" type="button"><span><img
-                        src="{{asset('assets/images/signup.png')}}" width="25" height="25"
-                        class="d-inline-block align-right"> Click here to register as a patient</span>
+                <button style="height: 2.2cm" class="block button button1" onclick="location.href='/adminlogin'"><span><img
+                            src="{{asset('assets/images/key.png')}}" width="25" height="25"
+                            class="d-inline-block align-right"> Administrator Login</span>
                 </button>
             </li>
             &nbsp;&nbsp;&nbsp;
             <li>
-                <button  class="block button button1" onclick="location.href='/patientlogin'" type="button"><span><img
+                <button style="height: 2.2cm; margin-bottom: 2cm"  class="block button button1" onclick="location.href='/patientlogin'" type="button"><span><img
                         src="{{asset('assets/images/key.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> Patient Login</span>
                 </button>
             </li>
             &nbsp;&nbsp;&nbsp;
             <li>
-                <button style="margin-top:-0.5cm; margin-top: 1px "class="block button button1" onclick="location.href='/adminlogin'"><span><img
-                        src="{{asset('assets/images/key.png')}}" width="25" height="25"
-                        class="d-inline-block align-right"> Administrator Login</span>
+                <button style="margin-top: -2cm; margin-left: -7.7cm"class="block button button1" onclick="location.href='/patientregistration'" type="button"><span><img
+                            src="{{asset('assets/images/signup.png')}}" width="25" height="25"
+                            class="d-inline-block align-right"> Click here to register as a patient</span>
                 </button>
             </li>
         </ul>
