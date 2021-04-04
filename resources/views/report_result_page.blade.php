@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Report_Result</title>
+    <title>Report Result</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -72,20 +72,17 @@
                         </tr>
                     @endforeach
 
-                </table>
-
-
+                </table>           
+            </div>
             <div>
-                <form method="post" action="/report/download" enctype="multipart/form-data" style="margin-top: 10px; margin-left: 185px">
-                    @csrf
-                    <input type="hidden" name="fileName" value="{{$fileName}}">
-                    <button style="width: 5cm; margin-bottom:1cm; margin-top: 10px; margin-left:270px"
-                            class="btn btn-success btn-rounded">Save
-                    </button>
-                </form>
-            </div>
-            </div>
-
+            <form method="post" action="/report/download" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" name="fileName" value="{{$fileName}}">
+                <button style="width: 5cm; margin-left: 45%; margin-bottom: 50px;"
+                        class="btn btn-success btn-rounded">Save
+                </button>
+            </form>
+        </div>
 
             <!-- The dashboard which has all the options for the admin. This dashboard is located in the side of the page-->
             <div class="msb" id="msb">

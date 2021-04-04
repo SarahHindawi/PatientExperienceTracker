@@ -22,6 +22,7 @@
     https://www.w3schools.com/icons/icons_reference.asp
     -->
 </head>
+<div id="wrapper">
 <body>
 
 <section class="container-fluid">
@@ -70,17 +71,15 @@
         </li>
         &nbsp;&nbsp;&nbsp;
 
-        <li><a href=""></a>
+        <li>
             <button style="height: 2.2cm"class="block button button1" onclick="location.href='/passwordchangeadmin'"><span><img
                         src="{{asset('assets/images/key.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> Change Your Password</span></button>
         </li>
         &nbsp;&nbsp;&nbsp;
-
-
-        <br>
+        
         <li>
-            <button style="margin-top: 1px;height: 2.2cm"class="block button button1" onclick="location.href='/addsurvey/create'"><span><img
+            <button style="height: 2.2cm; margin-top: -20px"class="block button button1" onclick="location.href='/addsurvey/create'"><span><img
                     src="{{asset('assets/images/survey.png')}}" width="25" height="25"
                     class="d-inline-block align-right"> Create a New Survey</span>
             </button>
@@ -98,7 +97,7 @@
             </span></button></li>
 
         <br>
-        <li><button class="block button button1" onclick="location.href='/medication'"><span><img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right"> Add a Medication
+        <li><button style="height: 2.2cm" class="block button button1" onclick="location.href='/medication'"><span><img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right"> Add a Medication
             </span></button></li>
 
 

@@ -6,11 +6,21 @@
     <link href="{{asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/cssFile.css')}}">
-
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin_dashboard_page.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/buttons.css')}}">
+    <style>
+        #wrapper {
+            margin-left: auto;
+            margin-right: auto;
+            width: 1519px;
+        }
+    </style>
+    
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
 </head>
-
+<div id="wrapper">
 <body>
     @if(Session::has('message'))
     <p class="alert alert-info"style="text-align:center; height: 40px">{{ Session::get('message') }}</p>
@@ -58,7 +68,7 @@
 
     <section class="row justify-content-center" style="margin-left: 2cm">
         <section class="col-12 col-sm-6 col-md-3">
-            <form style="margin-top: 5%" class="form-container" method = "POST" action = "{{ url('/patientloginpage')}}">
+            <form style="margin-top: 5%;" method = "POST" action = "{{ url('/patientloginpage')}}">
                 @csrf
                 <!-- box for email-->
                 <div class="mb-3">
@@ -73,7 +83,7 @@
                            id="password" name = "password">
                         <!-- the paragraph under password if the admin forgot their passwords-->
                         <p class=" text-center h6">Having trouble remembering your password?</p>
-                    <p class="text-center h6">Enter your email and click <a href="{{url('/patientreset')}}">here</a> to reset your password.
+                    <p class="text-center h6">Click <a href="{{url('/patientreset')}}">here</a> to reset your password.
                     </p>
 
                         <!-- sign in button-->
@@ -95,5 +105,5 @@
         integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
         crossorigin="anonymous"></script>
 </body>
-
+</div>
 </html>

@@ -14,8 +14,15 @@
         Here is the link to find all the important icons
     https://www.w3schools.com/icons/icons_reference.asp
     -->
-
+    <style>
+        #wrapper {
+            margin-left: auto;
+            margin-right: auto;
+            width: 1519px;
+        }
+    </style>
 </head>
+<div id="wrapper">
 <body>
 
 
@@ -30,7 +37,7 @@
 
     <p class="text-center h4" style="margin-left: 4cm;margin-top: 5%; text-align:center" >Please select from one of the options below </p>
 
-    <p>Default list:</p>
+    
 
     <!-- The dashboard options in the centere of the page-->
     <div style="margin-left: -55px">
@@ -117,4 +124,5 @@
         integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
         crossorigin="anonymous"></script>
 </body>
+</div>
 </html>

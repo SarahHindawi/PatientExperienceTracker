@@ -17,7 +17,7 @@
 </head>
 
 <!-- the body has the content of the page  -->
-
+<div id="wrapper">
 <body>
     @if(Session::has('message'))
     <p class="alert alert-info" style="text-align:center">{{ Session::get('message') }}</p>

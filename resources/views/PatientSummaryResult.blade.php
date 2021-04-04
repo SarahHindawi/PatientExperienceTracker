@@ -11,6 +11,7 @@
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/buttons.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
 
     <style>
         table, th, td {
@@ -36,7 +37,7 @@
 <div id="wrapper">
 
     <!-- the body has the content of the page  -->
-    <body style="margin-top: 1cm">
+    <body>
 
     <!-- The dashboard which has all the options for the admin. This dashboard is located in the side of the page-->
     <div class="msb" id="msb">
@@ -142,7 +143,7 @@
         @endisset
 
 
-        <div style=" position:absolute;  left:38%; top:22%; ">
+        <div style="margin-left:25%;margin-top: -300px">
             <!-- card that have an image and text box to show the weight -->
             <div class="card" style="width: 17rem;height: 16rem;">
                 <div class="rounded mx-auto d-block">
@@ -165,7 +166,7 @@
             </div>
         </div>
 
-        <div style=" position:absolute;  left:58%; top:22%; ">
+        <div style="margin-left: 55%; margin-top:-255px;">
             <!-- card that have an image and text box to show the height -->
             <div class="card" style="width: 17rem;height: 16rem;">
                 <div class="rounded mx-auto d-block">
@@ -191,9 +192,9 @@
     </div>
 
     <!-- Area to show the Surveys -->
-    <div style="position:absolute; margin-top:2%; left:23%;">
+    <div style="margin-left:15%; margin-top:50px">
         @isset($responses)
-            <h3 style="  text-align: center; margin-left: 35px; margin-bottom: 10px">Submitted Surveys</h3>
+            <h3 style="  text-align: center; margin-left: -40%; margin-bottom: 10px">Submitted Surveys</h3>
             <table>
                 <colgroup>
                 <tr>

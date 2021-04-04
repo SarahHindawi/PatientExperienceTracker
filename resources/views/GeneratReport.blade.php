@@ -2,6 +2,11 @@
 
 <!DOCTYPE html>
 <html>
+    <?php echo
+    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+    header("Cache-Control: post-check=0, pre-check=0", false);
+    header("Pragma: no-cache");
+    header('Content-Type: text/html');?>
 <!-- the head has the title of the page and the link for Bootstrap Framework and the link for the css file  -->
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

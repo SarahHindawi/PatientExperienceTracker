@@ -9,7 +9,15 @@
            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
       <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin_dashboard_page.css')}}">
       <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
+      <style>
+        #wrapper {
+            margin-left:auto;
+            margin-right:auto;
+            width:1519px;
+        }
+    </style>
  </head>
+<div id="wrapper">
  <!-- the body has the content of the page  -->
  <body>
  <!-- the navigation bar in the top-->
@@ -40,7 +48,7 @@
                 </li>
                 <li class="nav-item">
                     <p><a class="text-dark nav-link active" aria-current="page"
-                                              href="{{ url('/')}}"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Complete Survey</a></p>
+                                              href="{{ url('/surveyselection')}}"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Complete Survey</a></p>
                 </li>
                 <!-- Password Change Option-->
                 <li class="nav-item">
@@ -56,7 +64,7 @@
          </div>
  </div>
  <!-- the form where Patient have to change the password-->
- <form class="form-container" method = "POST" action = "{{ url('/passwordchangepatientsave')}}" style="margin-left: -60px">
+ <form method = "POST" action = "{{ url('/passwordchangepatientsave')}}" style="margin-left: -60px">
     @csrf
      <!-- the box for current password-->
      <div style="width: 550px; margin-left:18cm; margin-top:6%">
@@ -107,5 +115,5 @@
 
 
  </body>
-
+ </div>
  </html>

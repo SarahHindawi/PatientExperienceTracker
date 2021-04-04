@@ -8,7 +8,7 @@
     <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}"
           rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/reg.css')}}">
+          <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
     <style>
         .scrollcontainer {
             border: 2px solid #ccc;
@@ -16,8 +16,14 @@
             height: 125px;
             overflow-y: scroll;
         }
+        #wrapper {
+            margin-left: auto;
+            margin-right: auto;
+            width: 1519px;
+        }
     </style>
 </head>
+<div id="wrapper">
 <body>
 <div style="margin-top: .5cm">
     <h2 style="text-align: center;color:seagreen">Welcome To Patient Experience Tracker</h2>
@@ -68,85 +74,101 @@
 
 
     <!--<form method = "post" action = "">--->
-    <div style="margin-top: 1.5cm">
-
-        {!! Form::open(['action' => 'App\Http\Controllers\PatientRegistrationController@register', 'method' => 'POST']) !!}
-        <p>test</p>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <!-- create four text boxes for user input -->
-        <div class="form-group" style="margin-top: 200px">
-            {{Form::label('firstname', 'First Name ')}}
-            {{Form::text('firstName', '' , ['class' => 'form-control', 'placeholder' => 'First Name'])}}
-        </div>
-
-        <br>
-
-        <div class="form-group">
-            {{Form::label('lastname', 'Last Name')}}
-            {{Form::text('lastName', '' , ['class' => 'form-control', 'placeholder' => 'Last Name'])}}
-        </div>
-
-        <br>
-
-        <div class="form-group">
-            {{Form::label('dob', 'Date of Birth')}}
-            {{Form::text('dob', '' , ['class' => 'form-control', 'placeholder' => 'DOB: dd-mm-yyyy'])}}
-        </div>
-
-        <br>
-
-        <div class="form-group">
-            {{Form::label('weight', 'Weight')}}
-            {{Form::number('weight', '' , ['class' => 'form-control', 'placeholder' => 'pounds' , 'width' => '25'])}}
-
-            <br>
-
-            <div class="form-group">
-                {{Form::label('height', 'Height')}}
-                {{Form::number('height', '' , ['class' => 'form-control', 'placeholder' => 'cm'])}}
-                <br>
-
-
-                <div class="form-group">
-                    {{Form::label('gender', 'Gender')}}
-                    {{Form::select('gender', ['Male' => 'Male' ,'Female' => 'Female', 'Other' => 'Other'], ['class' => 'form-control', 'placeholder' => 'Gender'])}}
+        <form style="width: 600px; margin-left: 35%; margin-top:5%" method="post" action="{{ url('/patientregistration')}}">
+            @csrf
+            <!-- text box for the new Patient First name-->
+            <div class="mb-3 row">
+                <div class="col-sm-10">
+                    {{Form::label('firstname', 'First Name:')}}
+                    {{Form::text('firstName', '' , ['class' => 'form-control shadow p-2  bg-body rounded', 'placeholder' => 'First Name'])}}
                 </div>
-
-                <br>
-
-                <div class="form-group">
-                    {{Form::label('email', 'Email Address')}}
-                    {{Form::text('email', '' , ['class' => 'form-control', 'placeholder' => 'Email'])}}
-                </div>
-
-                <br>
-                <div class="form-group">
-                    {{Form::label('password', 'Password')}}
-                    {{Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password'])}}
-                </div>
-
-                <br>
-
-                {{Form::label('condition', 'Condition')}}
-                {!! Form::select('condition',  $conditionList, null,['class' => 'form-control', 'placeholder' => 'Select Condition']) !!}
-
-                <br>
-                {{Form::label('medications', 'Select any medications you are taking from this list:')}}
-                <div class="scrollcontainer" id="scrollcontainer">
-                    @foreach($medicationList as $meds)
-                        <label>
-                            {!! Form::checkbox("medication[]", $meds) !!} {{$meds}}
-                        </label>
-                    @endforeach
-                </div>
-
-                <br>
-
-                {{Form::submit('Submit' , ['class' => 'btn btn-success', 'style'=>'margin-left:160px; width:170px; height:30px'])}}
-                {!! Form::close() !!}
             </div>
-        </div>
-    </div>
+            <!-- text box for the new Patient Last name-->
+            <div class="mb-3 row">
+                <div class="col-sm-10">
+                    {{Form::label('lastname', 'Last Name:')}}
+                    {{Form::text('lastName', '' , ['class' => 'form-control shadow p-2  bg-body rounded', 'placeholder' => 'Last Name'])}}
+                </div>
+            </div>
+             <!-- text box for the new Patient DOB-->
+             <div class="mb-3 row">
+                <div class="col-sm-10">
+                    {{Form::label('dob', 'Date of Birth')}}
+                    {{Form::text('dob', '' , ['class' => 'form-control shadow p-2  bg-body rounded', 'placeholder' => 'DOB: dd-mm-yyyy'])}}
+                </div>
+            </div>
+             <!-- text box for the new Patient Weight-->
+             <div class="mb-3 row">
+                <div class="col-sm-10">
+                    {{Form::label('weight', 'Weight')}}
+                    {{Form::number('weight', '' , ['class' => 'form-control shadow p-2  bg-body rounded', 'placeholder' => 'pounds' , 'width' => '25'])}}
+                </div>
+            </div>
+             <!-- text box for the new Patient Height-->
+             <div class="mb-3 row">
+                <div class="col-sm-10">
+                    {{Form::label('height', 'Height')}}
+                    {{Form::number('height', '' , ['class' => 'form-control shadow p-2  bg-body rounded', 'placeholder' => 'cm'])}}
+                </div>
+            </div>
+            <!-- text box for the new Patient Gender-->
+            <div class="mb-3 row">
+                <div class="col-sm-10">
+                    {{Form::label('gender', 'Gender')}}
+                    {{Form::select('gender', ['Male' => 'Male' ,'Female' => 'Female', 'Other' => 'Other'], ['class' => 'form-control shadow p-2  bg-body rounded', 'placeholder' => 'Gender'])}}
+                </div>
+            </div>
+            <!-- text box for the new Patient Email--> 
+            <div class="mb-3 row">
+                <div class="col-sm-10">
+                    {{Form::label('email', 'Email:')}}
+                    {{Form::text('email', '' , ['class' => 'form-control shadow p-2  bg-body rounded', 'placeholder' => 'Email'])}}
+                </div>
+            </div>
+            <!-- text box for the new Patient Password-->            
+            <div class="mb-3 row">
+                <div class="col-sm-10">
+                    {{Form::label('password', 'Password:')}}
+                    {{Form::text('password', '' , ['class' => 'form-control shadow p-2  bg-body rounded', 'placeholder' => 'Minimum 6 Characters'])}}
+                </div>
+            </div>    
+            <div class="mb-3 row">
+                <div class="col-sm-10">
+                    {{Form::label('condition', 'Condition')}}
+                    {!! Form::select('condition',  $conditionList, null,['class' => 'form-control shadow p-2  bg-body rounded', 'placeholder' => 'Select Condition']) !!}
+                </div>
+            </div> 
+            {{Form::label('medications', 'Select any medications you are taking from this list:')}}
+            <div class="panel panel-default">
+                <div style="width: 330px;margin-right: 35px;" class="panel-body shadow p-3">
+
+                    <div class="container">
+                        <div class="row align-items-start">
+
+                            @foreach ($medicationList as $m)
+
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="medication[]"
+                                               value="{{$m}}" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            {{$m}}
+                                        </label>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                        </div>
+                    </div>
+                </div>
+            </div>                 
+            <!-- submit button-->
+            <br><div style="margin-left:4cm">
+                    {{Form::submit('Submit' , ['class' => 'btn btn-success btn-rounded', 'style'=>'margin-left:20px; width:190px; height:30px'])}}
+                    {!! Form::close() !!}
+            </div>
+        </form>
 </div>
 </body>
+</div>
 </html>

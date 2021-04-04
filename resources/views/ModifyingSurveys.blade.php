@@ -181,55 +181,53 @@
     </div>
     <!-- to add a new question to a survey-->
     <div style="margin:15%; margin-top:3% ;">
-        <form name="addQuestion" method="post" action="{{url('/addQuestion')}}" enctype="multipart/form-data"
-              style="margin-left: 0px">
+        <form name="addQuestion" method="post" action="{{url('/addQuestion')}}" enctype="multipart/form-data" style="margin-left: 0px">
             @csrf
-            <input type="hidden" id="SurveyName" name="SurveyName" value="{{$name}}">
+            <input type="hidden" id="SurveyName" name="SurveyName" value="{{$name}}">            
 
-            <br>
-            <p style=" margin-left: 45%" class="h4">Add a Question:</p>
-            <!-- question position in a survey-->
-            <label for="input" style=" width: 220px" class="col-sm-2 col-form-label">New Question Number</label>
-            <input type="number" style=" width: 100px" class=" shadow  bg-body rounded" id="qNumber" name="qNumber"
-                   min="1" max="{{(count($questions) + 1)}}">
+        <br>
+        <p style=" margin-left: 50%" class="h4">Add Question:</p>
+        <!-- question position in a survey-->       
+        <label for="input" style=" width: 220px" class="col-sm-2 col-form-label">New Question Number</label>
+        <input type="number" style=" width: 100px" class=" shadow  bg-body rounded" id="qNumber" name="qNumber" min="1" max="{{(count($questions) + 1)}}">
 
-            <!-- question type in a survey-->
-            <br><label for="input" style=" width: 200px" class="col-sm-2 col-form-label">Question Type</label>
-            <select style=" width: 200px; margin-left: 20px" class="shadow  bg-body rounded" id="qType" name="qType">
-                <option selected>Choose...</option>
-                <option value="FreeText">FreeText</option>
-                <option value="DropDown">DropDown</option>
-                <option value="Checkbox">Checkbox</option>
-                <option value="RadioButtons">RadioButtons</option>
-            </select>
+        <!-- question type in a survey-->
+        <br><label for="input" style=" width: 200px" class="col-sm-2 col-form-label">Question Type</label>        
+        <select style=" width: 200px" class="shadow  bg-body rounded" id="qType" name="qType">
+            <option selected>Choose...</option>            
+            <option value="FreeText">FreeText</option>
+            <option value="DropDown">DropDown</option>
+            <option value="Checkbox">Checkbox</option>
+            <option value="RadioButtons">RadioButtons</option>
+        </select>
 
-            <div style="width: 400px; margin-left:70%; margin-top:-8%; height: 20px;">
-                <!--  text of the question that needs to be added in a survey-->
-                <label for="input" style=" width: 200px" class="col-sm-2 col-form-label">Question text:</label>
-                <div class="form-floating">
-                    <!-- text area-->
-                    <textarea style="height: 2cm; " class="shadow-sm form-control" placeholder="Leave a comment here"
-                              id="qText" name="qText"></textarea>
+        <div style="width: 400px; margin-left:70%; margin-top:-8%; height: 20px;">
+            <!--  text of the question that needs to be added in a survey-->
+            <label for="input" style=" width: 200px" class="col-sm-2 col-form-label">Question text:</label>
+            <div class="form-floating">
+                <!-- text area-->
+                <textarea style="height: 2cm; " class="shadow-sm form-control" placeholder=""
+                              id="qText" name= "qText"></textarea>                
 
-                </div>
-                <!-- how the answer of the question would be-->
-                <br><label for="input" style=" width: 500px" class="col-sm-2 col-form-label">Question Responses (If
-                    required, separate with a Comma No Spaces):</label>
-                <div class="form-floating">
-                    <!-- text area-->
-                    <textarea style="height: 2cm; " class="shadow-sm form-control" placeholder="Leave a comment here"
+            </div>
+            <!-- how the answer of the question would be-->
+            <br><label for="input" style=" width: 500px" class="col-sm-2 col-form-label">Question Responses(If
+                required., Seperate with commas No Spaces)</label>
+            <div class="form-floating">
+                <!-- text area-->
+                <textarea style="height: 2cm; " class="shadow-sm form-control"
                               id="qResponses" name="qResponses"></textarea>
-                </div>
             </div>
-            <!-- a submit button-->
-            <div style=" height: 4cm;">
-                <button style="width: 5cm; margin-left: 12.5cm; margin-top:7.5cm; " type="submit"
-                        class="btn btn-success btn-rounded">Submit
-                </button>
-            </div>
-        </form>
+        </div>
     </div>
-
+    <!-- a submit button-->
+    <div style=" height: 4cm;">
+        <button style="width: 5cm; margin-left: 50%; margin-top:2cm; " type="submit"
+                class="btn btn-success btn-rounded">Submit
+        </button>
+    </div>
+</form>
+</div>
     </body>
 </div>
 </html>

@@ -19,7 +19,16 @@ header('Content-Type: text/html');?>
         Here is the link to find all the important icons
     https://www.w3schools.com/icons/icons_reference.asp
     -->
+
+    <style>
+        #wrapper {
+            margin-left:auto;
+            margin-right:auto;
+            width:1519px;
+        }
+    </style>
 </head>
+<div id="wrapper">
 <body>
 
 
@@ -36,8 +45,7 @@ header('Content-Type: text/html');?>
 
         <p class="text-center h4" style="text-align:center; margin-top:1cm; margin-left: 4cm">Please select from one of
             the options below </p>
-
-        <p>Default list:</p>
+      
 
         <!-- The dashborad options in the center of the page-->
         <div style="margin-left: -30px">
@@ -117,4 +125,5 @@ header('Content-Type: text/html');?>
         integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
         crossorigin="anonymous"></script>
 </body>
+</div>
 </html>

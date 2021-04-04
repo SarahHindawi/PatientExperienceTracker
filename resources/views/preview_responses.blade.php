@@ -7,8 +7,15 @@
           rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
+    <style>
+    #wrapper {
+        margin-left: auto;
+        margin-right: auto;
+        width: 1519px;
+    }
+    </style>
 </head>
-
+<div id="wrapper">
 <body>
 <!---
 <nav class="navbar navbar-light bg-light">
@@ -100,7 +107,7 @@
 </div>
 
 <div style="width: 1100px; margin-left:17%; margin-top: 15px " class="shadow-lg p-3 mb-5 bg-white rounded">
-    <p class="text-center h4" style="margin-left: -60px; margin-bottom: 45px"> {{$patient}} responses to {{$surveyName}} survey on {{$date}}</p>
+    <p class="text-center h4" style="margin-left: 10px; margin-bottom: 45px; max-width: 1000px;"> {{$patient}} responses to {{$surveyName}} survey on {{$date}}</p>
 
     @foreach ($questions as $q)
         <p class="h5"> {{$q}}</p>
@@ -114,5 +121,5 @@
 </form>
 
 </body>
-
+</div>
 </html>
