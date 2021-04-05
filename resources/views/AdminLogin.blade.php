@@ -6,7 +6,7 @@
     <title>Admin Login</title>
     <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/cssFile.css')}}">    
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/cssFile.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin_dashboard_page.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/buttons.css')}}">
@@ -23,7 +23,7 @@
 <div id="wrapper">
 <body>
 @if(Session::has('message'))
-    <p class="alert alert-info"style="text-align:center; height: 40px">{{ Session::get('message') }}</p>
+    <p class="alert alert-info" style="text-align:center; width:94.6%; height: 40px; margin-left: 90px">{{ Session::get('message') }}</p>
 @endif
 
 
@@ -38,8 +38,7 @@
     <div class="msb" id="msb">
         <p class="text-center fs-2">PET</p>
 
-        <nav class="navbar navbar-default" role="naviga
-        tion">
+        <nav class="navbar navbar-default" role="navigation">
             <div class="btn-group-vertical" style=" margin-top:15%; width:100%">
                 <ul class="nav flex-column" style="width:100%">
                     <!-- the Dashboard options-->
