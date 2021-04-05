@@ -149,7 +149,7 @@
 
                             @foreach ($medicationList as $m)
 
-                                <div class="col">
+                                <div style="max-width:300px; overflow-x:auto; whitespace:nowrap;">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" name="medication[]"
                                                value="{{$m}}" id="flexCheckDefault">
