@@ -25,7 +25,7 @@
         }
 
         th, td {
-            width: 170px;
+            width: 190px;
         }
 
         #wrapper {
@@ -37,25 +37,28 @@
         tr:nth-child(even) {
             background-color: #dddddd;
         }
+
+        body{
+            overflow: hidden;
+        }
     </style>
 
-    </style>
     <!--
     <script src="{{ URL::asset('https://kit.fontawesome.com/a076d05399.js') }}" crossorigin='anonymous'></script>
     -->
 </head>
 <div id="wrapper">
-    <body>
+    <body style="margin-left: -40px">
 
     <section class="container-fluid"  style="margin-top: 1cm">
 
         <!--The page header -->
         <div id="wrapper">
-            <p class="text-center h2" style="margin-top: 20px; margin-right: -25px; color:seagreen;">Search Results</p>
+            <p class="text-center h2" style="margin-top: 20px; margin-right: -165px; color:seagreen;">Search Results</p>
 
 
             <div class="cent"
-                 style="top: 350px; width:80em;overflow-x: auto;white-space: nowrap; margin-left: -100px; margin-top: -6cm; margin-bottom: 10px">
+                 style="top: 350px; width:80em;overflow-x: auto;white-space: nowrap; margin-left: -130px; margin-top: -6cm; margin-bottom: 10px">
                 <table>
                     <tr>
                         <th>First Name</th>

@@ -21,12 +21,12 @@
     <body  style="margin-top: 1cm">
 
     @if(isset($message))
-        <p class="alert alert-info" style="text-align:center;margin-top: -1cm">{{ $message}}</p>
+        <p class="alert alert-info" style="text-align:center;margin-top: -1cm; margin-left: 57px; width: 96.8%">{{ $message}}</p>
     @endif
 
     <!-- the title in the top  -->
     <div style=" margin-left:4%">
-        <p class="text-center h2 " style="color:seagreen">Patient Profile Search</p>
+        <p class="text-center h2 " style="color:seagreen; margin-left: 30px">Patient Profile Search</p>
     </div>
 
     <!-- The dashboard which has all the options for the admin. This dashboard is located in the side of the page-->
@@ -115,7 +115,7 @@
         <div class="mb-3 row">
             <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control shadow p-2  bg-body rounded" name="inputEmail">
+                <input type="email" class="form-control shadow p-2  bg-body rounded" name="inputEmail" required>
                 <div style="margin-left:130%; margin-top:-7%; width: 150Px">
                     <button style="width: 200px;" type="submit" class="btn btn-success btn-rounded">Search By Email
                     </button>

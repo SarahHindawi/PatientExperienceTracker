@@ -19,12 +19,17 @@
             padding: 10px;
             text-align: center;
             white-space:normal;
+            font-size: 13px;
         }
 
         #wrapper {
             margin-left: auto;
             margin-right: auto;
             width: 1519px;
+        }
+
+        body{
+            overflow: hidden;
         }
 
     </style>
@@ -39,10 +44,10 @@
 
         <!--The page header -->
         <div id="wrapper">
-            <p class="text-center h2" style="margin-top: 20px; margin-right: -25px; color: seagreen">Report Result</p>
+            <p class="text-center h2" style="margin-top: 20px; margin-right: -95px; color: seagreen">Report Result</p>
 
 
-            <div class="cent" style="top: 350px; width:80em;overflow-x: auto;white-space: nowrap; margin-left: -100px; margin-top: -6cm; margin-bottom: 10px">
+            <div class="cent" style="top: 350px; width:80em;overflow-x: auto;white-space: nowrap; margin-left: -125px; margin-top: -5.8cm; margin-bottom: 10px">
                 <table>
                     <tr>
                         <th>Name</th>
@@ -72,15 +77,17 @@
                         </tr>
                     @endforeach
 
-                </table>           
+                </table>
             </div>
             <div>
             <form method="post" action="/report/download" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="fileName" value="{{$fileName}}">
-                <button style="width: 5cm; margin-left: 45%; margin-bottom: 50px;"
-                        class="btn btn-success btn-rounded">Save
-                </button>
+                <button style="width: 4cm; margin-left: 80%; margin-top: -70px; "
+                        class="btn btn-success btn-rounded"><img
+                            src="{{asset('assets/images/save.png')}}" width="25" height="25"
+                            class="d-inline-block align-right" style="margin-left: -10px"> Save </button>
+
             </form>
         </div>
 

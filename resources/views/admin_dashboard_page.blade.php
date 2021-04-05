@@ -18,8 +18,9 @@
         }
 
         body{
-            overflow: hidden;
+            overflow-x: hidden;
         }
+
     </style>
     <!--Get your own code at fontawesome.com
         Here is the link to find all the important icons
@@ -35,13 +36,13 @@
     @endif
 
 
-    <p class="text-center h2" style="color:seagreen; margin-top: .8cm; margin-left: 2.5cm"> Hello {{Auth::guard('admin')->user()->FirstName}}</p>
+    <p class="text-center h2" style="color:seagreen; margin-top: .7cm; margin-left: 2.5cm"> Hello {{Auth::guard('admin')->user()->FirstName}}</p>
 
 
-    <p class="text-center h4" style="text-align:center; margin-top:1cm; margin-left: 2.5cm">Here are your administration options </p>
+    <p class="text-center h4" style="text-align:center; margin-top:.7cm; margin-left: 2.5cm">Here are your administration options </p>
 
 
-    <!-- The dashboard options in the centere of the page-->
+    <!-- The dashboard options in the center of the page-->
 
 
     <ul class="lp" style="margin-top: 50px; margin-left: 8cm">

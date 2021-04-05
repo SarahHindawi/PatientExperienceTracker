@@ -19,7 +19,7 @@
 <body>
 
 <div style=" margin-top:1cm; margin-left:10%">
-    <h2 style="color:seagreen; text-align:center; margin-left: -60px">Survey Preview</h2>>
+    <h2 style="color:seagreen; text-align:center; margin-left: -50px">Survey Preview</h2>>
 </div>
 
 
@@ -103,7 +103,7 @@
     <p class="text-center h4" style="margin-left: 10px; margin-bottom: 45px; "> {{$patient}} responses to {{$surveyName}} survey on {{$date}}</p>
 
     @foreach ($questions as $q)
-        <p class="h5"> {{$q}}</p>
+        <p class="h5" style="font-size: 18px"> {{$q}}</p>
         <p class="h6">- {{$answers[$loop->index]}}</p>
 
         <br>

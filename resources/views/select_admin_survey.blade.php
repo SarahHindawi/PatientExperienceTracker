@@ -15,6 +15,10 @@
             margin-right: auto;
             width: 1519px;
         }
+
+        body{
+            overflow: hidden;
+        }
     </style>
 </head>
 <div id="wrapper">
@@ -96,7 +100,7 @@
         </nav>
     </div>
 
-    <div style="margin-left: -3cm">
+    <div>
 
         <div>
             <p class="text-center h2" style="color:seagreen; margin-top: 20px;margin-top: 1cm; margin-left: 4cm">Survey

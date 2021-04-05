@@ -109,7 +109,7 @@
             </nav>
         </div>
 
-        <form style="width: 600px; margin-left:16cm; margin-top:7%" method="post" enctype="multipart/form-data"
+        <form style="width: 600px; margin-left:16.7cm; margin-top:7%" method="post" enctype="multipart/form-data"
               action="{{ url('/addsurvey')}}">
             @csrf
             <div class="mb-3 row">

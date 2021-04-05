@@ -25,7 +25,7 @@
 <body>
 
 
-<div style=" margin-top:1cm; margin-left:5%">
+<div style=" margin-top:1cm; margin-left:8%">
     <h2 style="color:seagreen; text-align:center;">Deletion Confirmation</h2>
     <p class="text-center h4">{{$name}} Survey</p>
 </div>

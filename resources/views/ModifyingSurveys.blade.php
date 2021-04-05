@@ -16,16 +16,18 @@
     </style>
 </head>
 <!-- the body has the content of the page  -->
+
+<body>
 <div id="wrapper">
-    <body>
     <!-- the navigation bar in the top-->
     @if(Session::has('message'))
         <p class="alert alert-info" style="text-align:center">{{ Session::get('message') }}</p>
-    @endif
+@endif
 
-    <!-- the title in the top middle of the page -->
+<!-- the title in the top middle of the page -->
     <div style=" margin-top: 1cm; margin-left:6%">
         <p class="text-center h2" style="color: seagreen">Modify Survey</p>
+        <p class="text-center h4" style="margin-top: 35px">{{$name}}</p>
     </div>
 
     <!-- the Dashboard of the page that has different options-->
@@ -100,7 +102,7 @@
     <!-- an example on how to add or remove survey questions-->
     <br style="line-height:100;">
 
-    <div style="width: 1200px; margin-left:15%; " class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div style="width: 1270px; margin-left:15%; " class="shadow-lg p-3 mb-5 bg-white rounded">
 
         @foreach ($questions as $q)
             <form name="deleteQuestion" method="post" action="{{url('/deletion-confirmation')}}"
@@ -117,7 +119,8 @@
                 </div>
             </form>
 
-            <p class="h6" style="font-size: 18px"> {{str_replace("|",".",$q["Text"])}}</p> <!--Display the question-->
+            <p class="h6" style="font-size: 18px"> {{$loop->index+1}}) {{str_replace("|",".",$q["Text"])}}</p>
+            <!--Display the question-->
 
             @if ( $q["Type"]  == "DropDown")
                 <select name="{{$q["Text"]}}">
@@ -142,7 +145,6 @@
 
                     @endforeach
                 </div>
-                <br>
                 <br> <br>
 
             @elseif ($q["Type"]  == "RadioButtons")
@@ -153,13 +155,10 @@
                         <label>{{$option}}</label>&nbsp;&nbsp;&nbsp;
                     @endforeach
                 </div>
-
-                <br>
                 <br> <br>
 
             @elseif ($q["Type"]  == "Text")
                 <input type="text" name="{{$q["Text"]}}"><br>
-                <br>
                 <br> <br>
 
             @elseif ($q["Type"]  == "FreeText")
@@ -186,7 +185,8 @@
             <p style=" margin-left: 45%" class="h4">Add Question:</p>
             <!-- question position in a survey-->
             <label for="input" style=" width: 220px" class="col-sm-2 col-form-label">New Question Number:</label>
-            <input type="number" style=" width: 100px; margin-left: -20px" class=" shadow  bg-body rounded" id="qNumber" name="qNumber"
+            <input type="number" style=" width: 100px; margin-left: -20px" class=" shadow  bg-body rounded" id="qNumber"
+                   name="qNumber"
                    min="1" max="{{(count($questions) + 1)}}">
 
             <!-- question type in a survey-->
@@ -217,15 +217,15 @@
                               id="qResponses" name="qResponses"></textarea>
                 </div>
             </div>
+            <!-- a submit button-->
+            <div style=" height: 4cm;">
+                <button style="width: 5cm; margin-left: 46%; margin-top:7cm; " type="submit"
+                        class="btn btn-success btn-rounded">Submit
+                </button>
+            </div>
+        </form>
     </div>
-    <!-- a submit button-->
-    <div style=" height: 4cm;">
-        <button style="width: 5cm; margin-left: 46%; margin-top:2cm; " type="submit"
-                class="btn btn-success btn-rounded">Submit
-        </button>
-    </div>
-    </form>
+
 </div>
 </body>
-</div>
 </html>

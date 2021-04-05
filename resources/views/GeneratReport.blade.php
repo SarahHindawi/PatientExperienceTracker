@@ -30,7 +30,7 @@
 
 
     @if(isset($message))
-        <p class="alert alert-info" style="text-align:center; margin-top: -1cm">{{ $message}}</p>
+        <p class="alert alert-info" style="text-align:center; margin-top: -1cm; margin-left: 130px">{{ $message}}</p>
     @endif
 
 

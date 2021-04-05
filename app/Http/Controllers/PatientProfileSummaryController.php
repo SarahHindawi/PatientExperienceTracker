@@ -168,7 +168,7 @@ class PatientProfileSummaryController extends Controller
         }
 
 
-        $data = $data->get()->toArray();
+        $data = $data->where('NewAccount', 'true')->get()->toArray();
 
         //if there are no registered patients with the given name
         if (count($data) == 0) {

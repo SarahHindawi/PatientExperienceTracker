@@ -147,6 +147,7 @@
                         the patient and will send it to them in a brief email. Any denied registration requests will
                         have the profile deleted.
                     </h6>
+                    <br>
                 </div>
             </div>
         </div>
