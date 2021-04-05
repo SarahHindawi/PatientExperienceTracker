@@ -17,14 +17,15 @@
 </head>
 <!-- the body has the content of the page  -->
 
-<body>
 <div id="wrapper">
+
+    <body>
     <!-- the navigation bar in the top-->
     @if(Session::has('message'))
         <p class="alert alert-info" style="text-align:center">{{ Session::get('message') }}</p>
-@endif
+    @endif
 
-<!-- the title in the top middle of the page -->
+    <!-- the title in the top middle of the page -->
     <div style=" margin-top: 1cm; margin-left:6%">
         <p class="text-center h2" style="color: seagreen">Modify Survey</p>
         <p class="text-center h4" style="margin-top: 35px">{{$name}}</p>
@@ -174,13 +175,11 @@
 
         @endforeach
     </div>
-    <!-- to add a new question to a survey-->
     <div style="margin:15%; margin-top:3% ;">
         <form name="addQuestion" method="post" action="{{url('/addQuestion')}}" enctype="multipart/form-data"
               style="margin-left: 0px">
             @csrf
             <input type="hidden" id="SurveyName" name="SurveyName" value="{{$name}}">
-
             <br>
             <p style=" margin-left: 45%" class="h4">Add Question:</p>
             <!-- question position in a survey-->
@@ -198,7 +197,6 @@
                 <option value="Checkbox">Checkbox</option>
                 <option value="RadioButtons">RadioButtons</option>
             </select>
-
             <div style="width: 400px; margin-left:70%; margin-top:-8%; height: 20px;">
                 <!--  text of the question that needs to be added in a survey-->
                 <label for="input" style=" width: 200px" class="col-sm-2 col-form-label">Question text:</label>
@@ -206,7 +204,6 @@
                     <!-- text area-->
                     <textarea style="height: 2cm; " class="shadow-sm form-control" placeholder=""
                               id="qText" name="qText"></textarea>
-
                 </div>
                 <!-- how the answer of the question would be-->
                 <br><label for="input" style=" width: 500px" class="col-sm-2 col-form-label">Question Responses (If
@@ -217,14 +214,15 @@
                               id="qResponses" name="qResponses"></textarea>
                 </div>
             </div>
-            <!-- a submit button-->
-            <div style=" height: 4cm;">
-                <button style="width: 5cm; margin-left: 44%; margin-top:7cm; " type="submit"
-                        class="btn btn-success btn-rounded">Submit
-                </button>
-            </div>
-        </form>
     </div>
+    <!-- a submit button-->
+    <div style=" height: 4cm;">
+        <button style="width: 5cm; margin-left: 46%; margin-top:2cm; " type="submit"
+                class="btn btn-success btn-rounded">Submit
+        </button>
+    </div>
+    </form>
+</div>
 
 </div>
 </body>
