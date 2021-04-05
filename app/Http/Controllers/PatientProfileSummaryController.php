@@ -68,7 +68,7 @@ class PatientProfileSummaryController extends Controller
 
             //remove the first character " and last one " for each medication string
             for ($j = 0; $j < count($medArray); $j++) {
-                $medArray[$j] = substr($medArray[$j], 1, -1);
+                $medArray[$j] = str_replace("\\","",substr($medArray[$j], 1, -1));
             }
         }
 

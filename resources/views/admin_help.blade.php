@@ -54,13 +54,13 @@
 
             <div>
                 <ul class="list-group" style="margin-left: 100px">
-                    <li><a href="#create">Create a New Survey</a></li>
+{{--                    <li><a href="#create">Create a New Survey</a></li>--}}
                     <li><a href="#modify">Modify a Survey</a></li>
                     <li><a href="#delete">Delete a Question</a></li>
                     <li><a href="#add">Add a Question</a></li>
-                    <li><a href="#genrate">Generate a Report of the Responses</a></li>
+{{--                    <li><a href="#genrate">Generate a Report of the Responses</a></li>--}}
                     <li><a href="#accept">Accept New Patients</a></li>
-                    <li><a href="#change">Accept Password Reset Requests</a></li>
+                    <li><a href="#password">Accept Password Reset Requests</a></li>
                 </ul>
 
                 <br>
@@ -146,6 +146,29 @@
                         Request Page when you click submit the application will create a temporary random password for
                         the patient and will send it to them in a brief email. Any denied registration requests will
                         have the profile deleted.
+                    </h6>
+                    <br><br>
+
+                    <h4 style="margin-top: 30px; color:seagreen" id="password">Accept Password Reset Requests</h4><br>
+
+                    <h6>
+
+                        Feature Prerequisites: A logged in Administrator. <br><br>
+
+                        Step 1) If you would like to check if there is any Password Reset
+                        Requests to review, select “Patient Password Reset Requests” from
+                        either the left-hand sidebar or options in the center of the Dashboard. <br> <br>
+
+                        Step 2) A page is presented that will list patients that requested to change their password at the login page.
+                        After reviewing a request for password reset there will be a green checkmark
+                        or red ‘X’ to select. After choosing your option for each hit the submit button. NOTE: Selecting the red
+                        ‘X’ beside their information will ignore the password reset request,
+                        so the patient might not be able to login later. <br><br>
+
+                        Step 3) After reviewing all requests and selecting to either approve or deny each request click
+                        on the submit button at the bottom of the list of requests. On the Patient Password Reset
+                        Request Page, when you click submit the application will create a temporary random password for
+                        the patient and will send it to them in a brief email.
                     </h6>
                     <br>
                 </div>
