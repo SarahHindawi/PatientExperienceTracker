@@ -27,7 +27,7 @@
 
 <section class="container-fluid">
     @if(Session::has('message'))
-        <p class="alert alert-info" style="text-align:center">{{ Session::get('message') }}</p>
+        <p class="alert alert-info" style="text-align:center; width:94%; margin-left:110px">{{ Session::get('message') }}</p>
     @endif
 
 
@@ -100,7 +100,7 @@
 
         <br>
         <li>
-            <button style="height: 2.2cm"class="block button button1" onclick="location.href='/adminsurveyselection'"><span><img
+            <button style="height: 2.2cm;" class="block button button1" onclick="location.href='/adminsurveyselection'"><span><img
                         src="{{asset('assets/images/survey.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> Fill Out a Survey
             </span></button>
@@ -108,14 +108,14 @@
 
         <br>
         <li>
-            <button style="height: 2.2cm"class="block button button1" onclick="location.href='/adminhelp'"><span><img
+            <button style="height: 2.2cm" class="block button button1" onclick="location.href='/adminhelp'"><span><img
                         src="{{asset('assets/images/questionmark.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> Admin Help
             </span></button>
         </li>
 
         <br>
-        <li><button class="block button button1" onclick="location.href='/medication'"><span><img src="{{asset('assets/images/medication.png')}}" width="25" height="25" class="d-inline-block align-right"> Add a Medication
+        <li><button  style="height: 2.2cm" class="block button button1" onclick="location.href='/medication'"><span><img src="{{asset('assets/images/medication.png')}}" width="25" height="25" class="d-inline-block align-right"> Add a Medication
             </span></button></li>
 
     </ul>

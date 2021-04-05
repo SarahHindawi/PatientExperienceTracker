@@ -7,7 +7,7 @@
           crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
 
-    <!--
+<!--
     <script src="{{ URL::asset('https://kit.fontawesome.com/a076d05399.js') }}" crossorigin='anonymous'></script>
     -->
 
@@ -78,22 +78,24 @@
 <div id="wrapper">
     <body>
 
-    <section class="container-fluid"  style="margin-left: -1cm; margin-top: 1cm">
+    <section class="container-fluid" style="margin-left: -1cm; margin-top: 1cm">
 
 
-        <!--The page header and an explanation for how to use the page -->
-        <p class="text-center h2 style="style="color:seagreen;margin-left: 3.5cm">Password Reset Requests</p>
+        <div style="margin-left: 3cm">
+            <!--The page header and an explanation for how to use the page -->
+            <p class="text-center h2 style=" style="color:seagreen;margin-left: 3.5cm">Password Reset Requests</p>
 
-        @if (count($patients) > 0)
-            <p class="text-center h6" style="text-align:center;margin-left: 3cm;margin-top:1cm">Selecting the green check marks will
-                approve password reset requests.
-                <br>Users will receive the confirmation and a temporary password via email.</p>
-        @endif
-        <br>
-        <br>
-        <br>
+            @if (count($patients) > 0)
+                <p class="text-center h6" style="text-align:center;margin-left: 3cm;margin-top:1cm">Selecting the green
+                    check marks will
+                    approve password reset requests.
+                    <br>Users will receive the confirmation and a temporary password via email.</p>
+            @endif
+            <br>
+            <br>
+            <br>
 
-
+        </div>
         <!-- The dashboard which has all the options for the admin. This dashboard is located in the side of the page-->
         <div class="msb" id="msb">
             <p class="text-center fs-2">PET</p>
@@ -212,7 +214,7 @@
                     </ol>
 
 
-                    <button style="width: 5cm; margin-top: 8px; margin-left: -35px" type="submit"
+                    <button style="width: 5cm; margin-top: 8px; margin-left: 25px" type="submit"
                             class="btn btn-success btn-rounded">Save
                     </button>
                 </form>

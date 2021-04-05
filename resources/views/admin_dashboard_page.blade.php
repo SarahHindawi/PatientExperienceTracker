@@ -16,6 +16,10 @@
             margin-right: auto;
             width: 1519px;
         }
+
+        body{
+            overflow: hidden;
+        }
     </style>
     <!--Get your own code at fontawesome.com
         Here is the link to find all the important icons
@@ -27,21 +31,20 @@
 
 <section class="container-fluid">
     @if(Session::has('message'))
-        <p class="alert alert-info" style="text-align:center">{{ Session::get('message') }}</p>
+        <p class="alert alert-info" style="text-align:center; width:94%; margin-left:110px">{{ Session::get('message') }}</p>
     @endif
 
 
-    <p class="text-center h2" style="color:seagreen; margin-top: 1cm; margin-left: 2.5cm">
-        Hello {{Auth::guard('admin')->user()->FirstName}}</p>
+    <p class="text-center h2" style="color:seagreen; margin-top: .8cm; margin-left: 2.5cm"> Hello {{Auth::guard('admin')->user()->FirstName}}</p>
 
 
-    <p class="text-center h4" style="text-align:center; margin-top:1.2cm; margin-left: 2.5cm">Here are your administration options </p>
+    <p class="text-center h4" style="text-align:center; margin-top:1cm; margin-left: 2.5cm">Here are your administration options </p>
 
 
     <!-- The dashboard options in the centere of the page-->
 
 
-    <ul class="lp" style="margin-top: 50px; margin-left: 7cm">
+    <ul class="lp" style="margin-top: 50px; margin-left: 8cm">
         <li>
             <button class="block button button1" onclick="location.href='/accept/create'" type="button"><span><img
                         src="{{asset('assets/images/request.png')}}" width="25" height="25"
@@ -90,7 +93,7 @@
             </span></button></li>
 
         <br>
-        <li><button style="height: 2.2cm"class="block button button1" onclick="location.href='/adminsurveyselection'"><span><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Fill Out a Survey
+        <li><button style="height: 2.3cm"class="block button button1" onclick="location.href='/adminsurveyselection'"><span><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Fill Out a Survey
             </span></button></li>
         <br>
         <li><button style="height: 2.2cm"class="block button button1" onclick="location.href='/adminhelp'"><span><img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right"> Admin Help

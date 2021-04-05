@@ -35,25 +35,24 @@ header('Content-Type: text/html');?>
 <section class="container-fluid">
 
     @if(Session::has('message'))
-        <p class="alert alert-info" style="text-align:center">{{ Session::get('message') }}</p>
+        <p class="alert alert-info" style="text-align:center; width:94%; margin-left:110px">{{ Session::get('message') }}</p>
     @endif
 
     <div style="margin-left: -2cm">
 
-        <p class="text-center h2" style="color:seagreen; margin-top: 1cm; margin-left: 4cm">Hello {{$name}} </p>
+        <p class="text-center h2" style="color:seagreen; margin-top: 1cm; margin-left: 5cm">Hello {{$name}} </p>
 
 
-        <p class="text-center h4" style="text-align:center; margin-top:1cm; margin-left: 4cm">Please select from one of
-            the options below </p>
-      
+        <p class="text-center h4" style="text-align:center; margin-top:1cm; margin-left: 5cm">Please select from one of the options below </p>
+
 
         <!-- The dashborad options in the center of the page-->
-        <div style="margin-left: -30px">
+        <div style="margin-left: -10px; margin-top: 60px">
             <ul class="lp">
                 <li>
                     <button class="block button button1" onclick="location.href='/surveyselection'" type="button"><span><img
                                 src="{{asset('assets/images/survey.png')}}" width="25" height="25"
-                                class="d-inline-block align-right"> Click here complete a survey</span>
+                                class="d-inline-block align-right"> Complete a Survey</span>
                     </button>
                 </li>
                 &nbsp;&nbsp;&nbsp;

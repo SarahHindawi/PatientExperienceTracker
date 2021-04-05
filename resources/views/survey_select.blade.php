@@ -14,6 +14,10 @@
         margin-right: auto;
         width: 1519px;
     }
+
+    body {
+        overflow: hidden;
+    }
     </style>
 </head>
 <div id="wrapper">

@@ -7,7 +7,7 @@
           crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
 
-    <!--
+<!--
     <script src="{{ URL::asset('https://kit.fontawesome.com/a076d05399.js') }}" crossorigin='anonymous'></script>
     -->
 
@@ -53,6 +53,7 @@
             background: transparent;
             transition: all 0.3s ease 0s;
         }
+
         .alert {
             padding: 20px;
             background-color: #f44336;
@@ -90,21 +91,23 @@
     <section class="container-fluid" style="margin-left: -1cm; margin-top: 1cm">
 
 
+        <div style="margin-left: 3cm">
+            <!--The page header and an explanation for how to use the page -->
+            <p class="text-center h2" style="color:seagreen;margin-left: 3cm">New Patient Registration</p>
 
-        <!--The page header and an explanation for how to use the page -->
-        <p class="text-center h2" style="color:seagreen;margin-left: 3cm">New Patient Registration</p>
+        @if (count($patients) > 0)
 
-    @if (count($patients) > 0)
-
-        <!-- padding-right: 500px-->
-            <p class="text-center h6" style="text-align:center; margin-left: 3cm;margin-top:1cm">Selecting the green check marks will
-                approve new  patients so they will be added to the system. <br> They will receive their account activation email and the
-                ability to set the password via email.</p>
-        @endif
-        <br>
-        <br>
-        <br>
-
+            <!-- padding-right: 500px-->
+                <p class="text-center h6" style="text-align:center; margin-left: 3cm;margin-top:1cm">Selecting the green
+                    check marks will
+                    approve new patients so they will be added to the system. <br> They will receive their account
+                    activation email and the
+                    ability to set the password via email.</p>
+            @endif
+            <br>
+            <br>
+            <br>
+        </div>
 
         <!-- The dashboard which has all the options for the admin. This dashboard is located in the side of the page-->
         <div class="msb" id="msb">
@@ -157,13 +160,18 @@
 
                         <li class="nav-item">
                             <p><a class="text-dark nav-link active" aria-current="page"
-                                  href= "{{ url('/addsurvey/create')}}" ><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Create New Survey</a></p>
+                                  href="{{ url('/addsurvey/create')}}"><img src="{{asset('assets/images/survey.png')}}"
+                                                                            width="25" height="25"
+                                                                            class="d-inline-block align-right"> Create
+                                    New Survey</a></p>
                         </li>
 
 
                         <li class="nav-item">
-                            <p><a class="text-dark nav-link active" aria-current="page" href="{{ url('/editSurveySelect')}}">
-                                    <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify a Survey</a></p>
+                            <p><a class="text-dark nav-link active" aria-current="page"
+                                  href="{{ url('/editSurveySelect')}}">
+                                    <img src="{{asset('assets/images/survey.png')}}" width="25" height="25"
+                                         class="d-inline-block align-right"> Modify a Survey</a></p>
                         </li>
 
 
@@ -196,7 +204,8 @@
             <!-- If there are no new patients, then don't print a list -->
             @if (count($patients) > 0)
 
-                <form name="acceptanceForm" method="post" action="/accept" enctype="multipart/form-data" class="lp" style="margin-top: 1cm">
+                <form name="acceptanceForm" method="post" action="/accept" enctype="multipart/form-data" class="lp"
+                      style="margin-top: 1cm">
                     @csrf
                     <ol class="lp">
 
@@ -218,12 +227,12 @@
                         @endforeach
                     </ol>
 
-                    <button style="width: 5cm; margin-top: 8px; margin-left: -35px" type="submit"
+                    <button style="width: 5cm; margin-top: 8px; margin-left: 25px" type="submit"
                             class="btn btn-success btn-rounded">Save
                     </button>
                 </form>
             @else
-{{--                <h5 style="margin-left: 277px; color: red">There are no new registered patients </h5>--}}
+                {{--                <h5 style="margin-left: 277px; color: red">There are no new registered patients </h5>--}}
                 <div class="alert" style="margin-left: 8.8cm ">
                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                     <strong> There are no new registered patients </strong>

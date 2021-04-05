@@ -24,12 +24,12 @@
     @if(Session::has('message'))
     <p class="alert alert-info"style="text-align:center">{{ Session::get('message') }}</p>
     @endif
- <div style="margin-left: -2cm">
+ <div style="margin-left: -1cm">
  <!-- the title in the top middle of the page -->
  <div >
      <p class="text-center h2" style="color:seagreen; margin-top: 20px; margin-left: 4cm">Change Password</p>
 
-     <p class="text-center h4"style="margin-left: 4cm; margin-top: 1cm; margin-bottom: 1cm">Here you can change the password on your account.</p>
+     <p class="text-center h4"style="margin-left: 4cm; margin-top: .7cm; margin-bottom: 1cm">Here you can change the password on your account.</p>
 {{--     <p class="text-center h4"style="margin-left: 4cm">See password rules below</p>--}}
  </div>
 
@@ -73,7 +73,7 @@
              <label for="inputFirstName" class="col-sm-4 col-form-label">Current Password: </label>
              <div class="col-sm-5">
                  <input type="password" style="width:7cm" class="form-control shadow-lg p-2 mb-3 bg-white rounded"
-                        id="currentpass" name="currentpass">
+                        id="currentpass" name="currentpass" required>
              </div>
          </div>
          <!-- the box for new password-->
@@ -81,7 +81,7 @@
              <label for="inputFirstName" class="col-sm-4 col-form-label">New Password: </label>
              <div class="col-sm-5">
                  <input type="password" style="width:7cm" class="form-control shadow-lg p-2 mb-3 bg-white rounded"
-                        id="password" name="password">
+                        id="password" name="password" pattern="^[A-Za-z\d@$!%*+-:,;.?&~/\()=_]{6,}$" title="Password must include at least 6 characters" required>
              </div>
          </div>
          <!-- the box for new password conformation -->
@@ -89,7 +89,7 @@
              <label for="inputFirstName" class="col-sm-4 col-form-label">Confirm New Password: </label>
              <div class="col-sm-5">
                  <input type="password" style="width:7cm" class="form-control shadow-lg p-2 mb-3 bg-white rounded"
-                        id="password2" name="password2">
+                        id="password2" name="password2" required>
              </div>
          </div>
      </div>
@@ -108,7 +108,7 @@
 {{--     <br><br>--}}
      <!-- the submit button-->
         <div style="margin-left:22cm;">
-            <button class="btn btn-success btn-rounded  btn-lg "style="width: 200px; margin-top: 1cm">Change Password</button>
+            <button class="btn btn-success btn-rounded  btn-lg " style="width: 200px; margin-top: 1cm; margin-left: -20px">Change Password</button>
         </div>
 
  </form>
