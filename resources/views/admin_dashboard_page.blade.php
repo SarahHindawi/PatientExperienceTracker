@@ -60,8 +60,8 @@
         &nbsp;&nbsp;&nbsp;
         <li>
             <button style="height: 2.2cm" class="block button button1" onclick="location.href='/profilesearch'"><span> <img
-                        src="{{asset('assets/images/pen.png')}}" width="25" height="25"
-                        class="d-inline-block align-right"> View Summary of Patient</span></button>
+                        src="{{asset('assets/images/profile.png')}}" width="25" height="25"
+                        class="d-inline-block align-right"> View Patient Profile</span></button>
         </li>
         &nbsp;&nbsp;&nbsp;
         <li>
@@ -77,7 +77,7 @@
                         class="d-inline-block align-right"> Change Your Password</span></button>
         </li>
         &nbsp;&nbsp;&nbsp;
-        
+
         <li>
             <button style="height: 2.2cm; margin-top: -20px"class="block button button1" onclick="location.href='/addsurvey/create'"><span><img
                     src="{{asset('assets/images/survey.png')}}" width="25" height="25"
@@ -97,7 +97,7 @@
             </span></button></li>
 
         <br>
-        <li><button style="height: 2.2cm" class="block button button1" onclick="location.href='/medication'"><span><img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right"> Add a Medication
+        <li><button style="height: 2.2cm" class="block button button1" onclick="location.href='/medication'"><span><img src="{{asset('assets/images/drug.png')}}" width="25" height="25" class="d-inline-block align-right"> Add a Medication
             </span></button></li>
 
 

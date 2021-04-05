@@ -118,26 +118,26 @@
                     {{Form::select('gender', ['Male' => 'Male' ,'Female' => 'Female', 'Other' => 'Other'], ['class' => 'form-control shadow p-2  bg-body rounded', 'placeholder' => 'Gender'])}}
                 </div>
             </div>
-            <!-- text box for the new Patient Email--> 
+            <!-- text box for the new Patient Email-->
             <div class="mb-3 row">
                 <div class="col-sm-10">
                     {{Form::label('email', 'Email:')}}
                     {{Form::text('email', '' , ['class' => 'form-control shadow p-2  bg-body rounded', 'placeholder' => 'Email'])}}
                 </div>
             </div>
-            <!-- text box for the new Patient Password-->            
+            <!-- text box for the new Patient Password-->
             <div class="mb-3 row">
                 <div class="col-sm-10">
                     {{Form::label('password', 'Password:')}}
                     {{Form::text('password', '' , ['class' => 'form-control shadow p-2  bg-body rounded', 'placeholder' => 'Minimum 6 Characters'])}}
                 </div>
-            </div>    
+            </div>
             <div class="mb-3 row">
                 <div class="col-sm-10">
                     {{Form::label('condition', 'Condition')}}
                     {!! Form::select('condition',  $conditionList, null,['class' => 'form-control shadow p-2  bg-body rounded', 'placeholder' => 'Select Condition']) !!}
                 </div>
-            </div> 
+            </div>
             {{Form::label('medications', 'Select any medications you are taking from this list:')}}
             <div class="panel panel-default">
                 <div style="width: 330px;margin-right: 35px;" class="panel-body shadow p-3">
@@ -161,7 +161,7 @@
                         </div>
                     </div>
                 </div>
-            </div>                 
+            </div>
             <!-- submit button-->
             <br><div style="margin-left:4cm">
                     {{Form::submit('Submit' , ['class' => 'btn btn-success btn-rounded', 'style'=>'margin-left:20px; width:190px; height:30px'])}}

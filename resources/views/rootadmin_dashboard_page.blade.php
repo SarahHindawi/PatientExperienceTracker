@@ -16,8 +16,8 @@
     <style>
         #wrapper {
             margin-left: auto;
-            margin-right: auto;            
-            min-width: 1519px;            
+            margin-right: auto;
+            min-width: 1519px;
             overflow-x:auto;
         }
     </style>
@@ -31,15 +31,13 @@
     @endif
 
 
-
-
         <p class="text-center h2" style="color:seagreen; margin-top: .5cm; margin-left: 4cm">Hello {{$name}}</p>
 
 
     <p class="text-center h4" style="text-align:center; margin-top:1cm; margin-left: 4cm">Here are your administration options </p>
 
 
-    <!-- The dashboard options in the centere of the page-->
+    <!-- The dashboard options in the center of the page-->
 
     <ul class="lp" style="margin-top: 50px; margin-left: 10cm">
         <li>
@@ -59,13 +57,13 @@
         <li>
             <button style="height: 2.2cm"class="block button button1" onclick="location.href='/profilesearch'"><span> <img
                         src="{{asset('assets/images/pen.png')}}" width="25" height="25"
-                        class="d-inline-block align-right"> View Summary of Patient</span></button>
+                        class="d-inline-block align-right"> View Patient Profile</span></button>
         </li>
         &nbsp;&nbsp;&nbsp;
         <li>
             <button class="block button button1" onclick="location.href='/report/create'"><span><img
                         src="{{asset('assets/images/pen.png')}}" width="25" height="25"
-                        class="d-inline-block align-right"> Generate Report of PERMS and PROMS Survey Data</span>
+                        class="d-inline-block align-right"> Generate Report of PERM and PROM Survey Data</span>
             </button>
         </li>
         &nbsp;&nbsp;&nbsp;
@@ -117,7 +115,7 @@
         </li>
 
         <br>
-        <li><button class="block button button1" onclick="location.href='/medication'"><span><img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right"> Add a Medication
+        <li><button class="block button button1" onclick="location.href='/medication'"><span><img src="{{asset('assets/images/drug.png')}}" width="25" height="25" class="d-inline-block align-right"> Add a Medication
             </span></button></li>
 
     </ul>
@@ -166,18 +164,7 @@
                                 <img src="{{asset('assets/images/key.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Change Password</a></p>
                     </li>
-                <!-- Cooment out due to not MVP
-                    <li class="nav-item">
-                        <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{url('/passwordchangeadmin')}}">
-                                <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">Admin Help</a></p>
-                    </li>
-                    -->
-                    <li class="nav-item">
-                        <p><a class="text-dark nav-link active" aria-current="page"
-                              href="{{ url('/adminregistration')}}">
-                                <img src="{{asset('assets/images/signup.png')}}" width="25" height="25"
-                                     class="d-inline-block align-right"> Register Admin</a></p>
-                    </li>
+
 
                     <li class="nav-item">
                         <p><a class="text-dark nav-link active" aria-current="page"
@@ -192,6 +179,13 @@
                               href="{{ url('/editSurveySelect')}}">
                                 <img src="{{asset('assets/images/survey.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Modify a Survey</a></p>
+                    </li>
+
+                    <li class="nav-item">
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href="{{ url('/adminregistration')}}">
+                                <img src="{{asset('assets/images/signup.png')}}" width="25" height="25"
+                                     class="d-inline-block align-right"> Register Admin</a></p>
                     </li>
 
                     <!--Logout Option-->

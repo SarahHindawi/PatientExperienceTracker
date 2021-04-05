@@ -24,6 +24,7 @@
     @if(Session::has('message'))
     <p class="alert alert-info"style="text-align:center">{{ Session::get('message') }}</p>
     @endif
+ <div style="margin-left: -2cm">
  <!-- the title in the top middle of the page -->
  <div >
      <p class="text-center h2" style="color:seagreen; margin-top: 20px; margin-left: 4cm">Change Password</p>
@@ -111,7 +112,7 @@
         </div>
 
  </form>
-
+ </div>
 
 
  </body>

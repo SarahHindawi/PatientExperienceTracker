@@ -97,7 +97,7 @@
     @if (count($patients) > 0)
 
         <!-- padding-right: 500px-->
-            <p class="text-center h6" style="text-align:center; margin-left: 3cm;margin-top:2cm">Selecting the green check marks will
+            <p class="text-center h6" style="text-align:center; margin-left: 3cm;margin-top:1cm">Selecting the green check marks will
                 approve new  patients so they will be added to the system. <br> They will receive their account activation email and the
                 ability to set the password via email.</p>
         @endif
@@ -196,7 +196,7 @@
             <!-- If there are no new patients, then don't print a list -->
             @if (count($patients) > 0)
 
-                <form name="acceptanceForm" method="post" action="/accept" enctype="multipart/form-data" class="lp" style="margin-top: 2cm">
+                <form name="acceptanceForm" method="post" action="/accept" enctype="multipart/form-data" class="lp" style="margin-top: 1cm">
                     @csrf
                     <ol class="lp">
 
@@ -205,13 +205,13 @@
                                 <label style="margin-right: 10px;">
                                     <input type="radio" name="data[{{$p}}]" value="Accept">
                                     <img width="30" height="30"
-                                         src="https://freeiconshop.com/wp-content/uploads/edd/checkmark-flat.png">
+                                         src="{{asset('assets/images/checkmark.png')}}">
                                 </label>
 
                                 <label>
                                     <input type="radio" name="data[{{$p}}]" value="Remove">
                                     <img width="30" height="30"
-                                         src="https://icons-for-free.com/iconfiles/png/512/cercle+close+delete+dismiss+remove+icon-1320196712448219692.png">
+                                         src="{{asset('assets/images/x.png')}}">
                                 </label>
                             </ul>
                             <br> <br>

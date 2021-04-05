@@ -22,7 +22,7 @@
     <p class="alert alert-info"style="text-align:center; height: 40px">{{ Session::get('message') }}</p>
     @endif
 
-     <!-- The dashborad which has all the options for the Patient. This dashboard is located in the side of the page-->
+     <!-- The dashboard which has all the options for the Patient. This dashboard is located in the side of the page-->
      <div class="msb" id="msb">
         <p class="text-center fs-2">PET</p>
 
@@ -56,7 +56,7 @@
         </nav>
     </div>
 
-    
+<div style="margin-left: -2cm; margin-top: -.2cm">
     <div>
         <p class="text-center h2" style="color:seagreen; margin-top: 20px;margin-top: 1cm; margin-left: 4cm">Survey Selection</p>
         <p class="text-center h4"style="text-align:center; margin-top:1cm; margin-left: 4cm">Please enter a Survey Selection Below</p>
@@ -64,21 +64,21 @@
 
     <section class="row justify-content-center">
         <section class="col-12 col-sm-6 col-md-3">
-            <form method = "POST" action = "{{ url('/form/create')}}">
+            <form method = "POST" action = "{{ url('/form/create')}}" style="margin-left: -30px">
                 @csrf
                 <!-- Box for Survey Selection-->
                 <div class="mb-3" style="margin-left: 37%; margin-top: 2cm">
-                    <label for="exampleInputEmail1">Survey Name:</label>                    
-                    {!! Form::select('surveyName',  $surveys, null,['class' => 'form-control shadow p-2  bg-body rounded', 'placeholder' => 'Select Survey Name' , 'style' => 'width: 300px;']) !!}                    
+                    <label for="exampleInputEmail1">Survey Name:</label>
+                    {!! Form::select('surveyName',  $surveys, null,['class' => 'form-control shadow p-2  bg-body rounded', 'placeholder' => 'Select Survey Name' , 'style' => 'width: 300px;']) !!}
                 </div>
                 <br><br>
                 <!-- Submission button-->
                     <button class="btn btn-success btn-rounded" style="margin-left: 50%; width: 5cm">Select</button>
-                </div>
             </form>
 
         </section>
     </section>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
