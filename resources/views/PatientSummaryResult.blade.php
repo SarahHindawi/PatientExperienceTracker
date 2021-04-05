@@ -160,6 +160,8 @@
                         <div class="col-sm-3">
                             <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 250%;"
                                 id="exampleFormControlInput4">{{$Summary['Weight']}}</h2>
+                            <label for="inputLastName" class="col-sm-4 col-form-label "
+                                   style="margin-top:0.3cm;">Pounds:</label>
                         </div>
                     </div>
                 </div>
@@ -184,6 +186,8 @@
                         <div class="col-sm-3">
                             <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 150%;"
                                 id="exampleFormControlInput4">{{$Summary['Height']}} </h2>
+                            <label for="inputLastName" class="col-sm-4 col-form-label "
+                                   style="margin-top:0.3cm;">cm</label>
                         </div>
                     </div>
                 </div>
