@@ -67,10 +67,22 @@
     <!-- the form where youhave to put the verification code-->
     <section class="row justify-content-center">
         <section class="col-12 col-sm-6 col-md-3">
-            <form class="form-container" method = "POST" action = "{{ url('/verifyemail')}}">
+            <form class="form-container" method = "POST" action = "{{ url('/patientregistration')}}">
                 @csrf
 
                 <input type="hidden" id="email" name="email" value="{{$email}}">
+                <input type="hidden" id="password" name="password" value="{{$password}}">
+                <input type="hidden" id="firstName" name="firstName" value="{{$firstName}}">
+                <input type="hidden" id="lastName" name="lastName" value="{{$lastName}}">
+                <input type="hidden" id="dob" name="dob" value="{{$dob}}">
+                <input type="hidden" id="weight" name="weight" value="{{$weight}}">
+                <input type="hidden" id="height" name="height" value="{{$height}}">
+                <input type="hidden" id="gender" name="gender" value="{{$gender}}">
+                <input type="hidden" id="condition" name="condition" value="{{$condition}}">
+                @foreach ($medication as $m)
+                    <input type="hidden" name="medication[]" value="{{$m}}" id="medication">
+                @endforeach        
+                <input type="hidden" id="verificationCode" name="verificationCode" value="{{$verificationCode}}">
                 <!-- box for Code-->
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-group form-inline">Verfication Code</label>

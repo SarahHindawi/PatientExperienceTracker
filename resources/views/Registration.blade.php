@@ -74,7 +74,7 @@
 
 
     <!--<form method = "post" action = "">--->
-        <form style="width: 600px; margin-left: 35%; margin-top:5%" method="post" action="{{ url('/patientregistration')}}">
+        <form style="width: 600px; margin-left: 35%; margin-top:5%" method="post" action="{{ url('/verifyemail')}}">
             @csrf
             <!-- text box for the new Patient First name-->
             <div class="mb-3 row">
