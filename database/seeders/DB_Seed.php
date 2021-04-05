@@ -18,9 +18,49 @@ class DB_Seed extends Seeder
     {
         DB::table('ADMIN_PROFILE')->insert([
             'email' => 'jboelhouwer@upei.ca',
-            'password' => Hash::make('rootPass'),
-            'FirstName' => 'TestRootFirstRoot',
-            'LastName' => 'TestRootLast',
+            'password' => Hash::make('jessePass'),
+            'FirstName' => 'Jesse',
+            'LastName' => 'Boelhouwer',
+            'RootAdmin' => true
+        ]);
+
+        DB::table('ADMIN_PROFILE')->insert([
+            'email' => 'mrahman2@upei.ca',
+            'password' => Hash::make('minhajPass'),
+            'FirstName' => 'Minhajur',
+            'LastName' => 'Rahman',
+            'RootAdmin' => true
+        ]);
+
+        DB::table('ADMIN_PROFILE')->insert([
+            'email' => 'shindawi@upei.ca',
+            'password' => Hash::make('saraPass'),
+            'FirstName' => 'Sara',
+            'LastName' => 'Hindawi',
+            'RootAdmin' => true
+        ]);
+
+        DB::table('ADMIN_PROFILE')->insert([
+            'email' => 'nmayaleh@upei.ca',
+            'password' => Hash::make('nairouzPass'),
+            'FirstName' => 'Nairouz',
+            'LastName' => 'Mayaleh',
+            'RootAdmin' => true
+        ]);
+
+        DB::table('ADMIN_PROFILE')->insert([
+            'email' => 'mmayaleh@upei.ca',
+            'password' => Hash::make('majdPass'),
+            'FirstName' => 'Majd',
+            'LastName' => 'Mayaleh',
+            'RootAdmin' => true
+        ]);
+
+        DB::table('ADMIN_PROFILE')->insert([
+            'email' => 'jsethdavid@upei.ca ',
+            'password' => Hash::make('jessiePass'),
+            'FirstName' => 'Jessie',
+            'LastName' => 'Sethdavid',
             'RootAdmin' => true
         ]);
 
@@ -36,21 +76,66 @@ class DB_Seed extends Seeder
             'Condition' => 'IBD'
         ]);
 
+    
         DB::table('MEDICATION_LIST')->insert([
-            'MedicationName' => 'Remicade/Infliximab'
+            'MedicationName' => 'Oral Steroids (Prendisone, Budesonide)'
         ]);
 
         DB::table('MEDICATION_LIST')->insert([
-            'MedicationName' => 'Stelera/Ustekinumab'
+            'MedicationName' => 'Rectal Steroids'
         ]);
 
         DB::table('MEDICATION_LIST')->insert([
-            'MedicationName' => 'Entyvio/Vedolizumab'
+            'MedicationName' => 'Oral 5-ASA or Sulfasalazine (Pentasa, Asacol, Salofalk etc)'
         ]);
 
         DB::table('MEDICATION_LIST')->insert([
-            'MedicationName' => 'HumiraAdalimumab'
+            'MedicationName' => 'Rectal 5-ASA (enemas,suppositories or foam- Salofalk)'
+        ]);
+
+        DB::table('MEDICATION_LIST')->insert([
+            'MedicationName' => 'Azathioprine'
+        ]);
+
+        DB::table('MEDICATION_LIST')->insert([
+            'MedicationName' => 'Mercaptopurine'
+        ]);
+
+        DB::table('MEDICATION_LIST')->insert([
+            'MedicationName' => 'Methortrexate'
+        ]);
+
+        DB::table('MEDICATION_LIST')->insert([
+            'MedicationName' => 'Methortrexate'
+        ]);
+
+        DB::table('MEDICATION_LIST')->insert([
+            'MedicationName' => 'Ustekinumab (Stelara)'
+        ]);
+
+        DB::table('MEDICATION_LIST')->insert([
+            'MedicationName' => 'Vedolizumab (Entyvio'
+        ]);
+
+        DB::table('MEDICATION_LIST')->insert([
+            'MedicationName' => 'Adalimumab (Humira)'
         ]);     
+
+        DB::table('MEDICATION_LIST')->insert([
+            'MedicationName' => 'Infliximab (Remicade)'
+        ]);   
+
+        DB::table('MEDICATION_LIST')->insert([
+            'MedicationName' => 'Golimumab (Simponi)'
+        ]);   
+
+        DB::table('MEDICATION_LIST')->insert([
+            'MedicationName' => 'Biosimilars'
+        ]);
+        
+        DB::table('MEDICATION_LIST')->insert([
+            'MedicationName' => 'Tofacitinib'
+        ]); 
 
         DB::table('PATIENT_PROFILE')->insert([
             'email' => 'jboelhouwer@upei.ca',
@@ -238,16 +323,20 @@ class DB_Seed extends Seeder
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - Worst Possible Control,1,2,3,4,5 - Neither agree or disagree,6,7,8,9,10 - Best Possible Control'),                                                                 
                         );
 
-        $HBquestions = array(array('Text' => 'How would you rate your general well-being?'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - Very well,2 - Slightly below par,3 - Poor,4 - Very poor,5 - Terrible'),
-                          array('Text' => 'How would you rate your abdominal pain?'
+        $HBquestions = array(array('Text' => 'Indicate Nisit No.'
+                                    , 'Type' => 'DropDown' , 'PossibleResponses' => 'One,Two,Three'),            
+                          array('Text' => 'Rate the general well-being of the patient?'
+                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - Very well,1 - Slightly below par,2 - Poor,3 - Very poor,4 - Terrible'),
+                          array('Text' => 'How would the patient rate their abdominal pain?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - None,1 - Mild,2 - Moderate,3 - Severe'),
-                          array('Text' => 'How many liquid stool do you experience per day?'
+                          array('Text' => 'How many liquid stool do they experience per day?'
                                      , 'Type' => 'FreeText' , 'PossibleResponses' => ''),
-                          array('Text' => 'Is there an abdominal mass present?'
+                          array('Text' => 'Indicate whether there is an abdominal mass present?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - None,1 - Dubious,2 - Definite,3 - Definite and Tender'),
-                          array('Text' => 'Select any of the bolow complications that apply?'
-                                     , 'Type' => 'CheckBox' , 'PossibleResponses' => 'Joint Pain,Inflamation of the Eye,Redness of the Skin,Canker Sores,'),                                                                           
+                          array('Text' => 'Select any of the bolow complications that apply(Score 1 per item)?'
+                                     , 'Type' => 'CheckBox' , 'PossibleResponses' => 'Arthralgian,Uveitis,Erythema,Nodosum,Apthous Ulcers,Pyoderma Ganrenosm,Anal Fissure,New Fistula,Abscess'),
+                          array('Text' => 'Total Score'
+                                     , 'Type' => 'FreeText' , 'PossibleResponses' => ''),                                                                           
                         );
 
         DB::table('SURVEY_QUESTIONS')->insert([
@@ -287,8 +376,8 @@ class DB_Seed extends Seeder
         ]); 
         
         DB::table('SURVEY_QUESTIONS')->insert([
-            'SurveyName' => 'Harvey Bradshaw Index Questionaire',
-            'ConditionServed' => 'IBD',
+            'SurveyName' => 'Harvey Bradshaw Index Questionaire (Physician)',
+            'ConditionServed' => 'Admin',
             'SurveyType' => 'PROM',
             'SurveyQuestions' => json_encode($HBquestions)
         ]);  

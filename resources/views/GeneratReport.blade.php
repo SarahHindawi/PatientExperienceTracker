@@ -200,7 +200,7 @@
                 <div style="width: 330px;margin-right: 35px;" class="panel-body shadow p-3">
 
                     <div class="container">
-                        <div class="row align-items-start">
+                        <div style="max-width:300px; overflow-x:auto; whitespace:nowrap;">
 
                             @foreach ($medications as $m)
 
