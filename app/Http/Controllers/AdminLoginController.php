@@ -45,7 +45,7 @@ class AdminLoginController extends Controller
 
 
         if(!Auth::guard('admin')->attempt(['email' => $request->input('email') , 'password' => $request->input('password')])) {
-            return back()->with('status', 'Invalid login details');
+            return back()->with('message', 'Invalid login details');
         }
         return redirect('/');
 

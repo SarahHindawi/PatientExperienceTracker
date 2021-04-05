@@ -17,13 +17,6 @@
 </head>
 <div id="wrapper">
 <body>
-<!---
-<nav class="navbar navbar-light bg-light">
-<div class="container-fluid">
-
-</div>
-</nav>
--->
 
 <div style=" margin-top:1cm; margin-left:10%">
     <h2 style="color:seagreen; text-align:center; margin-left: -60px">Survey Preview</h2>>
@@ -106,8 +99,8 @@
     </nav>
 </div>
 
-<div style="width: 1100px; margin-left:17%; margin-top: 15px " class="shadow-lg p-3 mb-5 bg-white rounded">
-    <p class="text-center h4" style="margin-left: 10px; margin-bottom: 45px; max-width: 1000px;"> {{$patient}} responses to {{$surveyName}} survey on {{$date}}</p>
+<div style="width: 1270px; margin-left:15%; margin-top: 15px " class="shadow-lg p-3 mb-5 bg-white rounded">
+    <p class="text-center h4" style="margin-left: 10px; margin-bottom: 45px; "> {{$patient}} responses to {{$surveyName}} survey on {{$date}}</p>
 
     @foreach ($questions as $q)
         <p class="h5"> {{$q}}</p>

@@ -67,7 +67,7 @@
     <div style="width: 1270px; margin-left:15%; " class="shadow-lg p-3 mb-5 bg-white rounded">
 
         @foreach ($questions as $q)
-            <p class="h4"> {{str_replace("|",".",$q["Text"])}}</p> <!--Display the question-->
+            <p class="h4" style="font-size: 18px"> {{str_replace("|",".",$q["Text"])}}</p> <!--Display the question-->
 
             @if ( $q["Type"]  == "DropDown")
                 <select name="{{$q["Text"]}}">

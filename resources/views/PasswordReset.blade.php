@@ -7,7 +7,7 @@
           crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
 
-    <!--
+<!--
     <script src="{{ URL::asset('https://kit.fontawesome.com/a076d05399.js') }}" crossorigin='anonymous'></script>
     -->
 
@@ -25,16 +25,6 @@
 
         [type=radio]:checked + img {
             outline: 2px solid #f00;
-        }
-
-        .btn-logout {
-            width: 100%;
-            padding: 3px 20px !important;
-            text-align: left !important;
-        }
-
-        .drop {
-            color: rgba(45, 87, 45, 0.75);
         }
 
         .btn-success:hover {
@@ -88,22 +78,24 @@
 <div id="wrapper">
     <body>
 
-    <section class="container-fluid"  style="margin-left: -1cm; margin-top: 1cm">
+    <section class="container-fluid" style="margin-left: -1cm; margin-top: 1cm">
 
 
-        <!--The page header and an explanation for how to use the page -->
-        <p class="text-center h2 style="style="color:seagreen;margin-left: 3.5cm">Password Reset Requests</p>
+        <div style="margin-left: 3cm">
+            <!--The page header and an explanation for how to use the page -->
+            <p class="text-center h2 style=" style="color:seagreen;margin-left: 3.5cm">Password Reset Requests</p>
 
-        @if (count($patients) > 0)
-            <p class="text-center h6" style="text-align:center; font-size: 15px">Selecting the green check marks will
-                approve password reset requests.
-                <br>Users will receive the confirmation and a temporary password via email.</p>
-        @endif
-        <br>
-        <br>
-        <br>
+            @if (count($patients) > 0)
+                <p class="text-center h6" style="text-align:center;margin-left: 3cm;margin-top:1cm">Selecting the green
+                    check marks will
+                    approve password reset requests.
+                    <br>Users will receive the confirmation and a temporary password via email.</p>
+            @endif
+            <br>
+            <br>
+            <br>
 
-
+        </div>
         <!-- The dashboard which has all the options for the admin. This dashboard is located in the side of the page-->
         <div class="msb" id="msb">
             <p class="text-center fs-2">PET</p>
@@ -186,7 +178,7 @@
         <!-- list of password reset requests-->
 
 
-        <ol class="lp">
+        <ol class="lp" style="margin-top: -.4cm">
             @foreach ($patients as $p)
                 <li style="font-size:20px"> {{$p}}</li>
 
@@ -194,7 +186,7 @@
             @endforeach
         </ol>
 
-        <div style="margin-left: 300px; position:absolute; top:230px">
+        <div style="margin-left: 300px; position:absolute; top:220px">
 
             <!-- If there are no password reset requests, then don't print a list -->
             @if (count($patients) > 0)
@@ -205,16 +197,16 @@
                     <ol class="lp">
                         @foreach ($patients as $p)
                             <ul>
-                                <label >
+                                <label style="margin-right: 10px">
                                     <input type="radio" name="data[{{$p}}]" value="Accept">
                                     <img width="30" height="30"
-                                         src="https://freeiconshop.com/wp-content/uploads/edd/checkmark-flat.png">
+                                         src="{{asset('assets/images/checkmark.png')}}">
                                 </label>
 
                                 <label>
                                     <input type="radio" name="data[{{$p}}]" value="Remove">
                                     <img width="30" height="30"
-                                         src="https://icons-for-free.com/iconfiles/png/512/cercle+close+delete+dismiss+remove+icon-1320196712448219692.png">
+                                         src="{{asset('assets/images/x.png')}}">
                                 </label>
                             </ul>
                             <br> <br>
@@ -222,7 +214,7 @@
                     </ol>
 
 
-                    <button style="width: 5cm; margin-top: 8px; margin-left: -60px" type="submit"
+                    <button style="width: 5cm; margin-top: 8px; margin-left: 25px" type="submit"
                             class="btn btn-success btn-rounded">Save
                     </button>
                 </form>

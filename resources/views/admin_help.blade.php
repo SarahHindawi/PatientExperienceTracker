@@ -37,20 +37,19 @@
             margin-right: auto;
             width: 1519px;
         }
+
+        body
+        {
+            overflow: initial;
+        }
     </style>
 
 </head>
 
 <div id="wrapper">
-    <body>
-    <section class="container-fluid">
-        <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid"></div>
-        </nav>
-
-        <div style=" margin-top:2%; margin-left:10%">
-            <h3 style="color:seagreen; text-align:center">Patient Experience Tracker</h3>
-            <h4 style="text-align:center; color:blue">Admin Help Information</h4>
+    <body style="margin-top: 1cm">
+        <div style="margin-left:8.5%">
+            <h2 style="text-align:center; color:seagreen">Admin Help Information</h2>
             <br>
 
             <div>
@@ -61,14 +60,14 @@
                     <li><a href="#add">Add a Question</a></li>
                     <li><a href="#genrate">Generate a Report of the Responses</a></li>
                     <li><a href="#accept">Accept New Patients</a></li>
-                    <li><a href="#change">Accept Password Reset Request</a></li>
+                    <li><a href="#change">Accept Password Reset Requests</a></li>
                 </ul>
 
                 <br>
                 <hr>
 
                 <div style="margin-left: 100px">
-                    <h4 style="margin-top: 30px; color:blue" id="modify">Modify a Survey</h4><br>
+                    <h4 style="margin-top: 30px; color:seagreen" id="modify">Modify a Survey</h4><br>
 
                     <h6>
                         <!--Modify Survey Instruction-->
@@ -88,7 +87,7 @@
                     </h6>
 
                     <br><br>
-                    <h4 style="margin-top: 30px; color:blue" id="delete">Deleting a Question</h4><br>
+                    <h4 style="margin-top: 30px; color:seagreen" id="delete">Delete a Question</h4><br>
 
                     <h6>
 
@@ -106,7 +105,7 @@
                     </h6>
 
                     <br><br>
-                    <h4 style="margin-top: 30px; color:blue" id="add">Adding a Question</h4><br>
+                    <h4 style="margin-top: 30px; color:seagreen" id="add">Add a Question</h4><br>
 
                     <h6>
 
@@ -123,7 +122,7 @@
                     </h6>
 
                     <br><br>
-                    <h4 style="margin-top: 30px; color:blue" id="accept">Accept new patients</h4><br>
+                    <h4 style="margin-top: 30px; color:seagreen" id="accept">Accept new patients</h4><br>
 
                     <h6>
 

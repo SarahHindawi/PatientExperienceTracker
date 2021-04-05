@@ -26,8 +26,8 @@
 
 
 <div style=" margin-top:1cm; margin-left:5%">
-    <h6 style="font-size:25pt; color:seagreen; text-align:center;">Deletion Confirmation</h6>
-    <p class="text-center h3">{{$name}} Survey</p>
+    <h2 style="color:seagreen; text-align:center;">Deletion Confirmation</h2>
+    <p class="text-center h4">{{$name}} Survey</p>
 </div>
 
 
@@ -95,10 +95,10 @@
     @csrf
     <input type="hidden" id="SurveyName" name="SurveyName" value="{{$name}}">
     <input type="hidden" id="QuestionIndex" name="QuestionIndex" value="{{$questionIndex}}">
-    <div style="width: 1200px; margin-left:15%;" class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div style="width: 1270px; margin-left:15%;" class="shadow-lg p-3 mb-5 bg-white rounded">
 
         @foreach ($questions as $q)
-            <p class="h4"> {{str_replace("|",".",$q["Text"])}}</p> <!--Display the question-->
+            <p class="h5"> {{str_replace("|",".",$q["Text"])}}</p> <!--Display the question-->
 
             @if ( $q["Type"]  == "DropDown")
                 <select name="{{$q["Text"]}}">
@@ -156,8 +156,8 @@
 
         @endforeach
 
-        <p style="text-align:center; font-size:32pt">Deletion Confirmation</p>
-        <p style="text-align:center; color:red; font-size: 20pt">Caution: this cannot be undone</p>
+        <h2 style="text-align:center; margin-left: -100px">Deletion Confirmation</h2>
+        <p style="text-align:center; color:red; font-size: 20pt; margin-left: -100px">Caution: this cannot be undone</p>
 
 
         <input class="form-check-input" type="checkbox" name="Confirmation" value="True">

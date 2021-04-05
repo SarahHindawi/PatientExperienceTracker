@@ -70,12 +70,7 @@
                                 <img src="{{asset('assets/images/key.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Change Password</a></p>
                     </li>
-                <!-- Cooment out due to not MVP
-                <li class="nav-item">
-                    <p class="text-center"><a class="text-dark nav-link active" aria-current="page" href="{{url('/passwordchangeadmin')}}">
-                            <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25" class="d-inline-block align-right">Admin Help</a></p>
-                </li>
-                -->
+
                     <li class="nav-item">
                         <p><a class="text-dark nav-link active" aria-current="page"
                               href="{{ url('/addsurvey/create')}}"><img src="{{asset('assets/images/survey.png')}}"
@@ -114,14 +109,15 @@
                 <input type="hidden" id="SurveyName" name="SurveyName" value="{{$name}}">
                 <input type="hidden" id="QuestionIndex" name="QuestionIndex" value="{{$loop->iteration}}">
                 <div>
-                    <button type="submit" style="width: 30px; height: 30px;"><img style="width: 100%; height: 100%;"
-                                                                                  src="{{asset('assets/images/redX.png')}}">
+                    <button type="submit" style="width: 25px; height: 25px;"><img
+                            style="margin-left: -7px; margin-top: -9px" width="22" height="22"
+                            src="{{asset('assets/images/redX.png')}}">
                     </button>
                     </button>
                 </div>
             </form>
 
-            <p class="h4"> {{str_replace("|",".",$q["Text"])}}</p> <!--Display the question-->
+            <p class="h6" style="font-size: 18px"> {{str_replace("|",".",$q["Text"])}}</p> <!--Display the question-->
 
             @if ( $q["Type"]  == "DropDown")
                 <select name="{{$q["Text"]}}">
@@ -181,53 +177,55 @@
     </div>
     <!-- to add a new question to a survey-->
     <div style="margin:15%; margin-top:3% ;">
-        <form name="addQuestion" method="post" action="{{url('/addQuestion')}}" enctype="multipart/form-data" style="margin-left: 0px">
+        <form name="addQuestion" method="post" action="{{url('/addQuestion')}}" enctype="multipart/form-data"
+              style="margin-left: 0px">
             @csrf
-            <input type="hidden" id="SurveyName" name="SurveyName" value="{{$name}}">            
+            <input type="hidden" id="SurveyName" name="SurveyName" value="{{$name}}">
 
-        <br>
-        <p style=" margin-left: 50%" class="h4">Add Question:</p>
-        <!-- question position in a survey-->       
-        <label for="input" style=" width: 220px" class="col-sm-2 col-form-label">New Question Number</label>
-        <input type="number" style=" width: 100px" class=" shadow  bg-body rounded" id="qNumber" name="qNumber" min="1" max="{{(count($questions) + 1)}}">
+            <br>
+            <p style=" margin-left: 45%" class="h4">Add Question:</p>
+            <!-- question position in a survey-->
+            <label for="input" style=" width: 220px" class="col-sm-2 col-form-label">New Question Number:</label>
+            <input type="number" style=" width: 100px; margin-left: -20px" class=" shadow  bg-body rounded" id="qNumber" name="qNumber"
+                   min="1" max="{{(count($questions) + 1)}}">
 
-        <!-- question type in a survey-->
-        <br><label for="input" style=" width: 200px" class="col-sm-2 col-form-label">Question Type</label>        
-        <select style=" width: 200px" class="shadow  bg-body rounded" id="qType" name="qType">
-            <option selected>Choose...</option>            
-            <option value="FreeText">FreeText</option>
-            <option value="DropDown">DropDown</option>
-            <option value="Checkbox">Checkbox</option>
-            <option value="RadioButtons">RadioButtons</option>
-        </select>
+            <!-- question type in a survey-->
+            <br><label for="input" style=" width: 200px" class="col-sm-2 col-form-label">Question Type:</label>
+            <select style=" width: 200px" class="shadow  bg-body rounded" id="qType" name="qType">
+                <option selected>Choose...</option>
+                <option value="FreeText">FreeText</option>
+                <option value="DropDown">DropDown</option>
+                <option value="Checkbox">Checkbox</option>
+                <option value="RadioButtons">RadioButtons</option>
+            </select>
 
-        <div style="width: 400px; margin-left:70%; margin-top:-8%; height: 20px;">
-            <!--  text of the question that needs to be added in a survey-->
-            <label for="input" style=" width: 200px" class="col-sm-2 col-form-label">Question text:</label>
-            <div class="form-floating">
-                <!-- text area-->
-                <textarea style="height: 2cm; " class="shadow-sm form-control" placeholder=""
-                              id="qText" name= "qText"></textarea>                
+            <div style="width: 400px; margin-left:70%; margin-top:-8%; height: 20px;">
+                <!--  text of the question that needs to be added in a survey-->
+                <label for="input" style=" width: 200px" class="col-sm-2 col-form-label">Question text:</label>
+                <div class="form-floating">
+                    <!-- text area-->
+                    <textarea style="height: 2cm; " class="shadow-sm form-control" placeholder=""
+                              id="qText" name="qText"></textarea>
 
-            </div>
-            <!-- how the answer of the question would be-->
-            <br><label for="input" style=" width: 500px" class="col-sm-2 col-form-label">Question Responses(If
-                required., Seperate with commas No Spaces)</label>
-            <div class="form-floating">
-                <!-- text area-->
-                <textarea style="height: 2cm; " class="shadow-sm form-control"
+                </div>
+                <!-- how the answer of the question would be-->
+                <br><label for="input" style=" width: 500px" class="col-sm-2 col-form-label">Question Responses (If
+                    required. Separate with commas, No Spaces)</label>
+                <div class="form-floating">
+                    <!-- text area-->
+                    <textarea style="height: 2cm; " class="shadow-sm form-control"
                               id="qResponses" name="qResponses"></textarea>
+                </div>
             </div>
-        </div>
     </div>
     <!-- a submit button-->
     <div style=" height: 4cm;">
-        <button style="width: 5cm; margin-left: 50%; margin-top:2cm; " type="submit"
+        <button style="width: 5cm; margin-left: 46%; margin-top:2cm; " type="submit"
                 class="btn btn-success btn-rounded">Submit
         </button>
     </div>
-</form>
+    </form>
 </div>
-    </body>
+</body>
 </div>
 </html>

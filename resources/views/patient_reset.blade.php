@@ -33,8 +33,7 @@
     <div class="msb" id="msb">
         <p class="text-center fs-2">PET</p>
 
-        <nav class="navbar navbar-default" role="naviga
-        tion">
+        <nav class="navbar navbar-default" role="navigation">
             <div class="btn-group-vertical" style=" margin-top:15%; width:100%">
                 <ul class="nav flex-column" style="width:100%">
                     <!-- the Dashboard options-->

@@ -16,14 +16,14 @@
             width: 1519px;
         }
     </style>
-    
+
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
 </head>
 <div id="wrapper">
 <body>
     @if(Session::has('message'))
-    <p class="alert alert-info"style="text-align:center; height: 40px">{{ Session::get('message') }}</p>
+        <p class="alert alert-info" style="text-align:center; width:94.6%; height: 40px; margin-left: 90px">{{ Session::get('message') }}</p>
     @endif
 
      <!-- The dashborad which has all the options for guest. This dashboard is located in the side of the page-->
