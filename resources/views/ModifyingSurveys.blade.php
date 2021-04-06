@@ -21,9 +21,9 @@
 
     <body>
     <!-- the navigation bar in the top-->
-    @if(Session::has('message'))
-        <p class="alert alert-info" style="text-align:center">{{ Session::get('message') }}</p>
-    @endif
+    @isset($message)
+        <p class="alert alert-info" style="text-align:center; margin-bottom: -20px; margin-left: 65px">{{ $message }}</p>
+    @endisset
 
     <!-- the title in the top middle of the page -->
     <div style=" margin-top: 1cm; margin-left:6%">
