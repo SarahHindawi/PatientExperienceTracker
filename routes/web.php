@@ -72,3 +72,6 @@ Route::post('/preview', 'App\Http\Controllers\ViewResponseController@create');
 
 Route::get('/medication', 'App\Http\Controllers\MedicationController@create');
 Route::post('/addmedication', 'App\Http\Controllers\MedicationController@add');
+
+Route::get('/condition', 'App\Http\Controllers\ConditionController@create');
+Route::post('/addcondition', 'App\Http\Controllers\ConditionController@add');

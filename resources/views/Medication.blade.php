@@ -24,7 +24,7 @@
 
 <!-- the title in the top middle of the page -->
 <div>
-    <p class="text-center h2" style="color:seagreen; margin-top: 1cm; margin-left: 7%">Adding a Medication</p>
+    <p class="text-center h2" style="color:seagreen; margin-top: 1cm; margin-left: 7%">Add a Medication</p>
 
 </div>
 
