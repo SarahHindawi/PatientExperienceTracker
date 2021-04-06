@@ -165,7 +165,9 @@ class EditSurveyController extends Controller
         //Verify responses exist for non FreeText questions
         if ($request->input('qResponses') === null) {
             if ($request->input('qType') !== 'FreeText') {
-                return back()->with('message', 'Respnses required for non FreeText Questions');
+
+                return $this->createStr($request->input('SurveyName'), "Responses required for non FreeText Questions");
+//                return back()->with('message', 'Responses required for non FreeText Questions');
             }
         }
 

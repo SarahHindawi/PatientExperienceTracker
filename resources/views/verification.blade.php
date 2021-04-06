@@ -26,15 +26,17 @@
 <body>
 <div id="wrapper">
 
-        @if(Session::has('message'))
-        <p class="alert alert-info" style="text-align:center; width:94.6%; height: 40px; margin-left: 110px">{{ Session::get('message') }}</p>
-        @endif
+    @if(Session::has('message'))
+        <p class="alert alert-info"
+           style="text-align:center; width:94.6%; height: 40px; margin-left: 110px">{{ Session::get('message') }}</p>
+    @endif
 
     <section class="container-fluid" style="margin-top: .5cm">
         <!-- the title in the top middle of the page -->
         <div style="margin-left: 3.7cm">
             <p class="text-center h2" style="color:seagreen">Patient Email Verification</p>
-            <p class="text-center h4" style="margin-top: 30px">An email has been sent to {{$email}}. Enter Verification Code below.</p>
+            <p class="text-center h4" style="margin-top: 30px">An email has been sent to {{$email}}. Enter Verification
+                Code below.</p>
         </div>
         <!-- the Dashboard of the page that has different options-->
         <div class="msb" id="msb">
@@ -79,38 +81,39 @@
             </nav>
         </div>
 
-    <!-- the form where youhave to put the verification code-->
-    <section class="row justify-content-center">
-        <section class="col-12 col-sm-6 col-md-3">
-            <form class="form-container" method = "POST" action = "{{ url('/patientregistration')}}" style="margin-left: 4cm">
-                @csrf
+        <!-- the form where youhave to put the verification code-->
+        <section class="row justify-content-center">
+            <section class="col-12 col-sm-6 col-md-3">
+                <form class="form-container" method="POST" action="{{ url('/patientregistration')}}"
+                      style="margin-left: 4cm">
+                    @csrf
 
-                <input type="hidden" id="email" name="email" value="{{$email}}">
-                <input type="hidden" id="password" name="password" value="{{$password}}">
-                <input type="hidden" id="firstName" name="firstName" value="{{$firstName}}">
-                <input type="hidden" id="lastName" name="lastName" value="{{$lastName}}">
-                <input type="hidden" id="dob" name="dob" value="{{$dob}}">
-                <input type="hidden" id="weight" name="weight" value="{{$weight}}">
-                <input type="hidden" id="height" name="height" value="{{$height}}">
-                <input type="hidden" id="gender" name="gender" value="{{$gender}}">
-                <input type="hidden" id="condition" name="condition" value="{{$condition}}">
-                @foreach ($medication as $m)
-                    <input type="hidden" name="medication[]" value="{{$m}}" id="medication">
-                @endforeach
-                <input type="hidden" id="verificationCode" name="verificationCode" value="{{$verificationCode}}">
-                <!-- box for Code-->
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-group form-inline">Verification Code</label>
-                    <input type="text" class="form-control shadow-lg p-3 mb-5 bg-white rounded"
-                           id="code" name = "code">
-                </div>
-                <!-- Submit Button-->
+                    <input type="hidden" id="email" name="email" value="{{$email}}">
+                    <input type="hidden" id="password" name="password" value="{{$password}}">
+                    <input type="hidden" id="firstName" name="firstName" value="{{$firstName}}">
+                    <input type="hidden" id="lastName" name="lastName" value="{{$lastName}}">
+                    <input type="hidden" id="dob" name="dob" value="{{$dob}}">
+                    <input type="hidden" id="weight" name="weight" value="{{$weight}}">
+                    <input type="hidden" id="height" name="height" value="{{$height}}">
+                    <input type="hidden" id="gender" name="gender" value="{{$gender}}">
+                    <input type="hidden" id="condition" name="condition" value="{{$condition}}">
+                    @foreach ($medication as $m)
+                        <input type="hidden" name="medication[]" value="{{$m}}" id="medication">
+                    @endforeach
+                    <input type="hidden" id="verificationCode" name="verificationCode" value="{{$verificationCode}}">
+                    <!-- box for Code-->
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-group form-inline">Verification Code</label>
+                        <input type="text" class="form-control shadow-lg p-3 mb-5 bg-white rounded"
+                               id="code" name="code" required>
+                    </div>
+                    <!-- Submit Button-->
                     <button class="btn btn-success btn-rounded w-100 btn-lg ">Verify</button>
-                </div>
-                </form>
-            </section>
-        </section>
-    </section>
+</div>
+</form>
+</section>
+</section>
+</section>
 </div>
 </body>
 </html>

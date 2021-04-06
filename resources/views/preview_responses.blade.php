@@ -8,111 +8,113 @@
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
     <style>
-    #wrapper {
-        margin-left: auto;
-        margin-right: auto;
-        width: 1519px;
-    }
+        #wrapper {
+            margin-left: auto;
+            margin-right: auto;
+            width: 1519px;
+        }
     </style>
 </head>
 <div id="wrapper">
-<body>
+    <body>
 
-<div style=" margin-top:1cm; margin-left:10%">
-    <h2 style="color:seagreen; text-align:center; margin-left: -50px">Survey Preview</h2>>
-</div>
-
-
-<div class="msb" id="msb">
-    <p class="text-center fs-2">PET</p>
-
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="btn-group-vertical" style=" margin-top:15%; width:100%">
-            <ul class="nav flex-column" style="width:100%">
-                <li class="nav-item">
-                    <!-- the Dashboard options-->
-                    <p><a class="text-dark nav-link active" aria-current="page"
-                          href="{{ url('/')}}">
-                            <img src="{{asset('assets/images/Home.png')}}" width="25" height="25"
-                                 class="d-inline-block align-right"> Dashboard</a></p>
-                </li>
-                <li class="nav-item">
-                    <p><a class="text-dark nav-link active" aria-current="page"
-                          href="{{ url('/accept/create')}}">
-                            <img src="{{asset('assets/images/request.png')}}" width="25" height="25"
-                                 class="d-inline-block align-right"> Patient Registration</a></p>
-                </li>
-                <li class="nav-item">
-
-                    <p><a class="text-dark nav-link active" aria-current="page"
-                          href="{{ url('/resetreview/create')}}">
-                            <img src="{{asset('assets/images/request.png')}}" width="25" height="25"
-                                 class="d-inline-block align-right"> Password Reset</a></p>
-
-                </li>
-                <li class="nav-item">
-                    <p><a class="text-dark nav-link active" aria-current="page"
-                          href="{{ url('/profilesearch')}}">
-                            <img src="{{asset('assets/images/pen.png')}}" width="25" height="25"
-                                 class="d-inline-block align-right"> Patient Summary</a></p>
-                </li>
-                <li class="nav-item">
-                    <p><a class="text-dark nav-link active" aria-current="page"
-                          href="{{ url('/report/create')}}">
-                            <img src="{{asset('assets/images/pen.png')}}" width="25" height="25"
-                                 class="d-inline-block align-right"> Generate Report</a></p>
-                </li>
-
-                <li class="nav-item">
-                    <p><a class="text-dark nav-link active" aria-current="page"
-                          href="{{url('/passwordchangeadmin')}}">
-                            <img src="{{asset('assets/images/key.png')}}" width="25" height="25"
-                                 class="d-inline-block align-right"> Change Password</a></p>
-                </li>
+    <div style=" margin-top:1cm; margin-left:10%">
+        <h2 style="color:seagreen; text-align:center; margin-left: -50px">Survey Preview</h2>>
+    </div>
 
 
-                <li class="nav-item">
-                    <p><a class="text-dark nav-link active" aria-current="page"
-                          href="{{ url('/addsurvey/create')}}"><img src="{{asset('assets/images/survey.png')}}"
-                                                                    width="25" height="25"
-                                                                    class="d-inline-block align-right"> Create New
-                            Survey</a></p>
-                </li>
+    <div class="msb" id="msb">
+        <p class="text-center fs-2">PET</p>
+
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="btn-group-vertical" style=" margin-top:15%; width:100%">
+                <ul class="nav flex-column" style="width:100%">
+                    <li class="nav-item">
+                        <!-- the Dashboard options-->
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href="{{ url('/')}}">
+                                <img src="{{asset('assets/images/Home.png')}}" width="25" height="25"
+                                     class="d-inline-block align-right"> Dashboard</a></p>
+                    </li>
+                    <li class="nav-item">
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href="{{ url('/accept/create')}}">
+                                <img src="{{asset('assets/images/request.png')}}" width="25" height="25"
+                                     class="d-inline-block align-right"> Patient Registration</a></p>
+                    </li>
+                    <li class="nav-item">
+
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href="{{ url('/resetreview/create')}}">
+                                <img src="{{asset('assets/images/request.png')}}" width="25" height="25"
+                                     class="d-inline-block align-right"> Password Reset</a></p>
+
+                    </li>
+                    <li class="nav-item">
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href="{{ url('/profilesearch')}}">
+                                <img src="{{asset('assets/images/pen.png')}}" width="25" height="25"
+                                     class="d-inline-block align-right"> Patient Summary</a></p>
+                    </li>
+                    <li class="nav-item">
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href="{{ url('/report/create')}}">
+                                <img src="{{asset('assets/images/pen.png')}}" width="25" height="25"
+                                     class="d-inline-block align-right"> Generate Report</a></p>
+                    </li>
+
+                    <li class="nav-item">
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href="{{url('/passwordchangeadmin')}}">
+                                <img src="{{asset('assets/images/key.png')}}" width="25" height="25"
+                                     class="d-inline-block align-right"> Change Password</a></p>
+                    </li>
 
 
-                <li class="nav-item">
-                    <p><a class="text-dark nav-link active" aria-current="page" href="{{ url('/editSurveySelect')}}">
-                            <img src="{{asset('assets/images/survey.png')}}" width="25" height="25"
-                                 class="d-inline-block align-right"> Modify a Survey</a></p>
-                </li>
+                    <li class="nav-item">
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href="{{ url('/addsurvey/create')}}"><img src="{{asset('assets/images/survey.png')}}"
+                                                                        width="25" height="25"
+                                                                        class="d-inline-block align-right"> Create New
+                                Survey</a></p>
+                    </li>
 
 
-                <!--Logout Option-->
-                <li class="nav-item">
-                    <p><a class="text-dark nav-link active" aria-current="page"
-                          href="{{ url('/logout')}}"><img
-                                src="{{asset('assets/images/key.png')}}" width="25" height="25"
-                                class="d-inline-block align-right"> Logout</a></p>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</div>
+                    <li class="nav-item">
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href="{{ url('/editSurveySelect')}}">
+                                <img src="{{asset('assets/images/survey.png')}}" width="25" height="25"
+                                     class="d-inline-block align-right"> Modify a Survey</a></p>
+                    </li>
 
-<div style="width: 1270px; margin-left:15%; margin-top: 15px " class="shadow-lg p-3 mb-5 bg-white rounded">
-    <p class="text-center h4" style="margin-left: 10px; margin-bottom: 45px; "> {{$patient}} responses to {{$surveyName}} survey on {{$date}}</p>
 
-    @foreach ($questions as $q)
-        <p class="h5" style="font-size: 18px"> {{$q}}</p>
-        <p class="h6">- {{$answers[$loop->index]}}</p>
+                    <!--Logout Option-->
+                    <li class="nav-item">
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href="{{ url('/logout')}}"><img
+                                    src="{{asset('assets/images/key.png')}}" width="25" height="25"
+                                    class="d-inline-block align-right"> Logout</a></p>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 
-        <br>
-        <p class="double"></p>
-    @endforeach
+    <div style="width: 1270px; margin-left:15%; margin-top: 15px " class="shadow-lg p-3 mb-5 bg-white rounded">
+        <p class="text-center h4" style="margin-left: 10px; margin-bottom: 45px; "> {{$patient}} responses
+            to {{$surveyName}} survey on {{$date}}</p>
 
-</div>
-</form>
+        @foreach ($questions as $q)
+            <p class="h5" style="font-size: 18px"> {{$q}}</p>
+            <p class="h6">- {{$answers[$loop->index]}}</p>
 
-</body>
+            <br>
+            <p class="double"></p>
+        @endforeach
+
+    </div>
+    </form>
+
+    </body>
 </div>
 </html>

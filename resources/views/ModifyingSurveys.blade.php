@@ -186,13 +186,12 @@
             <label for="input" style=" width: 220px" class="col-sm-2 col-form-label">New Question Number:</label>
             <input type="number" style=" width: 100px; margin-left: -20px" class=" shadow  bg-body rounded" id="qNumber"
                    name="qNumber"
-                   min="1" max="{{(count($questions) + 1)}}">
+                   min="1" max="{{(count($questions) + 1)}}" required>
 
             <!-- question type in a survey-->
             <br><label for="input" style=" width: 200px" class="col-sm-2 col-form-label">Question Type:</label>
             <select style=" width: 200px" class="shadow  bg-body rounded" id="qType" name="qType">
-                <option selected>Choose...</option>
-                <option value="FreeText">FreeText</option>
+                <option value="FreeText" selected>FreeText</option>
                 <option value="DropDown">DropDown</option>
                 <option value="Checkbox">Checkbox</option>
                 <option value="RadioButtons">RadioButtons</option>
@@ -203,7 +202,7 @@
                 <div class="form-floating">
                     <!-- text area-->
                     <textarea style="height: 2cm; " class="shadow-sm form-control" placeholder=""
-                              id="qText" name="qText"></textarea>
+                              id="qText" name="qText" required></textarea>
                 </div>
                 <!-- how the answer of the question would be-->
                 <br><label for="input" style=" width: 500px" class="col-sm-2 col-form-label">Question Responses (If

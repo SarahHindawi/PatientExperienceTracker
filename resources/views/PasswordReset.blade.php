@@ -221,7 +221,7 @@
 
             @else
                 {{--                <h5 style="margin-left: 277px; color: red">There are no password reset requests </h5>--}}
-                <div class="alert" style="margin-left: 8.8cm ">
+                <div class="alert" style="margin-left: 10.3cm ">
                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                     <strong> There are no password reset requests </strong>
                 </div>

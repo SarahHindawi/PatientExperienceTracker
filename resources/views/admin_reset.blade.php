@@ -73,7 +73,7 @@
                 <div class="mb-3" style="margin-left:37%; margin-top: 2cm">
                     <label for="exampleInputEmail1" class="form-group form-inline">Email Address:</label>
                     <input type="email" style="width: 7cm" class="form-control shadow-lg p-2 mb-4 bg-white rounded"
-                           id="email" aria-describedby="emailHelp" name = "email">
+                           id="email" aria-describedby="emailHelp" name = "email" required>
                 </div>
                 <!-- Submit Button-->
                     <button class="btn btn-success btn-rounded" style="margin-left:45%; width:6cm">Submit</button>

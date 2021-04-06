@@ -116,7 +116,7 @@
                 medication: </label>
             <div class="col-sm-5">
                 <input type="text" style="width:7cm" class="form-control shadow-lg p-2 mb-3 bg-white rounded"
-                       id="medication" name="medication">
+                       id="medication" name="medication" required>
             </div>
         </div>
     </div>
