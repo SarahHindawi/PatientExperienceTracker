@@ -126,55 +126,47 @@
             <p class="double"></p>
 
             @foreach ($questions as $q)
-                <p class="h6" style="font-size: 18px"> {{str_replace("|",".",$q["Text"])}}</p> <!--Display the question-->
+                <p class="h4" style="font-size: 18px"> {{str_replace("|",".",$q["Text"])}}</p> <!--Display the question-->
 
                 @if ( $q["Type"]  == "DropDown")
                     <select name="{{$q["Text"]}}">
 
                         <!--iterate over the options-->
                         @foreach(explode(",",$q['PossibleResponses']) as $option)
-                            <div class="btn btn-secondary dropdown-toggle" style=" margin-left: 310px">
+                            <div  class="btn btn-secondary dropdown-toggle" style=" margin-left: 310px">
                                 <option value="{{$option}}">{{$option}}</option>
                             </div>
                         @endforeach
-                        <br>
                     </select>
                     <br> <br>
 
                 @elseif ($q["Type"]  == "Checkbox")
 
-                    <div style="width:60em;overflow-x: auto;white-space: nowrap;">
-                        <input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="None Apply"
-                               checked>
+                    <div style="width:77em;word-wrap: break-word">
+                        <input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="None Apply" checked>
                         <label class="form-check form-check-inline">None Apply</label>
 
                         @foreach(explode(",",$q['PossibleResponses']) as $option)
-                            <input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="{{$option}}">
-                            <label class="form-check form-check-inline">{{$option}}</label>
+                            <label class="form-check form-check-inline"><input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="{{$option}}"> {{$option}}</label>
 
                         @endforeach
                     </div>
                     <br>
-                    <br> <br>
 
                 @elseif ($q["Type"]  == "RadioButtons")
 
-                    <div style="width:60em;overflow-x: auto;white-space: nowrap;">
+                    <div style="width:77em;word-wrap: break-word">
                         <input type="radio" name="{{$q["Text"]}}" value="None" checked>
                         <label>None Apply</label>&nbsp;&nbsp;&nbsp;
                         @foreach(explode(",",$q['PossibleResponses']) as $option)
-                            <input type="radio" name="{{$q["Text"]}}" value="{{$option}}">
-                            <label>{{$option}}</label>&nbsp;&nbsp;&nbsp;
+                            <label><input type="radio" name="{{$q["Text"]}}" value="{{$option}}"> {{$option}}</label>&nbsp;&nbsp;&nbsp;
                         @endforeach
                     </div>
-
                     <br>
-                    <br> <br>
 
                 @elseif ($q["Type"]  == "Text")
-                    <input type="text" name="{{$q["Text"]}}"><br>
+                    <input type="text" name="{{$q["Text"]}}">
                     <br>
-                    <br> <br>
 
                 @elseif ($q["Type"]  == "FreeText")
                     <div class="mb-3">
@@ -182,13 +174,13 @@
                             <textarea class="form-control" name="{{$q["Text"]}}" rows="3" cols="300"></textarea>
                         </div>
                     </div>
-                    <br> <br>
+                    <br>
 
                 @endif
                 <p class="double"></p>
 
             @endforeach
-
+            
             <div style=" height: 4cm; margin-left: 1.5cm">
                 <button style="width: 5cm; margin-left: 40%; margin-top:2cm; " type="submit"
                         class="btn btn-success btn-rounded">Submit

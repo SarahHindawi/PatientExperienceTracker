@@ -35,6 +35,7 @@ Route::post('/adminloginpage', 'App\Http\Controllers\AdminLoginController@login'
 Route::get('/patientlogin', 'App\Http\Controllers\PatientLoginController@index');
 Route::post('/patientloginpage', 'App\Http\Controllers\PatientLoginController@login');
 Route::get('/editSurvey/create', 'App\Http\Controllers\EditSurveyController@create');
+Route::get('/editSurvey/recreate', 'App\Http\Controllers\EditSurveyController@createStr');
 Route::post('/editSurvey', 'App\Http\Controllers\EditSurveyController@store');
 Route::delete('surveyquestions/{id}', 'App\Http\Controllers\EditSurveyController@destroy');
 Route::post('/report', 'App\Http\Controllers\ReportController@store');

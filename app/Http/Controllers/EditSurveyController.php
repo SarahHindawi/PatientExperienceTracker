@@ -59,8 +59,10 @@ class EditSurveyController extends Controller
         return view('ModifyingSurveys', ["questions" => $surveyArray, "name" => $surveyName]);
     }
 
-    public function createStr(string $surveyName, string $message)
+    public function createStr()
     {
+        $surveyName = request()->name;
+        $message = request()->message;
         $survey = Survey_Questions::query()->where("SurveyName", $surveyName)->first();
         $surveyArray = json_decode($survey, true);
         $surveyArray = json_decode($surveyArray["SurveyQuestions"], true);
@@ -119,7 +121,9 @@ class EditSurveyController extends Controller
         }
 
         if ($request->input('Confirmation') !== 'True') {
-            return $this->createStr($request->input('SurveyName'), 'Question deletion aborted: No Confirmation');
+
+            $url = '/editSurvey/recreate?name='. $request->input('SurveyName').'&message='."Question deletion aborted: No Confirmation";
+            return redirect($url);
 
 //            return redirect('')->with('message', 'Question deletion aborted: No Confirmation');
         }
@@ -137,7 +141,8 @@ class EditSurveyController extends Controller
         $survey->SurveyQuestions = json_encode($newQuestions);
         $survey->save();
 
-        return $this->createStr($request->input('SurveyName'), "");
+        $url = '/editSurvey/recreate?name='. $request->input('SurveyName').'&message='.".";
+        return redirect($url);
 
 //        return redirect('/')->with('message', 'Survey has been updated successfully.');
     }
@@ -166,7 +171,9 @@ class EditSurveyController extends Controller
         if ($request->input('qResponses') === null) {
             if ($request->input('qType') !== 'FreeText') {
 
-                return $this->createStr($request->input('SurveyName'), "Responses required for non FreeText Questions");
+                $url = '/editSurvey/recreate?name='. $request->input('SurveyName').'&message='."Responses required for non FreeText Questions";
+                return redirect($url);
+
 //                return back()->with('message', 'Responses required for non FreeText Questions');
             }
         }
@@ -191,7 +198,8 @@ class EditSurveyController extends Controller
         $survey->SurveyQuestions = json_encode($surveyArray);
         $survey->save();
 
-        return $this->createStr($request->input('SurveyName'), "");
+        $url = '/editSurvey/recreate?name='. $request->input('SurveyName').'&message='.".";
+        return redirect($url);
 
 //        return redirect('/')->with('message', 'Survey has been updated successfully.');
     }

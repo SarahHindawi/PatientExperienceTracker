@@ -42,14 +42,14 @@
 
     <ul class="lp" style="margin-top: 50px; margin-left: 10cm">
         <li>
-            <button class="block button button1" onclick="location.href='/accept/create'" type="button"><span><img
+            <button style="height: 2.2cm" class="block button button1" onclick="location.href='/accept/create'" type="button"><span><img
                         src="{{asset('assets/images/request.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> New Patient Registration. <br>Click here to review</span>
             </button>
         </li>
         &nbsp;&nbsp;&nbsp;
         <li>
-            <button class="block button button1" onclick="location.href='/resetreview/create'" type="button"> <span><img
+            <button style="height: 2.2cm" class="block button button1" onclick="location.href='/resetreview/create'" type="button"> <span><img
                         src="{{asset('assets/images/request.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> Patient Password Reset Requests. Click here to review
            </span></button>
@@ -62,7 +62,7 @@
         </li>
         &nbsp;&nbsp;&nbsp;
         <li>
-            <button class="block button button1" onclick="location.href='/report/create'"><span><img
+            <button style="height: 2.2cm"class="block button button1" onclick="location.href='/report/create'"><span><img
                         src="{{asset('assets/images/pen.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> Generate Report of PERM and PROM Survey Data</span>
             </button>
@@ -85,7 +85,7 @@
 
         <br>
         <li>
-            <button style="height: 2.2cm" class="block button button1" onclick="location.href='/addsurvey/create'"><span><img
+            <button style="height: 2.2cm; margin-top: -20px" class="block button button1" onclick="location.href='/addsurvey/create'"><span><img
                         src="{{asset('assets/images/survey.png')}}" width="25" height="25"
                         class="d-inline-block align-right"> Create a New Survey
             </span></button>
