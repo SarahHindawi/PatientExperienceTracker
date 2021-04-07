@@ -97,10 +97,9 @@ class SurveyController extends Controller
         $surveyArray = json_decode($surveyArray["SurveyQuestions"], true);
 
 
-
         //convert dot characters to | character
         for ($i = 0; $i < count($surveyArray); $i++) {
-            $surveyArray[$i]["Text"] = str_replace(".","|", $surveyArray[$i]["Text"] );
+            $surveyArray[$i]["Text"] = str_replace(".", "|", $surveyArray[$i]["Text"]);
         }
 
         return view('survey', ["questions" => $surveyArray, "name" => $surveyName]);
@@ -145,11 +144,19 @@ class SurveyController extends Controller
 
         //convert | characters back to dot characters
         foreach ($submittedData as $question => $answer) {
-            $submittedSurvey[str_replace("|",".", $question)] =  $answer;
+            $submittedSurvey[str_replace("|", ".", $question)] = $answer;
         }
 
+        $submittedSurveyAr = [];
 
-        $responses = json_encode($submittedSurvey);
+        //remove empty text area responses
+        foreach ($submittedSurvey as $question => $answer) {
+            if ((is_string($answer) and strlen($answer) > 0) or !is_string($answer)) {
+                $submittedSurveyAr[$question] = $answer;
+            }
+        }
+
+        $responses = json_encode($submittedSurveyAr);
 
         $firstName = Auth::guard('patient')->user()->FirstName;
         $lastName = Auth::guard('patient')->user()->LastName;

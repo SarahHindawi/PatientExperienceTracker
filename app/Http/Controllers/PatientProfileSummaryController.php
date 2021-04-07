@@ -94,6 +94,7 @@ class PatientProfileSummaryController extends Controller
         }
 
 
+        $responsesArray = [];
         for ($i = 0; $i < count($responses); $i++) {
             $responsesArray[] = json_decode($responses[$i]["Responses"], true);
         }
@@ -107,30 +108,31 @@ class PatientProfileSummaryController extends Controller
             $surveyName[] = $responses[$i]["SurveyName"];
         }
 
+        $responsesAr = [];
         //convert underscore characters to space characters
         for ($i = 0; $i < count($responsesArray); $i++) {
             foreach ($responsesArray[$i] as $key => $value) {
                 $question = str_replace("_", " ", $key);
-                $responsesArray[$i][$question] = $responsesArray[$i][$key];
-                unset($responsesArray[$i][$key]);
+                $responsesAr[$i][$question] = $responsesArray[$i][$key];
             }
         }
 
+
         //reformat responses that are stored as arrays to strings
-        for ($i = 0; $i < count($responsesArray); $i++) {
-            foreach ($responsesArray[$i] as $key => $value) {
-                if (is_array($responsesArray[$i][$key])) {
-                    $responsesArray[$i][$key] = implode(", ", $responsesArray[$i][$key]);
+        for ($i = 0; $i < count($responsesAr); $i++) {
+            foreach ($responsesAr[$i] as $key => $value) {
+                if (is_array($responsesAr[$i][$key])) {
+                    $responsesAr[$i][$key] = implode(", ", $responsesAr[$i][$key]);
                 }
             }
         }
 
         $responsesString = [];
         //convert responses array to string
-        for ($i = 0; $i < count($responsesArray); $i++) {
+        for ($i = 0; $i < count($responsesAr); $i++) {
             $res = "";
             $quesNum = 1;
-            foreach ($responsesArray[$i] as $key => $value) {
+            foreach ($responsesAr[$i] as $key => $value) {
                 $res .= $quesNum . ") " . $key . ":: " . $value . "| ";
                 $quesNum += 1;
             }

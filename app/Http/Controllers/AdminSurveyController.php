@@ -88,6 +88,17 @@ class AdminSurveyController extends Controller
         $surveyName = $submittedData['surveyname'];
         $patientEmail = $submittedData['email'];
 
+        //check whether the patient has already submitted the survey on the same day
+        $responses = DB::table('Survey_Responses')
+            ->where('Email', 'LIKE', $patientEmail)
+            ->where('DateCompleted', 'LIKE', date("Y-m-d"))
+            ->where('SurveyName', 'LIKE', $surveyName)->count();
+
+        if ($responses > 0) {
+            return redirect('/')->with('message', 'Responses were not saved. Patients cannot resubmit the survey on the same day.');
+        }
+
+
         unset($submittedData["surveyname"]);
         unset($submittedData["email"]);
 
@@ -101,10 +112,18 @@ class AdminSurveyController extends Controller
         }
 
 
-        $responses = json_encode($submittedSurvey);
+        $submittedSurveyAr = [];
+
+        //remove empty text area responses
+        foreach ($submittedSurvey as $question => $answer) {
+            if ((is_string($answer) and strlen($answer) > 0) or !is_string($answer)) {
+                $submittedSurveyAr[$question] = $answer;
+            }
+        }
+
+        $responses = json_encode($submittedSurveyAr);
 
         //get patient's information
-
         $data = DB::table('PATIENT_PROFILE')
             ->where('Email', 'LIKE', "%" . $patientEmail . "%")->first();
 

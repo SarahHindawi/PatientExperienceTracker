@@ -193,7 +193,7 @@
     </div>
 
     <!-- Area to show the Surveys -->
-    <div style="margin-left:15%; margin-top:90px">
+    <div style="margin-left:15%; margin-top:90px; margin-bottom: 20px">
         @isset($responses)
             <h3 style="  text-align: center; margin-left: -40%; margin-bottom: 10px">Submitted Surveys</h3>
             <table>

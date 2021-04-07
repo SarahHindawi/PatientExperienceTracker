@@ -231,21 +231,21 @@ class ReportController extends Controller
         $surveyArray = json_decode($survey, true);
         $surveyArray = json_decode($surveyArray["SurveyQuestions"], true);
 
+        $responsesAr = [];
 
         //convert underscore characters to space characters
         for ($i = 0; $i < count($responsesArray); $i++) {
             foreach ($responsesArray[$i] as $key => $value) {
                 $question = str_replace("_", " ", $key);
-                $responsesArray[$i][$question] = $responsesArray[$i][$key];
-                unset($responsesArray[$i][$key]);
+                $responsesAr[$i][$question] = $responsesArray[$i][$key];
             }
         }
 
         //reformat responses that are stored as arrays to strings
-        for ($i = 0; $i < count($responsesArray); $i++) {
-            foreach ($responsesArray[$i] as $key => $value) {
-                if (is_array($responsesArray[$i][$key])) {
-                    $responsesArray[$i][$key] = implode(", ", $responsesArray[$i][$key]);
+        for ($i = 0; $i < count($responsesAr); $i++) {
+            foreach ($responsesAr[$i] as $key => $value) {
+                if (is_array($responsesAr[$i][$key])) {
+                    $responsesAr[$i][$key] = implode(", ", $responsesAr[$i][$key]);
                 }
             }
         }
@@ -260,8 +260,8 @@ class ReportController extends Controller
         for ($i = 0; $i < count($patientsEmail); $i++) {
             $row = $patientsName[$i] . "|" . $patientsEmail[$i] . "|" . $dateCompleted[$i];
             foreach ($surveyArray as $q) {
-                if (array_key_exists($q['Text'], $responsesArray[$i])) {
-                    $row .= "|" . $responsesArray[$i][$q['Text']];
+                if (array_key_exists($q['Text'], $responsesAr[$i])) {
+                    $row .= "|" . $responsesAr[$i][$q['Text']];
                 } else {
                     $row .= "|N/A";
                 }
@@ -284,7 +284,7 @@ class ReportController extends Controller
         //a new CSV file is created in storage/ReportCSVs
         fclose($file);
 
-        return view("report_result_page", ["responses" => $responsesArray, "emails" => $patientsEmail, "names" => $patientsName, "dates" => $dateCompleted, "questions" => $surveyArray, "fileName" => $name]);
+        return view("report_result_page", ["responses" => $responsesAr, "emails" => $patientsEmail, "names" => $patientsName, "dates" => $dateCompleted, "questions" => $surveyArray, "fileName" => $name]);
     }
 
     public function download(){
