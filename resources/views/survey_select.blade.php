@@ -12,12 +12,9 @@
     #wrapper {
         margin-left: auto;
         margin-right: auto;
-        width: 1519px;
+        width: 1419px;
     }
 
-    body {
-        overflow: hidden;
-    }
 
     </style>
 </head>

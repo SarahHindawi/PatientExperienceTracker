@@ -29,8 +29,7 @@
  <div >
      <p class="text-center h2" style="color:seagreen; margin-top: 20px; margin-left: 4cm">Change Password</p>
 
-     <p class="text-center h4"style="margin-left: 4cm; margin-top: .7cm; margin-bottom: 1cm">Here you can change the password on your account.</p>
-{{--     <p class="text-center h4"style="margin-left: 4cm">See password rules below</p>--}}
+     <p class="text-center h4"style="margin-left: 4cm; margin-top: .7cm; margin-bottom: 1cm">Here you can change the password of your account</p>
  </div>
 
 

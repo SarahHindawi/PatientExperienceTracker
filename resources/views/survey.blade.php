@@ -41,7 +41,7 @@
                 </li>
                 <li class="nav-item">
                     <p><a class=" text-dark nav-link active" aria-current="page"
-                                              href="{{ url('/form/create')}}"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Complete Survey</a></p>
+                                              href="{{ url('/surveyselection')}}"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Complete Survey</a></p>
                 </li>
                 <!-- Password Change Option-->
                 <li class="nav-item">

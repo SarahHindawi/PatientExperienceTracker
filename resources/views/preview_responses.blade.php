@@ -105,8 +105,8 @@
             to {{$surveyName}} survey on {{$date}}</p>
 
         @foreach ($questions as $q)
-            <p class="h5" style="font-size: 18px"> {{$q}}</p>
-            <p class="h6">- {{$answers[$loop->index]}}</p>
+            <p class="h5" style="font-size: 18px"> {{str_replace("\/","/",$q)}}</p>
+            <p class="h6">- {{str_replace("\/","/",$answers[$loop->index])}}</p>
 
             <br>
             <p class="double"></p>
