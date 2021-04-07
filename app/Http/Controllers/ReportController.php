@@ -97,13 +97,12 @@ class ReportController extends Controller
         //get the email, medications, and date of birth of the filtered patients
         $filteredPatients = $queryPatients->get(["Email", "Medications", "DOB"]);
 
-
         $medicationUsage = $_POST["medicationUsage"];
 
         $matchedPatientsEmails = [];
         $matchedPatientsDOB = [];
 
-        //if the patient selected 'includes medication', then filter patients based on whether they use any of the selected medications
+        //if the patient selected 'includes medication', then filter patients based on whether they use ANY (union) of the selected medications
         if ($medicationUsage == 'includes') {
 
             //returns an array of the selected medications/checkboxes
@@ -122,7 +121,7 @@ class ReportController extends Controller
 
                 //remove the first character " and last one " for each medication string
                 for ($j = 0; $j < count($medArray); $j++) {
-                    $medArray[$j] = substr($medArray[$j], 1, -1);
+                    $medArray[$j] = str_replace("\/","/",substr($medArray[$j], 1, -1));
                 }
 
                 //check if there are any matches between the medications consumed by this specific patient, and the selected checkboxes
@@ -217,13 +216,6 @@ class ReportController extends Controller
         if (count($patientsName) == 0) {
             return $this->create("No records match the specified data.");
         }
-
-
-//        for ($i = 0; $i< count($patientEmail); $i++) {
-//            $query = DB::table('Patient_Profile')
-//            ->where('Email', "LIKE", $patientEmail[$i])
-//            ->get();
-//        }
 
         //Get the questions of the current version of the survey (as column headers)
         $surveyName = $_POST["surveyName"];

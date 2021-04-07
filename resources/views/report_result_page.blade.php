@@ -50,7 +50,7 @@
             <div class="cent" style="top: 350px; width:80em;overflow-x: auto;white-space: nowrap; margin-left: -125px; margin-top: -5.8cm; margin-bottom: 10px">
                 <table>
                     <tr>
-                        <th>Name</th>
+                        <th><div style="width: 130px">Name</div></th>
                         <th>Email Address</th>
                         <th style="width:100px">Date Completed</th>
 
