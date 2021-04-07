@@ -13,9 +13,9 @@ class PostTest3 extends TestCase
      */
     public function test_asserting_a_json_paths_value()
     {
-
-        $response = $this->json('POST', '/passwordreset', ["Nairouz Mayaleh (nmayaleh@upei.ca)" => "Accept",
-            "Majd Mayaleh (mmayaleh@upei.ca)" => "Accept"]);
+//"nairouz Mam (neyrouze.mah@gmail.com)" => "Accept",
+        $response = $this->json('POST', '/passwordreset', [
+            ]);
 
         $response
             ->assertStatus(200);
