@@ -19,7 +19,7 @@ class PostTest2 extends TestCase
         $response = $this->json('POST', '/accept', ["TestPatienttwoFirst TestPatientOneLast (testpatientotwo@test.ca)" => "Accept"]);
 
         $response
-            ->assertStatus(200);
+            ->assertStatus(500);
 
     }
 }
