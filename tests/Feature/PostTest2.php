@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-
+//**
 class PostTest2 extends TestCase
 {
     /**
@@ -13,9 +13,10 @@ class PostTest2 extends TestCase
      */
     public function test_asserting_a_json_paths_value()
     {
-
-        $response = $this->json('POST', '/accept', ["Nairouz Mayaleh (nmayaleh@upei.ca)" => "Accept",
-            "Majd Mayaleh (mmayaleh@upei.ca)" => "Accept"]);
+        // It passed but has a unrlated problem with the code problem
+        // the problem with the environment when the APP env
+        // iT  passed the  browser testing
+        $response = $this->json('POST', '/accept', ["TestPatienttwoFirst TestPatientOneLast (testpatientotwo@test.ca)" => "Accept"]);
 
         $response
             ->assertStatus(200);
