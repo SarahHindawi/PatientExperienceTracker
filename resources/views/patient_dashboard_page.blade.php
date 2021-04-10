@@ -13,8 +13,9 @@ header('Content-Type: text/html');?>
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin_dashboard_page.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/buttons.css')}}">
-
+<!--
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    -->
     <!--Get your own code at fontawesome.com
         Here is the link to find all the important icons
     https://www.w3schools.com/icons/icons_reference.asp
