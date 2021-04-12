@@ -48,7 +48,7 @@ class PatientProfileSummaryController extends Controller
         $data = DB::table('PATIENT_PROFILE');
         if (!empty($request->inputEmail)) {
             if ($request->inputEmail) {
-                $data = $data->where('Email', 'LIKE', "%" . $request->inputEmail . "%")->get();
+                $data = $data->where('Email', 'LIKE', "%" . $request->inputEmail . "%")->where('NewAccount', 'false')->get();
             }
         }
 
@@ -68,7 +68,7 @@ class PatientProfileSummaryController extends Controller
 
             //remove the first character " and last one " for each medication string
             for ($j = 0; $j < count($medArray); $j++) {
-                $medArray[$j] = str_replace("\\","",substr($medArray[$j], 1, -1));
+                $medArray[$j] = str_replace("\\", "", substr($medArray[$j], 1, -1));
             }
         }
 
@@ -86,7 +86,9 @@ class PatientProfileSummaryController extends Controller
             return view('PatientSummaryResult', ["Summary" => $data]);
         }
 
-        $medArray = implode(", ", $medArray);
+        if (isset($medArray)) {
+            $medArray = implode(", ", $medArray);
+        }
 
         //convert Stdclass to array
         for ($i = 0; $i < count($responses); $i++) {
@@ -138,7 +140,16 @@ class PatientProfileSummaryController extends Controller
             }
             $responsesString[] = $res;
         }
-        return view('PatientSummaryResult', ["Summary" => $data, "medications" => $medArray, "responses" => $responsesString, "dates" => $dateCompleted, "names" => $surveyName]);
+
+        if (isset($medArray) and count($responsesString) > 0) {
+            return view('PatientSummaryResult', ["Summary" => $data, "medications" => $medArray, "responses" => $responsesString, "dates" => $dateCompleted, "names" => $surveyName]);
+        } else if (isset($medArray) and count($responsesString) == 0) {
+            return view('PatientSummaryResult', ["Summary" => $data, "medications" => $medArray]);
+        } else if (!isset($medArray) and count($responsesString) > 0) {
+            return view('PatientSummaryResult', ["Summary" => $data, "responses" => $responsesString, "dates" => $dateCompleted, "names" => $surveyName]);
+        } else {
+            return view('PatientSummaryResult', ["Summary" => $data,]);
+        }
     }
 
     public function nameSearch(Request $request)
@@ -180,7 +191,7 @@ class PatientProfileSummaryController extends Controller
         //an array of arrays (each element represents a patient, with an array of the patient's info)
         $patients = [];
         $age = [];
-        for ($i = 0; $i < count($data); $i++){
+        for ($i = 0; $i < count($data); $i++) {
             $row = json_encode($data[$i], true);
             $rowArray = json_decode($row, true);
             $patients[] = $rowArray;
@@ -188,7 +199,7 @@ class PatientProfileSummaryController extends Controller
             $now = time();
             $diff = abs($date - $now);
             $ageYears = floor($diff / (365 * 60 * 60 * 24));
-            $age[]=$ageYears;
+            $age[] = $ageYears;
         }
 
         return view('ReportSearchByName', ["data" => $patients, "age" => $age]);

@@ -7,13 +7,18 @@
           rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/buttons.css')}}">
+
     <style>
+
         #wrapper {
             margin-left: auto;
             margin-right: auto;
             width: 1519px;
         }
+
     </style>
+
 </head>
 <div id="wrapper">
     <body>
@@ -112,9 +117,15 @@
             <p class="double"></p>
         @endforeach
 
-    </div>
-    </form>
 
+    <form method="post" action="/profilereport" enctype="multipart/form-data">
+        @csrf
+        <input type="hidden" name="inputEmail" value="{{ $email }}">
+
+        <button class="block button button1" type="submit" style="padding: 5px 10px; margin-left: 500px"><span>Back to Profile</span>
+        </button>
+    </form>
+    </div>
     </body>
 </div>
 </html>

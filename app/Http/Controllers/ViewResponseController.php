@@ -36,6 +36,6 @@ class ViewResponseController extends Controller
         }
 
         return view('preview_responses', ['questions' => $questions, 'answers' => $answers,
-            'surveyName' => $_POST['name'], 'date' => $_POST['date'], 'patient' => $_POST['patient']]);
+            'surveyName' => $_POST['name'], 'date' => $_POST['date'], 'patient' => $_POST['patient'], 'email' => $_POST['email']]);
     }
 }
