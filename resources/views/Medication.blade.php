@@ -19,7 +19,7 @@
 <!-- the body has the content of the page  -->
 <body>
 @isset($message)
-    <p class="alert alert-info" style="text-align:center">{{ $message }}</p>
+    <p class="alert alert-info" style="text-align:center; width:93.9%; margin-left: 100px">{{ $message }}</p>
 @endisset
 
 <!-- the title in the top middle of the page -->

@@ -29,7 +29,7 @@ class PasswordController extends Controller
 
 
         //get a list of the patients that submitted a request to reset their password
-        $passwordResetRequests = Patient::select(['FirstName', 'LastName', 'Email'])->where("PasswordReset", "true")->get();
+        $passwordResetRequests = Patient::select(['FirstName', 'LastName', 'Email'])->where('NewAccount', 'false')->where("PasswordReset", "true")->get();
 
         $patientsInfo = [];
         for ($i = 0; $i < count($passwordResetRequests); $i++) {
@@ -81,11 +81,11 @@ class PasswordController extends Controller
         //for each accepted password-reset request, create a temporary password ("pending" indicates that the patient has not set a permanent password yet)
         foreach ($accepted as $acceptedEmail) {
             $tempPassword = Str::random(8);
-            
+
             $details = [
                 'temppass' => $tempPassword
             ];
-            
+
             Mail::to($acceptedEmail)->send(new ResetMail($details));
             Patient::where('email', $acceptedEmail)->update(array('PasswordReset' => "pending", "password" => Hash::make($tempPassword)));
         }
@@ -139,10 +139,10 @@ class PasswordController extends Controller
 
         $currentUser->password = Hash::make($request->input('password'));
 
-        
-        //Check if current password is temprary and turn flag to false if so.        
+
+        //Check if current password is temprary and turn flag to false if so.
         $tempPassCheck = Auth::guard('patient')->user()->PasswordReset;
-            
+
         if((strcmp($tempPassCheck, "pending") === 0)){
             $currentUser->PasswordReset = "false";
         }
@@ -202,7 +202,7 @@ class PasswordController extends Controller
     }
 
     public function adminresetindex(){
-        
+
      //Checking if there is an Authenticated user and redirecting to dashboard as they do not need to reset password.
     if (Auth::guard('admin')->check()) {
 
@@ -210,11 +210,11 @@ class PasswordController extends Controller
     } else if (Auth::guard('patient')->check()) {
         return redirect('/');
     }
-    
+
     return view('admin_reset');
     }
 
-    public function adminresetemail(Request $request){        
+    public function adminresetemail(Request $request){
         //Checking if there is an Authenticated user and redirecting to dashboard as they do not need to reset password.
 
         if (Auth::guard('admin')->check()) {
@@ -232,7 +232,7 @@ class PasswordController extends Controller
         $existanceTest = Admin::where('Email', $request->input('email'))->first();
 
         if(!$existanceTest)
-        {        
+        {
             return redirect('/adminreset')->with('message', 'Request Failed. Administrator Profile with email does not exist');
         }
 
@@ -241,30 +241,30 @@ class PasswordController extends Controller
         $details = [
             'temppass' => $tempPassword
         ];
-    
+
         Mail::to($request->input('email'))->send(new ResetMail($details));
-    
+
         Admin::where('Email', $request->input('email'))->update(array("password" => Hash::make($tempPassword)));
 
         return redirect('/')->with('message', 'Administrator password reset successful please check email.');
         }
 
     public function patientresetindex(){
-        
+
         //Checking if there is an Authenticated user and redirecting to dashboard as they do not need to reset password.
        if (Auth::guard('admin')->check()) {
-   
+
            return redirect('/');
        } else if (Auth::guard('patient')->check()) {
            return redirect('/');
        }
-       
+
        return view('patient_reset');
     }
 
     public function patientresetrequest(Request $request){
-        
-        
+
+
         if (Auth::guard('admin')->check()) {
             return redirect('/');
         } else if (Auth::guard('patient')->check()) {
@@ -280,7 +280,7 @@ class PasswordController extends Controller
         $existanceTest = Patient::where('Email', $request->input('email'))->first();
 
         if(!$existanceTest)
-        {        
+        {
             return redirect('/patientreset')->with('message', 'Request Failed. Patient Profile with email does not exist');
         }
 

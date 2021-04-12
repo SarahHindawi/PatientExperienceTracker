@@ -27,16 +27,6 @@
             outline: 2px solid #f00;
         }
 
-        .btn-logout {
-            width: 100%;
-            padding: 3px 20px !important;
-            text-align: left !important;
-        }
-
-        .drop {
-            color: rgba(45, 87, 45, 0.75);
-        }
-
         .btn-success:hover {
             color: rgb(255, 255, 255);
             background: rgba(44, 92, 44, 0.75);
@@ -98,11 +88,7 @@
         @if (count($patients) > 0)
 
             <!-- padding-right: 500px-->
-                <p class="text-center h6" style="text-align:center; margin-left: 3cm;margin-top:1cm">Selecting the green
-                    check marks will
-                    approve new patients so they will be added to the system. <br> They will receive their account
-                    activation email and the
-                    ability to set the password via email.</p>
+                <p class="text-center h6" style="text-align:center; margin-left: 3cm;margin-top:1cm">Selecting the green check marks will approve new patients and they will be added to the system. </p>
             @endif
             <br>
             <br>
@@ -190,6 +176,8 @@
 
         <!-- list of new patients requests-->
 
+        <div style="position:absolute; top:205px">
+
 
         <ol class="lp" style="margin-bottom: 5px">
             @foreach ($patients as $p)
@@ -198,14 +186,13 @@
                 <br> <br>
             @endforeach
         </ol>
-
+        </div>
         <div style="margin-left: 300px; position:absolute; top:205px">
 
             <!-- If there are no new patients, then don't print a list -->
             @if (count($patients) > 0)
 
-                <form name="acceptanceForm" method="post" action="/accept" enctype="multipart/form-data" class="lp"
-                      style="margin-top: 1cm">
+                <form name="acceptanceForm" method="post" action="/accept" enctype="multipart/form-data" class="lp">
                     @csrf
                     <ol class="lp">
 

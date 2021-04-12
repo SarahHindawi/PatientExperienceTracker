@@ -81,7 +81,7 @@
         <li>
             <button style="height: 2.2cm" class="block button button1" onclick="location.href='/adminregistration'"><span><img
                         src="{{asset('assets/images/signup.png')}}" width="25" height="25"
-                        class="d-inline-block align-right"> Register Admin</span>
+                        class="d-inline-block align-right"> Register a New Admin</span>
             </button>
         </li>
 

@@ -37,11 +37,11 @@
             <p class="text-center h1" style="color:seagreen;margin-left: 4cm; margin-top: 2%">Welcome to the Patient
                 Experience Tracker </p>
 
-            <p class="text-center h4" style="margin-left: 4cm;margin-top: 5%; text-align:center">Please select from one
+            <p class="text-center h4" style="margin-left: 4cm;margin-top: 5%; text-align:center">Please select one
                 of the options below </p>
 
 
-            <!-- The dashboard options in the centere of the page-->
+            <!-- The dashboard options in the center of the page-->
             <div style="margin-left: -55px">
                 <ul class="lp">
 

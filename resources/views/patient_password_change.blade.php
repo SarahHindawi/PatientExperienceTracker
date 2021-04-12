@@ -41,7 +41,7 @@
              <ul class="nav flex-column" style="width:100%">
                  <!-- the Dashboard options-->
                  <!-- Dashboard option-->
-                 <li class="nav-item">
+                 <li class="nav-item" style="margin-top: 8px">
                     <p><a class=" text-dark nav-link active" aria-current="page"
                                               href="{{ url('/')}}"><img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right"> Dashboard</a></p>
                  <!--Survey Option-->

@@ -88,7 +88,7 @@ class SurveyController extends Controller
             ->where('SurveyName', 'LIKE', $surveyName)->count();
 
         if ($responses > 0) {
-            return redirect('/')->with('message', 'Sorry, you cannot resubmit the survey on the same day.');
+            return redirect('/')->with('message', 'Sorry, you cannot resubmit the same survey on the same day');
         }
 
 
