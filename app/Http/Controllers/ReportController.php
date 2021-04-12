@@ -95,7 +95,7 @@ class ReportController extends Controller
         }
 
         //get the email, medications, and date of birth of the filtered patients
-        $filteredPatients = $queryPatients->get(["Email", "Medications", "DOB"]);
+        $filteredPatients = $queryPatients->where('NewAccount', 'false')->get(["Email", "Medications", "DOB"]);
 
         $medicationUsage = $_POST["medicationUsage"];
 
@@ -103,7 +103,7 @@ class ReportController extends Controller
         $matchedPatientsDOB = [];
 
         //if the patient selected 'includes medication', then filter patients based on whether they use ANY (union) of the selected medications
-        if ($medicationUsage == 'includes') {
+        if ($medicationUsage == 'includes' and isset($_POST["medication"])) {
 
             //returns an array of the selected medications/checkboxes
             $medications = $_POST["medication"];
@@ -117,12 +117,20 @@ class ReportController extends Controller
                 $rowArray = json_decode($row, true);
 
                 //remove the first character "[" and last one "]" from the "Medications" column
-                $medArray = explode(",", substr($rowArray["Medications"], 1, -1));
+                $medArray = explode('","', substr($rowArray["Medications"], 1, -1));
 
                 //remove the first character " and last one " for each medication string
                 for ($j = 0; $j < count($medArray); $j++) {
-                    $medArray[$j] = str_replace("\/","/",substr($medArray[$j], 1, -1));
+                    $medArray[$j] = str_replace("\/", "/", $medArray[$j]);
                 }
+
+                $lastIndex = count($medArray) - 1;
+
+                //remove the " in the first string in the array
+                $medArray[0] = substr($medArray[0], 1);
+
+                //remove the " in the last string in the array
+                $medArray[$lastIndex] = substr($medArray[$lastIndex], 0, -1);
 
                 //check if there are any matches between the medications consumed by this specific patient, and the selected checkboxes
                 $intersectionMeds = count(array_intersect($medArray, $medications));
@@ -131,8 +139,6 @@ class ReportController extends Controller
                 if ($intersectionMeds > 0) {
                     $matchedPatientsEmails[] = $rowArray['Email'];
                     $matchedPatientsDOB[] = $rowArray['DOB'];
-                } else {
-                    unset($filteredPatients[$i]);
                 }
             }
         } else {
@@ -242,6 +248,19 @@ class ReportController extends Controller
             }
         }
 
+        //get all the files in the storage/app directory, to remove any old report files
+        $files = Storage::allFiles();
+        $csvFiles = [];
+
+        for( $i = 0; $i < count($files); $i++){
+            //if the name of the file contains the word 'report'
+            if (str_contains($files[$i], 'report')){
+                $csvFiles[]= $files[$i];
+            }
+        }
+        Storage::delete($csvFiles);
+
+
         $header = "Name|Email Address|Date Completed";
 
         foreach ($surveyArray as $q) {
@@ -263,7 +282,7 @@ class ReportController extends Controller
 
         $path = storage_path('app\\');
 
-        $date = new DateTime("now", new \DateTimeZone('America/Halifax') );
+        $date = new DateTime("now", new \DateTimeZone('America/Halifax'));
 
         $name = "report[" . $date->format('d-m-Y@H-i-s') . "].csv";
 
@@ -279,7 +298,8 @@ class ReportController extends Controller
         return view("report_result_page", ["responses" => $responsesAr, "emails" => $patientsEmail, "names" => $patientsName, "dates" => $dateCompleted, "questions" => $surveyArray, "fileName" => $name]);
     }
 
-    public function download(){
+    public function download()
+    {
 
         return Storage::download($_POST['fileName']);
 

@@ -19,10 +19,10 @@
 </head>
 <div id="wrapper">
     <!-- the body has the content of the page  -->
-    <body style="margin-top: 1cm; margin-left: -2cm">
+    <body style="margin-top: 1cm; margin-left: -2cm; overflow-x: hidden">
     <section class="container-fluid">
         @isset($message)
-            <p class="alert alert-info" style="text-align:center; margin-top: -1cm">{{ $message}}</p>
+            <p class="alert alert-info" style="text-align:center; margin-top: -1cm; margin-left: 200px; width: 91%">{{ $message}}</p>
     @endisset
 
 
@@ -143,7 +143,7 @@
                     </div>
                 </div>
 
-                <div style="margin-left:2.3cm; margin-top:55px; width: 150Px">
+                <div style="margin-left:2.2cm; margin-top:55px; width: 150Px">
                     <button style="width: 200px;" type="submit" class="btn btn-success btn-rounded">Create</button>
                 </div>
 
