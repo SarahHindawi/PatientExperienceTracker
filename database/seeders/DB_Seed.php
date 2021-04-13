@@ -76,7 +76,7 @@ class DB_Seed extends Seeder
             'Condition' => 'IBD'
         ]);
 
-    
+
         DB::table('MEDICATION_LIST')->insert([
             'MedicationName' => 'Oral Steroids (Prendisone, Budesonide)'
         ]);
@@ -106,36 +106,32 @@ class DB_Seed extends Seeder
         ]);
 
         DB::table('MEDICATION_LIST')->insert([
-            'MedicationName' => 'Methortrexate'
-        ]);
-
-        DB::table('MEDICATION_LIST')->insert([
             'MedicationName' => 'Ustekinumab (Stelara)'
         ]);
 
         DB::table('MEDICATION_LIST')->insert([
-            'MedicationName' => 'Vedolizumab (Entyvio'
+            'MedicationName' => 'Vedolizumab (Entyvio)'
         ]);
 
         DB::table('MEDICATION_LIST')->insert([
             'MedicationName' => 'Adalimumab (Humira)'
-        ]);     
+        ]);
 
         DB::table('MEDICATION_LIST')->insert([
             'MedicationName' => 'Infliximab (Remicade)'
-        ]);   
+        ]);
 
         DB::table('MEDICATION_LIST')->insert([
             'MedicationName' => 'Golimumab (Simponi)'
-        ]);   
+        ]);
 
         DB::table('MEDICATION_LIST')->insert([
             'MedicationName' => 'Biosimilars'
         ]);
-        
+
         DB::table('MEDICATION_LIST')->insert([
             'MedicationName' => 'Tofacitinib'
-        ]); 
+        ]);
 
         DB::table('PATIENT_PROFILE')->insert([
             'email' => 'jboelhouwer@upei.ca',
@@ -174,11 +170,11 @@ class DB_Seed extends Seeder
         $GNOSHquestions = array(array('Text' => 'On a scale of 1-10 how much would you agree with the following statement:'
                                   .'In the last week, because of my Crohn' . "'s". ' disease or ulcerative colitis I have had aches in my stomach or abdomen.' , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - Do not agree,1,2,3,4,5 - Neither agree or disagree,6,7,8,9,10 - Absolutely Agree'),
                           array('Text' => 'On a scale of 1-10 how much would you agree with the following statement:'
-                                  .' In the last week, because of my Crohn' . "'s". ' disease or ulcerative colitis I have had difficulty coordinating and managing defecation, inlcuding choosing and getting to an appropriate place for defecation and cleaning myself afterwards.' , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - Do not agree,1,2,3,4,5 - Neither agree or disagree,6,7,8,9,10 - Absolutely Agree'),
+                                  .' In the last week, because of my Crohn' . "'s". ' disease or ulcerative colitis I have had difficulty coordinating and managing defecation, including choosing and getting to an appropriate place for defecation and cleaning myself afterwards.' , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - Do not agree,1,2,3,4,5 - Neither agree or disagree,6,7,8,9,10 - Absolutely Agree'),
                           array('Text' => 'On a scale of 1-10 how much would you agree with the following statement:'
                                   .' In the last week, because of my Crohn' . "'s". ' disease or ulcerative colitis I have had difficulty with personal relationships and/or difficulty participating in the community.' , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - Do not agree,1,2,3,4,5 - Neither agree or disagree,6,7,8,9,10 - Absolutely Agree'),
                           array('Text' => 'On a scale of 1-10 how much would you agree with the following statement:'
-                                  .' In the last week, because of my Crohn' . "'s". ' disease or ulcerative colitis I have had difficulty with school or studying activities, and/or difficulty with work or household activies.' , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - Do not agree,1,2,3,4,5 - Neither agree or disagree,6,7,8,9,10 - Absolutely Agree'),
+                                  .' In the last week, because of my Crohn' . "'s". ' disease or ulcerative colitis I have had difficulty with school or studying activities, and/or difficulty with work or household actives.' , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - Do not agree,1,2,3,4,5 - Neither agree or disagree,6,7,8,9,10 - Absolutely Agree'),
                           array('Text' => 'On a scale of 1-10 how much would you agree with the following statement:'
                                   .' In the last week, because of my Crohn' . "'s". ' disease or ulcerative colitis I have had difficulty sleeping, such as falling asleep, waking up frequently during the night or waking up too early in the morning.' , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - Do not agree,1,2,3,4,5 - Neither agree or disagree,6,7,8,9,10 - Absolutely Agree'),
                           array('Text' => 'On a scale of 1-10 how much would you agree with the following statement:'
@@ -190,19 +186,19 @@ class DB_Seed extends Seeder
                           array('Text' => 'On a scale of 1-10 how much would you agree with the following statement:'
                                   .' In the last week, because of my Crohn' . "'s". ' disease or ulcerative colitis I have had difficulty with the mental and/or physical aspects of sex.' , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - Do not agree,1,2,3,4,5 - Neither agree or disagree,6,7,8,9,10 - Absolutely Agree'),
                           array('Text' => 'On a scale of 1-10 how much would you agree with the following statement:'
-                                  .' In the last week, because of my Crohn' . "'s". ' disease or ulcerative colitis I have had pain in the joints of my body.' , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - Do not agree,1,2,3,4,5 - Neither agree or disagree,6,7,8,9,10 - Absolutely Agree'),                           
+                                  .' In the last week, because of my Crohn' . "'s". ' disease or ulcerative colitis I have had pain in the joints of my body.' , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - Do not agree,1,2,3,4,5 - Neither agree or disagree,6,7,8,9,10 - Absolutely Agree'),
                     );
 
         $QOLquestions = array(array('Text' => 'How frequent have your bowel movements been during the last two weeks?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - More frequent than they have ever been,2 - Extremely frequent,3 - Very frequent,4 - Moderate increase in frequency,5 - Some increase in frequency,6 - Slight increase in frequency,7 - Normal or no increase in frequency'),
                           array('Text' => 'How often has the feeling of fatigue or of being tired and worn out been a problem for you during the last 2 weeks?'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - More frequent than I have ever experienced,2 - Extremely frequent,3 - Very frequent,4 - Moderatly frequent,5 - Now and then,6 - Infrequently,7 - No more than normal'),
+                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - More frequent than I have ever experienced,2 - Extremely frequent,3 - Very frequent,4 - Moderately frequent,5 - Now and then,6 - Infrequently,7 - No more than normal'),
                           array('Text' => 'How often during the past two weeks have you felt frustrated, impatient, or restless because of your bowel problem?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - More often than ever before,2 - Extremely often,3 - Very often,4 - Somewhat often,5 - Slightly often, 6 - Infrequently,7 - Never'),
                           array('Text' => 'How often during the last 2 weeks have you been unable to attend school or work due to your bowel problem?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - Higher than 8 days,2 - 6 or 7 days, 3 - 4 or 5 days  ,4 - 2 or 3 days,5 - 1 day,6 - Partial day,7 - No missed attendance'),
                           array('Text' => 'How often of the time during the last 2 weeks have your bowel movements been loose?'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - More frequent than ever experienced,2 - Extremely frequent,3 - Very frequent,4 - Moderately frequent,5 - Some frequency,6 - Slightly frequenct,7 - Never'),
+                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - More frequent than ever experienced,2 - Extremely frequent,3 - Very frequent,4 - Moderately frequent,5 - Some frequency,6 - Slightly frequent,7 - Never'),
                           array('Text' => 'On a scale of 1-10 how much would you agree with the following statement:'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - '),
                           array('Text' => 'On a scale of 1-10 how much would you agree with the following statement:'
@@ -212,28 +208,28 @@ class DB_Seed extends Seeder
                           array('Text' => 'On a scale of 1-10 how much would you agree with the following statement:'
                                     .' In the last week, because of my Crohn' . "'s". ' disease or ulcerative colitis I have had difficulty with the mental and/or physical aspects of sex.' , 'Type' => 'DropDown' , 'PossibleResponses' => '0,1,2,3,4,5,6,7,8,9,10'),
                           array('Text' => 'On a scale of 1-10 how much would you agree with the following statement:'
-                                .' In the last week, because of my Crohn' . "'s". ' disease or ulcerative colitis I have had pain in the joints of my body.' , 'Type' => 'DropDown' , 'PossibleResponses' => '0,1,2,3,4,5,6,7,8,9,10'),                           
-                        );    
-        
-        $GADquestions = array(array('Text' => 'Over the past 2 weeks how often have you felt nervous, anxious, or on edge?'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => 'Not at all sure,Serveral days,Over half the days,Nearly every day'),
-                          array('Text' => 'Over the last 2 weeks how often have you felt as if you could not stop ir control worrying?'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => 'Not at all sure,Serveral days,Over half the days,Nearly every day'),
-                          array('Text' => 'Over the past 2 weeks how often have you had trouble relaxing?'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => 'Not at all sure,Serveral days,Over half the days,Nearly every day'),
-                          array('Text' => 'Over the past2 weeks how often have you been so restless that it has been hard to sit still?'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => 'Not at all sure,Serveral days,Over half the days,Nearly every day'),
-                          array('Text' => 'Over the past 2 weeks how often have you experienced becoming easily annoyed or have been irritable?'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => 'Not at all sure,Serveral days,Over half the days,Nearly every day'),
-                          array('Text' => 'Over the past 2 weeks how often have you experienced feelings of being afraid as if something awful might happen?'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => 'Not at all sure,Serveral days,Over half the days,Nearly every day'),                                                  
+                                .' In the last week, because of my Crohn' . "'s". ' disease or ulcerative colitis I have had pain in the joints of my body.' , 'Type' => 'DropDown' , 'PossibleResponses' => '0,1,2,3,4,5,6,7,8,9,10'),
                         );
-                        
+
+        $GADquestions = array(array('Text' => 'Over the past 2 weeks how often have you felt nervous, anxious, or on edge?'
+                                     , 'Type' => 'DropDown' , 'PossibleResponses' => 'Not at all sure,Several days,Over half the days,Nearly every day'),
+                          array('Text' => 'Over the last 2 weeks how often have you felt as if you could not stop ir control worrying?'
+                                     , 'Type' => 'DropDown' , 'PossibleResponses' => 'Not at all sure,Several days,Over half the days,Nearly every day'),
+                          array('Text' => 'Over the past 2 weeks how often have you had trouble relaxing?'
+                                     , 'Type' => 'DropDown' , 'PossibleResponses' => 'Not at all sure,Several days,Over half the days,Nearly every day'),
+                          array('Text' => 'Over the past2 weeks how often have you been so restless that it has been hard to sit still?'
+                                     , 'Type' => 'DropDown' , 'PossibleResponses' => 'Not at all sure,Several days,Over half the days,Nearly every day'),
+                          array('Text' => 'Over the past 2 weeks how often have you experienced becoming easily annoyed or have been irritable?'
+                                     , 'Type' => 'DropDown' , 'PossibleResponses' => 'Not at all sure,Several days,Over half the days,Nearly every day'),
+                          array('Text' => 'Over the past 2 weeks how often have you experienced feelings of being afraid as if something awful might happen?'
+                                     , 'Type' => 'DropDown' , 'PossibleResponses' => 'Not at all sure,Several days,Over half the days,Nearly every day'),
+                        );
+
         $MOSQquestions = array(array('Text' => 'In general you would say your health is:'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - Exellent,2 - Very good,3 - Good,4 - Fair,5 - Poor'),
+                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - Excellent,2 - Very good,3 - Good,4 - Fair,5 - Poor'),
                           array('Text' => 'Compared to one year ago you would say your health now is:'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - Much better than one year ago,2 - Somewhat better than one year ago,3 - About the same,4 - Somehwhat worse than one uear ago,5 - Much worse than one year ago'),
-                          array('Text' => 'Does your health now limit you in completing vigorous activities such as running,ligting heavy objects, participating in strenuous sports?'
+                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - Much better than one year ago,2 - Somewhat better than one year ago,3 - About the same,4 - Somewhat worse than one year ago,5 - Much worse than one year ago'),
+                          array('Text' => 'Does your health now limit you in completing vigorous activities such as running,lighting heavy objects, participating in strenuous sports?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - Yes Limited a Lot,2 - Yes Limited a Little,3 - No Not Limited at All'),
                           array('Text' => 'Does your health now limit you in lifting or carrying groceries?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - Yes Limited a Lot,2 - Yes Limited a Little,3 - No Not Limited at All'),
@@ -257,7 +253,7 @@ class DB_Seed extends Seeder
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - Yes,2 - No'),
                           array('Text' => 'During the past 4 weeks as a result of any emotional problems have you not done any work or other activities as carefully as usual?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - Yes,2 - No'),
-                          array('Text' => 'During the past 4 weeks to what extent has youur physical health or emotional problems interfered with your normal social activities with family, friends, neighbors, or groups?'
+                          array('Text' => 'During the past 4 weeks to what extent has your physical health or emotional problems interfered with your normal social activities with family, friends, neighbors, or groups?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - Not at all,2 - Slightly,3 - Moderately,4 - Quite a bit,5 - Extremely'),
                           array('Text' => 'How much bodily pain have you had during the past 4 weeks?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - None,2 - Very mild,3 - Mild,4 - Moderate,5 - Severe,6 - Very severe'),
@@ -268,13 +264,13 @@ class DB_Seed extends Seeder
                           array('Text' => 'How much of the time during the past 4 weeks have you felt very nervous?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - All of the Time,2 - Most of the Time,3 - A Good Bit of the Time,4 - Some of the Time,5 - A Little of the Time,6 - None of the Time'),
                           array('Text' => 'How much of the time during the past 4 weeks have you felt so down that nothing could cheer you up?'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - All of the Time,2 - Most of the Time,3 - A Good Bit of the Time,4 - Some of the Time,5 - A Little of the Time,6 - None of the Time'),                                                            
+                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - All of the Time,2 - Most of the Time,3 - A Good Bit of the Time,4 - Some of the Time,5 - A Little of the Time,6 - None of the Time'),
                           array('Text' => 'How much of the time during the past 4 weeks have you felt calm and peaceful?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - All of the Time,2 - Most of the Time,3 - A Good Bit of the Time,4 - Some of the Time,5 - A Little of the Time,6 - None of the Time'),
                           array('Text' => 'How much of the time during the past 4 weeks have you had a lot of energy?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - All of the Time,2 - Most of the Time,3 - A Good Bit of the Time,4 - Some of the Time,5 - A Little of the Time,6 - None of the Time'),
                           array('Text' => 'How much of the time during the past 4 weeks have you felt downhearted and blue?'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - All of the Time,2 - Most of the Time,3 - A Good Bit of the Time,4 - Some of the Time,5 - A Little of the Time,6 - None of the Time'),         
+                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - All of the Time,2 - Most of the Time,3 - A Good Bit of the Time,4 - Some of the Time,5 - A Little of the Time,6 - None of the Time'),
                           array('Text' => 'How much of the time during the past 4 weeks have you felt worn out?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - All of the Time,2 - Most of the Time,3 - A Good Bit of the Time,4 - Some of the Time,5 - A Little of the Time,6 - None of the Time'),
                           array('Text' => 'How much of the time during the past 4 weeks have you been a happy person?'
@@ -291,15 +287,15 @@ class DB_Seed extends Seeder
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - Definitely True,2 - Mostly True,3 - Do Not Know,4 - Mostly False,5 - Definitely False'),
                           array('Text' => 'How true or false is the following statement: My health is excellent?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - Definitely True,2 - Mostly True,3 - Do Not Know,4 - Mostly False,5 - Definitely False'),
-                       ); 
-                       
-        $IBDCquestions = array(array('Text' => 'Do you belive that your IBD has been well controlled over the past 2 weeks?'
+                       );
+
+        $IBDCquestions = array(array('Text' => 'Do you believe that your IBD has been well controlled over the past 2 weeks?'
                                      , 'Type' => 'RadioButtons' , 'PossibleResponses' => 'Yes,No,Not sure'),
                           array('Text' => 'Do you believe that your current treatment is useful in controlling your IBD?'
                                      , 'Type' => 'RadioButtons' , 'PossibleResponses' => 'Yes,No,Not sure'),
                           array('Text' => 'Over the past 2 weeks have your bowel symptoms been getting worse, getting better, or not changed?'
                                      , 'Type' => 'RadioButtons' , 'PossibleResponses' => 'Better,No change,Worse'),
-                          array('Text' => 'Over the past 2 weeks have you missed any planned activies because of IBD?'
+                          array('Text' => 'Over the past 2 weeks have you missed any planned actives because of IBD?'
                                      , 'Type' => 'RadioButtons' , 'PossibleResponses' => 'Yes,No,Not sure'),
                           array('Text' => 'Over the past 2 weeks have you been woken up at night due to symptoms of IBD?'
                                      , 'Type' => 'RadioButtons' , 'PossibleResponses' => 'Yes,No,Not sure'),
@@ -317,14 +313,14 @@ class DB_Seed extends Seeder
                                      , 'Type' => 'RadioButtons' , 'PossibleResponses' => 'Yes,No,Not sure'),
                           array('Text' => 'At your next clinic visit would you like to discuss side effects or difficulties with using your medications?'
                                      , 'Type' => 'RadioButtons' , 'PossibleResponses' => 'Yes,No,Not sure'),
-                          array('Text' => 'At your next clinic visit would you like to disuss new symptoms that have developed since your last visit?'
-                                     , 'Type' => 'RadioButtons' , 'PossibleResponses' => 'Yes,No,Not sure'),     
+                          array('Text' => 'At your next clinic visit would you like to discuss new symptoms that have developed since your last visit?'
+                                     , 'Type' => 'RadioButtons' , 'PossibleResponses' => 'Yes,No,Not sure'),
                           array('Text' => 'Over the past 2 weeks how would you rate the OVERALL control of your IBD?'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - Worst Possible Control,1,2,3,4,5 - Neither agree or disagree,6,7,8,9,10 - Best Possible Control'),                                                                 
+                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - Worst Possible Control,1,2,3,4,5 - Neither agree or disagree,6,7,8,9,10 - Best Possible Control'),
                         );
 
         $HBquestions = array(array('Text' => 'Indicate Nisit No.'
-                                    , 'Type' => 'DropDown' , 'PossibleResponses' => 'One,Two,Three'),            
+                                    , 'Type' => 'DropDown' , 'PossibleResponses' => 'One,Two,Three'),
                           array('Text' => 'Rate the general well-being of the patient?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - Very well,1 - Slightly below par,2 - Poor,3 - Very poor,4 - Terrible'),
                           array('Text' => 'How would the patient rate their abdominal pain?'
@@ -333,10 +329,10 @@ class DB_Seed extends Seeder
                                      , 'Type' => 'FreeText' , 'PossibleResponses' => ''),
                           array('Text' => 'Indicate whether there is an abdominal mass present?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - None,1 - Dubious,2 - Definite,3 - Definite and Tender'),
-                          array('Text' => 'Select any of the bolow complications that apply(Score 1 per item)?'
+                          array('Text' => 'Select any of the below complications that apply(Score 1 per item)?'
                                      , 'Type' => 'CheckBox' , 'PossibleResponses' => 'Arthralgian,Uveitis,Erythema,Nodosum,Apthous Ulcers,Pyoderma Ganrenosm,Anal Fissure,New Fistula,Abscess'),
                           array('Text' => 'Total Score'
-                                     , 'Type' => 'FreeText' , 'PossibleResponses' => ''),                                                                           
+                                     , 'Type' => 'FreeText' , 'PossibleResponses' => ''),
                         );
 
         DB::table('SURVEY_QUESTIONS')->insert([
@@ -362,24 +358,24 @@ class DB_Seed extends Seeder
         ]);
 
         DB::table('SURVEY_QUESTIONS')->insert([
-            'SurveyName' => 'Medical Outcomes Study Questionaire',
+            'SurveyName' => 'Medical Outcomes Study Questionnaire',
             'ConditionServed' => 'IBD',
             'SurveyType' => 'PROM',
             'SurveyQuestions' => json_encode($MOSQquestions)
-        ]); 
-        
+        ]);
+
         DB::table('SURVEY_QUESTIONS')->insert([
-            'SurveyName' => 'IBD Control Questionaire',
+            'SurveyName' => 'IBD Control Questionnaire',
             'ConditionServed' => 'IBD',
             'SurveyType' => 'PROM',
             'SurveyQuestions' => json_encode($IBDCquestions)
-        ]); 
-        
+        ]);
+
         DB::table('SURVEY_QUESTIONS')->insert([
-            'SurveyName' => 'Harvey Bradshaw Index Questionaire (Physician)',
+            'SurveyName' => 'Harvey Bradshaw Index Questionnaire (Physician)',
             'ConditionServed' => 'Admin',
             'SurveyType' => 'PROM',
             'SurveyQuestions' => json_encode($HBquestions)
-        ]);  
+        ]);
     }
 }

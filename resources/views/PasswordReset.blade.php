@@ -76,7 +76,7 @@
 
 </head>
 <div id="wrapper">
-    <body>
+    <body style="overflow-x: hidden">
 
     <section class="container-fluid" style="margin-left: -1cm; margin-top: 1cm">
 
@@ -174,7 +174,7 @@
         <br>
         <!-- list of password reset requests-->
 
-        <div style="position:absolute; top:220px">
+        <div style="position:absolute; top:220px; width: 1220px;">
 
         <ol class="lp" style="margin-top: -.4cm">
             @foreach ($patients as $p)
@@ -185,7 +185,7 @@
         </ol>
 
     </div>
-        <div style="margin-left: 300px; position:absolute; top:220px">
+        <div style="margin-left: 300px; position:absolute; top:220px; width: 1220px;">
 
             <!-- If there are no password reset requests, then don't print a list -->
             @if (count($patients) > 0)
@@ -220,7 +220,7 @@
 
             @else
                 {{--                <h5 style="margin-left: 277px; color: red">There are no password reset requests </h5>--}}
-                <div class="alert" style="margin-left: 10.3cm ">
+                <div class="alert" style="margin-left: 10.3cm; width: 370px">
                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                     <strong> There are no password reset requests </strong>
                 </div>

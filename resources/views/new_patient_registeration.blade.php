@@ -76,7 +76,7 @@
 </head>
 <div id="wrapper">
 
-    <body>
+    <body style="overflow-x: hidden">
 
     <section class="container-fluid" style="margin-left: -1cm; margin-top: 1cm">
 
@@ -176,7 +176,7 @@
 
         <!-- list of new patients requests-->
 
-        <div style="position:absolute; top:205px">
+        <div style="position:absolute; top:205px; width: 1220px;">
 
 
         <ol class="lp" style="margin-bottom: 5px">
@@ -187,7 +187,7 @@
             @endforeach
         </ol>
         </div>
-        <div style="margin-left: 300px; position:absolute; top:205px">
+        <div style="margin-left: 300px; position:absolute; top:205px; width: 1220px;">
 
             <!-- If there are no new patients, then don't print a list -->
             @if (count($patients) > 0)
@@ -220,7 +220,7 @@
                 </form>
             @else
                 {{--                <h5 style="margin-left: 277px; color: red">There are no new registered patients </h5>--}}
-                <div class="alert" style="margin-left: 10.3cm ">
+                <div class="alert" style="margin-left: 10.3cm; margin-top: 13px; width: 370px">
                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                     <strong> There are no new registered patients </strong>
                 </div>
