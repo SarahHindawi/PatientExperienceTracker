@@ -112,8 +112,8 @@
                 <input type="hidden" id="SurveyName" name="SurveyName" value="{{$name}}">
                 <input type="hidden" id="QuestionIndex" name="QuestionIndex" value="{{$loop->iteration}}">
                 <div>
-                    <button type="submit" style="width: 25px; height: 25px;"><img
-                            style="margin-left: -7px; margin-top: -9px" width="22" height="22"
+                    <button type="submit" style="width: 25px; height: 24px;"><img
+                            style="margin-left: -7px; margin-top: -11px" width="22" height="22"
                             src="{{asset('assets/images/redX.png')}}">
                     </button>
                     </button>
