@@ -96,8 +96,8 @@
         <input type="hidden" id="SurveyName" name="name" value="{{$name}}">
         <input type="hidden" id="SurveyName" name="message" value="Deletion Cancelled">
 
-        <button type="submit" style="margin-left: 1215px; margin-top: -50px; width: 25px; height: 25px">
-            <img src="{{asset('assets/images/cancel.png')}}" style="margin-left:-8px; margin-top: -11px; width: 25px; height: 25px"></button>
+        <input type="image" name="imgbtn" style="margin-left: 1207px; margin-top: -19px; width: 50px; height: 50px"
+               src="{{asset('assets/images/cancelRed.png')}}"  alt="Tool Tip">
     </form>
 
 <form name="surveyForm" method="post" action="{{url('/delete')}}" style="margin-left: 0px">
