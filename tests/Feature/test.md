@@ -1,4 +1,4 @@
-Guide testing Sprint 5 with updates for Sprint6
+Guide testing Sprint 5 with updates for Sprint6,7,8
 
     The path: Route::get('/patientregistration', 'App\Http\Controllers\PatientRegistrationController@index');
     The URL in postman: http://127.0.0.1:8000/patientregistration
@@ -37,7 +37,12 @@ Guide testing Sprint 5 with updates for Sprint6
 
      The path: Route::get('/form/create', 'App\Http\Controllers\SurveyController@create');
      The URL in postman: http://127.0.0.1:8000/form/create
-     The method: get
+     The method: post
+      JSON OBJECT:
+     {
+        "surveyName": "newSurvey"
+
+      }
 
       ---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -376,7 +381,17 @@ In order to do the test using postman, I need to have a request  in the method. 
           The method: get
 
         -----------------------------------------------------------------------------------------------------------------------------------------
-       
+        Route::post('/patientloginpage', 'App\Http\Controllers\PatientLoginController@login');
+         The URL in postman: http://127.0.0.1:8000/patientloginpage
+         The method: post
+
+         {
+             "email": "testpatient@test.ca",
+             "password": "patientPass"
+	
+         }
+        ------------------------------------------------------------------------------------------------------------------------------------------
+        ------------------------------------------------------------------------------------------------------------------
         The path: Route::post('/addmedication', 'App\Http\Controllers\MedicationController@add');
          
          The method: Post
@@ -388,3 +403,13 @@ In order to do the test using postman, I need to have a request  in the method. 
 
 
          -----------------------------------------------------------------------------------------------------------------------------------------
+         Route::delete('surveyquestions/{id}', 'App\Http\Controllers\EditSurveyController@destroy');// not used  
+         ______________________________________________________________________________________________________________________
+
+         Route::post('/editSurvey', 'App\Http\Controllers\EditSurveyController@store');// not used
+          
+
+         Preview Survey
+          Search by name
+          Fill out survey by admin
+          ReportSearchByName
