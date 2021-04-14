@@ -94,7 +94,7 @@ class PasswordController extends Controller
             Patient::where('email', $removedEmail)->update(array('PasswordReset' => "false"));
         }
 
-        return redirect('/')->with('message', 'Resets Successful. Emails with temporary passwords sent to patients.');
+        return redirect('/');
     }
 
     public function patientchange(){

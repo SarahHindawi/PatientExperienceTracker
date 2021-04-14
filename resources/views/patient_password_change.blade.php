@@ -22,7 +22,7 @@
  <body>
  <!-- the navigation bar in the top-->
     @if(Session::has('message'))
-    <p class="alert alert-info"style="text-align:center">{{ Session::get('message') }}</p>
+    <p class="alert alert-info"style="text-align:center; margin-left: 100px">{{ Session::get('message') }}</p>
     @endif
  <div style="margin-left: -1cm">
  <!-- the title in the top middle of the page -->
