@@ -409,7 +409,5 @@ In order to do the test using postman, I need to have a request  in the method. 
          Route::post('/editSurvey', 'App\Http\Controllers\EditSurveyController@store');// not used
           
 
-         Preview Survey
-          Search by name
-          Fill out survey by admin
-          ReportSearchByName
+         
+
