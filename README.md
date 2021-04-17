@@ -35,4 +35,4 @@ After Cloning the project from GitHub, cd to the folder and enter:
 ! php artisan db:seed --class=DB_Seed
 ! composer dump-autoload
 ! php artisan serve
-#### Keep the terminal open and go to local host at: [127.0.0.1](https://127.0.0.1)
+#### Keep the terminal open and go to local host at: 127.0.0.1
