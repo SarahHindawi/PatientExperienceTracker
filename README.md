@@ -36,3 +36,6 @@ After Cloning the project from GitHub, cd to the folder and enter:
 ! composer dump-autoload
 ! php artisan serve
 #### Keep the terminal open and go to local host at: 127.0.0.1
+
+### Installing Composer:
+https://getcomposer.org/doc/00-intro.md
