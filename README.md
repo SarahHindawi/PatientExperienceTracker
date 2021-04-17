@@ -33,3 +33,5 @@ After Cloning the project from GitHub, cd to the folder and enter:
 ! cp .env .example .env(copy .env.example .env for windows)
 ! php artisan migrate
 ! php artisan db:seed --class=DB_Seed
+! composer dump-autoload
+! php artisan serve
