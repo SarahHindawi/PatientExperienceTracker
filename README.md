@@ -22,6 +22,6 @@ The Patient Experience Tracker is an online data collection tool that is intende
 ### Getting Started
 -The Database Should be created through XAMPP Shell:
 ```diff
-> Mysql -u root\ in red
-> CREATE DATABASE Patient_Experience_Tracker; in red
+> Mysql -u root\
+> CREATE DATABASE Patient_Experience_Tracker;
 ```
