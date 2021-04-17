@@ -20,3 +20,5 @@ The Patient Experience Tracker is an online data collection tool that is intende
 
 ## Local Development:
 ### Getting Started
+-The Database Should be created through XAMPP Shell:
+> Mysql -u root
