@@ -31,3 +31,5 @@ After Cloning the project from GitHub, cd to the folder and enter:
 ```diff
 ! composer update
 ! cp .env .example .env(copy .env.example .env for windows)
+! php artisan migrate
+php artisan db:seed --class=DB_Seed
