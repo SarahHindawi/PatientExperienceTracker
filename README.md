@@ -29,5 +29,5 @@ The Patient Experience Tracker is an online data collection tool that is intende
 ### Running Server:
 After Cloning the project from GitHub, cd to the folder and enter:
 ```diff
-- composer update
-- cp .env .example .env(copy .env.example .env for windows)
+! composer update
+! cp .env .example .env(copy .env.example .env for windows)
