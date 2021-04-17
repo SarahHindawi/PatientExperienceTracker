@@ -26,3 +26,8 @@ The Patient Experience Tracker is an online data collection tool that is intende
 - Mysql -u root
 - CREATE DATABASE Patient_Experience_Tracker;
 ```
+### Running Server:
+After Cloning the project from GitHub, cd to the folder and enter:
+```diff
+- composer update
+- cp .env .example .env(copy .env.example .env for windows)
