@@ -17,3 +17,6 @@ The Patient Experience Tracker is an online data collection tool that is intende
 * Admin can Retrive Patient Filled Survey as CSV file
 * Admin can add new medication when needed
 * Admin can add new medical condition like IBD, COVID-19 etc.
+
+## Local Development
+# Getting Started:
