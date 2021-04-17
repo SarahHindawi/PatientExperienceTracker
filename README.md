@@ -7,7 +7,7 @@ The Patient Experience Tracker is an online data collection tool that is intende
 
 ## Feature of the Patient Expeirence Tracker
 
-* Two kind of Survey will be collected:
+- Two kind of Survey will be collected:
 * Patient Reported Experience Measurements- PREM
 * Patient Reported Outcome Measurements- PROM
 * Administrator Registration by root
